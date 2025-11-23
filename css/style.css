@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom extras */
+body {
+  @apply bg-gradient-to-b from-white to-pink-50 text-gray-800 font-sans;
+}
+
+.nav-link {
+  @apply text-gray-700 hover:text-pink-600 transition font-medium;
+}
+
+.btn-primary {
+  @apply bg-pink-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-pink-700 transition;
+}

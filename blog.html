@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Monica Dube-Sekhwela</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600,700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --muted:#6B5B4A;
+    }
+    body{ font-family:'Poppins',sans-serif; }
+    .serif{ font-family:'Playfair Display',serif; }
+    .reveal{ opacity:0; transform: translateY(10px); transition: all .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
+    .card-hover { transition: transform .35s ease, box-shadow .35s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(16,24,40,0.08); }
+  </style>
+</head>
+<body>
+
+  <header class="py-6">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white">M</span>
+        </div>
+        <div class="serif font-bold">Monica Dube-Sekhwela</div>
+      </a>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <main class="container mx-auto px-6 py-12">
+    <div class="text-center mb-12 reveal">
+        <h1 class="serif text-3xl font-bold">Insights & Stories</h1>
+        <p class="mt-3 text-gray-600">Articles, guides and thoughts on branding, growth and business for women entrepreneurs.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Post 1 -->
+        <article class="reveal soft-panel card-hover overflow-hidden rounded-xl flex flex-col">
+            <img src="https://source.unsplash.com/collection/1118905/800x600" class="w-full h-44 object-cover" />
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="serif text-xl font-bold">How to build a content habit that lasts</h3>
+                <p class="mt-3 text-sm text-gray-600 flex-grow">A simple framework for creating content every week without burning out.</p>
+                <div class="mt-4 text-xs text-gray-400">October 8, 2025 • 6 min read</div>
+            </div>
+        </article>
+        
+        <!-- Post 2 -->
+        <article class="reveal soft-panel card-hover overflow-hidden rounded-xl flex flex-col">
+            <img src="https://source.unsplash.com/collection/190727/800x600" class="w-full h-44 object-cover" />
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="serif text-xl font-bold">Pricing with confidence: 5 conversation starters</h3>
+                <p class="mt-3 text-sm text-gray-600 flex-grow">Practical ways to raise prices without losing clients.</p>
+                <div class="mt-4 text-xs text-gray-400">September 24, 2025 • 4 min read</div>
+            </div>
+        </article>
+        
+        <!-- Post 3 -->
+        <article class="reveal soft-panel card-hover overflow-hidden rounded-xl flex flex-col">
+            <img src="https://source.unsplash.com/collection/888146/800x600" class="w-full h-44 object-cover" />
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="serif text-xl font-bold">Making your first digital product: a checklist</h3>
+                <p class="mt-3 text-sm text-gray-600 flex-grow">The steps I use with clients to launch profitable digital offers.</p>
+                <div class="mt-4 text-xs text-gray-400">August 18, 2025 • 7 min read</div>
+            </div>
+        </article>
+        
+        <!-- Post 4 -->
+        <article class="reveal soft-panel card-hover overflow-hidden rounded-xl flex flex-col">
+            <img src="https://source.unsplash.com/collection/1118905/800x600" class="w-full h-44 object-cover" />
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="serif text-xl font-bold">Why partnerships beat paid ads for African businesses</h3>
+                <p class="mt-3 text-sm text-gray-600 flex-grow">Strategic relationships create revenue multipliers that advertising never will.</p>
+                <div class="mt-4 text-xs text-gray-400">July 12, 2025 • 5 min read</div>
+            </div>
+        </article>
+        
+        <!-- Post 5 -->
+        <article class="reveal soft-panel card-hover overflow-hidden rounded-xl flex flex-col">
+            <img src="https://source.unsplash.com/collection/190727/800x600" class="w-full h-44 object-cover" />
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="serif text-xl font-bold">From idea to investor-ready in 90 days</h3>
+                <p class="mt-3 text-sm text-gray-600 flex-grow">The systematic approach that transforms vague concepts into fundable businesses.</p>
+                <div class="mt-4 text-xs text-gray-400">June 28, 2025 • 8 min read</div>
+            </div>
+        </article>
+        
+        <!-- Post 6 -->
+        <article class="reveal soft-panel card-hover overflow-hidden rounded-xl flex flex-col">
+            <img src="https://source.unsplash.com/collection/888146/800x600" class="w-full h-44 object-cover" />
+            <div class="p-6 flex flex-col flex-grow">
+                <h3 class="serif text-xl font-bold">Building for legacy, not just revenue</h3>
+                <p class="mt-3 text-sm text-gray-600 flex-grow">Why sustainable business infrastructure matters more than hustle culture.</p>
+                <div class="mt-4 text-xs text-gray-400">May 15, 2025 • 6 min read</div>
+            </div>
+        </article>
+    </div>
+</main>
+
+    <!-- Load more -->
+    <div class="mt-12 text-center reveal">
+      <button class="px-6 py-3 rounded-md soft-panel">Load more posts</button>
+    </div>
+  </main>
+
+  <footer class="border-t py-8">
+    <div class="container mx-auto px-6 text-center text-sm text-gray-600">
+      &copy; <span id="y2"></span> Monica Dube-Sekhwela
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y2').textContent = new Date().getFullYear();
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.12});
+    revealEls.forEach(n => io.observe(n));
+  </script>
+</body>
+</html>

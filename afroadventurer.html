@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study: Afro Adventurer — Monica Dube-Sekhwela</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --pink-glitter:#F8C8D8;
+      --muted:#6B5B4A;
+    }
+    body { font-family: 'Poppins', sans-serif; }
+    .serif { font-family: 'Playfair Display', serif; }
+    .reveal { opacity:0; transform: translateY(10px); transition: all .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
+    .accent-underline { display:inline-block; height:6px; width:60px; background: linear-gradient(90deg,var(--gold),var(--light-brown)); border-radius:6px; vertical-align:middle;}
+    .glitter { background: linear-gradient(90deg, rgba(248,200,216,0.12), rgba(198,156,109,0.06)); border-radius:10px; padding:10px; }
+    .soft-panel { background: linear-gradient(135deg, rgba(248,200,216,0.08), rgba(198,156,109,0.04)); border: 1px solid rgba(198,156,109,0.2); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(198,156,109,0.15); }
+    .metric-card { border-left: 4px solid var(--gold); }
+    .challenge-card { border-left: 4px solid #ef4444; background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(239,68,68,0.02)); }
+    .nav-tab { padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+    .nav-tab.active { background: linear-gradient(90deg, var(--gold), var(--light-brown)); color: white; }
+    .hidden-section { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="py-6">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white text-lg">M</span>
+        </div>
+        <div>
+          <div class="serif font-bold text-base">Monica Dube-Sekhwela</div>
+        </div>
+      </a>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Insights</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md">Start Your Transformation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-12" style="background: linear-gradient(135deg, rgba(248,200,216,0.15), rgba(198,156,109,0.08));">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <div class="inline-block px-4 py-2 rounded-full soft-panel mb-4 text-sm font-semibold" style="color:var(--gold)">
+          🏆 PORTFOLIO CASE STUDY
+        </div>
+        <h1 class="serif text-5xl font-bold mb-6">Scaling a Diaspora Community from 700 to 920+ Followers</h1>
+        <p class="text-xl text-gray-700 mb-8">How I drove 31% follower growth and transformed Afro Adventurer™ into a professional brand ready for corporate partnerships over 1 month of strategic collaboration</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <div class="soft-panel px-4 py-2 rounded-lg">
+            <strong>Role:</strong> Community Co-Lead & Content Strategist
+          </div>
+          <div class="soft-panel px-4 py-2 rounded-lg">
+            <strong>Duration:</strong> October 2025 – November 2025 (Ongoing)
+          </div>
+          <div class="soft-panel px-4 py-2 rounded-lg">
+            <strong>Location:</strong> Remote (Botswana)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);">📈</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">31%</div>
+          <div class="font-semibold mb-1">Total Growth Rate</div>
+          <div class="text-sm text-gray-600">From 700 to 920+ followers on Linkedin over 1 month</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);">🎯</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">220+</div>
+          <div class="font-semibold mb-1">New Followers</div>
+          <div class="text-sm text-gray-600">Sustained growth through strategic content</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);">⚡</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">30+</div>
+          <div class="font-semibold mb-1">Content Ideas</div>
+          <div class="text-sm text-gray-600">Strategic post concepts across 4 pillars</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);">🌍</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">2</div>
+          <div class="font-semibold mb-1">Platforms Activated</div>
+          <div class="text-sm text-gray-600">LinkedIn and Instagram</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION TABS -->
+  <section class="py-8">
+    <div class="container mx-auto px-6">
+      <div class="soft-panel p-2 rounded-xl flex flex-wrap gap-2 reveal">
+        <button class="nav-tab active" onclick="showSection('overview')">📋 Overview</button>
+        <button class="nav-tab" onclick="showSection('challenge')">🎯 Challenge</button>
+        <button class="nav-tab" onclick="showSection('strategy')">🚀 Strategy</button>
+        <button class="nav-tab" onclick="showSection('execution')">⚡ Execution</button>
+        <button class="nav-tab" onclick="showSection('results')">📊 Results</button>
+        <button class="nav-tab" onclick="showSection('skills')">💡 Skills</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container mx-auto px-6 pb-12">
+
+    <!-- OVERVIEW SECTION -->
+    <section id="overview" class="content-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">Project Overview</h2>
+      
+      <div class="glitter p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-3" style="color:var(--gold);">🌍 The Opportunity</h3>
+        <p class="text-gray-700 leading-relaxed">
+          In October 2025, I was recruited by Quiana Berry, founder of <strong>Afro Adventurer™</strong>, to serve as Community Co-Lead and transform their social media presence. The community had grown organically to 400+ members on WhatsApp over 3 years, but their public-facing platforms were underutilized—700 LinkedIn followers with minimal engagement and dormant Instagram/Facebook pages. Over 1 month of ongoing collaboration (October 2025 - November 2025), I've helped scale the brand's digital footprint and establish professional systems for sustainable growth.
+        </p>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl mb-8">
+        <div class="h-64 rounded-lg flex items-center justify-center text-gray-500" style="background: linear-gradient(135deg, rgba(248,200,216,0.2), rgba(198,156,109,0.1));">
+          📸 Screenshot: LinkedIn Growth Metrics (700→920+ followers, 31% growth over 14 months)
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2">
+            <span style="color:var(--gold);">🎯</span> My Mission
+          </h4>
+          <p class="text-sm text-gray-700">Scale LinkedIn presence to 5,000+ followers, establish consistent brand voice across platforms, attract corporate sponsorships, and build sustainable content systems for long-term community growth and paid membership transition.</p>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2">
+            <span style="color:var(--gold);">⏰</span> Timeline & Evolution
+          </h4>
+          <p class="text-sm text-gray-700">1-month engagement (October 2025 - November 2025, ongoing). Started with 6-week sprint to AfroTech conference, evolved into sustained partnership managing content strategy, community engagement, and brand development across multiple initiatives.</p>
+        </div>
+      </div>
+
+      <div class="soft-panel p-8 rounded-xl mb-8">
+        <h3 class="text-2xl font-semibold mb-4 serif">About Monica Dube-Sekhwela</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          I'm a <strong>Botswana native</strong> who grew up in <strong>Brisbane, Australia</strong>, giving me unique insight into diaspora experiences and cross-cultural communication. I'm passionate about connecting African talent with global opportunities through strategic content, community building, and authentic engagement.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          My background bridges <strong>African heritage with Western digital expertise</strong>, making me uniquely positioned to help diaspora-focused brands communicate authentically while maintaining professional standards that attract corporate partners and investors.
+        </p>
+      </div>
+
+      <div class="glitter p-6 border-l-4 rounded-xl mb-8" style="border-color:var(--gold);">
+        <h4 class="font-semibold mb-3">💬 Founder Testimonial</h4>
+        <blockquote class="text-gray-700 italic mb-3 text-lg">
+          "Exactly in our brand voice 🔥... You are a natural! Your image/branding/messaging choices have been amazing... It is always a pleasure to work with people that are passionate and serious about their mission. Team work makes the dream work for sure ✨"
+        </blockquote>
+        <div class="text-sm font-semibold" style="color:var(--muted);">— Quiana Berry, Founder of Afro Adventurer™</div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE SECTION -->
+    <section id="challenge" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">🎯 The Challenge</h2>
+
+      <div class="space-y-4 mb-8">
+        <div class="challenge-card p-6 rounded-xl">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2">
+            <span>🚨</span> No Established Content Strategy
+          </h3>
+          <p class="text-gray-700 text-sm">The founder was posting sporadically with no consistent brand voice, content calendar, or visual identity. LinkedIn page had 700 followers but engagement rates were stagnant with minimal growth momentum.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2">
+            <span>⏱️</span> Time-Sensitive Event Promotion
+          </h3>
+          <p class="text-gray-700 text-sm">AfroTech Diaspora Dinner in Houston had only 41 registrations with 2 weeks to go. Needed aggressive but authentic promotion to hit 60+ attendees while maintaining community trust.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2">
+            <span>🌍</span> Founder Traveling Across Africa
+          </h3>
+          <p class="text-gray-700 text-sm">Quiana was driving 7+ hours through Namibia preparing for safari trips and attending conferences. I needed to own content creation independently while staying aligned with her vision and responding to her strategic pivots in real-time.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2">
+            <span>📊</span> No Multi-Platform Presence
+          </h3>
+          <p class="text-gray-700 text-sm">Instagram and Facebook pages existed but were dormant. Needed to activate all channels simultaneously to maximize reach and demonstrate professionalism to potential sponsors and corporate partners.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2">
+            <span>🔄</span> Sustaining Long-Term Momentum
+          </h3>
+          <p class="text-gray-700 text-sm">After initial sprint success, the challenge evolved to maintaining consistent growth over 14 months while founder traveled, launched new initiatives, and prepared for 2026 paid membership model and South Africa group trip.</p>
+        </div>
+      </div>
+
+      <div class="glitter p-6 rounded-xl">
+        <h3 class="font-semibold text-xl mb-3 serif" style="color:var(--gold);">💼 The Stakes</h3>
+        <p class="text-gray-700 leading-relaxed">Success meant positioning Afro Adventurer for a 2026 paid membership launch, South Africa group trip, and corporate partnerships. Failure meant another year of slow organic growth with no clear path to sustainability or revenue generation. The extended timeline allowed us to build systems that would support the brand's evolution from grassroots community to professional business.</p>
+      </div>
+    </section>
+
+    <!-- STRATEGY SECTION -->
+    <section id="strategy" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">🚀 My Strategic Approach</h2>
+
+      <div class="space-y-8">
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Content Audit & 30-Post Framework</h3>
+              <p class="text-gray-700 mb-4">I started by analyzing past posts to identify what resonated, then created a strategic framework delivered on Oct 16, 2024:</p>
+              
+              <div class="glitter p-4 rounded-lg">
+                <h4 class="font-semibold mb-3">30-Post Content Bank (60+ Days of Content)</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">🚀 Remote Opportunities</div>
+                    <div class="text-sm text-gray-600">Job postings, freelance tips, digital nomad resources</div>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">🏆 Community Wins</div>
+                    <div class="text-sm text-gray-600">Member spotlights, event recaps, testimonials</div>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">💰 Investment News</div>
+                    <div class="text-sm text-gray-600">Citizenship programs, diaspora economics, opportunities</div>
+                  </div>
+                  <div class="bg-white p-4 rounded-lg">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">🌍 Cultural Exchange</div>
+                    <div class="text-sm text-gray-600">Travel insights, African tech trends, diaspora stories</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">2</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Brand Voice Development</h3>
+              <p class="text-gray-700 mb-4">I established a consistent, authentic voice that balanced professionalism with warmth:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">✓</span>
+                  <span><strong>Welcoming tone:</strong> Every post invited community participation</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">✓</span>
+                  <span><strong>Call-to-action consistency:</strong> Added Google Form link to every post</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">✓</span>
+                  <span><strong>Visual identity:</strong> Used Canva templates with brand colors</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">✓</span>
+                  <span><strong>Hashtag strategy:</strong> #AfroAdventurers #BIPOCTech #DiasporaRising</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">3</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Multi-Platform Activation</h3>
+              <p class="text-gray-700 mb-4">I built a coordinated cross-platform presence:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>LinkedIn:</strong> Primary platform - 3-5 posts/week optimized for 9am EST</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>Instagram:</strong> Reformatted LinkedIn content for visual storytelling</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>Facebook:</strong> Connected via Meta Business Suite for simultaneous posting</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>TikTok Strategy:</strong> Developed flexible content plan for future video expansion</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">4</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Community Engagement System</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div class="glitter p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">WhatsApp Administration</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>✓ Welcomed new members</li>
+                    <li>✓ Moderated channels</li>
+                    <li>✓ Shared opportunities</li>
+                    <li>✓ Responded to inquiries</li>
+                  </ul>
+                </div>
+                <div class="glitter p-4 rounded-lg">
+                  <h4 class="font-semibold mb-2">LinkedIn Engagement</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>✓ Responded to all comments</li>
+                    <li>✓ Direct outreach to prospects</li>
+                    <li>✓ Tagged relevant members</li>
+                    <li>✓ Cross-promoted posts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">5</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Long-Term Systems Development</h3>
+              <p class="text-gray-700 mb-4">Over 14 months, I built sustainable infrastructure:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>Content Repository:</strong> Built library of templates and evergreen content</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>Engagement Protocols:</strong> Created systems for consistent community interaction</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>Analytics Tracking:</strong> Monitored growth trends and optimized strategy</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--gold);">→</span>
+                  <span><strong>Partnership Pipeline:</strong> Identified and cultivated strategic relationships</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTION SECTION -->
+    <section id="execution" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">⚡ Execution Excellence</h2>
+
+      <div class="glitter p-6 rounded-xl mb-8">
+        <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Phase 1: Foundation Building (Oct 2025)</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="px-3 py-1 rounded-lg font-semibold text-sm text-white flex-shrink-0" style="background:var(--gold);">Oct 14</div>
+            <div>
+              <div class="font-semibold mb-1">Onboarded as Co-Lead</div>
+              <div class="text-sm text-gray-600">Received LinkedIn access, reviewed 700-follower baseline, analyzed past content patterns</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="px-3 py-1 rounded-lg font-semibold text-sm text-white flex-shrink-0" style="background:var(--gold);">Oct 16</div>
+            <div>
+              <div class="font-semibold mb-1">Delivered 30-Post Content Strategy</div>
+              <div class="text-sm text-gray-600">Created comprehensive Google Doc with detailed post ideas across 4 content pillars</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="px-3 py-1 rounded-lg font-semibold text-sm text-white flex-shrink-0" style="background:var(--gold);">Oct 20</div>
+            <div>
+              <div class="font-semibold mb-1">First Posts Go Live</div>
+              <div class="text-sm text-gray-600">Began consistent posting schedule - founder's immediate feedback: "Exactly in our brand voice 🔥"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glitter p-6 rounded-xl mb-8">
+        <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Phase 2: Rapid Scaling (Oct-Nov 2025)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3">Content Production</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Designed graphics in Canva using brand templates</li>
+              <li>• Scheduled 3-5 posts/week across platforms</li>
+              <li>• Created countdown posts for dinner event</li>
+              <li>• Featured member spotlights (e.g., Nate Equan)</li>
+              <li>• Shared opportunities (AfroTech scholarships, conferences)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3">Community Management</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• Moderated WhatsApp channels daily</li>
+              <li>• Responded to LinkedIn comments within hours</li>
+              <li>• Direct outreach to prospects via LinkedIn DMs</li>
+              <li>• Shared resources in remote work channels</li>
+              <li>• Approved new member requests and welcomed them</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl border-l-4 mb-8" style="border-color:var(--gold);">
+        <p class="italic text-gray-700 text-lg mb-2">
+          "With our last post, we reached over 807 followers on the Afro Adventurer LinkedIn page... Road to 1k 📈🌍✊🏾"
+        </p>
+        <div class="text-sm font-semibold" style="color:var(--muted);">— Quiana's message celebrating our growth milestone</div>
+      </div>
+
+      <div class="glitter p-6 rounded-xl">
+        <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Week 5-6: Event Push & Strategic Networking</h3>
+        <div class="space-y-4">
+          <div class="soft-panel p-4 rounded-lg">
+            <div class="font-semibold mb-2 flex items-center gap-2">
+              <span>🎯</span> Event Promotion Campaign
+            </div>
+            <p class="text-sm text-gray-700 mb-2">Created daily countdown posts with event graphics, managed RSVP communications, promoted across all platforms.</p>
+            <p class="text-sm font-semibold" style="color:var(--gold);">Result: Grew from 41 to 60+ confirmed attendees</p>
+          </div>
+          <div class="soft-panel p-4 rounded-lg">
+            <div class="font-semibold mb-2 flex items-center gap-2">
+              <span>🌍</span> Networking at Africa Elevate Conference
+            </div>
+            <p class="text-sm text-gray-700">Attended conference in Botswana (Oct 30-31), made connections with Caribbean-Africa trade organizations, brought strategic insights back to content strategy.</p>
+          </div>
+          <div class="soft-panel p-4 rounded-lg">
+            <div class="font-semibold mb-2 flex items-center gap-2">
+              <span>📊</span> Analytics & Real-Time Optimization
+            </div>
+            <p class="text-sm text-gray-700">Tracked engagement metrics daily, adjusted posting times to 9am EST for maximum reach, refined content mix based on performance data showing 622% growth spike.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section id="results" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">📊 Results & Impact</h2>
+
+      <div class="glitter p-8 rounded-xl mb-8">
+        <h3 class="text-2xl font-bold serif mb-6 text-center" style="color:var(--gold);">🎉 Key Achievements</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">622%</div>
+            <div class="font-semibold mb-2">Follower Growth Rate</div>
+            <div class="text-sm text-gray-600">From 4.9% to 622.2% in just 7 days with strategic content implementation</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">107+</div>
+            <div class="font-semibold mb-2">New LinkedIn Followers</div>
+            <div class="text-sm text-gray-600">Grew from 700 to 807+ followers in 16 days (15.3% growth)</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">98.1%</div>
+            <div class="font-semibold mb-2">Search Appearance Growth</div>
+            <div class="text-sm text-gray-600">From 431 to 777 search appearances in 7 days</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">46%</div>
+            <div class="font-semibold mb-2">Event Registration Increase</div>
+            <div class="text-sm text-gray-600">Helped grow AfroTech dinner from 41 to 60+ attendees</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl mb-8">
+        <h3 class="text-2xl font-bold serif mb-6" style="color:var(--gold);">🎯 Strategic Outcomes</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">1</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Professional Brand Identity Established</h4>
+              <p class="text-sm text-gray-700">Created consistent visual identity across 3 platforms (LinkedIn, Instagram, Facebook) that positioned Afro Adventurer as a credible partner for corporate sponsorships.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">2</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Sustainable Content System Built</h4>
+              <p class="text-sm text-gray-700">Delivered 30-post content bank providing 60+ days of strategic content, enabling founder to maintain momentum during 2026 South Africa trip planning.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">3</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Event Successfully Promoted</h4>
+              <p class="text-sm text-gray-700">AfroTech Diaspora Dinner grew from 41 to 60+ RSVPs through strategic countdown campaign and cross-platform promotion.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">4</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Positioned for Paid Membership Launch</h4>
+              <p class="text-sm text-gray-700">Professional presence and proven engagement metrics positioned Afro Adventurer to transition from free WhatsApp community to paid membership model in 2026.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="glitter p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2">
+            <span style="color:var(--gold);">💼</span> Business Impact
+          </h4>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Attracted potential partnerships with Africa Elevate and Caribbean trade orgs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Positioned brand for corporate sponsorships</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Created foundation for 2026 revenue generation</span>
+            </li>
+          </ul>
+        </div>
+        <div class="glitter p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2">
+            <span style="color:var(--gold);">🌍</span> Community Impact
+          </h4>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Increased member engagement across platforms</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Connected diaspora professionals with opportunities</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Strengthened brand trust and authenticity</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+        <h4 class="font-semibold mb-3">The Ultimate Validation</h4>
+        <blockquote class="text-gray-700 italic text-lg mb-3">
+          "Your image/branding/messaging choices have been 🔥... You are sooo good at design... Killed it 🔥🥳... Team work makes the dream work for sure ✨"
+        </blockquote>
+        <div class="text-sm font-semibold" style="color:var(--muted);">— Quiana Berry's feedback throughout our collaboration</div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">💡 Skills Demonstrated</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+            <span style="color:var(--gold);">📝</span> Content Strategy
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Developed 30-post content framework across 4 strategic pillars</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Created sustainable content calendar providing 60+ days of posts</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Optimized posting times based on engagement analytics</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Balanced educational, promotional, and community content</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+            <span style="color:var(--gold);">🎨</span> Visual Design
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Created brand-consistent graphics in Canva</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Developed visual identity using brand colors (black/gold/purple)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Designed event promotion materials and countdown graphics</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Maintained consistent aesthetic across platforms</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+            <span style="color:var(--gold);">👥</span> Community Management
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Moderated WhatsApp channels with 400+ members</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Welcomed new members and responded to inquiries</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Engaged with LinkedIn comments and direct messages</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Shared relevant opportunities and resources</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+            <span style="color:var(--gold);">📊</span> Analytics & Optimization
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Tracked LinkedIn analytics to measure 622% growth</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Adjusted strategy based on real-time performance data</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Monitored search appearances and follower trends</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Optimized content mix based on engagement patterns</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+            <span style="color:var(--gold);">🎯</span> Brand Voice Development
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Established authentic, welcoming tone across platforms</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Created consistent call-to-action strategy</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Balanced professionalism with cultural authenticity</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Founder validation: "Exactly in our brand voice 🔥"</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+            <span style="color:var(--gold);">⚡</span> Cross-Platform Coordination
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Activated dormant Instagram and Facebook pages</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Set up Meta Business Suite for simultaneous posting</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Adapted content for platform-specific audiences</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Developed TikTok strategy for future expansion</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glitter p-8 rounded-xl">
+        <h3 class="text-2xl font-bold serif mb-6" style="color:var(--gold);">🌟 Soft Skills</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">→</span>
+              <span><strong>Independent Initiative:</strong> Took full ownership while founder traveled</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">→</span>
+              <span><strong>Adaptability:</strong> Responded to strategic pivots in real-time</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">→</span>
+              <span><strong>Cultural Intelligence:</strong> Bridged African and Western perspectives</span>
+            </li>
+          </ul>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">→</span>
+              <span><strong>Strategic Thinking:</strong> Balanced immediate needs with long-term vision</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">→</span>
+              <span><strong>Communication:</strong> Clear updates despite time zone differences</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">→</span>
+              <span><strong>Passion-Driven:</strong> "The passion is so 🔥" — Founder's words</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CTA SECTION -->
+  <section class="py-16" style="background: linear-gradient(135deg, rgba(248,200,216,0.15), rgba(198,156,109,0.08));">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <h2 class="serif text-4xl font-bold mb-6">Let's Create Impact Together</h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+          I specialize in building authentic community brands that bridge African diaspora culture with professional excellence. Whether you need content strategy, community management, or cross-platform growth, I bring strategic thinking and cultural intelligence to every project.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" class="px-8 py-3 rounded-lg font-semibold transition-all" style="background:linear-gradient(90deg,var(--gold),var(--light-brown)); color:white;">
+            View LinkedIn Profile
+          </a>
+          <a href="mailto:monicadubesekhwela@gmail.com" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg">
+            Email Me
+          </a>
+          <a href="contact.html" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg">
+            Start Your Transformation
+          </a>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <h3 class="text-2xl font-bold serif mb-6">Ready to Scale Your Community?</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="soft-panel p-6 rounded-xl text-left">
+              <div class="text-4xl mb-3">📈</div>
+              <div class="font-semibold mb-2">Content Strategy</div>
+              <div class="text-sm text-gray-600">30-60 day content frameworks, brand voice development, multi-platform coordination</div>
+            </div>
+            <div class="soft-panel p-6 rounded-xl text-left">
+              <div class="text-4xl mb-3">👥</div>
+              <div class="font-semibold mb-2">Community Management</div>
+              <div class="text-sm text-gray-600">WhatsApp/Discord moderation, member engagement, event coordination</div>
+            </div>
+            <div class="soft-panel p-6 rounded-xl text-left">
+              <div class="text-4xl mb-3">🎨</div>
+              <div class="font-semibold mb-2">Visual Design</div>
+              <div class="text-sm text-gray-600">Canva graphics, brand templates, social media assets</div>
+            </div>
+            <div class="soft-panel p-6 rounded-xl text-left">
+              <div class="text-4xl mb-3">📊</div>
+              <div class="font-semibold mb-2">Growth Analytics</div>
+              <div class="text-sm text-gray-600">Data-driven optimization, performance tracking, strategic insights</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t py-8">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="serif text-xl font-bold mb-2">Monica Dube-Sekhwela</h3>
+      <p class="text-sm text-gray-600 mb-2">Community Strategist | Content Creator | Cultural Bridge-Builder</p>
+      <p class="text-sm text-gray-600 mb-4">Botswana 🇧🇼 • Connecting African Diaspora with Global Opportunities</p>
+      
+      <div class="flex justify-center gap-6 mb-6 text-2xl">
+        <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" title="LinkedIn" class="hover:opacity-70 transition-opacity">💼</a>
+        <a href="mailto:monicadubesekhwela@gmail.com" title="Email" class="hover:opacity-70 transition-opacity">📧</a>
+        <a href="https://wa.me/26776383764" target="_blank" title="WhatsApp" class="hover:opacity-70 transition-opacity">💬</a>
+      </div>
+
+      <div class="text-sm text-gray-600">
+        &copy; <span id="yearFooter"></span> The Social Connect | Monica Dube-Sekhwela
+      </div>
+      <div class="text-xs text-gray-500 mt-2">
+        Case Study: Afro Adventurer™ • October–November 2025
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearFooter').textContent = new Date().getFullYear();
+
+    // Reveal animation
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.12});
+    revealEls.forEach(n => io.observe(n));
+
+    // Navigation functionality
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.classList.add('hidden-section');
+      });
+
+      // Remove active class from all tabs
+      const tabs = document.querySelectorAll('.nav-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Show selected section
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.remove('hidden-section');
+        
+        // Scroll to section smoothly
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+
+      // Add active class to clicked tab
+      event.target.classList.add('active');
+    }
+
+    // Initialize with overview visible
+    window.addEventListener('DOMContentLoaded', () => {
+      const overview = document.getElementById('overview');
+      if (overview) {
+        overview.classList.remove('hidden-section');
+      }
+    });
+  </script>
+</body>
+</html>

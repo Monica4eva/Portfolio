@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shop — Monica Dube-Sekhwela</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --pink-glitter:#F8C8D8;
+      --deep-teal:#2C5F5D;
+      --muted:#6B5B4A;
+    }
+    body{ font-family: 'Poppins', sans-serif; background:#fff; color:#111827; }
+    .serif{ font-family: 'Playfair Display', serif; }
+    .soft-panel{ background: rgba(255,255,255,0.85); border-radius: 12px; }
+    .card-hover{ transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
+    .card-hover:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,40,0.12); }
+    .reveal{ opacity:0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
+    .glitter{ background: linear-gradient(90deg, rgba(248,200,216,0.12), rgba(198,156,109,0.06)); border-radius:10px; }
+    .price{ color: var(--muted); font-weight:700; }
+    /* product grid max width */
+    main{ max-width:1200px; margin:0 auto; padding:28px; }
+    /* cart drawer */
+    .cart-drawer{ position:fixed; right:0; top:0; height:100vh; width:360px; background:white; box-shadow:-24px 0 40px rgba(16,24,40,0.12); transform: translateX(110%); transition: transform .35s; z-index:60; padding:20px; overflow-y:auto; }
+    .cart-drawer.open{ transform: translateX(0); }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Header -->
+  <header class="py-6 border-b">
+    <div class="container mx-auto px-6 flex items-center justify-between max-w-6xl">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white text-xl">M</span>
+        </div>
+        <div>
+          <div class="serif font-bold text-lg">Monica Dube-Sekhwela</div>
+          <div class="text-xs" style="color:var(--muted)">Shop</div>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="text-sm hidden md:inline">Home</a>
+        <a href="blog.html" class="text-sm hidden md:inline">Blog</a>
+        <a href="services.html" class="text-sm hidden md:inline">Services</a>
+
+        <button id="cartBtn" class="relative soft-panel px-3 py-2 rounded-md">
+          Cart <span id="cartCount" class="ml-2 inline-block text-xs bg-gray-100 rounded-full px-2">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="mb-12">
+      <div class="text-center reveal mb-8">
+        <h1 class="serif text-4xl md:text-5xl font-bold mb-4">DIY Resources</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Tools and templates for bootstrapped entrepreneurs</p>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="mb-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Starter Business Kit -->
+        <div class="reveal soft-panel p-6 card-hover">
+          <div class="text-4xl mb-3">📦</div>
+          <h3 class="font-semibold text-lg mb-2">Starter Business Kit</h3>
+          <p class="text-sm text-gray-600 mt-2 mb-4">Business plan template, content calendar, 50+ templates.</p>
+          <div class="mt-3 font-bold text-xl mb-4" style="color:var(--gold);">P2,000</div>
+          <button data-id="1" class="add-btn w-full px-4 py-2 rounded-md text-sm font-semibold text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Get kit →</button>
+        </div>
+
+        <!-- Social Media Mastery -->
+        <div class="reveal soft-panel p-6 card-hover">
+          <div class="text-4xl mb-3">📱</div>
+          <h3 class="font-semibold text-lg mb-2">Social Media Mastery</h3>
+          <p class="text-sm text-gray-600 mt-2 mb-4">90-day calendar, 100+ post templates.</p>
+          <div class="mt-3 font-bold text-xl mb-4" style="color:var(--gold);">P1,200</div>
+          <button data-id="2" class="add-btn w-full px-4 py-2 rounded-md text-sm font-semibold text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Get kit →</button>
+        </div>
+
+        <!-- Brand Identity Kit -->
+        <div class="reveal soft-panel p-6 card-hover">
+          <div class="text-4xl mb-3">🎨</div>
+          <h3 class="font-semibold text-lg mb-2">Brand Identity Kit</h3>
+          <p class="text-sm text-gray-600 mt-2 mb-4">DIY logo guide, brand workbook.</p>
+          <div class="mt-3 font-bold text-xl mb-4" style="color:var(--gold);">P1,500</div>
+          <button data-id="3" class="add-btn w-full px-4 py-2 rounded-md text-sm font-semibold text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Get kit →</button>
+        </div>
+
+        <!-- Content Creator Kit -->
+        <div class="reveal soft-panel p-6 card-hover">
+          <div class="text-4xl mb-3">💬</div>
+          <h3 class="font-semibold text-lg mb-2">Content Creator Kit</h3>
+          <p class="text-sm text-gray-600 mt-2 mb-4">Video editing guide, copywriting formulas.</p>
+          <div class="mt-3 font-bold text-xl mb-4" style="color:var(--gold);">P1,000</div>
+          <button data-id="4" class="add-btn w-full px-4 py-2 rounded-md text-sm font-semibold text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Get kit →</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Additional Products Section -->
+    <section class="mb-12">
+      <div class="flex items-center justify-between mb-8">
+        <div class="reveal">
+          <h2 class="serif text-2xl font-bold">More Resources</h2>
+          <p class="text-gray-600">Expand your toolkit with these additional resources</p>
+        </div>
+        <div class="reveal">
+          <select id="filterCategory" class="soft-panel px-4 py-2 rounded-md text-sm">
+            <option value="all">All categories</option>
+            <option value="journals">Journals</option>
+            <option value="digital">Digital</option>
+            <option value="prints">Prints</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Additional products will be injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- footer -->
+  <footer class="border-t py-12 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <a href="index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold">M</span>
+            </div>
+            <div>
+              <div class="serif font-bold">Monica Dube-Sekhwela</div>
+              <div class="text-xs text-gray-500">Vision Accelerator</div>
+            </div>
+          </a>
+          <p class="text-sm text-gray-600 mb-4">Transforming purpose-driven entrepreneurs from unclear vision to market-ready brands that open doors.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-bold mb-4 text-sm uppercase" style="color:var(--deep-teal);">Programs</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="services.html" class="text-gray-600 hover:text-gray-900 transition">Vision Accelerator</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-gray-900 transition">Entrepreneur's Circle</a></li>
+            <li><a href="services.html" class="text-gray-600 hover:text-gray-900 transition">Custom Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div>
+          <h4 class="font-bold mb-4 text-sm uppercase" style="color:var(--deep-teal);">Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="blog.html" class="text-gray-600 hover:text-gray-900 transition">Blog & Insights</a></li>
+            <li><a href="projects.html" class="text-gray-600 hover:text-gray-900 transition">Case Studies</a></li>
+            <li><a href="about.html" class="text-gray-600 hover:text-gray-900 transition">About Monica</a></li>
+            <li><a href="contact.html" class="text-gray-600 hover:text-gray-900 transition">Work With Me</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-bold mb-4 text-sm uppercase" style="color:var(--deep-teal);">Get In Touch</h4>
+          <ul class="space-y-3 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <a href="mailto:thesocialconnectbw@gmail.com" class="hover:underline">thesocialconnectbw@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:+26774310425" class="hover:underline">+267 74310425</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>Gaborone, Botswana</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t pt-8 text-center text-sm text-gray-600">
+        &copy; <span id="y"></span> The Social Connect | Monica Dube-Sekhwela. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="serif text-xl font-bold">Your cart</h3>
+      <button id="closeCart" class="text-sm">Close</button>
+    </div>
+    <div id="cartItems" class="space-y-4" style="max-height:60vh; overflow-y:auto; padding-right:6px;"></div>
+
+    <div class="mt-6 border-t pt-4">
+      <div class="flex items-center justify-between mb-2">
+        <div class="text-sm text-gray-600">Subtotal</div>
+        <div id="cartSubtotal" class="font-semibold">P0</div>
+      </div>
+      <button id="checkoutBtn" class="w-full py-3 rounded-md serif text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Quick view modal -->
+  <div id="quickView" class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50" style="display:none;">
+    <div class="bg-white rounded-xl max-w-4xl w-full mx-4 p-6 relative">
+      <button id="closeQuick" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">✕</button>
+      <div id="quickContent" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- injected -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Product dataset ----------
+    const FEATURED_PRODUCTS = [
+      { id:1, title:"Starter Business Kit", price:2000, category:"digital", emoji:"📦", excerpt:"Business plan template, content calendar, 50+ templates." },
+      { id:2, title:"Social Media Mastery", price:1200, category:"digital", emoji:"📱", excerpt:"90-day calendar, 100+ post templates." },
+      { id:3, title:"Brand Identity Kit", price:1500, category:"digital", emoji:"🎨", excerpt:"DIY logo guide, brand workbook." },
+      { id:4, title:"Content Creator Kit", price:1000, category:"digital", emoji:"💬", excerpt:"Video editing guide, copywriting formulas." }
+    ];
+
+    const ADDITIONAL_PRODUCTS = [
+      { id:5, title:"Branded Journal — A5", price:180, category:"journals", img:"https://source.unsplash.com/collection/1118905/800x600", excerpt:"A guided journal to map ideas, wins and launches." },
+      { id:6, title:"Branding Moodboard Kit", price:250, category:"digital", img:"https://source.unsplash.com/collection/190727/800x600", excerpt:"Editable moodboard templates & color packs (digital)." },
+      { id:7, title:"Inspirational Print — 'Begin'", price:120, category:"prints", img:"https://source.unsplash.com/collection/888146/800x600", excerpt:"Printable inspirational art for your workspace." },
+      { id:8, title:"Mini-course: 5-Day Content Sprint", price:390, category:"digital", img:"https://source.unsplash.com/collection/1077778/800x600", excerpt:"Mini course with templates and checklists." },
+      { id:9, title:"Launch Planner — Printable", price:150, category:"prints", img:"https://source.unsplash.com/collection/190727/801x600", excerpt:"Downloadable planner pages for product launches." },
+      { id:10, title:"Client Pitch Template (Notion)", price:290, category:"digital", img:"https://source.unsplash.com/collection/1118905/801x600", excerpt:"Customisable pitch deck & proposal templates." }
+    ];
+
+    const ALL_PRODUCTS = [...FEATURED_PRODUCTS, ...ADDITIONAL_PRODUCTS];
+
+    // ---------- helpers ----------
+    const $ = (s) => document.querySelector(s);
+    const $$ = (s) => document.querySelectorAll(s);
+    const formatCurrency = n => `P${n.toFixed(0)}`;
+
+    // ---------- render additional products ----------
+    function renderProducts(list){
+      const container = document.getElementById('productsGrid');
+      container.innerHTML = '';
+      list.forEach(p=>{
+        const card = document.createElement('article');
+        card.className = 'reveal card-hover overflow-hidden rounded-xl soft-panel';
+        card.innerHTML = `
+          <div class="relative">
+            <img src="${p.img}" alt="${p.title}" class="w-full h-56 object-cover" />
+            <button data-id="${p.id}" class="absolute right-3 top-3 soft-panel px-3 py-2 text-sm quick-btn">Quick view</button>
+          </div>
+          <div class="p-4">
+            <h3 class="serif text-lg font-bold">${p.title}</h3>
+            <p class="mt-2 text-sm text-gray-600">${p.excerpt}</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="price">${formatCurrency(p.price)}</div>
+              <div>
+                <button data-id="${p.id}" class="add-btn px-4 py-2 rounded-md text-sm font-semibold text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Add</button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // add reveal observer
+      requestAnimationFrame(()=>{ 
+        const reveals = document.querySelectorAll('.reveal'); 
+        reveals.forEach(r=> io.observe(r)); 
+      });
+    }
+
+    // ---------- filter ----------
+    document.getElementById('filterCategory').addEventListener('change', (e)=>{
+      const val = e.target.value;
+      const list = val === 'all' ? ADDITIONAL_PRODUCTS : ADDITIONAL_PRODUCTS.filter(p=>p.category===val);
+      renderProducts(list);
+    });
+
+    // ---------- intersection observer ----------
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting) en.target.classList.add('visible');
+      });
+    }, {threshold:0.12});
+
+    // ---------- add to cart handler ----------
+    document.addEventListener('click', (e)=>{
+      // quick view button
+      if(e.target.matches('.quick-btn')){
+        const id = +e.target.dataset.id;
+        const p = ALL_PRODUCTS.find(x=>x.id===id);
+        openQuickView(p);
+      }
+
+      // add to cart
+      if(e.target.matches('.add-btn')){
+        const id = +e.target.dataset.id;
+        addToCart(id, 1);
+      }
+    });
+
+    // ---------- quick view modal ----------
+    const quickViewEl = document.getElementById('quickView');
+    function openQuickView(product){
+      const container = document.getElementById('quickContent');
+      const imgHtml = product.img ? `<img src="${product.img}" alt="${product.title}" class="w-full h-80 object-cover rounded-lg" />` : `<div class="w-full h-80 flex items-center justify-center text-6xl bg-gray-100 rounded-lg">${product.emoji || '📦'}</div>`;
+      container.innerHTML = `
+        <div>
+          ${imgHtml}
+        </div>
+        <div>
+          <h2 class="serif text-2xl font-bold">${product.title}</h2>
+          <div class="mt-2 price text-xl">${formatCurrency(product.price)}</div>
+          <p class="mt-4 text-gray-600">${product.excerpt}</p>
+          <div class="mt-6 flex gap-3">
+            <button id="quickAdd" class="px-5 py-2 serif text-white rounded-md" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Add to cart</button>
+          </div>
+        </div>
+      `;
+      quickViewEl.style.display = 'flex';
+      // quick add listener
+      document.getElementById('quickAdd').addEventListener('click', ()=>{
+        addToCart(product.id,1);
+        closeQuickView();
+      });
+    }
+    document.getElementById('closeQuick').addEventListener('click', closeQuickView);
+    quickViewEl.addEventListener('click', (ev)=>{ if(ev.target===quickViewEl) closeQuickView(); });
+    function closeQuickView(){ quickViewEl.style.display = 'none'; }
+
+    // ---------- cart (in-memory storage) ----------
+    let cart = [];
+    
+    function addToCart(id, qty=1){
+      const item = cart.find(i=>i.id===id);
+      if(item) item.qty += qty; 
+      else cart.push({ id, qty });
+      updateCartUI();
+      
+      // small feedback animation
+      const btn = document.querySelector(`button.add-btn[data-id="${id}"]`);
+      if(btn){ 
+        const orig = btn.textContent;
+        btn.textContent='Added ✓'; 
+        setTimeout(()=>btn.textContent=orig,900); 
+      }
+    }
+    
+    function removeFromCart(id){
+      cart = cart.filter(i=>i.id!==id);
+      updateCartUI();
+    }
+    
+    function updateCartUI(){
+      document.getElementById('cartCount').textContent = cart.reduce((s,i)=>s+i.qty,0);
+      const itemsWrap = document.getElementById('cartItems');
+      itemsWrap.innerHTML = '';
+      let subtotal = 0;
+      
+      cart.forEach(ci=>{
+        const p = ALL_PRODUCTS.find(x=>x.id===ci.id);
+        subtotal += p.price * ci.qty;
+        const node = document.createElement('div');
+        node.className = 'flex items-center gap-3 border-b pb-3';
+        const imgHtml = p.img ? `<img src="${p.img}" class="w-14 h-14 object-cover rounded" />` : `<div class="w-14 h-14 flex items-center justify-center bg-gray-100 rounded text-2xl">${p.emoji || '📦'}</div>`;
+        node.innerHTML = `
+          ${imgHtml}
+          <div class="flex-1">
+            <div class="text-sm font-semibold">${p.title}</div>
+            <div class="text-xs text-gray-500">${ci.qty} × ${formatCurrency(p.price)}</div>
+          </div>
+          <div><button class="text-sm text-red-500 remove-btn" data-id="${p.id}">Remove</button></div>
+        `;
+        itemsWrap.appendChild(node);
+      });
+      
+      document.getElementById('cartSubtotal').textContent = formatCurrency(subtotal);
+      
+      // attach remove handlers
+      document.querySelectorAll('.remove-btn').forEach(b=>{
+        b.addEventListener('click', ()=> removeFromCart(+b.dataset.id));
+      });
+    }
+
+    // open/close cart drawer
+    const cartDrawer = document.getElementById('cartDrawer');
+    document.getElementById('cartBtn').addEventListener('click', ()=> cartDrawer.classList.add('open'));
+    document.getElementById('closeCart').addEventListener('click', ()=> cartDrawer.classList.remove('open'));
+
+    // checkout (dummy)
+    document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+      if(cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      alert('This is a demo checkout. Integrate Stripe / PayPal for real checkout.');
+    });
+
+    // init
+    renderProducts(ADDITIONAL_PRODUCTS);
+    updateCartUI();
+    document.getElementById('y').textContent = new Date().getFullYear();
+    
+    // Initial reveal
+    document.querySelectorAll('.reveal').forEach(r=> io.observe(r));
+  </script>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study: UNICAF Botswana — Monica Dube-Sekhwela</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --pink-glitter:#F8C8D8;
+      --muted:#6B5B4A;
+      --unicaf-blue:#0066CC;
+      --unicaf-orange:#FF6600;
+    }
+    body { font-family: 'Poppins', sans-serif; }
+    .serif { font-family: 'Playfair Display', serif; }
+    .reveal { opacity:0; transform: translateY(10px); transition: all .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
+    .accent-underline { display:inline-block; height:6px; width:60px; background: linear-gradient(90deg,var(--gold),var(--light-brown)); border-radius:6px; vertical-align:middle;}
+    .glitter { background: linear-gradient(90deg, rgba(248,200,216,0.12), rgba(198,156,109,0.06)); border-radius:10px; padding:10px; }
+    .soft-panel { background: linear-gradient(135deg, rgba(248,200,216,0.08), rgba(198,156,109,0.04)); border: 1px solid rgba(198,156,109,0.2); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(198,156,109,0.15); }
+    .metric-card { border-left: 4px solid var(--unicaf-blue); }
+    .nav-tab { padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
+    .nav-tab.active { background: linear-gradient(90deg, var(--unicaf-blue), var(--unicaf-orange)); color: white; }
+    .hidden-section { display: none; }
+    
+    /* Carousel Gallery Styles */
+    .carousel-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .carousel-track-container {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,102,204,0.15);
+      flex: 1;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+    }
+    
+    .carousel-image-wrapper {
+      position: relative;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.1));
+      overflow: hidden;
+    }
+    
+    .carousel-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .carousel-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0,102,204,0.08), rgba(255,102,0,0.08));
+      font-size: 4rem;
+    }
+    
+    .carousel-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
+      padding: 30px;
+      color: white;
+    }
+    
+    .carousel-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .carousel-description {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      line-height: 1.5;
+    }
+    
+    .carousel-btn {
+      background: linear-gradient(135deg, var(--unicaf-blue), var(--unicaf-orange));
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,102,204,0.3);
+      flex-shrink: 0;
+    }
+    
+    .carousel-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0,102,204,0.4);
+    }
+    
+    .carousel-btn:active {
+      transform: scale(0.95);
+    }
+    
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(0,102,204,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .indicator.active {
+      background: var(--unicaf-blue);
+      width: 32px;
+      border-radius: 6px;
+    }
+    
+    .indicator:hover {
+      background: var(--unicaf-orange);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-wrapper {
+        gap: 10px;
+      }
+      
+      .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+      }
+      
+      .carousel-title {
+        font-size: 1.2rem;
+      }
+      
+      .carousel-description {
+        font-size: 0.85rem;
+      }
+      
+      .carousel-overlay {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="py-6">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white text-lg">M</span>
+        </div>
+        <div>
+          <div class="serif font-bold text-base">Monica Dube-Sekhwela</div>
+        </div>
+      </a>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Insights</a></li>
+        <li><a href="services.html">Programs</a></li>
+        <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md">Start Your Transformation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="py-12" style="background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.05));">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <div class="inline-block px-4 py-2 rounded-full soft-panel mb-4 text-sm font-semibold" style="color:var(--unicaf-blue)">
+          🎓 PORTFOLIO CASE STUDY
+        </div>
+        <h1 class="serif text-5xl font-bold mb-6">Building UNICAF's Ground Presence in Botswana</h1>
+        <p class="text-xl text-gray-700 mb-8">How I transformed a Cyprus-based educational brand into a trusted local partner through strategic events, community engagement, and authentic stakeholder relationships over 2 years</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <div class="soft-panel px-4 py-2 rounded-lg">
+            <strong>Role:</strong> Marketing & Business Development Manager
+          </div>
+          <div class="soft-panel px-4 py-2 rounded-lg">
+            <strong>Duration:</strong> 2021 – 2023
+          </div>
+          <div class="soft-panel px-4 py-2 rounded-lg">
+            <strong>Location:</strong> Botswana (Remote for Cyprus-based company)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section class="py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3">🎯</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--unicaf-blue);">4</div>
+          <div class="font-semibold mb-1">Major Events Executed</div>
+          <div class="text-sm text-gray-600">High school workshop, teacher workshop, women's brunch, charity walk sponsorship</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3">🏆</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--unicaf-blue);">1st</div>
+          <div class="font-semibold mb-1">Founding Sponsor</div>
+          <div class="text-sm text-gray-600">First-ever sponsor walk in Palapye, Botswana</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3">📈</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--unicaf-blue);">High</div>
+          <div class="font-semibold mb-1">Registration Conversion</div>
+          <div class="text-sm text-gray-600">Strong attendance across all events leading to course enrollments</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3">🤝</div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--unicaf-blue);">Local</div>
+          <div class="font-semibold mb-1">Brand Trust Established</div>
+          <div class="text-sm text-gray-600">Positioned Cyprus company as trusted local education partner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVIGATION TABS -->
+  <section class="py-8">
+    <div class="container mx-auto px-6">
+      <div class="soft-panel p-2 rounded-xl flex flex-wrap gap-2 reveal">
+        <button class="nav-tab active" onclick="showSection('overview')">📋 Overview</button>
+        <button class="nav-tab" onclick="showSection('gallery')">📸 Gallery</button>
+        <button class="nav-tab" onclick="showSection('events')">🎪 Events</button>
+        <button class="nav-tab" onclick="showSection('results')">📊 Results</button>
+        <button class="nav-tab" onclick="showSection('skills')">💡 Skills</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container mx-auto px-6 pb-12">
+
+    <!-- OVERVIEW SECTION -->
+    <section id="overview" class="content-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">Project Overview</h2>
+      
+      <div class="glitter p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-3" style="color:var(--unicaf-blue);">🎓 The Opportunity</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          From 2021 to 2023, I served as UNICAF's local representative in Botswana, progressing from Service Consultant to Marketing Consultant, and ultimately to <strong>Marketing and Business Development Manager</strong>. My mission was to establish on-the-ground presence for this Cyprus-based online education provider and build trust within the Batswana community.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          UNICAF needed more than digital marketing—they needed a <strong>local face, authentic community relationships, and strategic partnerships</strong> to overcome skepticism about online education and international credentials. I became that bridge, transforming abstract brand awareness into tangible community impact.
+        </p>
+      </div>
+
+      <div class="glitter p-6 border-l-4 rounded-xl mb-8" style="border-color:var(--unicaf-blue);">
+        <h4 class="font-semibold mb-3">💬 Senior Manager Testimonial</h4>
+        <blockquote class="text-gray-700 italic mb-3 text-lg">
+          "Monica actively fostered engagement with alumni and current students through thoughtfully planned events and workshops... She demonstrates particular strength in event management, ideation, coordination, budget oversight, communication, promotion, and stakeholder engagement."
+        </blockquote>
+        <div class="text-sm font-semibold" style="color:var(--muted);">— Ria Argyrides, Senior International Marketing Manager, UNICAF</div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8 text-center">📸 Event Gallery</h2>
+      
+      <div class="glitter p-6 rounded-xl mb-8 text-center">
+        <p class="text-gray-700 text-lg">A visual journey through UNICAF's community impact in Botswana—from student workshops to teacher development, women's empowerment brunch to the historic first sponsor walk in Palapye.</p>
+      </div>
+
+      <!-- Revolving Carousel Gallery -->
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">
+            <span>‹</span>
+          </button>
+          
+          <div class="carousel-track-container">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <div class="carousel-image-wrapper">
+                  <div class="carousel-placeholder">
+                    <div><img src="studentsunicaf.jpg" alt="High School Workshop" class="carousel-image"></div>
+                    <div style="font-size:1.2rem; margin-top:10px;">High School Workshop</div>
+                  </div>
+                  <div class="carousel-overlay">
+                    <h3 class="carousel-title">High School Student Workshop</h3>
+                    <p class="carousel-description">Students engaging with esteemed speakers about higher education opportunities</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <div class="carousel-image-wrapper">
+                  <div class="carousel-placeholder">
+                    <div><img src="tea.png" alt="High School Workshop" class="carousel-image"></div>
+                    <div style="font-size:1.2rem; margin-top:10px;">Teachers Workshop</div>
+                  </div>
+                  <div class="carousel-overlay">
+                    <h3 class="carousel-title">Teachers Professional Development</h3>
+                    <p class="carousel-description">Educators learning about career advancement through UNICAF programs</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <div class="carousel-image-wrapper">
+                  <div class="carousel-placeholder">
+                    <div><img src="womensbrunch.jpg" alt="High School Workshop" class="carousel-image"></div>
+                    <div style="font-size:1.2rem; margin-top:10px;">Women's Brunch</div>
+                  </div>
+                  <div class="carousel-overlay">
+                    <h3 class="carousel-title">Women's Empowerment Brunch</h3>
+                    <p class="carousel-description">Female students and alumni networking and celebrating achievements</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide">
+                <div class="carousel-image-wrapper">
+                  <div class="carousel-placeholder">
+                    <div><img src="Tree-Planting-Activity-Botswana.png" alt="High School Workshop" class="carousel-image"></div>
+                    <div style="font-size:1.2rem; margin-top:10px;">Sponsor Walk</div>
+                  </div>
+                  <div class="carousel-overlay">
+                    <h3 class="carousel-title">First Sponsor Walk in Palapye</h3>
+                    <p class="carousel-description">UNICAF as founding sponsor supporting community charity initiative</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="carousel-slide">
+                <div class="carousel-image-wrapper">
+                  <div class="carousel-placeholder">
+                    <div><img src="speak.jpg" alt="High School Workshop" class="carousel-image"></div>
+                    <div style="font-size:1.2rem; margin-top:10px;">Guest Speakers</div>
+                  </div>
+                  <div class="carousel-overlay">
+                    <h3 class="carousel-title">Esteemed Guest Speakers</h3>
+                    <p class="carousel-description">Local professionals and UNICAF alumni inspiring attendees across events</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="carousel-slide">
+                <div class="carousel-image-wrapper">
+                  <div class="carousel-placeholder">
+                    <div><img src="community.jpg" alt="High School Workshop" class="carousel-image"></div>
+                    <div style="font-size:1.2rem; margin-top:10px;">Community</div>
+                  </div>
+                  <div class="carousel-overlay">
+                    <h3 class="carousel-title">Community Engagement</h3>
+                    <p class="carousel-description">Building lasting connections between UNICAF and Batswana stakeholders</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">
+            <span>›</span>
+          </button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <span class="indicator active" onclick="goToSlide(0)"></span>
+          <span class="indicator" onclick="goToSlide(1)"></span>
+          <span class="indicator" onclick="goToSlide(2)"></span>
+          <span class="indicator" onclick="goToSlide(3)"></span>
+          <span class="indicator" onclick="goToSlide(4)"></span>
+          <span class="indicator" onclick="goToSlide(5)"></span>
+        </div>
+      </div>
+
+      <div class="mt-12 glitter p-8 rounded-xl border-l-4" style="border-color:var(--unicaf-blue);">
+        <h3 class="font-semibold text-xl mb-3">💬 Recognition from Leadership</h3>
+        <blockquote class="text-gray-700 italic text-lg mb-3">
+          "Monica ensured that each initiative aligned with UNICAF's mission and consistently sourced credible local speakers to boost engagement and reinforce brand loyalty in Botswana."
+        </blockquote>
+        <div class="text-sm font-semibold" style="color:var(--muted);">— Ria Argyrides, Senior International Marketing Manager, UNICAF</div>
+      </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section id="events" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">🎪 Event Portfolio</h2>
+
+      <div class="space-y-8">
+        <div class="soft-panel p-8 rounded-xl border-l-4" style="border-color:var(--unicaf-blue);">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="text-5xl">👨‍🎓</div>
+            <div>
+              <h3 class="text-2xl font-bold serif mb-2" style="color:var(--unicaf-blue);">High School Student Workshop</h3>
+              <p class="text-sm text-gray-600 mb-4">Public & Private Schools | Multi-Session Format</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 class="font-semibold mb-3">Objectives</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-blue);">•</span>
+                  <span>Expose students to higher education pathways</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-blue);">•</span>
+                  <span>Introduce UNICAF's online degree programs</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-blue);">•</span>
+                  <span>Inspire academic ambition through guest speakers</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-blue);">•</span>
+                  <span>Generate leads from graduating students</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-3">Key Outcomes</h4>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-orange);">✓</span>
+                  <span><strong>Strong attendance</strong> across multiple schools</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-orange);">✓</span>
+                  <span><strong>High engagement</strong> during Q&A sessions</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-orange);">✓</span>
+                  <span><strong>Direct inquiries</strong> about application process</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span style="color:var(--unicaf-orange);">✓</span>
+                  <span><strong>Brand awareness</strong> among future students</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-8 rounded-xl border-l-4" style="border-color:var(--unicaf-orange);">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="text-5xl">👩‍🏫</div>
+            <div>
+              <h3 class="text-2xl font-bold serif mb-2" style="color:var(--unicaf-orange);">Teachers Professional Development Workshop</h3>
+              <p class="text-sm text-gray-600 mb-4">Educators from Multiple Schools | Career Advancement Focus</p>
+            </div>
+          </div>
+          
+          <div class="glitter p-4 rounded-lg">
+            <p class="text-sm text-gray-700"><strong>Key Achievement:</strong> Positioned UNICAF as partner for teacher development, resulting in multiple master's program enrollments and school partnerships.</p>
+          </div>
+        </div>
+
+        <div class="soft-panel p-8 rounded-xl border-l-4" style="border-color:var(--pink-glitter);">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="text-5xl">👩‍💼</div>
+            <div>
+              <h3 class="text-2xl font-bold serif mb-2" style="color:var(--gold);">Women's Brunch Workshop</h3>
+              <p class="text-sm text-gray-600 mb-4">Female Students & Alumni | Empowerment & Networking</p>
+            </div>
+          </div>
+          
+          <div class="glitter p-4 rounded-lg">
+            <p class="text-sm text-gray-700"><strong>Impact:</strong> Created meaningful connections, renewed enrollments from alumni, and strengthened brand loyalty within female community.</p>
+          </div>
+        </div>
+
+        <div class="soft-panel p-8 rounded-xl border-l-4" style="border-color:#10b981;">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="text-5xl">🏃</div>
+            <div>
+              <h3 class="text-2xl font-bold serif mb-2" style="color:#10b981;">First-Ever Sponsor Walk in Palapye</h3>
+              <p class="text-sm text-gray-600 mb-4">Founding Sponsor | Community Charity Event</p>
+            </div>
+          </div>
+          
+          <div class="glitter p-4 rounded-lg">
+            <p class="text-sm text-gray-700"><strong>Historic Achievement:</strong> Established UNICAF as first-ever sponsor walk supporter in Palapye, demonstrating corporate social responsibility and creating lasting brand goodwill.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section id="results" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">📊 Results & Impact</h2>
+
+      <div class="glitter p-8 rounded-xl mb-8">
+        <h3 class="text-2xl font-bold serif mb-6 text-center" style="color:var(--unicaf-blue);">🎉 Key Achievements</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--unicaf-blue);">Strong</div>
+            <div class="font-semibold mb-2">Event Attendance Rates</div>
+            <div class="text-sm text-gray-600">Consistently achieved good attendance across all 4 major events</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--unicaf-orange);">High</div>
+            <div class="font-semibold mb-2">Registration Conversion</div>
+            <div class="text-sm text-gray-600">Events generated qualified leads that converted to course enrollments</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:#10b981;">1st</div>
+            <div class="font-semibold mb-2">Founding Sponsor Recognition</div>
+            <div class="text-sm text-gray-600">First-ever sponsor walk supporter in Palapye</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">Local</div>
+            <div class="font-semibold mb-2">Brand Trust Established</div>
+            <div class="text-sm text-gray-600">Cyprus-based company positioned as trusted local partner</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-8 rounded-xl border-l-4 mb-8" style="border-color:var(--unicaf-blue);">
+        <h4 class="font-semibold text-xl mb-4">Manager's Assessment</h4>
+        <blockquote class="text-gray-700 italic text-lg mb-4">
+          "Monica remained effective, collaborative, and solutions-driven, consistently delivering results even under challenging circumstances."
+        </blockquote>
+        <div class="text-sm font-semibold" style="color:var(--muted);">— Ria Argyrides, Senior International Marketing Manager, UNICAF</div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8">💡 Skills Demonstrated</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--unicaf-blue);">
+          <h3 class="font-bold text-xl mb-4">🎪 Event Management</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-blue);">✓</span>
+              <span>End-to-end event planning and execution</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-blue);">✓</span>
+              <span>Venue selection and logistics coordination</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-blue);">✓</span>
+              <span>Speaker sourcing and management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-blue);">✓</span>
+              <span>Day-of-event coordination</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--unicaf-orange);">
+          <h3 class="font-bold text-xl mb-4">💰 Budget Management</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-orange);">✓</span>
+              <span>Event budget planning</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-orange);">✓</span>
+              <span>Vendor negotiations</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-orange);">✓</span>
+              <span>Expense tracking and reporting</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--unicaf-orange);">✓</span>
+              <span>ROI measurement</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:#10b981;">
+          <h3 class="font-bold text-xl mb-4">🤝 Partnership Development</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:#10b981;">✓</span>
+              <span>Strategic partnership identification</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:#10b981;">✓</span>
+              <span>Memoranda of agreement drafting</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:#10b981;">✓</span>
+              <span>Stakeholder relationship management</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:#10b981;">✓</span>
+              <span>Cold outreach and pitching</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4">📈 Lead Generation</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Strategic lead capture systems</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Consultative client approach</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Follow-up and conversion tracking</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Business development reporting</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CTA SECTION -->
+  <section class="py-16" style="background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.05));">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <h2 class="serif text-4xl font-bold mb-6">Let's Build Your Brand Presence Together</h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+          I specialize in establishing authentic local presence for international brands, developing strategic partnerships, and executing high-impact community events that drive real business results.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" class="px-8 py-3 rounded-lg font-semibold transition-all" style="background:linear-gradient(90deg,var(--unicaf-blue),var(--unicaf-orange)); color:white;">
+            View LinkedIn Profile
+          </a>
+          <a href="mailto:monicadubesekhwela@gmail.com" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg">
+            Email Me
+          </a>
+          <a href="contact.html" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg">
+            Start Your Transformation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t py-8">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="serif text-xl font-bold mb-2">Monica Dube-Sekhwela</h3>
+      <p class="text-sm text-gray-600 mb-2">Marketing & Business Development | Event Management | Strategic Partnerships</p>
+      <p class="text-sm text-gray-600 mb-4">Botswana 🇧🇼 • Building Bridges Between International Brands & Local Communities</p>
+      
+      <div class="flex justify-center gap-6 mb-6 text-2xl">
+        <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" title="LinkedIn" class="hover:opacity-70 transition-opacity">💼</a>
+        <a href="mailto:monicadubesekhwela@gmail.com" title="Email" class="hover:opacity-70 transition-opacity">📧</a>
+        <a href="https://wa.me/26776383764" target="_blank" title="WhatsApp" class="hover:opacity-70 transition-opacity">💬</a>
+      </div>
+
+      <div class="text-sm text-gray-600">
+        &copy; <span id="yearFooter"></span> The Social Connect | Monica Dube-Sekhwela
+      </div>
+      <div class="text-xs text-gray-500 mt-2">
+        Case Study: UNICAF Botswana • 2021–2023
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearFooter').textContent = new Date().getFullYear();
+
+    // Reveal animation
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.12});
+    revealEls.forEach(n => io.observe(n));
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const totalSlides = 6;
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const indicators = document.querySelectorAll('.indicator');
+      
+      if (track) {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
+    }
+
+    function moveCarousel(direction) {
+      currentSlide += direction;
+      
+      if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+      } else if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+      }
+      
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    // Auto-advance carousel every 5 seconds
+    let autoPlay = setInterval(() => {
+      moveCarousel(1);
+    }, 5000);
+
+    // Pause auto-play on hover
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener('mouseenter', () => {
+        clearInterval(autoPlay);
+      });
+      
+      carouselWrapper.addEventListener('mouseleave', () => {
+        autoPlay = setInterval(() => {
+          moveCarousel(1);
+        }, 5000);
+      });
+    }
+
+    // Navigation functionality
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.classList.add('hidden-section');
+      });
+
+      // Remove active class from all tabs
+      const tabs = document.querySelectorAll('.nav-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Show selected section
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.remove('hidden-section');
+        
+        // Scroll to section smoothly
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+
+      // Add active class to clicked tab
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
+    }
+
+    // Initialize with overview visible
+    window.addEventListener('DOMContentLoaded', () => {
+      const overview = document.getElementById('overview');
+      if (overview) {
+        overview.classList.remove('hidden-section');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Transformation Case Study | Monica Dube-Sekhwela</title>
+    
+    <!-- Google Fonts (Playfair Display + Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --gold: #C69C6D;
+            --light-brown: #DCC4A1;
+            --pink-glitter: #F8C8D8;
+            --body-bg: #ffffff;
+            --muted: #6B5B4A;
+        }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: var(--body-bg); 
+            color: #111827; 
+        }
+        
+        .serif { 
+            font-family: 'Playfair Display', serif; 
+        }
+        
+        .glitter {
+            background: linear-gradient(90deg, rgba(248,200,216,0.18), rgba(198,156,109,0.08));
+            border-radius: 8px;
+        }
+        
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(12px); 
+            transition: opacity .6s ease, transform .6s ease; 
+        }
+        
+        .reveal.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+        
+        .accent-underline {
+            display: inline-block;
+            height: 6px;
+            width: 60px;
+            background: linear-gradient(90deg, var(--gold), var(--light-brown));
+            border-radius: 6px;
+            vertical-align: middle;
+        }
+        
+        .card-hover { 
+            transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; 
+        }
+        
+        .card-hover:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 18px 40px rgba(16,24,40,0.12); 
+        }
+        
+        .soft-panel { 
+            background: rgba(255,255,255,0.85); 
+            backdrop-filter: blur(6px); 
+            border-radius: 14px; 
+        }
+        
+        .image-placeholder {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border: 2px dashed #cbd5e0;
+            transition: all 0.3s ease;
+            border-radius: 14px;
+        }
+        
+        .image-placeholder:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(90deg, var(--gold), var(--light-brown));
+        }
+        
+        .gold-gradient-bg {
+            background: linear-gradient(180deg, rgba(198,156,109,0.08), rgba(248,200,216,0.08));
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- NAV -->
+    <header class="py-6">
+        <nav class="container mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center gold-gradient">
+                    <span class="serif text-white text-xl">M</span>
+                </div>
+                <div>
+                    <div class="serif font-bold text-lg">Monica Dube-Sekhwela</div>
+                    <div class="text-xs" style="color:var(--muted)">Vision Accelerator | Business Strategist</div>
+                </div>
+            </a>
+
+            <ul class="hidden md:flex gap-8 items-center text-sm">
+                <li><a href="about.html" class="hover:text-gray-700">About</a></li>
+                <li><a href="blog.html" class="hover:text-gray-700">Insights</a></li>
+                <li><a href="shop.html" class="hover:text-gray-700">Resources</a></li>
+                <li><a href="projects.html" class="hover:text-gray-700">Case Studies</a></li>
+                <li><a href="services.html" class="hover:text-gray-700">Programs</a></li>
+                <li><a href="contact.html" class="px-4 py-2 rounded-md soft-panel hover:shadow">Start Your Transformation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- Breadcrumb -->
+        <div class="reveal mb-6">
+            <a href="projects.html" class="text-sm hover:underline" style="color:var(--muted)">← Back to Case Studies</a>
+        </div>
+
+        <!-- Header -->
+        <div class="reveal mb-12">
+            <div class="inline-block px-4 py-2 glitter text-sm font-semibold mb-4" style="color:var(--gold)">
+                Featured Case Study
+            </div>
+            <h1 class="serif text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                Digital Transformation for Government Innovation Initiative
+            </h1>
+            <p class="text-xl text-gray-700 max-w-3xl mb-6">
+                Transforming a stalled government concept into a launch-ready platform with measurable engagement in 6 weeks
+            </p>
+            
+            <!-- Meta Info -->
+            <div class="flex flex-wrap gap-6 text-sm" style="color:var(--muted)">
+                <div>
+                    <span class="font-semibold text-gray-900">Timeline:</span> 6 weeks
+                </div>
+                <div>
+                    <span class="font-semibold text-gray-900">Industry:</span> Government / Economic Development
+                </div>
+                <div>
+                    <span class="font-semibold text-gray-900">Investment Value:</span> P12,000 - P21,000
+                </div>
+            </div>
+        </div>
+
+        <!-- The Challenge -->
+        <div class="reveal soft-panel p-8 mb-8">
+            <h2 class="serif text-2xl font-bold mb-4">The Challenge</h2>
+            <p class="text-gray-700 leading-relaxed">
+                A Principal Officer at a Ministry of Entrepreneurship needed to launch a national citizen engagement platform for economic transformation. The initiative had no digital presence, unclear brand positioning, and was stalled waiting for government approvals.
+            </p>
+        </div>
+
+        <!-- My Role -->
+        <div class="reveal p-8 mb-8 rounded-2xl text-white" style="background:linear-gradient(135deg,var(--gold),var(--light-brown))">
+            <h3 class="serif text-xl font-bold mb-3">My Role</h3>
+            <p class="opacity-90">Brand Strategist • Web Developer • Digital Marketing Consultant</p>
+        </div>
+
+        <!-- Project Images Section -->
+        <div class="reveal mb-12">
+    <h2 class="serif text-2xl font-bold mb-6">Project Showcase</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+        
+        <!-- Image Slot 1 -->
+        <div class="image-placeholder overflow-hidden aspect-video">
+            <img src="logos.png" alt="Government Initiative Website Design" class="w-full h-full object-cover">
+            <!-- If image doesn't exist yet, it will show broken image. Remove the placeholder div below once you add your image -->
+        </div>
+        
+        <!-- Image Slot 2 -->
+        <div class="image-placeholder overflow-hidden aspect-video">
+            <img src="pitch .png" alt="Government Initiative Marketing Materials" class="w-full h-full object-cover">
+            <!-- If image doesn't exist yet, it will show broken image. Remove the placeholder div below once you add your image -->
+        </div>
+        
+    </div>
+    
+
+            <!-- Website Link -->
+            <div class="mt-6 text-center">
+                <a href="https://my-happy-place-betp.vercel.app/" class="inline-flex items-center gap-2 px-8 py-3 rounded-md serif text-white gold-gradient hover:shadow-lg transition-shadow">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                    View Live Website
+                </a>
+                <p class="text-xs text-gray-500 mt-2">View the beta</p>
+            </div>
+        </div>
+
+        <!-- What I Delivered -->
+        <div class="reveal mb-12">
+            <h2 class="serif text-2xl font-bold mb-6">What I Delivered</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Brand & Visual Identity -->
+                <article class="soft-panel p-6 card-hover">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h3 class="font-semibold text-lg mb-3">Brand & Visual Identity</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Designed complete logo system from concept to final</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Redesigned 40+ slide presentation (reduced text by 80%)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Created 11 marketing flyers and promotional materials</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Established cohesive visual brand guidelines</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Digital Infrastructure -->
+                <article class="soft-panel p-6 card-hover">
+                    <div class="text-3xl mb-3">💻</div>
+                    <h3 class="font-semibold text-lg mb-3">Digital Infrastructure</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Built full-stack responsive website (HTML, Tailwind CSS)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Developed integrated QR code submission system</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Set up Google Forms backend with automated routing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Deployed on multiple platforms (Vercel, GitHub Pages)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Created dedicated email infrastructure</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- LinkedIn Strategy -->
+                <article class="soft-panel p-6 card-hover">
+                    <div class="text-3xl mb-3">📱</div>
+                    <h3 class="font-semibold text-lg mb-3">LinkedIn Strategy & Optimization</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Rewrote professional bio and summary for engagement</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Developed 6-post content strategy with templates</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Taught algorithm optimization techniques</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Created engagement protocols and content calendar</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Transformed academic tone to conversational authority</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Strategic Positioning -->
+                <article class="soft-panel p-6 card-hover">
+                    <div class="text-3xl mb-3">📊</div>
+                    <h3 class="font-semibold text-lg mb-3">Strategic Positioning</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Repositioned platform from government-dependent to independent</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Clarified brand differentiation and messaging</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Developed monetization framework (thought leadership, speaking, consulting)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Created partnership outreach strategy</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span style="color:var(--gold)" class="mt-1">•</span>
+                            <span>Navigated government protocol constraints</span>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="reveal gold-gradient-bg rounded-2xl p-8 mb-12">
+            <h2 class="serif text-2xl font-bold mb-6">Results</h2>
+            
+            <div class="mb-6">
+                <h3 class="font-semibold text-lg mb-4" style="color:var(--muted)">Within 48 Hours:</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="soft-panel p-4 text-center">
+                        <div class="serif text-3xl font-bold mb-1" style="color:var(--gold)">3</div>
+                        <div class="text-xs" style="color:var(--muted)">Partnership Inquiries</div>
+                    </div>
+                    <div class="soft-panel p-4 text-center">
+                        <div class="serif text-3xl font-bold mb-1" style="color:var(--gold)">2</div>
+                        <div class="text-xs" style="color:var(--muted)">Speaking Opportunities</div>
+                    </div>
+                    <div class="soft-panel p-4 text-center">
+                        <div class="serif text-3xl font-bold mb-1" style="color:var(--gold)">1</div>
+                        <div class="text-xs" style="color:var(--muted)">Confirmed Engagement</div>
+                    </div>
+                    <div class="soft-panel p-4 text-center">
+                        <div class="serif text-3xl font-bold mb-1" style="color:var(--gold)">✓</div>
+                        <div class="text-xs" style="color:var(--muted)">Measurable Traction</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="soft-panel p-6 mb-6">
+                <h3 class="font-semibold mb-3">Delivered:</h3>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start gap-2">
+                        <span style="color:var(--gold)">✓</span>
+                        <span>Complete operational website with citizen submission system</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span style="color:var(--gold)">✓</span>
+                        <span>Functional brand identity across all touchpoints</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span style="color:var(--gold)">✓</span>
+                        <span>4-week content roadmap with reusable templates</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span style="color:var(--gold)">✓</span>
+                        <span>Knowledge transfer for independent platform management</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="soft-panel p-6 border-l-4" style="border-color:var(--gold)">
+                <h3 class="font-semibold mb-2">Client Impact:</h3>
+                <p class="text-gray-700 italic text-sm">
+                    "My thinking on [this platform] has changed since meeting you... I was heading for a breakdown with little to show for it. With the new developments and refocus we can still go on."
+                </p>
+            </div>
+        </div>
+
+        <!-- The Approach -->
+        <div class="reveal soft-panel p-8 mb-12">
+            <h2 class="serif text-2xl font-bold mb-6">The Approach</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div>
+                    <h3 class="font-semibold mb-2">Strategic Foundation First</h3>
+                    <p class="text-sm text-gray-600">Diagnosed root issues (positioning, messaging) before building solutions</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Holistic Integration</h3>
+                    <p class="text-sm text-gray-600">Connected personal brand → platform brand → digital infrastructure for coherent ecosystem</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Education-Focused</h3>
+                    <p class="text-sm text-gray-600">Taught principles and frameworks, not just execution—built capacity for long-term success</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Rapid Prototyping</h3>
+                    <p class="text-sm text-gray-600">Iterative design process with regular feedback loops maintained momentum</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-2">Cultural Sensitivity</h3>
+                    <p class="text-sm text-gray-600">Navigated complex government protocols and stakeholder requirements</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Takeaway -->
+        <div class="reveal p-8 mb-12 rounded-2xl text-white" style="background:linear-gradient(135deg,var(--gold),var(--light-brown))">
+            <h2 class="serif text-2xl font-bold mb-4">Key Takeaway</h2>
+            <p class="text-lg opacity-90 leading-relaxed">
+                Transformed a stalled concept into a launch-ready platform with measurable engagement in 6 weeks through integrated strategy, design, and development—demonstrating the power of holistic digital transformation.
+            </p>
+        </div>
+
+        <!-- Skills & Services -->
+        <div class="reveal grid md:grid-cols-2 gap-6 mb-12">
+            <div class="soft-panel p-6">
+                <h3 class="serif text-xl font-bold mb-4">Services Provided</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Brand Strategy</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Logo & Visual Design</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Web Development</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Content Strategy</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Social Media Optimization</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Digital Marketing</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Copywriting</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Business Advisory</span>
+                </div>
+            </div>
+
+            <div class="soft-panel p-6">
+                <h3 class="serif text-xl font-bold mb-4">Skills Showcased</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Strategic Thinking</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Brand Development</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Web Development</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Content Strategy</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">LinkedIn Marketing</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Visual Design</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Stakeholder Management</span>
+                    <span class="px-3 py-1 glitter text-xs font-medium" style="color:var(--gold)">Cross-Cultural Communication</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="reveal text-center py-12">
+            <div class="max-w-2xl mx-auto">
+                <div class="serif text-3xl font-bold mb-4">Ready for your transformation?</div>
+                <p class="text-gray-600 mb-6">
+                    Most entrepreneurs don't lack vision—they lack the ability to articulate it clearly. Let's translate what's in your heart into language the market understands.
+                </p>
+                <a href="contact.html" class="inline-block px-8 py-3 rounded-md serif text-white gold-gradient hover:shadow-lg transition-shadow">
+                    Start Your Transformation
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t mt-12 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-sm text-gray-600">&copy; <span id="year"></span> The Social Connect | Monica Dube-Sekhwela. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Set year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Reveal on scroll
+        const observers = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if(e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, {threshold: 0.12});
+        observers.forEach(n => io.observe(n));
+    </script>
+</body>
+</html>
