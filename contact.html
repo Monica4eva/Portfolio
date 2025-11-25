@@ -1,115 +1,206 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Monica Dube-Sekhwela</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — Monica Dube-Sekhwela</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{
+--gold:#C69C6D;
+--light-brown:#DCC4A1;
+--muted:#6B5B4A;
+}
+body{ font-family:'Poppins',sans-serif; background: #FAFAF8; }
+.serif{ font-family:'Playfair Display',serif; }
+.reveal{ opacity:0; transform: translateY(20px); transition: all .6s ease; }
+.reveal.visible{ opacity:1; transform: translateY(0); }
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600,700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+/* Beautiful form styling */
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-  <style>
-    :root{
-      --gold:#C69C6D;
-      --light-brown:#DCC4A1;
-      --muted:#6B5B4A;
-    }
-    body{ font-family:'Poppins',sans-serif; }
-    .serif{ font-family:'Playfair Display',serif; }
-    .reveal{ opacity:0; transform: translateY(10px); transition: all .6s ease; }
-    .reveal.visible{ opacity:1; transform: translateY(0); }
-    input, textarea { border:1px solid #E6E6E6; padding:12px; border-radius:8px; width:100%; font-size:14px; }
-    .soft-panel { background: rgba(255,255,255,0.85); border-radius: 12px; }
-  </style>
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4A4A4A;
+  margin-bottom: 0.5rem;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #E8E8E8;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(198, 156, 109, 0.1);
+}
+
+.form-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--gold), var(--light-brown));
+  color: white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(198, 156, 109, 0.3);
+}
+
+.soft-panel { 
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.phone-mockup {
+  position: relative;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: linear-gradient(135deg, rgba(198, 156, 109, 0.1), rgba(220, 196, 161, 0.1));
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(198, 156, 109, 0.2);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold), var(--light-brown));
+  color: white;
+  font-size: 18px;
+}
+</style>
 </head>
 <body>
-  <header class="py-6">
-    <nav class="container mx-auto px-6 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
-          <span class="serif text-white">M</span>
-        </div>
-        <div class="serif font-bold">Monica Dube-Sekhwela</div>
-      </a>
+<header class="py-6">
+<nav class="container mx-auto px-6 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+<span class="serif text-white text-lg">M</span>
+</div>
+<div class="serif font-bold text-lg">Monica Dube-Sekhwela</div>
+</a>
+<ul class="hidden md:flex gap-8 items-center text-sm font-medium">
+<li><a href="about.html" class="hover:text-gray-600 transition">About</a></li>
+<li><a href="blog.html" class="hover:text-gray-600 transition">Blog</a></li>
+<li><a href="services.html" class="hover:text-gray-600 transition">Services</a></li>
+</ul>
+</nav>
+</header>
 
-      <ul class="hidden md:flex gap-8 items-center text-sm">
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="services.html">Services</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container mx-auto px-6 py-12">
-    <div class="md:flex md:gap-12">
-      <div class="md:w-1/2 reveal">
-        <h1 class="serif text-3xl font-bold">Work with me</h1>
-        <p class="mt-4 text-gray-600">Tell me about your project and I’ll get back within 48 hours.</p>
-
-       <div class="mt-8 soft-panel p-6">
-  <form
-  action="https://formspree.io/f/xyzvryvw"
-  method="POST"
->
- <div class="contact-form">
-  <form>
-    <!-- New field for Name -->
-    <label>
-      Your name:
-      <input type="text" name="name">
-    </label>
-    
-    <!-- Existing fields -->
-    <label>
-      Your email:
-      <input type="email" name="email">
-    </label>
-    <label>
-      Your message:
-      <textarea name="message"></textarea>
-    </label>
-    <!-- your other form fields go here -->
-    <button type="submit">Send</button>
-  </form>
+<main class="container mx-auto px-6 py-16">
+<div class="text-center mb-12 reveal">
+<h1 class="serif text-4xl md:text-5xl font-bold mb-4">Let's Work Together</h1>
+<p class="text-gray-600 text-lg max-w-2xl mx-auto">Tell me about your project and I'll get back to you within 48 hours. Whether you're just starting out or scaling up, I'm here to help.</p>
 </div>
 
-      <aside class="md:w-1/2 reveal mt-8 md:mt-0">
-        <div class="soft-panel p-6 rounded-xl">
-          <h3 class="font-semibold">Need help choosing a package?</h3>
-          <p class="mt-3 text-sm text-gray-600">If you’re unsure which service fits, share the goals and I'll recommend the best package for your stage.</p>
-          <div class="mt-4">
-            <div class="text-sm"><strong>Email:</strong> monicadubesekhela@gmail.com</div>
-            <div class="text-sm mt-2"><strong>Location:</strong> Botswana</div>
-          </div>
-        </div>
+<div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+<!-- Form Section -->
+<div class="reveal soft-panel p-8 md:p-10">
+<form action="https://formspree.io/f/xyzvryvw" method="POST" id="contactForm">
+<div class="form-group">
+<label class="form-label">Your Name</label>
+<input type="text" name="name" class="form-input" placeholder="Jane Doe" required>
+</div>
 
-        <div class="mt-6">
-          <img src="contact.png" class="rounded-xl w-full object-cover" />
-        </div>
-      </aside>
-    </div>
-  </main>
+<div class="form-group">
+<label class="form-label">Email Address</label>
+<input type="email" name="email" class="form-input" placeholder="jane@example.com" required>
+</div>
 
-  <footer class="border-t py-8">
-    <div class="container mx-auto px-6 text-center text-sm text-gray-600">
-      &copy; <span id="y4"></span> Monica Dube-Sekhwela
-    </div>
-  </footer>
+<div class="form-group">
+<label class="form-label">What can I help you with?</label>
+<textarea name="message" class="form-textarea" placeholder="Tell me about your business goals, challenges, or the project you have in mind..." required></textarea>
+</div>
 
-  <script>
-    document.getElementById('y4').textContent = new Date().getFullYear();
+<button type="submit" class="submit-btn">Send Message</button>
+</form>
+</div>
 
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-    }, {threshold:0.12});
-    revealEls.forEach(n => io.observe(n));
+<!-- Side Panel with Phone -->
+<div class="reveal space-y-6">
+<!-- Info Card -->
+<div class="info-card">
+<div class="flex items-start gap-4 mb-4">
+<div class="contact-icon"></div>
+<div>
+<h3 class="font-semibold text-lg mb-1">Email Me Directly</h3>
+<p class="text-sm text-gray-600">monicadubesekhela@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="contact-icon"></div>
+<div>
+<h3 class="font-semibold text-lg mb-1">Location</h3>
+<p class="text-sm text-gray-600">Botswana</p>
+</div>
+</div>
+</div>
 
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      alert('This form is a placeholder. Replace with your email or form-handling integration.');
-      e.target.reset();
-    });
-  </script>
+<!-- Help Section -->
+<div class="soft-panel p-6">
+<h3 class="font-semibold text-lg mb-3">Need help choosing?</h3>
+<p class="text-sm text-gray-600 leading-relaxed">If you're unsure which service fits your needs, just share your goals in the form. I'll recommend the best package for your stage and budget.</p>
+</div>
+
+<!-- Phone Mockup -->
+
+</main>
+
+<footer class="border-t py-8 mt-20">
+<div class="container mx-auto px-6 text-center text-sm text-gray-600">
+&copy; <span id="y4"></span> Monica Dube-Sekhwela. Building businesses that honor both ambition and presence.
+</div>
+</footer>
+
+<script>
+document.getElementById('y4').textContent = new Date().getFullYear();
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+entries.forEach(e => { 
+if(e.isIntersecting) {
+e.target.classList.add('visible');
+}
+});
+}, {threshold:0.15});
+revealEls.forEach(n => io.observe(n));
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+// Form will submit to Formspree naturally
+// You can add a success message here if needed
+});
+</script>
 </body>
 </html>
