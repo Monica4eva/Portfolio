@@ -44,24 +44,33 @@
     <div class="md:flex md:gap-12">
       <div class="md:w-1/2 reveal">
         <h1 class="serif text-3xl font-bold">Work with me</h1>
-        <p class="mt-4 text-gray-600">Tell me about your project and I’ll get back within 48 hours (dummy message — integrate email handling when ready).</p>
+        <p class="mt-4 text-gray-600">Tell me about your project and I’ll get back within 48 hours.</p>
 
        <div class="mt-8 soft-panel p-6">
   <form
   action="https://formspree.io/f/xyzvryvw"
   method="POST"
 >
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+ <div class="contact-form">
+  <form>
+    <!-- New field for Name -->
+    <label>
+      Your name:
+      <input type="text" name="name">
+    </label>
+    
+    <!-- Existing fields -->
+    <label>
+      Your email:
+      <input type="email" name="email">
+    </label>
+    <label>
+      Your message:
+      <textarea name="message"></textarea>
+    </label>
+    <!-- your other form fields go here -->
+    <button type="submit">Send</button>
+  </form>
 </div>
 
       <aside class="md:w-1/2 reveal mt-8 md:mt-0">
