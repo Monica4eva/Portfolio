@@ -6,7 +6,11 @@
   <title>About — Monica Dube-Sekhwela | Strategic Growth Architect</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
 
   <style>
     :root{
@@ -15,7 +19,38 @@
       --pink-glitter:#F8C8D8;
       --body-bg: #ffffff;
       --muted:#6B5B4A;
+
+      /* Dark Mode Variables */
+      --dark-bg: #1A202C; 
+      --dark-card: #2D3748;
+      --dark-text: #E2E8F0;
+      --dark-muted: #A0AEC0;
     }
+    
+    /* Global Dark Mode Overrides */
+    html.dark body { 
+        background: var(--dark-bg); 
+        color: var(--dark-text); 
+    }
+    html.dark .text-gray-700 {
+        color: var(--dark-text);
+    }
+    html.dark .text-gray-600 {
+        color: var(--dark-muted);
+    }
+    html.dark .text-gray-500 {
+        color: var(--dark-muted);
+    }
+    html.dark .text-muted {
+        color: var(--dark-muted) !important;
+    }
+    html.dark header, 
+    html.dark footer,
+    html.dark .border-t,
+    html.dark .border-gray-200 {
+        border-color: #3f4a5a; 
+    }
+
     body { font-family: 'Poppins', sans-serif; background: var(--body-bg); color: #111827; }
     .serif { font-family: 'Playfair Display', serif; }
     
@@ -24,8 +59,19 @@
 
     .card-hover { transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,40,0.12); }
+    html.dark .card-hover:hover { box-shadow: 0 18px 40px rgba(0,0,0,0.5); }
 
-    .soft-panel { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); border-radius: 14px; }
+
+    .soft-panel { 
+        background: rgba(255,255,255,0.85); 
+        backdrop-filter: blur(6px); 
+        border-radius: 14px; 
+        transition: background 0.3s;
+    }
+    html.dark .soft-panel {
+        background: var(--dark-card);
+        border: 1px solid #3f4a5a; 
+    }
 
     .badge {
       display: inline-block;
@@ -36,6 +82,10 @@
       background: linear-gradient(90deg, rgba(198,156,109,0.15), rgba(248,200,216,0.15));
       border: 1px solid var(--light-brown);
     }
+    html.dark .badge {
+        background: rgba(198,156,109,0.25);
+    }
+
 
     .stat-number { 
       font-size: 2.5rem; 
@@ -49,7 +99,6 @@
 </head>
 <body class="antialiased">
 
-  <!-- NAV -->
   <header class="py-6">
     <nav class="container mx-auto px-6 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
@@ -63,17 +112,22 @@
       </a>
 
       <ul class="hidden md:flex gap-8 items-center text-sm">
-        <li><a href="about.html" class="hover:text-gray-700">About</a></li>
-        <li><a href="blog.html" class="hover:text-gray-700">Insights</a></li>
-        <li><a href="shop.html" class="hover:text-gray-700">Resources</a></li>
-        <li><a href="projects.html" class="hover:text-gray-700">Case Studies</a></li>
-        <li><a href="services.html" class="hover:text-gray-700">Programs</a></li>
+        <li><a href="about.html" class="hover:text-gray-700 dark:hover:text-gray-300">About</a></li>
+        <li><a href="blog.html" class="hover:text-gray-700 dark:hover:text-gray-300">Insights</a></li>
+        <li><a href="shop.html" class="hover:text-gray-700 dark:hover:text-gray-300">Resources</a></li>
+        <li><a href="projects.html" class="hover:text-gray-700 dark:hover:text-gray-300">Case Studies</a></li>
+        <li><a href="services.html" class="hover:text-gray-700 dark:hover:text-gray-300">Programs</a></li>
         <li><a href="contact.html" class="px-4 py-2 rounded-md soft-panel hover:shadow">Let's Talk Growth</a></li>
+        <li>
+          <button id="darkModeToggle" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            <span class="light-mode-icon">☀️</span>
+            <span class="dark-mode-icon hidden">🌙</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
   <main>
     <section class="container mx-auto px-6 py-12">
       <div class="max-w-5xl mx-auto text-center reveal">
@@ -90,10 +144,8 @@
    I help businesses achieve measurable growth through strategic positioning, not hustle. Here's how necessity became my greatest teacher.</div>
     </section>
 
-    <!-- STORY SECTION -->
     <section class="container mx-auto px-6 py-12">
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-        <!-- SIDEBAR WITH IMAGE -->
         <aside class="reveal space-y-6 order-first md:order-last">
           <div class="rounded-xl overflow-hidden shadow-lg">
             <img src="aboutpic.png" class="w-full object-cover" alt="Monica Dube-Sekhwela">
@@ -155,7 +207,11 @@
             
             <div class="space-y-4 text-gray-700">
               <p>I became a single mother at 22 in the first year of my business degree. My entire childhood, I'd sometimes seen my parents briefly on weekday evenings between their work shifts. I looked at my newborn daughter and made a promise: she wouldn't grow up wondering where her mother was.</p>
-              <p>So I taught myself digital marketing in stolen hours, late nights while my baby slept, early mornings before she woke. At 26, I convinced Afrobella Natural Hair Studio to launch their first Afro hair and fashion showcase, an event of this scale had never been marketed in Botswana before, and I had no experience producing anything like it. I secured 8 corporate sponsors, national media coverage, and celebrity participation by positioning an overlooked market as a premium opportunity. Strategic clarity opened those doors, not experience, not budget, not connections.</p>
+              
+              <p>
+                <img src="Gemini_Generated_Image_trvut6trvut6trvu.png" alt="Monica Dube-Sekhwela working with clients" class="float-right w-40 h-auto ml-4 mb-4 rounded-lg shadow-lg md:w-48"/>
+                So I taught myself digital marketing in stolen hours, late nights while my baby slept, early mornings before she woke. At 26, I convinced Afrobella Natural Hair Studio to launch their first Afro hair and fashion showcase, an event of this scale had never been marketed in Botswana before, and I had no experience producing anything like it. I secured 8 corporate sponsors, national media coverage, and celebrity participation by positioning an overlooked market as a premium opportunity. Strategic clarity opened those doors, not experience, not budget, not connections.
+              </p>
 
               <p>That event revealed something I've built my entire practice around: strategic positioning opens doors that hustle alone never will. I didn't secure those partnerships by working harder than everyone else, I secured them because I understood how to translate vision into language that sponsors, media, and stakeholders couldn't resist. Clarity beats effort. Every time.</p>
             </div>
@@ -202,7 +258,6 @@
       </div>
     </section>
 
-    <!-- APPROACH FRAMEWORK -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -238,7 +293,6 @@
       </div>
     </section>
 
-    <!-- STRATEGIC ADVANTAGES -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -264,23 +318,22 @@
 
           <div class="reveal soft-panel p-8">
             <h3 class="font-bold text-lg mb-3">Data-Driven Decisions</h3>
-            <p class="text-gray-600 text-sm">Every strategy is backed by market intelligence and analytics. I optimize performance continuously based on real metrics, not assumptions.</p>
+            <p class="text-sm text-gray-600">Every strategy is backed by market intelligence and analytics. I optimize performance continuously based on real metrics, not assumptions.</p>
           </div>
 
           <div class="reveal soft-panel p-8">
             <h3 class="font-bold text-lg mb-3"> Partnership DNA</h3>
-            <p class="text-gray-600 text-sm">Proven track record securing corporate, government, and institutional partnerships. I don't just market, I open strategic doors that create revenue multipliers.</p>
+            <p class="text-sm text-gray-600">Proven track record securing corporate, government, and institutional partnerships. I don't just market, I open strategic doors that create revenue multipliers.</p>
           </div>
 
           <div class="reveal soft-panel p-8">
             <h3 class="font-bold text-lg mb-3"> Entrepreneurial Operator</h3>
-            <p class="text-gray-600 text-sm">Tony Elumelu Foundation grant recipient and NGO founder. I understand the founder journey from the inside, the cash flow challenges, the pivot decisions, the scaling anxieties.</p>
+            <p class="text-sm text-gray-600">Tony Elumelu Foundation grant recipient and NGO founder. I understand the founder journey from the inside, the cash flow challenges, the pivot decisions, the scaling anxieties.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PHILOSOPHY & VALUES -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -322,7 +375,6 @@
       </div>
     </section>
 
-    <!-- IDEAL CLIENTS -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-4xl mx-auto reveal">
         <div class="text-center mb-12">
@@ -372,7 +424,6 @@
       </div>
     </section>
 
-    <!-- CURRENT WORK -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-4xl mx-auto text-center reveal">
         <h2 class="serif text-4xl font-bold mb-6">Beyond Client Work</h2>
@@ -400,7 +451,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-3xl mx-auto text-center reveal">
         <h2 class="serif text-4xl font-bold mb-6">Let's Talk Strategic Growth</h2>
@@ -408,7 +458,7 @@
         
         <div class="flex gap-4 justify-center flex-wrap">
           <a href="contact.html" class="px-8 py-4 rounded-md serif text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Schedule Strategy Call</a>
-          <a href="projects.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow">View Case Studies</a>
+          <a href="projects.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow dark:border-gray-700 dark:text-gray-300">View Case Studies</a>
         </div>
 
         <p class="mt-8 text-sm text-gray-500"><strong> I am accepting select clients for Q1 2026 strategic engagements</strong> </p>
@@ -416,7 +466,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="border-t mt-12 py-8">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -462,6 +511,43 @@
       });
     }, {threshold:0.12});
     observers.forEach(n => io.observe(n));
+
+
+    // Dark Mode Logic
+    const toggle = document.getElementById('darkModeToggle');
+    const lightIcon = document.querySelector('.light-mode-icon');
+    const darkIcon = document.querySelector('.dark-mode-icon');
+    const html = document.documentElement;
+    
+    // Check local storage for preference, default to false (light)
+    const storedPreference = localStorage.getItem('dark');
+    const isDark = storedPreference === 'true';
+
+    // Set initial state
+    if (isDark) {
+      html.classList.add('dark');
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.remove('hidden');
+    } else {
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        // Switching to Light Mode
+        html.classList.remove('dark');
+        localStorage.setItem('dark', 'false');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      } else {
+        // Switching to Dark Mode
+        html.classList.add('dark');
+        localStorage.setItem('dark', 'true');
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      }
+    });
   </script>
 </body>
 </html>

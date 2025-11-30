@@ -4,9 +4,41 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Growth Infrastructure Programs — Monica Dube-Sekhwela</title>
-
+ <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Social Connect",
+    "alternateName": "TSC",
+    "description": "Growth Infrastructure Platform serving business leaders across Africa. We architect integrated growth systems for systematic competitive advantage.",
+    "slogan": "Plug Into Digital Success",
+    "url": "https://thesocialconnect.com",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Africa"
+    },
+    "serviceType": [
+      "Growth Strategy",
+      "Business Systems Architecture",
+      "Market Expansion Consulting",
+      "Brand Intelligence",
+      "Competitive Positioning"
+    ],
+    "knowsAbout": [
+      "Growth Infrastructure",
+      "Business Systems",
+      "African Markets",
+      "AfCFTA",
+      "Market Leadership"
+    ]
+  }
+  </script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
 
   <style>
     :root{
@@ -15,7 +47,42 @@
       --pink-glitter:#F8C8D8;
       --body-bg: #ffffff;
       --muted:#6B5B4A;
+
+      /* Dark Mode Variables */
+      --dark-bg: #1A202C; 
+      --dark-card: #2D3748;
+      --dark-text: #E2E8F0;
+      --dark-muted: #A0AEC0;
     }
+
+    /* Global Dark Mode Overrides */
+    html.dark body { 
+        background: var(--dark-bg); 
+        color: var(--dark-text); 
+    }
+    html.dark .text-gray-700 {
+        color: var(--dark-text);
+    }
+    html.dark .text-gray-600 {
+        color: var(--dark-muted);
+    }
+    html.dark .text-gray-500 {
+        color: var(--dark-muted);
+    }
+    html.dark .text-muted {
+        color: var(--dark-muted) !important;
+    }
+    html.dark header, 
+    html.dark footer,
+    html.dark .border-t,
+    html.dark .border-gray-200 {
+        border-color: #3f4a5a; 
+    }
+    html.dark .bg-gray-50 {
+        background-color: #2D3748 !important;
+    }
+
+
     body { font-family: 'Poppins', sans-serif; background: var(--body-bg); color: #111827; }
     .serif { font-family: 'Playfair Display', serif; }
     
@@ -24,8 +91,17 @@
 
     .card-hover { transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,40,0.12); }
+    html.dark .card-hover:hover { box-shadow: 0 18px 40px rgba(0,0,0,0.5); }
 
-    .soft-panel { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); border-radius: 14px; }
+    .soft-panel { 
+        background: rgba(255,255,255,0.85); 
+        backdrop-filter: blur(6px); 
+        border-radius: 14px; 
+    }
+    html.dark .soft-panel {
+        background: var(--dark-card);
+        border: 1px solid #3f4a5a; 
+    }
 
     .badge {
       display: inline-block;
@@ -36,6 +112,9 @@
       background: linear-gradient(90deg, rgba(198,156,109,0.15), rgba(248,200,216,0.15));
       border: 1px solid var(--light-brown);
     }
+    html.dark .badge {
+        background: rgba(198,156,109,0.25);
+    }
 
     .tab-button {
       padding: 0.75rem 1.5rem;
@@ -45,16 +124,21 @@
       transition: all 0.3s ease;
       background: rgba(255,255,255,0.5);
     }
+    html.dark .tab-button {
+        background: #3c4456;
+        color: var(--dark-text);
+        border-color: #3f4a5a;
+    }
+    html.dark .tab-button:not(.active):hover {
+        background: #485161;
+        border-color: var(--light-brown);
+    }
+
 
     .tab-button.active {
       background: linear-gradient(90deg, var(--gold), var(--light-brown));
       color: white;
       border-color: var(--gold);
-    }
-
-    .tab-button:not(.active):hover {
-      border-color: var(--light-brown);
-      background: rgba(198,156,109,0.1);
     }
 
     .tab-content {
@@ -75,10 +159,16 @@
       position: relative;
       border: 2px solid #e5e7eb;
     }
+    html.dark .pricing-card {
+        border-color: #3f4a5a;
+    }
 
     .pricing-card.featured {
       border-color: var(--gold);
       box-shadow: 0 10px 40px rgba(198,156,109,0.2);
+    }
+    html.dark .pricing-card.featured {
+        box-shadow: 0 10px 40px rgba(198,156,109,0.4);
     }
 
     .featured-badge {
@@ -107,7 +197,6 @@
 </head>
 <body class="antialiased">
 
-  <!-- NAV -->
   <header class="py-6">
     <nav class="container mx-auto px-6 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
@@ -121,19 +210,30 @@
       </a>
 
       <ul class="hidden md:flex gap-8 items-center text-sm">
-        <li><a href="about.html" class="hover:text-gray-700">About</a></li>
-        <li><a href="blog.html" class="hover:text-gray-700">Insights</a></li>
-        <li><a href="shop.html" class="hover:text-gray-700">Resources</a></li>
-        <li><a href="projects.html" class="hover:text-gray-700">Case Studies</a></li>
-        <li><a href="services.html" class="hover:text-gray-700">Programs</a></li>
+        <li><a href="about.html" class="hover:text-gray-700 dark:hover:text-gray-300">About</a></li>
+        <li><a href="blog.html" class="hover:text-gray-700 dark:hover:text-gray-300">Insights</a></li>
+        <li><a href="shop.html" class="hover:text-gray-700 dark:hover:text-gray-300">Resources</a></li>
+        <li><a href="projects.html" class="hover:text-gray-700 dark:hover:text-gray-300">Case Studies</a></li>
+        <li><a href="services.html" class="hover:text-gray-700 dark:hover:text-gray-300">Programs</a></li>
         <li><a href="contact.html" class="px-4 py-2 rounded-md soft-panel hover:shadow">Let's Talk Growth</a></li>
+        <li>
+          <button id="darkModeToggle" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            <span class="light-mode-icon">☀️</span>
+            <span class="dark-mode-icon hidden">🌙</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
   <main>
-    <section class="container mx-auto px-6 py-16">
+    <div class="w-full h-64 mb-12 flex items-center justify-center overflow-hidden rounded-xl bg-gray-300 dark:bg-gray-600">
+            <img src="services banner.jpg" 
+                 alt="Strategic Partnership Process Visual" 
+                 class="w-full h-full object-cover">
+        </div>
+
+    <section class="container mx-auto px-6 py-16" style="/* Hero Background Placeholder */ background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-4xl mx-auto text-center reveal">
         <div class="mb-4">
           <span class="badge">Strategic Growth Infrastructure</span>
@@ -150,7 +250,6 @@
       </div>
     </section>
 
-    <!-- TAB NAVIGATION -->
     <section class="container mx-auto px-6 py-8">
       <div class="max-w-5xl mx-auto">
         <div class="flex flex-wrap gap-4 justify-center mb-12 reveal">
@@ -160,7 +259,6 @@
           <button class="tab-button" onclick="switchTab('african')">For African Founders</button>
         </div>
 
-        <!-- MONTHLY INFRASTRUCTURE TAB -->
         <div id="monthly" class="tab-content active">
           <div class="text-center mb-12 reveal">
             <h2 class="serif text-4xl font-bold">Monthly Growth Infrastructure</h2>
@@ -168,7 +266,6 @@
           </div>
 
           <div class="grid md:grid-cols-3 gap-8">
-            <!-- Foundation System -->
             <div class="reveal soft-panel p-8 pricing-card">
               <h3 class="serif text-2xl font-bold mb-2">Foundation System</h3>
               <div class="text-gray-600 text-sm mb-6">For emerging businesses building systematic market presence</div>
@@ -214,10 +311,9 @@
                 </ul>
               </div>
 
-              <a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 border-gray-200 hover:border-gray-300 font-semibold">Get Started</a>
+              <a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 border-gray-200 hover:border-gray-300 font-semibold dark:hover:border-gray-500 dark:text-gray-300">Get Started</a>
             </div>
 
-            <!-- Market Momentum System - FEATURED -->
             <div class="reveal soft-panel p-8 pricing-card featured">
               <div class="featured-badge">Most Popular</div>
               
@@ -273,7 +369,6 @@
               <a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Building</a>
             </div>
 
-            <!-- Market Leadership -->
             <div class="reveal soft-panel p-8 pricing-card">
               <h3 class="serif text-2xl font-bold mb-2">Market Leadership</h3>
               <div class="text-gray-600 text-sm mb-6">For ambitious organizations pursuing category dominance</div>
@@ -328,12 +423,11 @@
                 </ul>
               </div>
 
-              <a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 border-gray-200 hover:border-gray-300 font-semibold">Schedule Consultation</a>
+              <a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 border-gray-200 hover:border-gray-300 font-semibold dark:hover:border-gray-500 dark:text-gray-300">Schedule Consultation</a>
             </div>
           </div>
         </div>
 
-        <!-- STRATEGIC INTENSIVES TAB -->
         <div id="intensive" class="tab-content">
           <div class="text-center mb-12 reveal">
             <h2 class="serif text-4xl font-bold">Strategic Intensives</h2>
@@ -341,10 +435,9 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <!-- Growth Readiness Accelerator -->
             <div class="reveal soft-panel p-8">
               <div class="flex items-start gap-4 mb-6">
-                <div class="infrastructure-icon">🚀</div>
+                <div class="infrastructure-icon"></div>
                 <div>
                   <h3 class="serif text-2xl font-bold">Growth Readiness Accelerator</h3>
                   <div class="text-sm text-gray-500">One-Time Intensive</div>
@@ -394,12 +487,11 @@
               <a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Your Launch</a>
             </div>
 
-            <!-- Executive Legacy Builder -->
             <div class="reveal soft-panel p-8 pricing-card featured">
               <div class="featured-badge">Premium</div>
               
               <div class="flex items-start gap-4 mb-6">
-                <div class="infrastructure-icon">👑</div>
+                <div class="infrastructure-icon"></div>
                 <div>
                   <h3 class="serif text-2xl font-bold">Executive Legacy Builder</h3>
                   <div class="text-sm text-gray-500">4-Month Strategic Partnership</div>
@@ -455,7 +547,6 @@
           </div>
         </div>
 
-        <!-- GROWTH SYSTEMS TAB -->
         <div id="systems" class="tab-content">
           <div class="text-center mb-12 reveal">
             <h2 class="serif text-4xl font-bold">Strategic Growth Systems</h2>
@@ -463,9 +554,8 @@
           </div>
 
           <div class="grid md:grid-cols-3 gap-6">
-            <!-- Brand Intelligence -->
             <div class="reveal soft-panel p-6">
-              <div class="infrastructure-icon mb-4">🎯</div>
+              <div class="infrastructure-icon mb-4"></div>
               <h3 class="font-bold text-lg mb-2">Brand Intelligence System</h3>
               <p class="text-sm text-gray-600 mb-4">Strategic market positioning and systematic brand presence</p>
               
@@ -480,9 +570,8 @@
               <a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
             </div>
 
-            <!-- Growth Architecture -->
             <div class="reveal soft-panel p-6">
-              <div class="infrastructure-icon mb-4">📊</div>
+              <div class="infrastructure-icon mb-4"></div>
               <h3 class="font-bold text-lg mb-2">Growth Architecture System</h3>
               <p class="text-sm text-gray-600 mb-4">Business model engineering and strategic roadmaps</p>
               
@@ -497,9 +586,8 @@
               <a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
             </div>
 
-            <!-- Market Authority -->
             <div class="reveal soft-panel p-6">
-              <div class="infrastructure-icon mb-4">✍️</div>
+              <div class="infrastructure-icon mb-4"></div>
               <h3 class="font-bold text-lg mb-2">Market Authority System</h3>
               <p class="text-sm text-gray-600 mb-4">Thought leadership and content infrastructure</p>
               
@@ -514,9 +602,8 @@
               <a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
             </div>
 
-            <!-- Conversion Infrastructure -->
             <div class="reveal soft-panel p-6">
-              <div class="infrastructure-icon mb-4">💻</div>
+              <div class="infrastructure-icon mb-4"></div>
               <h3 class="font-bold text-lg mb-2">Conversion Infrastructure</h3>
               <p class="text-sm text-gray-600 mb-4">24/7 revenue-generating digital platforms</p>
               
@@ -531,9 +618,8 @@
               <a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
             </div>
 
-            <!-- Stakeholder Engagement -->
             <div class="reveal soft-panel p-6">
-              <div class="infrastructure-icon mb-4">🤝</div>
+              <div class="infrastructure-icon mb-4"></div>
               <h3 class="font-bold text-lg mb-2">Stakeholder Engagement</h3>
               <p class="text-sm text-gray-600 mb-4">Strategic relationship and event infrastructure</p>
               
@@ -548,9 +634,8 @@
               <a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
             </div>
 
-            <!-- Investment Readiness -->
             <div class="reveal soft-panel p-6">
-              <div class="infrastructure-icon mb-4">💼</div>
+              <div class="infrastructure-icon mb-4"></div>
               <h3 class="font-bold text-lg mb-2">Investment Readiness</h3>
               <p class="text-sm text-gray-600 mb-4">Complete strategic documentation for investors</p>
               
@@ -567,7 +652,6 @@
           </div>
         </div>
 
-        <!-- AFRICAN FOUNDERS TAB -->
         <div id="african" class="tab-content">
           <div class="text-center mb-12 reveal">
             <h2 class="serif text-4xl font-bold">For African Founders</h2>
@@ -575,12 +659,11 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <!-- Market Expansion Infrastructure -->
             <div class="reveal soft-panel p-8 pricing-card featured">
               <div class="featured-badge">AfCFTA Ready</div>
               
               <div class="flex items-start gap-4 mb-6">
-                <div class="infrastructure-icon">🌍</div>
+                <div class="infrastructure-icon"></div>
                 <div>
                   <h3 class="serif text-2xl font-bold">Market Expansion Infrastructure</h3>
                   <div class="text-sm text-gray-500">8-Week Intensive Program</div>
@@ -634,10 +717,9 @@
               <a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Expansion</a>
             </div>
 
-            <!-- Pan-African Growth Package -->
             <div class="reveal soft-panel p-8">
               <div class="flex items-start gap-4 mb-6">
-                <div class="infrastructure-icon">🚀</div>
+                <div class="infrastructure-icon"></div>
                 <div>
                   <h3 class="serif text-2xl font-bold">Pan-African Growth Package</h3>
                   <div class="text-sm text-gray-500">Quarterly Strategic Support</div>
@@ -692,7 +774,6 @@
             </div>
           </div>
 
-          <!-- Additional African Founder Resources -->
           <div class="mt-12 reveal">
             <div class="soft-panel p-8 max-w-4xl mx-auto" style="background: linear-gradient(180deg, rgba(198,156,109,0.05), rgba(248,200,216,0.05));">
               <h3 class="serif text-2xl font-bold mb-4">Why African Founders Choose This Partnership</h3>
@@ -721,7 +802,6 @@
       </div>
     </section>
 
-    <!-- STRATEGIC ADD-ONS -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -732,7 +812,7 @@
         <div class="grid md:grid-cols-2 gap-6">
           <div class="reveal soft-panel p-6">
             <div class="flex items-center gap-4 mb-4">
-              <div class="infrastructure-icon text-2xl">🎨</div>
+              <div class="infrastructure-icon text-2xl"></div>
               <div>
                 <h3 class="font-bold">Complete Brand Infrastructure</h3>
                 <div class="text-sm text-gray-500">One-time investment: $720</div>
@@ -749,7 +829,7 @@
 
           <div class="reveal soft-panel p-6">
             <div class="flex items-center gap-4 mb-4">
-              <div class="infrastructure-icon text-2xl">🌐</div>
+              <div class="infrastructure-icon text-2xl"></div>
               <div>
                 <h3 class="font-bold">Conversion-Optimized Platform</h3>
                 <div class="text-sm text-gray-500">Starting at: $1,600</div>
@@ -766,7 +846,7 @@
 
           <div class="reveal soft-panel p-6">
             <div class="flex items-center gap-4 mb-4">
-              <div class="infrastructure-icon text-2xl">📧</div>
+              <div class="infrastructure-icon text-2xl"></div>
               <div>
                 <h3 class="font-bold">Email Marketing Infrastructure</h3>
                 <div class="text-sm text-gray-500">$720/month</div>
@@ -783,7 +863,7 @@
 
           <div class="reveal soft-panel p-6">
             <div class="flex items-center gap-4 mb-4">
-              <div class="infrastructure-icon text-2xl">🎯</div>
+              <div class="infrastructure-icon text-2xl"></div>
               <div>
                 <h3 class="font-bold">Strategic Event Infrastructure</h3>
                 <div class="text-sm text-gray-500">Starting at: $1,100</div>
@@ -800,7 +880,7 @@
 
           <div class="reveal soft-panel p-6">
             <div class="flex items-center gap-4 mb-4">
-              <div class="infrastructure-icon text-2xl">📊</div>
+              <div class="infrastructure-icon text-2xl"></div>
               <div>
                 <h3 class="font-bold">Growth Readiness Audit</h3>
                 <div class="text-sm text-gray-500">One-time: $1,200</div>
@@ -817,7 +897,7 @@
 
           <div class="reveal soft-panel p-6">
             <div class="flex items-center gap-4 mb-4">
-              <div class="infrastructure-icon text-2xl">💼</div>
+              <div class="infrastructure-icon text-2xl"></div>
               <div>
                 <h3 class="font-bold">Investment-Ready Architecture</h3>
                 <div class="text-sm text-gray-500">Starting at: $1,800</div>
@@ -835,7 +915,6 @@
       </div>
     </section>
 
-    <!-- WHY THIS APPROACH -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -906,13 +985,14 @@
       </div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12 reveal">
           <h2 class="serif text-4xl font-bold">How We Partner</h2>
           <p class="mt-4 text-gray-600 text-lg">A systematic process from discovery to market dominance</p>
         </div>
+
+        
 
         <div class="grid md:grid-cols-4 gap-6">
           <div class="reveal text-center">
@@ -942,7 +1022,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-3xl mx-auto text-center reveal">
         <h2 class="serif text-4xl font-bold mb-6">Ready to Build Systematic Advantage?</h2>
@@ -952,7 +1031,7 @@
         
         <div class="flex gap-4 justify-center flex-wrap">
           <a href="contact.html" class="px-8 py-4 rounded-md serif text-white text-lg" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Schedule Strategy Call</a>
-          <a href="projects.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow text-lg">View Success Stories</a>
+          <a href="projects.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow text-lg dark:border-gray-700 dark:text-gray-300">View Success Stories</a>
         </div>
 
         <p class="mt-8 text-sm text-gray-500">Currently accepting select partnerships for Q1 2026 | Limited capacity to ensure quality execution</p>
@@ -960,7 +1039,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="border-t mt-12 py-8">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -1014,7 +1092,9 @@
       document.getElementById(tabName).classList.add('active');
       
       // Add active class to clicked button
-      event.target.classList.add('active');
+      if(event && event.target) {
+        event.target.classList.add('active');
+      }
     }
 
     // Reveal animations
@@ -1025,6 +1105,43 @@
       });
     }, {threshold:0.12});
     observers.forEach(n => io.observe(n));
+
+
+    // Dark Mode Logic (Copied from index.html for consistency)
+    const toggle = document.getElementById('darkModeToggle');
+    const lightIcon = document.querySelector('.light-mode-icon');
+    const darkIcon = document.querySelector('.dark-mode-icon');
+    const html = document.documentElement;
+    
+    // Check local storage for preference, default to false (light)
+    const storedPreference = localStorage.getItem('dark');
+    const isDark = storedPreference === 'true';
+
+    // Set initial state
+    if (isDark) {
+      html.classList.add('dark');
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.remove('hidden');
+    } else {
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        // Switching to Light Mode
+        html.classList.remove('dark');
+        localStorage.setItem('dark', 'false');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      } else {
+        // Switching to Dark Mode
+        html.classList.add('dark');
+        localStorage.setItem('dark', 'true');
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      }
+    });
   </script>
 </body>
 </html>

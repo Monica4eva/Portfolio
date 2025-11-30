@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study: Scaling a Personal Development Brand — Driving Contracts & Authority</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Monica Dube Sekhwela",
+  "jobTitle": "Strategic Growth Architect and Business Development Consultant",
+  "description": "Growth strategist specializing in business development, digital transformation, and partnership development for purpose-driven businesses across Africa",
+  "url": "https://monicadubesekhwela.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/monica-dube-sekhwela",
+    "https://www.instagram.com/motivationwithmonicam_/"
+  ],
+  "knowsAbout": [
+    "Business Development",
+    "Growth Strategy",
+    "Digital Marketing",
+    "Partnership Development",
+    "Strategic Consulting",
+    "EdTech",
+    "Social Enterprise"
+  ],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Botswana"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Derby"
+    }
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "The Social Connect",
+    "url": "https://thesocialconnect.com"
+  }
+}
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/c1cc385413.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* ------------------------------------------- */
+    /* LIGHT MODE (Default) THEME VARIABLES */
+    /* ------------------------------------------- */
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --pink-glitter:#F8C8D8;
+      --muted:#6B5B4A;
+      --navy:#101F42; /* Used for dark text/accents in light mode */
+      
+      --bg-color: #ffffff;
+      --text-color: #1f2937; /* Dark Gray/Near Black */
+      --soft-panel-bg-light: rgba(248,200,216,0.08), rgba(198,156,109,0.04);
+      --glitter-bg-light: rgba(248,200,216,0.15), rgba(198,156,109,0.08);
+      --border-color: #e5e7eb;
+      --challenge-color: #ef4444; /* Red */
+    }
+
+    /* ------------------------------------------- */
+    /* DARK MODE THEME VARIABLES */
+    /* ------------------------------------------- */
+    .dark-mode {
+      --bg-color: #1a1a2e; /* Deep Navy/Dark Purple */
+      --text-color: #f0f0f0; /* Light Gray/Off-White */
+      --soft-panel-bg-light: rgba(255, 255, 255, 0.05), rgba(198,156,109,0.05);
+      --glitter-bg-light: rgba(198,156,109,0.1), rgba(16,31,66,0.15);
+      --border-color: #3f3f46;
+      --challenge-color: #f87171; /* Lighter Red */
+    }
+
+    /* ------------------------------------------- */
+    /* BASE STYLING (Applies to both modes) */
+    /* ------------------------------------------- */
+    body { 
+        font-family: 'Poppins', sans-serif; 
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .serif { font-family: 'Playfair Display', serif; }
+
+    /* Custom classes for dynamic colors/backgrounds */
+    .text-gray-700 { color: var(--text-color); }
+    .dark-mode .text-gray-700 { color: #cccccc; }
+    .text-gray-600 { color: #4b5563; }
+    .dark-mode .text-gray-600 { color: #a1a1aa; }
+    
+    .glitter { 
+        background: linear-gradient(90deg, var(--glitter-bg-light)); 
+        border-radius:10px; padding:10px;
+        transition: background-color 0.3s;
+    }
+    .soft-panel { 
+        background: linear-gradient(135deg, var(--soft-panel-bg-light)); 
+        border: 1px solid rgba(198,156,109,0.2); 
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    .dark-mode .soft-panel {
+        border: 1px solid var(--border-color);
+    }
+    .dark-mode header, .dark-mode footer {
+        background-color: var(--bg-color);
+    }
+
+    /* Element specific styling */
+    .reveal { opacity:0; transform: translateY(10px); transition: all .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
+    
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(198,156,109,0.15); }
+    
+    .metric-card { border-left: 4px solid var(--gold); }
+    
+    .challenge-card { 
+        border-left: 4px solid var(--challenge-color); 
+        background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(239,68,68,0.02)); 
+    }
+    .dark-mode .challenge-card {
+        background: linear-gradient(135deg, rgba(248, 113, 113, 0.1), rgba(248, 113, 113, 0.05));
+    }
+    
+    .nav-tab { 
+        padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.3s; 
+        color: var(--text-color); 
+    }
+    .nav-tab.active { 
+        background: linear-gradient(90deg, var(--gold), var(--light-brown)); 
+        color: white !important; 
+    }
+    .hidden-section { display: none; }
+
+    /* Sticky Nav Styling */
+    .sticky-nav {
+        top: 0;
+        z-index: 10;
+        background-color: var(--bg-color);
+        transition: background-color 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="py-6 border-b border-gray-200 sticky-nav">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white text-lg">M</span>
+        </div>
+        <div>
+          <div class="serif font-bold text-base" style="color:var(--text-color);">Monica Dube-Sekhwela</div>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-6">
+        <button id="darkModeToggle" onclick="toggleDarkMode()" class="text-xl p-2 rounded-full transition-colors hover:shadow-md" style="color:var(--gold); border: 1px solid var(--gold);">
+            <i class="fas fa-moon" id="toggleIcon"></i>
+        </button>
+
+        <ul class="hidden md:flex gap-8 items-center text-sm">
+            <li><a href="index.html" style="color:var(--text-color);">Home</a></li>
+            <li><a href="blog.html" style="color:var(--text-color);">Insights</a></li>
+            <li><a href="services.html" style="color:var(--text-color);">Programs</a></li>
+            <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md" style="color:var(--text-color);">Start Your Transformation</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <section class="py-12 glitter" style="background: linear-gradient(135deg, var(--glitter-bg-light));">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <div class="inline-block px-4 py-2 rounded-full soft-panel mb-4 text-sm font-semibold" style="color:var(--gold)">
+          🏆 PORTFOLIO CASE STUDY
+        </div>
+        <h1 class="serif text-5xl font-bold mb-6" style="color:var(--text-color);">Accelerating Growth: Driving Corporate Contracts for an Existing Personal Development Brand</h1>
+        <p class="text-xl text-gray-700 mb-8">During my 9-month tenure, I designed and executed a strategic content ecosystem (120+ pieces) that successfully moved the brand from limited visibility to securing **2 major corporate contracts**, **1 ministry speaking engagement**, and achieving national authority.</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+          <div class="soft-panel px-4 py-2 rounded-lg" style="color:var(--text-color);">
+            <strong>Role:</strong> Marketing Manager & Social Media Strategist
+          </div>
+          <div class="soft-panel px-4 py-2 rounded-lg" style="color:var(--text-color);">
+            <strong>Duration:</strong> August 2023 – April 2024 (9 months)
+          </div>
+          <div class="soft-panel px-4 py-2 rounded-lg" style="color:var(--text-color);">
+            <strong>Location:</strong> Botswana
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);"></div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">120+</div>
+          <div class="font-semibold mb-1" style="color:var(--text-color);">Strategic Content Pieces</div>
+          <div class="text-sm text-gray-600">Created over 9 months with consistent quality</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);"></div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">2</div>
+          <div class="font-semibold mb-1" style="color:var(--text-color);">Corporate Contracts</div>
+          <div class="text-sm text-gray-600">National organizations secured through content</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);"></div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">1</div>
+          <div class="font-semibold mb-1" style="color:var(--text-color);">Ministry Keynote</div>
+          <div class="text-sm text-gray-600">International Women's Day speaking engagement</div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+          <div class="text-5xl mb-3" style="color:var(--gold);"></div>
+          <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">76</div>
+          <div class="font-semibold mb-1" style="color:var(--text-color);">Peak Engagement</div>
+          <div class="text-sm text-gray-600">Reactions on single post (10-30 consistent)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4 sticky-nav" style="border-bottom: 1px solid var(--border-color);">
+    <div class="container mx-auto px-6">
+      <div class="soft-panel p-2 rounded-xl flex flex-wrap gap-2 justify-center reveal">
+        <button class="nav-tab active" onclick="showSection('overview')"> Overview</button>
+        <button class="nav-tab" onclick="showSection('challenge')"> Challenge</button>
+        <button class="nav-tab" onclick="showSection('strategy')"> Strategy</button>
+        <button class="nav-tab" onclick="showSection('execution')"> Execution</button>
+        <button class="nav-tab" onclick="showSection('results')"> Results</button>
+        <button class="nav-tab" onclick="showSection('skills')"> Skills</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container mx-auto px-6 pb-12">
+
+    <section id="overview" class="content-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);">Project Overview</h2>
+      
+      <div class="glitter p-6 mb-8">
+        <h3 class="text-xl font-semibold mb-3" style="color:var(--gold);"> The Opportunity (Before I Joined)</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The client, a personal development coach, was actively running her business but struggled with low and inconsistent revenue, limited brand visibility, and no systematic content engine. Her premium services were rarely converting into major contracts, and the marketing effort felt ad-hoc.
+          <br><br>
+          During my 9-month tenure (August 2023 - April 2024), I focused on transforming this slow organic growth into a sustainable, revenue-generating machine, resulting in 2 corporate training contracts, 1 ministry-level speaking engagement, and national authority through strategic content marketing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2" style="color:var(--text-color);">
+            <span style="color:var(--gold);"></span> My Mission
+          </h4>
+          <p class="text-sm text-gray-700">Systemize the brand identity, establish authority through a content ecosystem, successfully generate multiple revenue streams, and secure high-value corporate outcomes.</p>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2" style="color:var(--text-color);">
+            <span style="color:var(--gold);"></span> Key Achievement
+          </h4>
+          <p class="text-sm text-gray-700">Created <strong>9 recurring content series</strong> that generated 120+ posts without burnout, proving content systems drive revenue better than random posting.</p>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2" style="color:var(--text-color);">
+            <span style="color:var(--gold);"></span> Business Impact
+          </h4>
+          <p class="text-sm text-gray-700"><strong>6 revenue streams</strong> successfully activated and marketed, including corporate training, high-profile events, consultations, and book sales.</p>
+        </div>
+      </div>
+
+      <div class="soft-panel p-8 rounded-xl mb-8">
+        <h3 class="text-2xl font-semibold mb-4 serif" style="color:var(--text-color);">About This Project</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          This case study showcases my ability to step into an existing operation and architect a complete content ecosystem that functions as a proactive business development engine.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          The work demonstrates expertise in B2B and B2C marketing, multi-audience segmentation, and sustained campaign execution focused on converting high-value clients and securing organizational contracts.
+        </p>
+      </div>
+
+      <div class="glitter p-6 border-l-4 rounded-xl mb-8" style="border-color:var(--gold);">
+        <h4 class="font-semibold mb-3" style="color:var(--text-color);"> What Makes This Work Stand Out</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+          <div>
+            <strong>✓ Strategic Frameworks:</strong> Created 3 proprietary systems now used as consulting frameworks
+          </div>
+          <div>
+            <strong>✓ Sustained Excellence:</strong> 120+ posts over 9 months with zero quality decline
+          </div>
+          <div>
+            <strong>✓ Multi-Discipline Mastery:</strong> Strategy + copywriting + design + analytics simultaneously
+          </div>
+          <div>
+            <strong>✓ Measurable ROI:</strong> Content directly generated contracts and speaking engagements
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenge" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);"> The Challenge: From Ad-Hoc to Authority</h2>
+
+      <div class="space-y-4 mb-8">
+        <div class="challenge-card p-6 rounded-xl soft-panel">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2" style="color:var(--challenge-color);">
+            <span>❌</span> Low Conversion & Limited Visibility
+          </h3>
+          <p class="text-gray-700 text-sm">The business existed but lacked professional packaging and strategic reach. Marketing efforts were ad-hoc, leading to slow organic growth and difficulty converting high-ticket corporate services.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl soft-panel">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2" style="color:var(--challenge-color);">
+            <span>❌</span> Premium Service Perception Problem
+          </h3>
+          <p class="text-gray-700 text-sm">Etiquette and professional development services were perceived as "elite exclusive." Needed strategic communication to democratize the value proposition without losing premium positioning.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl soft-panel">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2" style="color:var(--challenge-color);">
+            <span>❌</span> Unsystematic Revenue Generation
+          </h3>
+          <p class="text-gray-700 text-sm">Revenue was inconsistent and reliant on sporadic individual bookings. Needed to simultaneously market and formalize multiple streams: corporate training (B2B), events, and book sales.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl soft-panel">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2" style="color:var(--challenge-color);">
+            <span>❌</span> Lack of Content Infrastructure
+          </h3>
+          <p class="text-gray-700 text-sm">No structured content library, calendar, or established posting schedule. Required building a sustainable, high-volume content system to support a 9-month intensive growth plan.</p>
+        </div>
+
+        <div class="challenge-card p-6 rounded-xl soft-panel">
+          <h3 class="font-semibold text-lg mb-2 flex items-center gap-2" style="color:var(--challenge-color);">
+            <span>❌</span> Need for Thought Leadership
+          </h3>
+          <p class="text-gray-700 text-sm">Required positioning the coach as a national authority to secure high-profile engagements (like ministry keynotes) that validate expertise and attract corporate decision-makers.</p>
+        </div>
+      </div>
+
+      <div class="glitter p-6 rounded-xl">
+        <h3 class="font-semibold text-xl mb-3 serif" style="color:var(--gold);"> The Stakes</h3>
+        <p class="text-gray-700 leading-relaxed">Success meant positioning the brand for sustainable corporate contracts and national authority. Failure meant stagnation, continued reliance on sporadic bookings, and inability to formalize the business into a recognized training institution.</p>
+      </div>
+    </section>
+
+    <section id="strategy" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);"> My Strategic Approach</h2>
+
+      <div class="space-y-8">
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">1</span>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Brand Foundation & Repositioning (Month 1-2)</h3>
+              <p class="text-gray-700 mb-4">Formalized and professionalized the existing brand identity:</p>
+              
+              <div class="glitter p-4 rounded-lg">
+                <h4 class="font-semibold mb-3" style="color:var(--text-color);">Key Foundation Work</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="soft-panel p-4 rounded-lg" style="background-color: var(--bg-color);">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">Voice & Messaging</div>
+                    <div class="text-sm text-gray-600">Established tone balancing professionalism with approachability (critical for B2C and B2B)</div>
+                  </div>
+                  <div class="soft-panel p-4 rounded-lg" style="background-color: var(--bg-color);">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">Positioning Statement</div>
+                    <div class="text-sm text-gray-600">"Universal life skills, not luxury exclusives" (to counter "elite" perception)</div>
+                  </div>
+                  <div class="soft-panel p-4 rounded-lg" style="background-color: var(--bg-color);">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">Cultural Connection</div>
+                    <div class="text-sm text-gray-600">Linked services to Botswana's Botho principle (compassion, respect)</div>
+                  </div>
+                  <div class="soft-panel p-4 rounded-lg" style="background-color: var(--bg-color);">
+                    <div class="font-semibold mb-1" style="color:var(--gold);">Visual Identity</div>
+                    <div class="text-sm text-gray-600">Signature pink/gold/black palette, 15+ graphic templates</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">2</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Content Ecosystem Architecture (9 Recurring Series)</h3>
+              <p class="text-gray-700 mb-4">Implemented 9 interconnected content series** to ensure consistency and topical authority, supporting the sustained delivery of 120+ posts.</p>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Navigating the Week"</strong><br/>
+                  <span class="text-gray-600">Professional development</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Amplifying the Week"</strong><br/>
+                  <span class="text-gray-600">Personal growth</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Sammy's Social Tips"</strong><br/>
+                  <span class="text-gray-600">Video education</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Connecting with Communication"</strong><br/>
+                  <span class="text-gray-600">Interpersonal skills</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Planning the Week"</strong><br/>
+                  <span class="text-gray-600">Productivity</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Growing Gracefully"</strong><br/>
+                  <span class="text-gray-600">Family content</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Send Us Your Questions"</strong><br/>
+                  <span class="text-gray-600">Lead generation</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> "Social Tips Friday"</strong><br/>
+                  <span class="text-gray-600">Weekend content</span>
+                </div>
+                <div class="glitter p-3 rounded soft-panel">
+                  <strong style="color:var(--text-color);"> Corporate Case Studies</strong><br/>
+                  <span class="text-gray-600">B2B credibility</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="serif text-white font-bold text-xl">3</span>
+            </div>
+            <div class="flex-1">
+              <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Conversion Architecture & Revenue Diversification</h3>
+              <p class="text-gray-700 mb-4">Developed campaigns targeting distinct segments, successfully activating 6 formal revenue streams where only a few ad-hoc services existed previously:</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2" style="color:var(--text-color);">
+                  <span style="color:var(--gold);">→</span>
+                  <span>B2B Conversion: Focused content drove 2 Corporate Training Contracts and 1 Ministry Keynote.</span>
+                </li>
+                <li class="flex items-start gap-2" style="color:var(--text-color);">
+                  <span style="color:var(--gold);">→</span>
+                  <span>Lead Generation: 30-Day Challenge built an email list for sustained B2C sales.</span>
+                </li>
+                <li class="flex items-start gap-2" style="color:var(--text-color);">
+                  <span style="color:var(--gold);">→</span>
+                  <span>Event Marketing: Structured 3-phase launches for ticketed and high-profile events (e.g., 76 reactions on the Golden Years event).</span>
+                </li>
+                <li class="flex items-start gap-2" style="color:var(--text-color);">
+                  <span style="color:var(--gold);">→</span>
+                  <span>New Markets: Successfully introduced and marketed Wedding Etiquette and Event Coordination services.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="execution" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);">⚡ Execution Excellence</h2>
+
+      <div class="glitter p-6 rounded-xl mb-8">
+        <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Content Production Breakdown</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Volume & Frequency</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• 120+ strategic pieces created from scratch to fill the content void.</li>
+              <li>• 3-4 posts per week maintained consistently.</li>
+              <li>• 9 recurring series ensured systematic content flow.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Format Distribution</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li>• 40% Educational long-form (built authority)</li>
+              <li>• 25% Motivational/inspirational (built community)</li>
+              <li>• 20% Promotional (drove immediate revenue)</li>
+              <li>• 15% Behind-the-scenes/Interactive</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6 mb-8">
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2 text-lg" style="color:var(--text-color);">
+            <span></span> High-Value B2B Campaign Execution
+          </h4>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div>Strategy: Developed ROI-focused case studies and educational content targeting HR/L&D professionals.</div>
+            <div>Key Deliverables: Partnership documentation for a technology firm, multi-day retreat marketing for a national organization, and high-profile PR coverage for the Ministry keynote.</div>
+            <div class="pt-2"><strong style="color:var(--gold);">Result:</strong> 2 Corporate Contracts Secured (high-ticket services finally converted).</div>
+          </div>
+        </div>
+        
+        <div class="soft-panel p-6 rounded-xl">
+          <h4 class="font-semibold mb-3 flex items-center gap-2 text-lg" style="color:var(--text-color);">
+            <span></span> Direct Conversion & Copywriting
+          </h4>
+          <div class="space-y-3 text-sm text-gray-700">
+            <div>Conversion Copy Example ("Your Transformation Starts Here"): Used vulnerability invitation technique to achieve 13 reactions and strong emotional resonance, guiding warm leads toward consultation.</div>
+            <div>B2B Copy Example ("Navigating Networking Nuances"): Structured copy with empathy + a 6-point framework, resulting in 23 reactions and 4 shares among professional audiences.</div>
+            <div class="pt-2"><strong style="color:var(--gold);">Result:</strong> 17 comments with conversion intent recorded during the event launch campaign.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glitter p-6 rounded-xl">
+        <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Visual Brand System Implementation</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Design Work</h4>
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li>✓ Designed 15+ reusable branded graphic templates</li>
+              <li>✓ Created comprehensive event marketing suites</li>
+              <li>✓ Maintained the elegant pink/gold/black color palette</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Creative Direction</h4>
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li>✓ Provided art direction for photography to ensure brand alignment</li>
+              <li>✓ Coordinated consistent styling and visual mood across all assets</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Brand Elements</h4>
+            <ul class="text-sm text-gray-700 space-y-2">
+              <li>✓ Established Typography standards and logo placement rules</li>
+              <li>✓ Formalized the complete visual identity guidelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);"> Results & Business Impact</h2>
+
+      <div class="glitter p-8 rounded-xl mb-8">
+        <h3 class="text-2xl font-bold serif mb-6 text-center" style="color:var(--gold);"> Key Achievements During 9-Month Tenure</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">120+</div>
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Content Assets Built</div>
+            <div class="text-sm text-gray-600">The content library was built from a fragmented base to a reusable, strategic asset.</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">2</div>
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Corporate Contracts</div>
+            <div class="text-sm text-gray-600">High-value services successfully converted into formal B2B agreements.</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">1</div>
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Ministry Keynote</div>
+            <div class="text-sm text-gray-600">Secured position as a national thought leader.</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">500+</div>
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Attendee Event</div>
+            <div class="text-sm text-gray-600">Major event coordination contract executed.</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">6</div>
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Revenue Streams</div>
+            <div class="text-sm text-gray-600">Formalized and marketed multiple profitable service lines.</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl">
+            <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">76</div>
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Peak Engagement</div>
+            <div class="text-sm text-gray-600">Drove audience activity far beyond previous limited reach.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl mb-8">
+        <h3 class="text-2xl font-bold serif mb-6" style="color:var(--gold);"> Strategic Business Outcomes</h3>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">1</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2" style="color:var(--text-color);">Conversion of High-Value Clients</h4>
+              <p class="text-sm text-gray-700">Successfully converted content engagement into 2 corporate training contracts and 1 ministry keynote, validating the authority-building strategy.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">2</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2" style="color:var(--text-color);">Multi-Revenue-Stream Stabilization</h4>
+              <p class="text-sm text-gray-700">Formalized and marketed 6 distinct revenue streams, moving the business away from inconsistent, individual bookings to a diversified, stable model.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--gold);">
+              <span class="text-white font-bold">3</span>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2" style="color:var(--text-color);">Geographic & National Authority Expansion</h4>
+              <p class="text-sm text-gray-700">Content generated regional delivery and secured national recognition through association with high-profile government and professional entities.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl border-l-4 mb-8" style="border-color:var(--gold);">
+        <h4 class="font-semibold mb-3" style="color:var(--gold);">✨ The Proof: Content That Drives Revenue</h4>
+        <p class="text-gray-700 mb-4">
+          This project demonstrates that strategic content marketing generates measurable business outcomes, transforming a slow-growth entity into a recognized, profitable venture.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="glitter p-3 rounded soft-panel">
+            <strong style="color:var(--text-color);">Content Investment:</strong> 120+ strategic posts
+          </div>
+          <div class="glitter p-3 rounded soft-panel">
+            <strong style="color:var(--text-color);">Direct Returns:</strong> 2 contracts + speaking gigs
+          </div>
+          <div class="glitter p-3 rounded soft-panel">
+            <strong style="color:var(--text-color);">Long-term Value:</strong> Sustainable systems built
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="content-section hidden-section reveal">
+      <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);">💡 Skills Demonstrated</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2" style="color:var(--gold);">
+            <span>🧠</span> Strategic Marketing
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>9-month integrated campaign development and execution</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Content calendar management (120+ posts organized)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Audience segmentation (5+ distinct personas)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Marketing funnel architecture (awareness → conversion)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Competitive positioning and differentiation strategy</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2" style="color:var(--gold);">
+            <span>✍️</span> Content Creation
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Educational copywriting (long-form 300-500 words)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Conversion-focused sales copy with CTAs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Video content scripting ("Sammy's Social Tips" series)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Social media microcopy optimization</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Series framework development (9 recurring formats)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2" style="color:var(--gold);">
+            <span>🎨</span> Visual Design & Branding
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Graphic design (15+ branded templates created)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Photography creative direction (8+ shoot concepts)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Brand identity establishment from zero</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Color system and typography standards</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Consistent aesthetic maintenance across 120+ posts</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2" style="color:var(--gold);">
+            <span></span> Business Development
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>B2B marketing and corporate case study creation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>B2C audience engagement and conversion</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Service productization and packaging</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Lead generation mechanics (challenges, Q&A)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Partnership development and co-marketing (3 activated)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2" style="color:var(--gold);">
+            <span></span> Analytics & Optimization
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Performance tracking (engagement patterns monitored)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Data-driven strategy adjustments in real-time</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Content optimization based on results</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>ROI measurement (contracts and revenue tracked)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>A/B testing of content types and formats</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+          <h3 class="font-bold text-xl mb-4 flex items-center gap-2" style="color:var(--gold);">
+            <span></span> Campaign Management
+          </h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Event marketing (full cycle from awareness to conversion)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Product launch campaigns (book marketing)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Contest/challenge mechanics execution</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>PR and high-profile event coverage</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color:var(--gold);">✓</span>
+              <span>Multi-phase campaign orchestration</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glitter p-8 rounded-xl">
+        <h3 class="text-2xl font-bold serif mb-6" style="color:var(--gold);"> Soft Skills & Differentiators</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);">Professional Excellence</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Sustained Execution:</strong> 9 months without quality decline</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Independent Initiative:</strong> Took full ownership of strategy</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Systematic Thinking:</strong> Built reusable frameworks</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Results Orientation:</strong> Focused on revenue, not vanity</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-3" style="color:var(--text-color);">Cultural Intelligence</h4>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Local Context:</strong> Connected services to Botho principle</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Market Insight:</strong> Understood competitive landscape</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Audience Empathy:</strong> 5+ personas served authentically</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span style="color:var(--gold);">→</span>
+                <span><strong>Positioning:</strong> Made premium feel accessible</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <section class="py-16 glitter" style="background: linear-gradient(135deg, var(--glitter-bg-light));">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center reveal">
+        <h2 class="serif text-4xl font-bold mb-6" style="color:var(--text-color);">Ready to Build Content That Drives Revenue?</h2>
+        <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+          I specialize in creating <strong>strategic content marketing systems</strong> that generate measurable business outcomes. Whether you're accelerating an established brand or scaling a new venture, I bring proven frameworks and execution excellence to every project.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" class="px-8 py-3 rounded-lg font-semibold transition-all" style="background:linear-gradient(90deg,var(--gold),var(--light-brown)); color:white;">
+            Connect on LinkedIn
+          </a>
+          <a href="mailto:monicadubesekhwela@gmail.com" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg" style="color:var(--text-color);">
+            Email Me
+          </a>
+          <a href="contact.html" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg" style="color:var(--text-color);">
+            Start Your Project
+          </a>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <h3 class="text-2xl font-bold serif mb-6" style="color:var(--text-color);">What I Can Do For Your Brand</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="soft-panel p-6 rounded-xl text-left card-hover">
+              <div class="text-4xl mb-3" style="color:var(--text-color);"></div>
+              <div class="font-semibold mb-2" style="color:var(--text-color);">Brand Building</div>
+              <div class="text-sm text-gray-600">Complete identity development from zero using IMPACT Framework™</div>
+            </div>
+            <div class="soft-panel p-6 rounded-xl text-left card-hover">
+              <div class="text-4xl mb-3" style="color:var(--text-color);"></div>
+              <div class="font-semibold mb-2" style="color:var(--text-color);">Content Strategy</div>
+              <div class="text-sm text-gray-600">9-series ecosystems that eliminate burnout using SERIES Method™</div>
+            </div>
+            <div class="soft-panel p-6 rounded-xl text-left card-hover">
+              <div class="text-4xl mb-3" style="color:var(--text-color);"></div>
+              <div class="font-semibold mb-2" style="color:var(--text-color);">Conversion Systems</div>
+              <div class="text-sm text-gray-600">Engagement to revenue optimization using CONVERT System™</div>
+            </div>
+            <div class="soft-panel p-6 rounded-xl text-left card-hover">
+              <div class="text-4xl mb-3" style="color:var(--text-color);"></div>
+              <div class="font-semibold mb-2" style="color:var(--text-color);">Campaign Management</div>
+              <div class="text-sm text-gray-600">Full-cycle execution from strategy through measurement</div>
+            </div>
+          </div
+        
+        
+      
+   
+  </section>
+
+  <footer class="border-t py-8" style="background-color: var(--bg-color); border-color: var(--border-color);">
+    <div class="container mx-auto px-6 text-center">
+      <h3 class="serif text-xl font-bold mb-2" style="color:var(--text-color);">Monica Dube-Sekhwela</h3>
+      <p class="text-sm text-gray-600 mb-2">Strategic Content Marketing Consultant | Framework Creator | Brand Builder</p>
+      <p class="text-sm text-gray-600 mb-4">Botswana 🇧🇼 • Building Brands That Generate Revenue Through Content</p>
+      
+      <div class="flex justify-center gap-6 mb-6 text-2xl">
+        <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" title="LinkedIn" class="hover:opacity-70 transition-opacity" style="color:var(--text-color);">💼</a>
+        <a href="mailto:monicadubesekhwela@gmail.com" title="Email" class="hover:opacity-70 transition-opacity" style="color:var(--text-color);">📧</a>
+      </div>
+
+      <div class="text-sm text-gray-600">
+        &copy; <span id="yearFooter"></span> The Social Connect | Monica Dube-Sekhwela
+      </div>
+      <div class="text-xs text-gray-600 mt-2">
+        Case Study: Strategic Content Marketing • August 2023 – April 2024
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Dark Mode Logic ---
+    function toggleDarkMode() {
+        const body = document.body;
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        body.classList.toggle('dark-mode');
+        
+        const isDarkMode = body.classList.contains('dark-mode');
+        
+        // Update icon
+        if (isDarkMode) {
+            toggleIcon.classList.remove('fa-moon');
+            toggleIcon.classList.add('fa-sun');
+        } else {
+            toggleIcon.classList.remove('fa-sun');
+            toggleIcon.classList.add('fa-moon');
+        }
+        
+        // Save preference to localStorage
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    }
+
+    // Apply preference and initialize content on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const darkModePreference = localStorage.getItem('darkMode');
+        const body = document.body;
+        const toggleIcon = document.getElementById('toggleIcon');
+
+        // Apply dark mode preference
+        if (darkModePreference === 'enabled') {
+            body.classList.add('dark-mode');
+            if (toggleIcon) {
+                toggleIcon.classList.remove('fa-moon');
+                toggleIcon.classList.add('fa-sun');
+            }
+        }
+        
+        // Initialize content section visibility (Default to Overview)
+        const overview = document.getElementById('overview');
+        if (overview) {
+          overview.classList.remove('hidden-section');
+          
+          // Set initial active tab
+          const initialTab = document.querySelector(`.nav-tab[onclick*='overview']`);
+          if (initialTab) {
+              initialTab.classList.add('active');
+          }
+        }
+        
+        // Initialize scroll reveal observer
+        initReveal();
+
+        // Set year in footer
+        document.getElementById('yearFooter').textContent = new Date().getFullYear();
+    });
+
+
+    // --- Scroll Reveal Logic ---
+    const initReveal = () => {
+        const revealEls = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { 
+            if(e.isIntersecting) {
+              e.target.classList.add('visible');
+              io.unobserve(e.target);
+            }
+          });
+        }, {threshold:0.12});
+        revealEls.forEach(n => io.observe(n));
+    };
+
+
+    // --- Navigation Tabs Logic ---
+    function showSection(sectionId) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => {
+        section.classList.add('hidden-section');
+      });
+
+      // Remove active class from all tabs
+      const tabs = document.querySelectorAll('.nav-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Show selected section
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.remove('hidden-section');
+        
+        // Scroll to the main content area smoothly
+        setTimeout(() => {
+          document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+
+      // Add active class to clicked tab (using event.target from the click event)
+      if (window.event && window.event.currentTarget) {
+          window.event.currentTarget.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

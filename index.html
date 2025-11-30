@@ -1,24 +1,94 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Monica Dube-Sekhwela | Strategic Growth Architect for Purpose-Driven Businesses</title>
-
-  <!-- Google Fonts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Monica Dube Sekhwela",
+  "jobTitle": "Strategic Growth Architect and Business Development Consultant",
+  "description": "Growth strategist specializing in business development, digital transformation, and partnership development for purpose-driven businesses across Africa",
+  "url": "https://monicadubesekhwela.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/monica-dube-sekhwela",
+    "https://motivationwithmonica.com"
+  ],
+  "knowsAbout": [
+    "Business Development",
+    "Growth Strategy",
+    "Digital Marketing",
+    "Partnership Development",
+    "Strategic Consulting",
+    "EdTech",
+    "Social Enterprise"
+  ],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Botswana"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "University of Derby"
+    }
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "The Social Connect",
+    "url": "https://thesocialconnect.com"
+  }
+}
+</script>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
 
   <style>
     :root{
       --gold:#C69C6D;
       --light-brown:#DCC4A1;
       --pink-glitter:#F8C8D8;
-      --body-bg: #ffffff;
+      --body-bg: #ffffff; /* Light Mode Background */
       --muted:#6B5B4A;
+
+      /* Dark Mode Variables */
+      --dark-bg: #1A202C; 
+      --dark-card: #2D3748;
+      --dark-text: #E2E8F0;
+      --dark-muted: #A0AEC0;
     }
+    
+    /* Global Dark Mode Overrides */
+    html.dark body { 
+        background: var(--dark-bg); 
+        color: var(--dark-text); 
+    }
+    html.dark .text-gray-700 {
+        color: var(--dark-text);
+    }
+    html.dark .text-gray-600 {
+        color: var(--dark-muted);
+    }
+    html.dark .text-gray-500 {
+        color: var(--dark-muted);
+    }
+    html.dark .text-muted {
+        color: var(--dark-muted) !important;
+    }
+    html.dark header, 
+    html.dark footer,
+    html.dark .border-t {
+        border-color: #3f4a5a; /* Darker border color */
+    }
+
     body { font-family: 'Poppins', sans-serif; background: var(--body-bg); color: #111827; }
     .serif { font-family: 'Playfair Display', serif; }
     
@@ -27,8 +97,18 @@
 
     .card-hover { transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,40,0.12); }
+    html.dark .card-hover:hover { box-shadow: 0 18px 40px rgba(0,0,0,0.5); }
 
-    .soft-panel { background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); border-radius: 14px; }
+    /* soft-panel has been updated to use dark: styles */
+    .soft-panel { 
+        background: rgba(255,255,255,0.85); 
+        backdrop-filter: blur(6px); 
+        border-radius: 14px; 
+    }
+    html.dark .soft-panel {
+        background: var(--dark-card);
+        border: 1px solid #3f4a5a; 
+    }
 
     .stat-number { 
       font-size: 2.5rem; 
@@ -48,11 +128,13 @@
       background: linear-gradient(90deg, rgba(198,156,109,0.15), rgba(248,200,216,0.15));
       border: 1px solid var(--light-brown);
     }
+    html.dark .badge {
+        background: rgba(198,156,109,0.25);
+    }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- NAV -->
   <header class="py-6">
     <nav class="container mx-auto px-6 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
@@ -66,60 +148,74 @@
       </a>
 
       <ul class="hidden md:flex gap-8 items-center text-sm">
-        <li><a href="about.html" class="hover:text-gray-700">About</a></li>
-        <li><a href="blog.html" class="hover:text-gray-700">Insights</a></li>
-        <li><a href="projects.html" class="hover:text-gray-700">Case Studies</a></li>
-        <li><a href="services.html" class="hover:text-gray-700">Programs</a></li>
+        <li><a href="about.html" class="hover:text-gray-700 dark:hover:text-gray-300">About</a></li>
+        <li><a href="blog.html" class="hover:text-gray-700 dark:hover:text-gray-300">Insights</a></li>
+        <li><a href="projects.html" class="hover:text-gray-700 dark:hover:text-gray-300">Case Studies</a></li>
+        <li><a href="services.html" class="hover:text-gray-700 dark:hover:text-gray-300">Programs</a></li>
         <li><a href="contact.html" class="px-4 py-2 rounded-md soft-panel hover:shadow">Let's Talk Growth</a></li>
+        <li>
+          <button id="darkModeToggle" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            <span class="light-mode-icon">☀️</span>
+            <span class="dark-mode-icon hidden">🌙</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
   <main>
-    <section class="container mx-auto px-6 py-16">
-      <div class="max-w-5xl mx-auto text-center reveal">
-        <div class="mb-4">
-          <span class="badge">8+ Years Driving Measurable Growth</span>
-          <span class="badge ml-2">Tony Elumelu Foundation Alumni</span>
-        </div>
-        
-        <h1 class="serif text-5xl md:text-6xl font-extrabold leading-tight">
-          I turn visionary entrepreneurs into <span style="color:var(--gold)">market leaders</span>
-        </h1>
-        
-        <p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
-          Strategic Growth Architect specializing in digital transformation, partnership development, and revenue acceleration for purpose-driven businesses across Africa and international markets.
-        </p>
+    <section class="container mx-auto px-6 py-16" style="/* Placeholder for Top Background Photo */ background: linear-gradient(180deg, #fffaf5, #ffffff); dark:bg-gray-900">
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            
+            <div class="reveal order-1 md:order-1 flex justify-center">
+                <div class="max-w-xs md:max-w-sm w-full overflow-hidden">
+                    <img src="hero11.png" alt="Monica Dube-Sekhwela Strategic Growth Architect" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+            
+            <div class="reveal order-2 md:order-2 text-center md:text-left">
+                <div class="mb-4">
+                    <span class="badge">8+ Years Driving Measurable Growth</span>
+                    <span class="badge ml-2">Tony Elumelu Foundation Alumni</span>
+                </div>
+                
+                <h1 class="serif text-5xl md:text-6xl font-extrabold leading-tight">
+                    I turn visionary entrepreneurs into <span style="color:var(--gold)">market leaders</span>
+                </h1>
+                
+                <p class="mt-6 text-xl text-gray-700 max-w-md md:max-w-full mx-auto md:mx-0">
+                    Strategic Growth Architect specializing in digital transformation, partnership development, and revenue acceleration for purpose-driven businesses across Africa and international markets.
+                </p>
 
-        <!-- Key Stats -->
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div class="soft-panel p-6">
-            <div class="stat-number">150%</div>
-            <div class="text-sm text-gray-600 mt-2">Client Engagement Growth</div>
-          </div>
-          <div class="soft-panel p-6">
-            <div class="stat-number">80%</div>
-            <div class="text-sm text-gray-600 mt-2">Enrollment Increase</div>
-          </div>
-          <div class="soft-panel p-6">
-            <div class="stat-number">5-Fig</div>
-            <div class="text-sm text-gray-600 mt-2">Contracts Secured</div>
-          </div>
-          <div class="soft-panel p-6">
-            <div class="stat-number">35%</div>
-            <div class="text-sm text-gray-600 mt-2">Revenue Uplift</div>
-          </div>
+                <div class="mt-8 flex gap-4 justify-center md:justify-start">
+                    <a href="contact.html" class="px-8 py-4 rounded-md serif text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Schedule Strategy Call</a>
+                    <a href="#case-studies" class="px-8 py-4 rounded-md border border-gray-200 hover:shadow dark:border-gray-700 dark:text-gray-300">View Success Stories</a>
+                </div>
+            </div>
         </div>
 
-        <div class="mt-8 flex gap-4 justify-center">
-          <a href="contact.html" class="px-8 py-4 rounded-md serif text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Schedule Strategy Call</a>
-          <a href="#case-studies" class="px-8 py-4 rounded-md border border-gray-200 hover:shadow">View Success Stories</a>
+        <div class="max-w-5xl mx-auto">
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+                <div class="soft-panel p-6">
+                    <div class="stat-number">150%</div>
+                    <div class="text-sm text-gray-600 mt-2">Client Engagement Growth</div>
+                </div>
+                <div class="soft-panel p-6">
+                    <div class="stat-number">80%</div>
+                    <div class="text-sm text-gray-600 mt-2">Enrollment Increase</div>
+                </div>
+                <div class="soft-panel p-6">
+                    <div class="stat-number">5-Fig</div>
+                    <div class="text-sm text-gray-600 mt-2">Contracts Secured</div>
+                </div>
+                <div class="soft-panel p-6">
+                    <div class="stat-number">35%</div>
+                    <div class="text-sm text-gray-600 mt-2">Revenue Uplift</div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- WHO I SERVE -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -129,7 +225,9 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="reveal soft-panel p-8 text-center card-hover">
-            <div class="text-4xl mb-4"></div>
+            <div class="text-4xl mb-4">
+              <img src="unicaf.png" alt="UNICAF Logo Placeholder" class="mx-auto h-12 w-auto object-contain" style="max-height:30px; filter: grayscale(100%) invert(0%);" /> 
+            </div>
             <h3 class="font-semibold text-lg mb-3">EdTech & Education</h3>
             <p class="text-sm text-gray-600">Enrollment strategy, partnership development, and market expansion for institutions and platforms across Africa</p>
           </div>
@@ -149,7 +247,6 @@
       </div>
     </section>
 
-    <!-- SIGNATURE RESULTS -->
     <section id="case-studies" class="container mx-auto px-6 py-16">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -157,36 +254,82 @@
           <p class="mt-4 text-gray-600 text-lg">Real businesses. Real transformation. Real revenue.</p>
         </div>
 
-        <div class="space-y-8">
-          <!-- UNICAF Success -->
-          <div class="reveal soft-panel p-8 grid md:grid-cols-3 gap-8 items-center">
-            <div class="md:col-span-2">
-              <div class="flex items-center gap-3 mb-4">
-                <span class="badge">Education Sector</span>
-                <span class="badge">2021-2023</span>
-              </div>
-              <h3 class="serif text-2xl font-bold mb-3">UNICAF Botswana: 35% Enrollment Growth</h3>
-              <p class="text-gray-700 mb-4">Led comprehensive marketing and recruitment strategy as Business Development & Marketing Manager, transforming market presence through strategic partnerships and data-driven campaigns.</p>
-              <ul class="text-sm text-gray-600 space-y-2">
-                <li>✓ Built strategic partnerships with government and corporate entities</li>
-                <li>✓ Reduced recruitment turnaround time by 20% through process optimization</li>
-                <li>✓ Improved lead conversion rates with integrated marketing campaigns</li>
-                <li>✓ Expanded scholarship collaborations for sustainable growth</li>
-              </ul>
-            </div>
-            <div class="text-center">
-              <div class="stat-number">35%</div>
-              <div class="text-sm text-gray-500">Enrollment Increase</div>
-            </div>
-          </div>
+   
+<section id="revenue-systems-architecture" class="content-section hidden-section reveal py-8">
+  <h2 class="serif text-4xl font-bold mb-8" style="color:var(--text-color);"> Revenue Systems Architecture: Converting Content to Corporate Contracts</h2>
+  
+  <div class="space-y-8">
+    
+    <div class="reveal soft-panel p-8 grid md:grid-cols-3 gap-8 items-center card-hover metric-card" style="border-left-color: var(--gold);">
+      
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-block px-3 py-1 rounded text-xs font-semibold" style="color:var(--gold); background-color: var(--light-brown); opacity: 0.8;">
+            B2B Conversion & Authority
+          </span>
+          <span class="inline-block px-3 py-1 rounded text-xs font-semibold" style="color:var(--gold); background-color: var(--light-brown); opacity: 0.8;">
+            9 Months Execution
+          </span>
+        </div>
+        
+        <h3 class="serif text-2xl font-bold mb-3" style="color:var(--text-color);">From Limited Visibility to Securing Government & Corporate Deals</h3>
+        <p class="text-gray-700 mb-4">Architected a multi-tier marketing strategy that successfully moved the brand beyond inconsistent bookings to securing high-value organizational contracts and achieving national thought leadership within 9 months.</p>
+        
+        <ul class="text-sm text-gray-600 space-y-2">
+          <li class="flex items-start gap-2">
+            <span style="color:var(--gold);">✓</span>
+            <span>Secured High-Value Conversions: 2 Corporate Contracts & 1 Ministry Keynote.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span style="color:var(--gold);">✓</span>
+            <span>Systemization: Developed 9 interconnected content series frameworks for sustainable content production.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span style="color:var(--gold);">✓</span>
+            <span>Market Growth: Formalized and successfully marketed 6 distinct revenue streams (Training, Events, Weddings, etc.).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span style="color:var(--gold);">✓</span>
+            <span>Execution Scale: Delivered 120+ strategic content assets over the 9-month period.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="text-center space-y-4">
+        
+        <div>
+          <div class="serif text-4xl font-extrabold" style="color:var(--gold);">2 + 1</div>
+          <div class="text-sm text-gray-600 font-semibold">Corporate Contracts & Keynote</div>
+        </div>
+        
+        <div style="border-top: 1px dashed rgba(198,156,109,0.3); padding-top: 10px;">
+          <div class="serif text-3xl font-extrabold" style="color:var(--gold);">6</div>
+          <div class="text-sm text-gray-600 font-semibold">Formal Revenue Streams</div>
+        </div>
+        
+        <div>
+          <div class="serif text-3xl font-extrabold" style="color:var(--gold);">120+</div>
+          <div class="text-sm text-gray-600 font-semibold">Strategic Content Pieces</div>
+        </div>
 
-          <!-- B Agro Crop -->
+        <div style="border-top: 1px dashed rgba(198,156,109,0.3); padding-top: 10px;">
+            <div class="serif text-3xl font-extrabold" style="color:var(--gold);">76</div>
+            <div class="text-sm text-gray-600 font-semibold">Peak Engagement (Event Post)</div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+</section>
+```
+
           <div class="reveal soft-panel p-8 grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-4">
                 <span class="badge">AgriTech</span>
                 <span class="badge">International</span>
               </div>
+              <img src="b agro crop logo.png" alt="B Agro Crop Logo" class="h-10 mb-4 object-contain" style="max-height:30px;"/>
               <h3 class="serif text-2xl font-bold mb-3">B Agro Crop Limited: From Idea to Investor-Ready</h3>
               <p class="text-gray-700 mb-4">Strategic advisory as Chief Marketing Officer, building fundraising infrastructure and market positioning from ground up.</p>
               <ul class="text-sm text-gray-600 space-y-2">
@@ -202,7 +345,6 @@
             </div>
           </div>
 
-          <!-- Multi-Sector Consulting -->
           <div class="reveal soft-panel p-8 grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-4">
@@ -224,7 +366,6 @@
             </div>
           </div>
 
-          <!-- Afro Adventurer -->
           <div class="reveal soft-panel p-8 grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2">
               <div class="flex items-center gap-3 mb-4">
@@ -249,7 +390,6 @@
       </div>
     </section>
 
-    <!-- WHAT MAKES ME DIFFERENT -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -259,6 +399,9 @@
 
         <div class="grid md:grid-cols-2 gap-8">
           <div class="reveal soft-panel p-8">
+            <div class="mb-3">
+              <img src="portfolioprojecticon.png" alt="Strategic Icon Placeholder" class="h-8 w-auto" style="filter: grayscale(100%) brightness(1.5) hue-rotate(30deg);"/>
+            </div>
             <h3 class="font-bold text-lg mb-3">Strategic + Execution</h3>
             <p class="text-gray-600 text-sm">Not just strategy decks, I combine C-suite strategic thinking with hands-on execution. From pitch decks to partnerships, I deliver the full spectrum.</p>
           </div>
@@ -291,7 +434,6 @@
       </div>
     </section>
 
-    <!-- CLIENT TESTIMONIALS -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -347,7 +489,6 @@
       </div>
     </section>
 
-    <!-- CREDENTIALS -->
     <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12 reveal">
@@ -391,7 +532,6 @@
       </div>
     </section>
 
-    <!-- CURRENT FOCUS -->
     <section class="container mx-auto px-6 py-16">
       <div class="max-w-4xl mx-auto text-center reveal">
         <h2 class="serif text-4xl font-bold mb-6">What I'm Building Now</h2>
@@ -416,7 +556,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="container mx-auto px-6 py-16 text-center" style="background: linear-gradient(180deg, rgba(198,156,109,0.05), rgba(248,200,216,0.05));">
       <div class="max-w-3xl mx-auto reveal">
         <h2 class="serif text-4xl font-bold mb-6">Ready to Transform Vision into Revenue?</h2>
@@ -424,7 +563,7 @@
         
         <div class="flex gap-4 justify-center flex-wrap">
           <a href="contact.html" class="px-8 py-4 rounded-md serif text-white" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Schedule Strategy Call</a>
-          <a href="services.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow">View Transformation Programs</a>
+          <a href="services.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow dark:border-gray-700 dark:text-gray-300">View Transformation Programs</a>
         </div>
 
         <p class="mt-8 text-sm text-gray-500">Currently accepting select clients for Q1 2026 engagements</p>
@@ -432,7 +571,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="border-t mt-12 py-8">
     <div class="container mx-auto px-6">
       <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -479,6 +617,44 @@
       });
     }, {threshold:0.12});
     observers.forEach(n => io.observe(n));
+
+
+    // Dark Mode Logic
+    const toggle = document.getElementById('darkModeToggle');
+    const lightIcon = document.querySelector('.light-mode-icon');
+    const darkIcon = document.querySelector('.dark-mode-icon');
+    const html = document.documentElement;
+    
+    // Check local storage for preference, default to false (light)
+    const storedPreference = localStorage.getItem('dark');
+    const isDark = storedPreference === 'true';
+
+    // Set initial state
+    if (isDark) {
+      html.classList.add('dark');
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.remove('hidden');
+    } else {
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        // Switching to Light Mode
+        html.classList.remove('dark');
+        localStorage.setItem('dark', 'false');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      } else {
+        // Switching to Dark Mode
+        html.classList.add('dark');
+        localStorage.setItem('dark', 'true');
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      }
+    });
   </script>
 </body>
 </html>
+```
