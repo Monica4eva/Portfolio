@@ -1,0 +1,2142 @@
+ <html lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<title>Growth Infrastructure Programs — Monica Dube-Sekhwela</title>
+
+<script type="application/ld+json">
+
+{
+
+"@context": "https://schema.org",
+
+"@type": "ProfessionalService",
+
+"name": "The Social Connect",
+
+"alternateName": "TSC",
+
+"description": "Growth Infrastructure Platform serving business leaders across Africa. We architect integrated growth systems for systematic competitive advantage.",
+
+"slogan": "Plug Into Digital Success",
+
+"url": "https://thesocialconnect.com",
+
+"areaServed": {
+
+"@type": "Place",
+
+"name": "Africa"
+
+},
+
+"serviceType": [
+
+"Growth Strategy",
+
+"Business Systems Architecture",
+
+"Market Expansion Consulting",
+
+"Brand Intelligence",
+
+"Competitive Positioning"
+
+],
+
+"knowsAbout": [
+
+"Growth Infrastructure",
+
+"Business Systems",
+
+"African Markets",
+
+"AfCFTA",
+
+"Market Leadership"
+
+]
+
+}
+
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com">
+
+tailwind.config = {
+
+darkMode: 'class',
+
+}
+
+</script>
+
+
+<style>
+
+:root{
+
+--gold:#C69C6D;
+
+--light-brown:#DCC4A1;
+
+--pink-glitter:#F8C8D8;
+
+--body-bg: #ffffff;
+
+--muted:#6B5B4A;
+
+
+/* Dark Mode Variables */
+
+--dark-bg: #1A202C;
+
+--dark-card: #2D3748;
+
+--dark-text: #E2E8F0;
+
+--dark-muted: #A0AEC0;
+
+}
+
+
+/* Global Dark Mode Overrides */
+
+html.dark body {
+
+background: var(--dark-bg);
+
+color: var(--dark-text);
+
+}
+
+html.dark .text-gray-700 {
+
+color: var(--dark-text);
+
+}
+
+html.dark .text-gray-600 {
+
+color: var(--dark-muted);
+
+}
+
+html.dark .text-gray-500 {
+
+color: var(--dark-muted);
+
+}
+
+html.dark .text-muted {
+
+color: var(--dark-muted) !important;
+
+}
+
+html.dark header,
+
+html.dark footer,
+
+html.dark .border-t,
+
+html.dark .border-gray-200 {
+
+border-color: #3f4a5a;
+
+}
+
+html.dark .bg-gray-50 {
+
+background-color: #2D3748 !important;
+
+}
+
+
+
+body { font-family: 'Poppins', sans-serif; background: var(--body-bg); color: #111827; }
+
+.serif { font-family: 'Playfair Display', serif; }
+
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+.card-hover { transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s; }
+
+.card-hover:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(16,24,40,0.12); }
+
+html.dark .card-hover:hover { box-shadow: 0 18px 40px rgba(0,0,0,0.5); }
+
+
+.soft-panel {
+
+background: rgba(255,255,255,0.85);
+
+backdrop-filter: blur(6px);
+
+border-radius: 14px;
+
+}
+
+html.dark .soft-panel {
+
+background: var(--dark-card);
+
+border: 1px solid #3f4a5a;
+
+}
+
+
+.badge {
+
+display: inline-block;
+
+padding: 0.25rem 0.75rem;
+
+border-radius: 999px;
+
+font-size: 0.75rem;
+
+font-weight: 600;
+
+background: linear-gradient(90deg, rgba(198,156,109,0.15), rgba(248,200,216,0.15));
+
+border: 1px solid var(--light-brown);
+
+}
+
+html.dark .badge {
+
+background: rgba(198,156,109,0.25);
+
+}
+
+
+.tab-button {
+
+padding: 0.75rem 1.5rem;
+
+border-radius: 8px;
+
+border: 2px solid transparent;
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+
+background: rgba(255,255,255,0.5);
+
+}
+
+html.dark .tab-button {
+
+background: #3c4456;
+
+color: var(--dark-text);
+
+border-color: #3f4a5a;
+
+}
+
+html.dark .tab-button:not(.active):hover {
+
+background: #485161;
+
+border-color: var(--light-brown);
+
+}
+
+
+
+.tab-button.active {
+
+background: linear-gradient(90deg, var(--gold), var(--light-brown));
+
+color: white;
+
+border-color: var(--gold);
+
+}
+
+
+.tab-content {
+
+display: none;
+
+}
+
+
+.tab-content.active {
+
+display: block;
+
+animation: fadeIn 0.5s ease;
+
+}
+
+
+@keyframes fadeIn {
+
+from { opacity: 0; transform: translateY(10px); }
+
+to { opacity: 1; transform: translateY(0); }
+
+}
+
+
+.pricing-card {
+
+position: relative;
+
+border: 2px solid #e5e7eb;
+
+}
+
+html.dark .pricing-card {
+
+border-color: #3f4a5a;
+
+}
+
+
+.pricing-card.featured {
+
+border-color: var(--gold);
+
+box-shadow: 0 10px 40px rgba(198,156,109,0.2);
+
+}
+
+html.dark .pricing-card.featured {
+
+box-shadow: 0 10px 40px rgba(198,156,109,0.4);
+
+}
+
+
+.featured-badge {
+
+position: absolute;
+
+top: -12px;
+
+right: 20px;
+
+background: linear-gradient(90deg, var(--gold), var(--light-brown));
+
+color: white;
+
+padding: 0.25rem 1rem;
+
+border-radius: 999px;
+
+font-size: 0.75rem;
+
+font-weight: 600;
+
+}
+
+
+.infrastructure-icon {
+
+width: 48px;
+
+height: 48px;
+
+border-radius: 12px;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+font-size: 1.5rem;
+
+background: linear-gradient(135deg, rgba(198,156,109,0.1), rgba(248,200,216,0.1));
+
+}
+
+</style>
+
+</head>
+
+<body class="antialiased">
+
+
+<header class="py-6">
+
+<nav class="container mx-auto px-6 flex items-center justify-between">
+
+<a href="index.html" class="flex items-center gap-3">
+
+<div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+
+<span class="serif text-white text-xl">M</span>
+
+</div>
+
+<div>
+
+<div class="serif font-bold text-lg">Monica Dube-Sekhwela</div>
+
+<div class="text-xs text-muted" style="color:var(--muted)">Strategic Growth Architect</div>
+
+</div>
+
+</a>
+
+
+<ul class="hidden md:flex gap-8 items-center text-sm">
+
+<li><a href="about.html" class="hover:text-gray-700 dark:hover:text-gray-300">About</a></li>
+
+<li><a href="blog.html" class="hover:text-gray-700 dark:hover:text-gray-300">Insights</a></li>
+
+<li><a href="projects.html" class="hover:text-gray-700 dark:hover:text-gray-300">Case Studies</a></li>
+
+<li><a href="services.html" class="hover:text-gray-700 dark:hover:text-gray-300">Programs</a></li>
+
+<li><a href="contact.html" class="px-4 py-2 rounded-md soft-panel hover:shadow">Let's Talk Growth</a></li>
+
+<li>
+
+<button id="darkModeToggle" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+
+<span class="light-mode-icon">☀️</span>
+
+<span class="dark-mode-icon hidden">🌙</span>
+
+</button>
+
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<main>
+
+<div class="w-full h-64 mb-12 flex items-center justify-center overflow-hidden rounded-xl bg-gray-300 dark:bg-gray-600">
+
+<img src="services banner.jpg"
+
+alt="Strategic Partnership Process Visual"
+
+class="w-full h-full object-cover">
+
+</div>
+
+
+<section class="container mx-auto px-6 py-16" style="/* Hero Background Placeholder */ background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
+
+<div class="max-w-4xl mx-auto text-center reveal">
+
+<div class="mb-4">
+
+<span class="badge">Strategic Growth Infrastructure</span>
+
+<span class="badge ml-2">Not Campaigns. Systems.</span>
+
+</div>
+
+<h1 class="serif text-5xl md:text-6xl font-extrabold leading-tight">
+
+Build Infrastructure That <span style="color:var(--gold)">Compounds Growth</span>
+
+</h1>
+
+<p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+
+While others chase tactics, market leaders build systematic infrastructure. From digital transformation to partnership development, strategic systems that deliver measurable, compounding results.
+
+</p>
+
+</div>
+
+</section>
+
+
+<section class="container mx-auto px-6 py-8">
+
+<div class="max-w-5xl mx-auto">
+
+<div class="flex flex-wrap gap-4 justify-center mb-12 reveal">
+
+<button class="tab-button active" onclick="switchTab('monthly')">Monthly Infrastructure</button>
+
+<button class="tab-button" onclick="switchTab('intensive')">Strategic Intensives</button>
+
+<button class="tab-button" onclick="switchTab('systems')">Growth Systems</button>
+
+<button class="tab-button" onclick="switchTab('african')">For African Founders</button>
+
+</div>
+
+
+<div id="monthly" class="tab-content active">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">Monthly Growth Infrastructure</h2>
+
+<p class="mt-4 text-gray-600 text-lg">Integrated systems that build competitive advantage month after month</p>
+
+</div>
+
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="reveal soft-panel p-8 pricing-card">
+
+<h3 class="serif text-2xl font-bold mb-2">Foundation System</h3>
+
+<div class="text-gray-600 text-sm mb-6">For emerging businesses building systematic market presence</div>
+
+<div class="mb-6">
+
+<div class="text-4xl font-bold" style="color:var(--gold)">$230</div>
+
+<div class="text-sm text-gray-500">per month</div>
+
+</div>
+
+
+<div class="space-y-4 mb-8 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Brand Intelligence System (2 platforms)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>15 strategic brand assets monthly</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>2 algorithm-optimized video content</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>2 SEO articles (1,000+ words)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Monthly growth tracking consultation</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Growth Infrastructure Resource Library</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<div class="font-semibold mb-2">Expected Outcomes:</div>
+
+<ul class="space-y-1 text-gray-600">
+
+<li>• Systematic brand presence established</li>
+
+<li>• 30-40% engagement improvement</li>
+
+<li>• Foundational conversion systems operational</li>
+
+</ul>
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 border-gray-200 hover:border-gray-300 font-semibold dark:hover:border-gray-500 dark:text-gray-300">Get Started</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-8 pricing-card featured">
+
+<div class="featured-badge">Most Popular</div>
+
+<h3 class="serif text-2xl font-bold mb-2">Market Momentum</h3>
+
+<div class="text-gray-600 text-sm mb-6">For businesses architecting market leadership</div>
+
+<div class="mb-6">
+
+<div class="text-4xl font-bold" style="color:var(--gold)">$395</div>
+
+<div class="text-sm text-gray-500">per month</div>
+
+</div>
+
+
+<div class="space-y-4 mb-8 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Complete Brand Intelligence (3 platforms)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>30 strategic assets + 5 video pieces</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>4 thought leadership articles</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Email automation (up to 500 contacts)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Marketing attribution dashboard</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Quarterly strategic roadmap reviews</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Priority strategic guidance</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<div class="font-semibold mb-2">Expected Outcomes:</div>
+
+<ul class="space-y-1 text-gray-600">
+
+<li>• 3x qualified lead generation</li>
+
+<li>• Measurable conversion optimization</li>
+
+<li>• 4-6x ROI within 6 months</li>
+
+<li>• Predictable pipeline visibility</li>
+
+</ul>
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Building</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-8 pricing-card">
+
+<h3 class="serif text-2xl font-bold mb-2">Market Leadership</h3>
+
+<div class="text-gray-600 text-sm mb-6">For ambitious organizations pursuing category dominance</div>
+
+<div class="mb-6">
+
+<div class="text-4xl font-bold" style="color:var(--gold)">$645</div>
+
+<div class="text-sm text-gray-500">per month</div>
+
+</div>
+
+
+<div class="space-y-4 mb-8 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Full-spectrum management (5+ channels)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Unlimited strategic content creation</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>8 long-form authority pieces monthly</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Advanced automation + lead nurturing</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Complete brand refresh + positioning</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Dedicated Growth Strategist</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Quarterly Executive Strategy Sessions</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Investment-readiness positioning</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<div class="font-semibold mb-2">Expected Outcomes:</div>
+
+<ul class="space-y-1 text-gray-600">
+
+<li>• Category leadership positioning</li>
+
+<li>• Systematic revenue infrastructure</li>
+
+<li>• 5-10x ROI on investment</li>
+
+<li>• Inbound opportunity generation</li>
+
+</ul>
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 border-gray-200 hover:border-gray-300 font-semibold dark:hover:border-gray-500 dark:text-gray-300">Schedule Consultation</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="intensive" class="tab-content">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">Strategic Intensives</h2>
+
+<p class="mt-4 text-gray-600 text-lg">Focused engagements for specific transformation objectives</p>
+
+</div>
+
+
+<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+<div class="reveal soft-panel p-8">
+
+<div class="flex items-start gap-4 mb-6">
+
+<div class="infrastructure-icon"></div>
+
+<div>
+
+<h3 class="serif text-2xl font-bold">Growth Readiness Accelerator</h3>
+
+<div class="text-sm text-gray-500">One-Time Intensive</div>
+
+</div>
+
+</div>
+
+
+<div class="mb-6">
+
+<div class="text-3xl font-bold" style="color:var(--gold)">$345</div>
+
+<div class="text-sm text-gray-500">Complete infrastructure package</div>
+
+</div>
+
+
+<div class="mb-6 text-sm text-gray-700">
+
+<strong>For:</strong> Executives and professionals launching strategic ventures with infrastructure from day one
+
+</div>
+
+
+<div class="space-y-3 mb-6 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Complete Growth Assessment + Infrastructure Roadmap</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Growth-ready business model design</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Professional brand infrastructure package</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Conversion-optimized landing page</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>120-minute Strategic Intensive</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>90-Day Execution Blueprint</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<strong>Outcome:</strong> Launch with systematic infrastructure that takes most businesses 2-3 years to build
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Your Launch</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-8 pricing-card featured">
+
+<div class="featured-badge">Premium</div>
+
+<div class="flex items-start gap-4 mb-6">
+
+<div class="infrastructure-icon"></div>
+
+<div>
+
+<h3 class="serif text-2xl font-bold">Executive Legacy Builder</h3>
+
+<div class="text-sm text-gray-500">4-Month Strategic Partnership</div>
+
+</div>
+
+</div>
+
+
+<div class="mb-6">
+
+<div class="text-3xl font-bold" style="color:var(--gold)">$860</div>
+
+<div class="text-sm text-gray-500">Complete transformation program</div>
+
+</div>
+
+
+<div class="mb-6 text-sm text-gray-700">
+
+<strong>For:</strong> Visionary leaders building market-dominant businesses and personal legacy positioning
+
+</div>
+
+
+<div class="space-y-3 mb-6 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Complete Market Leadership Infrastructure</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Executive Deep-Dive + Leadership Workshop (3 hours)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Strategic PR placement & authority campaign</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>4-Month Executive Mentorship</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Monthly Strategic Reviews</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Investor-Readiness Positioning</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Exclusive Leadership Circle inclusion</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<strong>Outcome:</strong> Transform from capable business owner to recognized market leader with systematic advantage
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Apply Now</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="systems" class="tab-content">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">Strategic Growth Systems</h2>
+
+<p class="mt-4 text-gray-600 text-lg">Modular infrastructure for specific business needs</p>
+
+</div>
+
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="reveal soft-panel p-6">
+
+<div class="infrastructure-icon mb-4"></div>
+
+<h3 class="font-bold text-lg mb-2">Brand Intelligence System</h3>
+
+<p class="text-sm text-gray-600 mb-4">Strategic market positioning and systematic brand presence</p>
+
+<ul class="text-xs space-y-2 mb-4 text-gray-700">
+
+<li>• Multi-platform authority presence</li>
+
+<li>• Performance marketing infrastructure</li>
+
+<li>• Community & advocacy architecture</li>
+
+<li>• Marketing attribution systems</li>
+
+</ul>
+
+
+<div class="text-sm font-semibold mb-2">From $230/month</div>
+
+<a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="infrastructure-icon mb-4"></div>
+
+<h3 class="font-bold text-lg mb-2">Growth Architecture System</h3>
+
+<p class="text-sm text-gray-600 mb-4">Business model engineering and strategic roadmaps</p>
+
+<ul class="text-xs space-y-2 mb-4 text-gray-700">
+
+<li>• Strategic growth roadmaps</li>
+
+<li>• Revenue systems for scale</li>
+
+<li>• Investment readiness positioning</li>
+
+<li>• Strategic partnership architecture</li>
+
+</ul>
+
+
+<div class="text-sm font-semibold mb-2">Custom Pricing</div>
+
+<a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="infrastructure-icon mb-4"></div>
+
+<h3 class="font-bold text-lg mb-2">Market Authority System</h3>
+
+<p class="text-sm text-gray-600 mb-4">Thought leadership and content infrastructure</p>
+
+<ul class="text-xs space-y-2 mb-4 text-gray-700">
+
+<li>• Strategic content production</li>
+
+<li>• SEO & organic authority building</li>
+
+<li>• Executive positioning systems</li>
+
+<li>• Content performance intelligence</li>
+
+</ul>
+
+
+<div class="text-sm font-semibold mb-2">From $395/month</div>
+
+<a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="infrastructure-icon mb-4"></div>
+
+<h3 class="font-bold text-lg mb-2">Conversion Infrastructure</h3>
+
+<p class="text-sm text-gray-600 mb-4">24/7 revenue-generating digital platforms</p>
+
+<ul class="text-xs space-y-2 mb-4 text-gray-700">
+
+<li>• Strategic website architecture</li>
+
+<li>• Sales funnel engineering</li>
+
+<li>• Marketing automation systems</li>
+
+<li>• Analytics & performance dashboards</li>
+
+</ul>
+
+
+<div class="text-sm font-semibold mb-2">From $1,500</div>
+
+<a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="infrastructure-icon mb-4"></div>
+
+<h3 class="font-bold text-lg mb-2">Stakeholder Engagement</h3>
+
+<p class="text-sm text-gray-600 mb-4">Strategic relationship and event infrastructure</p>
+
+<ul class="text-xs space-y-2 mb-4 text-gray-700">
+
+<li>• Corporate event strategy</li>
+
+<li>• Product launch infrastructure</li>
+
+<li>• Experiential brand activation</li>
+
+<li>• Full-service execution systems</li>
+
+</ul>
+
+
+<div class="text-sm font-semibold mb-2">From $1,200</div>
+
+<a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="infrastructure-icon mb-4"></div>
+
+<h3 class="font-bold text-lg mb-2">Investment Readiness</h3>
+
+<p class="text-sm text-gray-600 mb-4">Complete strategic documentation for investors</p>
+
+<ul class="text-xs space-y-2 mb-4 text-gray-700">
+
+<li>• Investor-ready pitch architecture</li>
+
+<li>• Financial modeling & projections</li>
+
+<li>• Strategic positioning documents</li>
+
+<li>• Partnership materials</li>
+
+</ul>
+
+
+<div class="text-sm font-semibold mb-2">From $1,800</div>
+
+<a href="contact.html" class="text-xs underline" style="color:var(--gold)">Learn More →</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="african" class="tab-content">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">For African Founders</h2>
+
+<p class="mt-4 text-gray-600 text-lg">Specialized programs for businesses navigating African market dynamics and continental opportunities</p>
+
+</div>
+
+
+<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+<div class="reveal soft-panel p-8 pricing-card featured">
+
+<div class="featured-badge">AfCFTA Ready</div>
+
+<div class="flex items-start gap-4 mb-6">
+
+<div class="infrastructure-icon"></div>
+
+<div>
+
+<h3 class="serif text-2xl font-bold">Market Expansion Infrastructure</h3>
+
+<div class="text-sm text-gray-500">8-Week Intensive Program</div>
+
+</div>
+
+</div>
+
+
+<div class="mb-6">
+
+<div class="text-3xl font-bold" style="color:var(--gold)">$540</div>
+
+<div class="text-sm text-gray-500">Complete expansion readiness</div>
+
+</div>
+
+
+<div class="mb-6 text-sm text-gray-700">
+
+<strong>For:</strong> African businesses targeting regional expansion, new markets, or AfCFTA opportunities
+
+</div>
+
+
+<div class="space-y-3 mb-6 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Comprehensive Business Capability Audit</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Strategic Expansion Roadmap (AfCFTA-optimized)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Brand Positioning for International Markets</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Export Readiness Assessment</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Cross-Border Market Analysis</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Digital Infrastructure Optimization</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Regulatory compliance guidance</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<strong>Outcome:</strong> Move from domestic player to regional contender with systematic expansion infrastructure
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Expansion</a>
+
+</div>
+
+
+<div class="reveal soft-panel p-8">
+
+<div class="flex items-start gap-4 mb-6">
+
+<div class="infrastructure-icon"></div>
+
+<div>
+
+<h3 class="serif text-2xl font-bold">Pan-African Growth Package</h3>
+
+<div class="text-sm text-gray-500">Quarterly Strategic Support</div>
+
+</div>
+
+</div>
+
+
+<div class="mb-6">
+
+<div class="text-3xl font-bold" style="color:var(--gold)">$295</div>
+
+<div class="text-sm text-gray-500">per month</div>
+
+</div>
+
+
+<div class="mb-6 text-sm text-gray-700">
+
+<strong>For:</strong> African businesses building systematic growth infrastructure with local market understanding
+
+</div>
+
+
+<div class="space-y-3 mb-6 text-sm">
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Brand Intelligence System (2-3 platforms)</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>20 strategic brand assets monthly</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Africa-focused content strategy</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Localized market positioning</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Partnership development support</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Quarterly growth strategy reviews</span>
+
+</div>
+
+<div class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Access to African business network</span>
+
+</div>
+
+</div>
+
+
+<div class="bg-gray-50 p-4 rounded-lg mb-6 text-sm">
+
+<strong>Outcome:</strong> Build systematic presence in African markets with culturally-relevant positioning and execution
+
+</div>
+
+
+<a href="contact.html" class="block text-center px-6 py-3 rounded-md border-2 hover:shadow font-semibold" style="border-color:var(--gold);">Get Started</a>
+
+</div>
+
+</div>
+
+
+<div class="mt-12 reveal">
+
+<div class="soft-panel p-8 max-w-4xl mx-auto" style="background: linear-gradient(180deg, rgba(198,156,109,0.05), rgba(248,200,216,0.05));">
+
+<h3 class="serif text-2xl font-bold mb-4">Why African Founders Choose This Partnership</h3>
+
+<div class="grid md:grid-cols-2 gap-6 text-sm">
+
+<div>
+
+<h4 class="font-semibold mb-2" style="color:var(--gold)">Local Market Intelligence</h4>
+
+<p class="text-gray-700">Deep understanding of African business culture, consumer behavior, and market dynamics across the continent</p>
+
+</div>
+
+<div>
+
+<h4 class="font-semibold mb-2" style="color:var(--gold)">AfCFTA Navigation</h4>
+
+<p class="text-gray-700">Strategic guidance on continental trade opportunities, regulatory compliance, and cross-border expansion</p>
+
+</div>
+
+<div>
+
+<h4 class="font-semibold mb-2" style="color:var(--gold)">Infrastructure Reality</h4>
+
+<p class="text-gray-700">Systems designed for African context—internet reliability, payment systems, mobile-first audiences</p>
+
+</div>
+
+<div>
+
+<h4 class="font-semibold mb-2" style="color:var(--gold)">Global Standards</h4>
+
+<p class="text-gray-700">World-class frameworks that position African businesses competitively on international stages</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
+
+<div class="max-w-5xl mx-auto">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">Strategic Infrastructure Add-Ons</h2>
+
+<p class="mt-4 text-gray-600 text-lg">Enhance your core infrastructure with specialized capabilities</p>
+
+</div>
+
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="reveal soft-panel p-6">
+
+<div class="flex items-center gap-4 mb-4">
+
+<div class="infrastructure-icon text-2xl"></div>
+
+<div>
+
+<h3 class="font-bold">Complete Brand Infrastructure</h3>
+
+<div class="text-sm text-gray-500">One-time investment: $720</div>
+
+</div>
+
+</div>
+
+<p class="text-sm text-gray-600 mb-4">Professional corporate identity, brand guidelines, complete visual consistency, foundation for market credibility</p>
+
+<ul class="text-xs space-y-2 text-gray-700">
+
+<li>• Logo design & brand mark variations</li>
+
+<li>• Complete brand style guide</li>
+
+<li>• Color palette & typography system</li>
+
+<li>• Marketing collateral templates</li>
+
+</ul>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="flex items-center gap-4 mb-4">
+
+<div class="infrastructure-icon text-2xl"></div>
+
+<div>
+
+<h3 class="font-bold">Conversion-Optimized Platform</h3>
+
+<div class="text-sm text-gray-500">Starting at: $1,600</div>
+
+</div>
+
+</div>
+
+<p class="text-sm text-gray-600 mb-4">24/7 revenue-generating digital infrastructure with systematic conversion architecture</p>
+
+<ul class="text-xs space-y-2 text-gray-700">
+
+<li>• Strategic website architecture</li>
+
+<li>• Mobile-optimized responsive design</li>
+
+<li>• SEO foundation & analytics</li>
+
+<li>• Lead capture & conversion systems</li>
+
+</ul>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="flex items-center gap-4 mb-4">
+
+<div class="infrastructure-icon text-2xl"></div>
+
+<div>
+
+<h3 class="font-bold">Email Marketing Infrastructure</h3>
+
+<div class="text-sm text-gray-500">$720/month</div>
+
+</div>
+
+</div>
+
+<p class="text-sm text-gray-600 mb-4">Automated nurture sequences, customer retention systems, measurable revenue attribution</p>
+
+<ul class="text-xs space-y-2 text-gray-700">
+
+<li>• Email automation workflows</li>
+
+<li>• Welcome & nurture sequences</li>
+
+<li>• List management up to 1,000 contacts</li>
+
+<li>• Performance tracking dashboard</li>
+
+</ul>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="flex items-center gap-4 mb-4">
+
+<div class="infrastructure-icon text-2xl"></div>
+
+<div>
+
+<h3 class="font-bold">Strategic Event Infrastructure</h3>
+
+<div class="text-sm text-gray-500">Starting at: $1,100</div>
+
+</div>
+
+</div>
+
+<p class="text-sm text-gray-600 mb-4">Lead generation systems, stakeholder engagement architecture, brand authority through experiences</p>
+
+<ul class="text-xs space-y-2 text-gray-700">
+
+<li>• Event strategy & positioning</li>
+
+<li>• Marketing campaign execution</li>
+
+<li>• Registration & attendee management</li>
+
+<li>• Post-event engagement systems</li>
+
+</ul>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="flex items-center gap-4 mb-4">
+
+<div class="infrastructure-icon text-2xl"></div>
+
+<div>
+
+<h3 class="font-bold">Growth Readiness Audit</h3>
+
+<div class="text-sm text-gray-500">One-time: $1,200</div>
+
+</div>
+
+</div>
+
+<p class="text-sm text-gray-600 mb-4">90-minute executive diagnostic + personalized report + 12-month infrastructure roadmap</p>
+
+<ul class="text-xs space-y-2 text-gray-700">
+
+<li>• 6-dimension growth assessment</li>
+
+<li>• Competitive positioning analysis</li>
+
+<li>• Strategic priorities identification</li>
+
+<li>• Actionable 12-month roadmap</li>
+
+</ul>
+
+</div>
+
+
+<div class="reveal soft-panel p-6">
+
+<div class="flex items-center gap-4 mb-4">
+
+<div class="infrastructure-icon text-2xl"></div>
+
+<div>
+
+<h3 class="font-bold">Investment-Ready Architecture</h3>
+
+<div class="text-sm text-gray-500">Starting at: $1,800</div>
+
+</div>
+
+</div>
+
+<p class="text-sm text-gray-600 mb-4">Complete strategic documentation for investors, lenders, or strategic partners</p>
+
+<ul class="text-xs space-y-2 text-gray-700">
+
+<li>• Investor pitch deck design</li>
+
+<li>• Financial model & projections</li>
+
+<li>• Executive summary & one-pager</li>
+
+<li>• Strategic positioning documents</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container mx-auto px-6 py-16">
+
+<div class="max-w-4xl mx-auto">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">Why Infrastructure, Not Campaigns</h2>
+
+<p class="mt-4 text-gray-600 text-lg">The fundamental difference between tactics and systematic advantage</p>
+
+</div>
+
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="reveal soft-panel p-8">
+
+<h3 class="font-bold text-lg mb-4">Traditional Marketing Approach</h3>
+
+<ul class="space-y-3 text-sm text-gray-700">
+
+<li class="flex items-start gap-3">
+
+<span style="color:#dc2626">✗</span>
+
+<span>One-time campaigns with temporary results</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:#dc2626">✗</span>
+
+<span>5-7 fragmented vendors, zero alignment</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:#dc2626">✗</span>
+
+<span>Execution without strategic foundation</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:#dc2626">✗</span>
+
+<span>Results dependent on constant spending</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:#dc2626">✗</span>
+
+<span>Generic tactics, no competitive advantage</span>
+
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="reveal soft-panel p-8" style="background: linear-gradient(180deg, rgba(198,156,109,0.05), rgba(248,200,216,0.05));">
+
+<h3 class="font-bold text-lg mb-4">Infrastructure-First Approach</h3>
+
+<ul class="space-y-3 text-sm text-gray-700">
+
+<li class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Systems that compound month over month</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Integrated platform, aligned execution</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Strategy and execution, fully integrated</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Assets that appreciate and multiply value</span>
+
+</li>
+
+<li class="flex items-start gap-3">
+
+<span style="color:var(--gold)">✓</span>
+
+<span>Systematic competitive moat that widens</span>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="mt-12 reveal soft-panel p-8 text-center">
+
+<p class="text-lg text-gray-700 mb-6">
+
+<strong>The Strategic Reality:</strong> Market leaders don't out-spend competitors. They out-system them. Infrastructure creates compounding advantage that tactics never will.
+
+</p>
+
+<a href="contact.html" class="inline-block px-8 py-4 rounded-md text-white font-semibold" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Start Building Your Infrastructure</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(248,200,216,0.03));">
+
+<div class="max-w-5xl mx-auto">
+
+<div class="text-center mb-12 reveal">
+
+<h2 class="serif text-4xl font-bold">How We Partner</h2>
+
+<p class="mt-4 text-gray-600 text-lg">A systematic process from discovery to market dominance</p>
+
+</div>
+
+
+
+<div class="grid md:grid-cols-4 gap-6">
+
+<div class="reveal text-center">
+
+<div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold text-white" style="background:linear-gradient(135deg,var(--gold),var(--light-brown));">1</div>
+
+<h3 class="font-semibold mb-2">Discovery Call</h3>
+
+<p class="text-sm text-gray-600">45-minute consultation to understand your business, goals, and growth readiness</p>
+
+</div>
+
+
+<div class="reveal text-center">
+
+<div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold text-white" style="background:linear-gradient(135deg,var(--gold),var(--light-brown));">2</div>
+
+<h3 class="font-semibold mb-2">Strategic Assessment</h3>
+
+<p class="text-sm text-gray-600">Comprehensive infrastructure audit identifying gaps and opportunities</p>
+
+</div>
+
+
+<div class="reveal text-center">
+
+<div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold text-white" style="background:linear-gradient(135deg,var(--gold),var(--light-brown));">3</div>
+
+<h3 class="font-semibold mb-2">Infrastructure Build</h3>
+
+<p class="text-sm text-gray-600">Systematic implementation of core systems aligned with your strategic priorities</p>
+
+</div>
+
+
+<div class="reveal text-center">
+
+<div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-2xl font-bold text-white" style="background:linear-gradient(135deg,var(--gold),var(--light-brown));">4</div>
+
+<h3 class="font-semibold mb-2">Growth & Optimization</h3>
+
+<p class="text-sm text-gray-600">Continuous measurement, refinement, and expansion of your competitive advantage</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="container mx-auto px-6 py-16">
+
+<div class="max-w-3xl mx-auto text-center reveal">
+
+<h2 class="serif text-4xl font-bold mb-6">Ready to Build Systematic Advantage?</h2>
+
+<p class="text-lg text-gray-700 mb-8">
+
+Schedule a complimentary Growth Readiness Consultation to discuss your market position, strategic objectives, and how infrastructure accelerates your trajectory from capable business to market leader.
+
+</p>
+
+<div class="flex gap-4 justify-center flex-wrap">
+
+<a href="contact.html" class="px-8 py-4 rounded-md serif text-white text-lg" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">Schedule Strategy Call</a>
+
+<a href="projects.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow text-lg dark:border-gray-700 dark:text-gray-300">View Success Stories</a>
+
+</div>
+
+
+<p class="mt-8 text-sm text-gray-500">Currently accepting select partnerships for Q1 2026 | Limited capacity to ensure quality execution</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer class="border-t mt-12 py-8">
+
+<div class="container mx-auto px-6">
+
+<div class="grid md:grid-cols-3 gap-8 mb-8">
+
+<div>
+
+<h4 class="font-semibold mb-3">Connect</h4>
+
+<div class="text-sm text-gray-600 space-y-2">
+
+<div>📧 monicadubesekhwela@gmail.com</div>
+
+<div>📞 +267 74310425</div>
+
+<div>📍 Gaborone, Botswana</div>
+
+<div><a href="https://www.linkedin.com/in/monica-dube-sekhwela/" class="underline">LinkedIn Profile</a></div>
+
+</div>
+
+</div>
+
+<div>
+
+<h4 class="font-semibold mb-3">Programs</h4>
+
+<div class="text-sm text-gray-600 space-y-2">
+
+<div><a href="#monthly">Monthly Infrastructure</a></div>
+
+<div><a href="#intensive">Strategic Intensives</a></div>
+
+<div><a href="#systems">Growth Systems</a></div>
+
+<div><a href="#african">For African Founders</a></div>
+
+</div>
+
+</div>
+
+<div>
+
+<h4 class="font-semibold mb-3">Recognition</h4>
+
+<div class="text-sm text-gray-600 space-y-2">
+
+<div>Tony Elumelu Foundation Alumni</div>
+
+<div>She Codes Africa Leader</div>
+
+<div>AWEP Cohort 6</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center text-sm text-gray-600 border-t pt-6">
+
+&copy; <span id="year"></span> Monica Dube-Sekhwela. All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// Tab Switching Functionality
+
+function switchTab(tabName) {
+
+// Hide all tab contents
+
+const contents = document.querySelectorAll('.tab-content');
+
+contents.forEach(content => content.classList.remove('active'));
+
+// Remove active class from all buttons
+
+const buttons = document.querySelectorAll('.tab-button');
+
+buttons.forEach(btn => btn.classList.remove('active'));
+
+// Show selected tab content
+
+document.getElementById(tabName).classList.add('active');
+
+// Add active class to clicked button
+
+if(event && event.target) {
+
+event.target.classList.add('active');
+
+}
+
+}
+
+
+// Reveal animations
+
+const observers = document.querySelectorAll('.reveal');
+
+const io = new IntersectionObserver((entries) => {
+
+entries.forEach(e => {
+
+if(e.isIntersecting) e.target.classList.add('visible');
+
+});
+
+}, {threshold:0.12});
+
+observers.forEach(n => io.observe(n));
+
+
+
+// Dark Mode Logic (Copied from index.html for consistency)
+
+const toggle = document.getElementById('darkModeToggle');
+
+const lightIcon = document.querySelector('.light-mode-icon');
+
+const darkIcon = document.querySelector('.dark-mode-icon');
+
+const html = document.documentElement;
+
+// Check local storage for preference, default to false (light)
+
+const storedPreference = localStorage.getItem('dark');
+
+const isDark = storedPreference === 'true';
+
+
+// Set initial state
+
+if (isDark) {
+
+html.classList.add('dark');
+
+lightIcon.classList.add('hidden');
+
+darkIcon.classList.remove('hidden');
+
+} else {
+
+lightIcon.classList.remove('hidden');
+
+darkIcon.classList.add('hidden');
+
+}
+
+
+toggle.addEventListener('click', () => {
+
+if (html.classList.contains('dark')) {
+
+// Switching to Light Mode
+
+html.classList.remove('dark');
+
+localStorage.setItem('dark', 'false');
+
+lightIcon.classList.remove('hidden');
+
+darkIcon.classList.add('hidden');
+
+} else {
+
+// Switching to Dark Mode
+
+html.classList.add('dark');
+
+localStorage.setItem('dark', 'true');
+
+lightIcon.classList.add('hidden');
+
+darkIcon.classList.remove('hidden');
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html> 

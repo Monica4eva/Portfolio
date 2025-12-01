@@ -9,189 +9,157 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* ------------------------------------------- */
+    /* GLOBAL THEME VARIABLES (Light Mode Defaults) */
+    /* ------------------------------------------- */
     :root{
       --gold:#C69C6D;
       --light-brown:#DCC4A1;
       --pink-glitter:#F8C8D8;
-      --muted:#6B5B4A;
       --unicaf-blue:#0066CC;
       --unicaf-orange:#FF6600;
+      
+      /* Light Mode */
+      --body-bg: #ffffff;
+      --text-color: #1f2937; /* Dark Gray/Near Black */
+      --muted: #6B5B4A; /* Readable dark muted text */
+      --soft-panel-bg: rgba(248,200,216,0.08), rgba(198,156,109,0.04);
+      --glitter-bg: linear-gradient(90deg, rgba(248,200,216,0.12), rgba(198,156,109,0.06));
+      --border-color: #e5e7eb;
+      --challenge-color: #ef4444; /* Red */
     }
-    body { font-family: 'Poppins', sans-serif; }
+
+    /* ------------------------------------------- */
+    /* DARK MODE VARIABLES (Applied via html.dark) */
+    /* ------------------------------------------- */
+    html.dark {
+      --body-bg: #1A202C; /* Deep Dark Blue */
+      --text-color: #E2E8F0; /* Light Gray */
+      --muted: #A0AEC0; /* Muted Dark Text */
+      --soft-panel-bg: #2D3748; /* Dark Card Background */
+      --glitter-bg: #2D3748; /* Dark Card Background */
+      --border-color: #3f4a5a;
+      --challenge-color: #f87171; /* Lighter Red */
+    }
+
+    /* ------------------------------------------- */
+    /* GLOBAL DARK MODE OVERRIDES (Ensure No White) */
+    /* ------------------------------------------- */
+    html.dark body { 
+        background: var(--body-bg); 
+        color: var(--text-color); 
+    }
+    html.dark .text-gray-700 { color: var(--text-color); }
+    html.dark .text-gray-600 { color: var(--muted); }
+    html.dark .text-gray-500 { color: var(--muted); }
+    html.dark header, html.dark footer, html.dark .border-t, html.dark .border-gray-200 {
+        border-color: var(--border-color); 
+    }
+    /* Sticky Nav Background */
+    html.dark .sticky-nav {
+        background-color: var(--body-bg);
+    }
+    
+    /* ------------------------------------------- */
+    /* BASE STYLING & COMPONENT STYLING */
+    /* ------------------------------------------- */
+    body { 
+        font-family: 'Poppins', sans-serif; 
+        background-color: var(--body-bg);
+        color: var(--text-color);
+        transition: background-color 0.3s, color 0.3s;
+    }
     .serif { font-family: 'Playfair Display', serif; }
+
+    /* Text Color Fallbacks (For elements without explicit Tailwind classes) */
+    .text-gray-700, .text-gray-600, .text-gray-500 {
+        color: var(--text-color); 
+        transition: color 0.3s;
+    }
+    .text-gray-600 { /* Slightly lighter for secondary text in light mode */
+        color: #4b5563; 
+    }
+    html.dark .text-gray-600 { color: var(--muted); }
+    
     .reveal { opacity:0; transform: translateY(10px); transition: all .6s ease; }
     .reveal.visible{ opacity:1; transform: translateY(0); }
-    .accent-underline { display:inline-block; height:6px; width:60px; background: linear-gradient(90deg,var(--gold),var(--light-brown)); border-radius:6px; vertical-align:middle;}
-    .glitter { background: linear-gradient(90deg, rgba(248,200,216,0.12), rgba(198,156,109,0.06)); border-radius:10px; padding:10px; }
-    .soft-panel { background: linear-gradient(135deg, rgba(248,200,216,0.08), rgba(198,156,109,0.04)); border: 1px solid rgba(198,156,109,0.2); }
+
+    .soft-panel { 
+        background: linear-gradient(135deg, var(--soft-panel-bg)); 
+        border: 1px solid rgba(198,156,109,0.2); 
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    html.dark .soft-panel {
+        background: var(--soft-panel-bg);
+        border-color: var(--border-color);
+    }
+
+    .glitter { 
+        background: var(--glitter-bg); 
+        border-radius:10px; padding:10px;
+        transition: background-color 0.3s;
+    }
+    html.dark .glitter {
+        background: var(--glitter-bg);
+    }
+    
     .card-hover { transition: all 0.3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(198,156,109,0.15); }
+    html.dark .card-hover:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    
     .metric-card { border-left: 4px solid var(--unicaf-blue); }
-    .nav-tab { padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.3s; }
-    .nav-tab.active { background: linear-gradient(90deg, var(--unicaf-blue), var(--unicaf-orange)); color: white; }
+    
+    .challenge-card { 
+        border-left: 4px solid var(--challenge-color); 
+        background: linear-gradient(135deg, rgba(239,68,68,0.05), rgba(239,68,68,0.02)); 
+    }
+    html.dark .challenge-card {
+        background: linear-gradient(135deg, rgba(248, 113, 113, 0.1), rgba(248, 113, 113, 0.05));
+    }
+    
+    .nav-tab { 
+        padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: all 0.3s; 
+        color: var(--text-color); 
+    }
+    .nav-tab.active { 
+        background: linear-gradient(90deg, var(--unicaf-blue), var(--unicaf-orange)); 
+        color: white !important; 
+    }
+    html.dark .nav-tab:not(.active) { background: #3c4456; color: var(--text-color); } 
+    html.dark .nav-tab:not(.active):hover { background: #485161; } 
+    
     .hidden-section { display: none; }
-    
-    /* Carousel Gallery Styles */
-    .carousel-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
+
+    /* Sticky Nav */
+    .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background-color: var(--body-bg);
+        transition: background-color 0.3s;
+        border-bottom: 1px solid var(--border-color);
     }
-    
-    .carousel-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 20px;
+    .dark-mode-toggle {
+        cursor: pointer;
+        transition: all 0.3s;
     }
-    
-    .carousel-track-container {
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0,102,204,0.15);
-      flex: 1;
-    }
-    
-    .carousel-track {
-      display: flex;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .carousel-slide {
-      min-width: 100%;
-      position: relative;
-    }
-    
-    .carousel-image-wrapper {
-      position: relative;
-      aspect-ratio: 16/10;
-      background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.1));
-      overflow: hidden;
-    }
-    
-    .carousel-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .carousel-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, rgba(0,102,204,0.08), rgba(255,102,0,0.08));
-      font-size: 4rem;
-    }
-    
-    .carousel-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.85) 100%);
-      padding: 30px;
-      color: white;
-    }
-    
-    .carousel-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      font-family: 'Playfair Display', serif;
-    }
-    
-    .carousel-description {
-      font-size: 0.95rem;
-      opacity: 0.95;
-      line-height: 1.5;
-    }
-    
-    .carousel-btn {
-      background: linear-gradient(135deg, var(--unicaf-blue), var(--unicaf-orange));
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,102,204,0.3);
-      flex-shrink: 0;
-    }
-    
-    .carousel-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(0,102,204,0.4);
-    }
-    
-    .carousel-btn:active {
-      transform: scale(0.95);
-    }
-    
-    .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    
-    .indicator {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(0,102,204,0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    
-    .indicator.active {
-      background: var(--unicaf-blue);
-      width: 32px;
-      border-radius: 6px;
-    }
-    
-    .indicator:hover {
-      background: var(--unicaf-orange);
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .carousel-wrapper {
-        gap: 10px;
-      }
-      
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
-      }
-      
-      .carousel-title {
-        font-size: 1.2rem;
-      }
-      
-      .carousel-description {
-        font-size: 0.85rem;
-      }
-      
-      .carousel-overlay {
-        padding: 20px;
-      }
+    .mobile-menu {
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: var(--body-bg);
+        border: 1px solid var(--border-color);
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 0.75rem;
     }
   </style>
 </head>
-<body>
+<body class="antialiased">
 
-  <!-- NAV -->
-  <header class="py-6">
+  <header class="py-6 sticky-nav">
     <nav class="container mx-auto px-6 flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
@@ -203,23 +171,47 @@
       </a>
 
       <ul class="hidden md:flex gap-8 items-center text-sm">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Insights</a></li>
-        <li><a href="services.html">Programs</a></li>
-        <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md">Start Your Transformation</a></li>
+        <li><a href="index.html" class="hover:text-gray-700 dark:hover:text-light-brown">Home</a></li>
+        <li><a href="blog.html" class="hover:text-gray-700 dark:hover:text-light-brown">Insights</a></li>
+        <li><a href="services.html" class="hover:text-gray-700 dark:hover:text-light-brown">Programs</a></li>
+        <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md hover:shadow-md transition-shadow">Start Your Transformation</a></li>
+        <li>
+            <button id="darkModeToggle" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                <span class="light-mode-icon">☀️</span>
+                <span class="dark-mode-icon hidden">🌙</span>
+            </button>
+        </li>
       </ul>
+      <button id="mobileMenuButton" class="md:hidden soft-panel p-2 rounded-md text-xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+      </button>
     </nav>
+    <div id="mobile-menu" class="hidden mobile-menu">
+        <ul class="flex flex-col gap-4 text-base">
+            <li><a href="index.html" class="block py-2">Home</a></li>
+            <li><a href="blog.html" class="block py-2">Insights</a></li>
+            <li><a href="services.html" class="block py-2">Programs</a></li>
+            <li><a href="contact.html" class="block py-2 px-3 soft-panel rounded-md text-center" style="color:var(--gold); border-color:var(--gold);">Start Your Transformation</a></li>
+            <li class="flex justify-center mt-2">
+                <button id="darkModeToggleMobile" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    <span class="light-mode-icon">☀️</span>
+                    <span class="dark-mode-icon hidden">🌙</span>
+                </button>
+            </li>
+        </ul>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="py-12" style="background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.05));">
+  <section class="py-12 md:py-16" style="background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.05));">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto text-center reveal">
         <div class="inline-block px-4 py-2 rounded-full soft-panel mb-4 text-sm font-semibold" style="color:var(--unicaf-blue)">
            PORTFOLIO CASE STUDY
         </div>
-        <h1 class="serif text-5xl font-bold mb-6">Building UNICAF's Ground Presence in Botswana</h1>
-        <p class="text-xl text-gray-700 mb-8">How I transformed a Cyprus-based educational brand into a trusted local partner through strategic events, community engagement, and authentic stakeholder relationships over 2 years</p>
+        <h1 class="serif text-4xl md:text-5xl font-bold mb-6">Building UNICAF's Ground Presence in Botswana</h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-8">How I transformed a Cyprus-based educational brand into a trusted local partner through strategic events, community engagement, and authentic stakeholder relationships over 2 years</p>
         
         <div class="flex flex-wrap justify-center gap-4 text-sm">
           <div class="soft-panel px-4 py-2 rounded-lg">
@@ -236,10 +228,9 @@
     </div>
   </section>
 
-  <!-- METRICS -->
   <section class="py-12">
     <div class="container mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
         <div class="soft-panel p-6 rounded-xl card-hover metric-card">
           <div class="text-5xl mb-3"></div>
           <div class="text-4xl font-bold serif mb-2" style="color:var(--unicaf-blue);">4</div>
@@ -271,10 +262,9 @@
     </div>
   </section>
 
-  <!-- NAVIGATION TABS -->
-  <section class="py-8">
-    <div class="container mx-auto px-6">
-      <div class="soft-panel p-2 rounded-xl flex flex-wrap gap-2 reveal">
+  <section class="py-4 md:py-8 sticky-nav">
+    <div class="container mx-auto px-6 overflow-x-auto">
+      <div class="soft-panel p-2 rounded-xl flex flex-wrap gap-2 reveal min-w-max">
         <button class="nav-tab active" onclick="showSection('overview')"> Overview</button>
         <button class="nav-tab" onclick="showSection('gallery')"> Gallery</button>
         <button class="nav-tab" onclick="showSection('events')"> Events</button>
@@ -284,11 +274,9 @@
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
   <main class="container mx-auto px-6 pb-12">
 
-    <!-- OVERVIEW SECTION -->
-    <section id="overview" class="content-section reveal">
+    <section id="overview" class="content-section reveal pt-8 md:pt-12">
       <h2 class="serif text-4xl font-bold mb-8">Project Overview</h2>
       
       <div class="glitter p-6 mb-8">
@@ -310,15 +298,13 @@
       </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="content-section hidden-section reveal">
+    <section id="gallery" class="content-section hidden-section reveal pt-8 md:pt-12">
       <h2 class="serif text-4xl font-bold mb-8 text-center"> Event Gallery</h2>
       
       <div class="glitter p-6 rounded-xl mb-8 text-center">
         <p class="text-gray-700 text-lg">A visual journey through UNICAF's community impact in Botswana—from student workshops to teacher development, women's empowerment brunch to the historic first sponsor walk in Palapye.</p>
       </div>
 
-      <!-- Revolving Carousel Gallery -->
       <div class="carousel-container">
         <div class="carousel-wrapper">
           <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">
@@ -327,7 +313,6 @@
           
           <div class="carousel-track-container">
             <div class="carousel-track" id="carouselTrack">
-              <!-- Slide 1 -->
               <div class="carousel-slide">
                 <div class="carousel-image-wrapper">
                   <div class="carousel-placeholder">
@@ -341,7 +326,6 @@
                 </div>
               </div>
 
-              <!-- Slide 2 -->
               <div class="carousel-slide">
                 <div class="carousel-image-wrapper">
                   <div class="carousel-placeholder">
@@ -355,7 +339,6 @@
                 </div>
               </div>
 
-              <!-- Slide 3 -->
               <div class="carousel-slide">
                 <div class="carousel-image-wrapper">
                   <div class="carousel-placeholder">
@@ -369,7 +352,6 @@
                 </div>
               </div>
 
-              <!-- Slide 4 -->
               <div class="carousel-slide">
                 <div class="carousel-image-wrapper">
                   <div class="carousel-placeholder">
@@ -383,7 +365,6 @@
                 </div>
               </div>
 
-              <!-- Slide 5 -->
               <div class="carousel-slide">
                 <div class="carousel-image-wrapper">
                   <div class="carousel-placeholder">
@@ -397,7 +378,6 @@
                 </div>
               </div>
 
-              <!-- Slide 6 -->
               <div class="carousel-slide">
                 <div class="carousel-image-wrapper">
                   <div class="carousel-placeholder">
@@ -418,7 +398,6 @@
           </button>
         </div>
 
-        <!-- Carousel Indicators -->
         <div class="carousel-indicators">
           <span class="indicator active" onclick="goToSlide(0)"></span>
           <span class="indicator" onclick="goToSlide(1)"></span>
@@ -438,8 +417,7 @@
       </div>
     </section>
 
-    <!-- EVENTS SECTION -->
-    <section id="events" class="content-section hidden-section reveal">
+    <section id="events" class="content-section hidden-section reveal pt-8 md:pt-12">
       <h2 class="serif text-4xl font-bold mb-8"> Event Portfolio</h2>
 
       <div class="space-y-8">
@@ -542,8 +520,7 @@
       </div>
     </section>
 
-    <!-- RESULTS SECTION -->
-    <section id="results" class="content-section hidden-section reveal">
+    <section id="results" class="content-section hidden-section reveal pt-8 md:pt-12">
       <h2 class="serif text-4xl font-bold mb-8"> Results & Impact</h2>
 
       <div class="glitter p-8 rounded-xl mb-8">
@@ -567,7 +544,7 @@
           <div class="soft-panel p-6 rounded-xl">
             <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">Local</div>
             <div class="font-semibold mb-2">Brand Trust Established</div>
-            <div class="text-sm text-gray-600">Cyprus-based company positioned as trusted local partner</div>
+            <div class="text-sm text-gray-600">Cyprus-based company positioned as trusted local education partner</div>
           </div>
         </div>
       </div>
@@ -581,8 +558,7 @@
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="content-section hidden-section reveal">
+    <section id="skills" class="content-section hidden-section reveal pt-8 md:pt-12">
       <h2 class="serif text-4xl font-bold mb-8"> Skills Demonstrated</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -678,7 +654,6 @@
 
   </main>
 
-  <!-- CTA SECTION -->
   <section class="py-16" style="background: linear-gradient(135deg, rgba(0,102,204,0.1), rgba(255,102,0,0.05));">
     <div class="container mx-auto px-6">
       <div class="max-w-4xl mx-auto text-center reveal">
@@ -725,6 +700,71 @@
 
   <script>
     document.getElementById('yearFooter').textContent = new Date().getFullYear();
+
+    // --- Dark Mode Logic ---
+    // Note: Replaced custom dark mode function with the robust version
+    const toggle = document.getElementById('darkModeToggle');
+    const toggleMobile = document.getElementById('darkModeToggleMobile');
+    const html = document.documentElement;
+    
+    // Check local storage for preference, default to false (light)
+    const storedPreference = localStorage.getItem('dark');
+    const isDark = storedPreference === 'true';
+
+    // Set initial state
+    if (isDark) {
+      html.classList.add('dark');
+    }
+
+    const updateIcons = (isDark) => {
+        const icons = document.querySelectorAll('.light-mode-icon, .dark-mode-icon');
+        icons.forEach(icon => {
+            if (icon.classList.contains('light-mode-icon')) {
+                icon.classList.toggle('hidden', isDark);
+            } else if (icon.classList.contains('dark-mode-icon')) {
+                icon.classList.toggle('hidden', !isDark);
+            }
+        });
+    };
+
+    updateIcons(isDark);
+
+    const handleToggle = () => {
+      const currentlyDark = html.classList.contains('dark');
+      if (currentlyDark) {
+        // Switching to Light Mode
+        html.classList.remove('dark');
+        localStorage.setItem('dark', 'false');
+        updateIcons(false);
+      } else {
+        // Switching to Dark Mode
+        html.classList.add('dark');
+        localStorage.setItem('dark', 'true');
+        updateIcons(true);
+      }
+    };
+
+    if (toggle) toggle.addEventListener('click', handleToggle);
+    if (toggleMobile) toggleMobile.addEventListener('click', handleToggle);
+    // --- End Dark Mode Logic ---
+
+
+    // --- Mobile Menu Logic ---
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+    // --- End Mobile Menu Logic ---
+
 
     // Reveal animation
     const revealEls = document.querySelectorAll('.reveal');
@@ -810,25 +850,52 @@
       if (targetSection) {
         targetSection.classList.remove('hidden-section');
         
-        // Scroll to section smoothly
+        // Scroll to the main content area smoothly
         setTimeout(() => {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       }
 
-      // Add active class to clicked tab
-      if (event && event.target) {
-        event.target.classList.add('active');
+      // Add active class to clicked tab (using event.target from the click event)
+      if (window.event && window.event.currentTarget) {
+          window.event.currentTarget.classList.add('active');
       }
     }
 
     // Initialize with overview visible
     window.addEventListener('DOMContentLoaded', () => {
+      // Initialize content section visibility (Default to Overview)
       const overview = document.getElementById('overview');
       if (overview) {
         overview.classList.remove('hidden-section');
+        
+        // Set initial active tab
+        const initialTab = document.querySelector(`.nav-tab[onclick*='overview']`);
+        if (initialTab) {
+            initialTab.classList.add('active');
+        }
       }
+      
+      // Initialize scroll reveal observer
+      const revealEls = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { 
+          if(e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold:0.12});
+      revealEls.forEach(n => io.observe(n));
+
+
+      // Set year in footer
+      document.getElementById('yearFooter').textContent = new Date().getFullYear();
+
+      // Initialize carousel
+      updateCarousel();
     });
+
   </script>
 </body>
 </html>
