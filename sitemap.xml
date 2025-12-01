@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://monicadubesekhwela.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://monicadubesekhwela.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monicadubesekhwela.com/services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monicadubesekhwela.com/projects</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
+```
+
+**Step 3:** Save the file
+
+**Step 4:** Deploy/upload to your hosting (same way you upload your other files)
+
+**Step 5:** Test by visiting `https://monicadubesekhwela.com/sitemap.xml` in your browser - you should see the XML code
+
+**Step 6:** Go back to Search Console and resubmit
+
+---
+
+## Where Should sitemap.xml Live?
+
+Put it in the **same folder as your index.html** (your root/public folder).
+
+Like this:
+```
+your-project/
+  ├── index.html
+  ├── about.html
+  ├── programs.html
+  ├── sitemap.xml  ← Add this here
+  └── css/
