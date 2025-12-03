@@ -46,6 +46,29 @@
             padding-top: 5rem; 
         }
 
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        article h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        article h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5rem;
+        }
+
+        article li {
+            margin-bottom: 0.75rem;
+        }
+
         .section-number {
             color: var(--color-primary-gold);
             font-size: 3rem;
@@ -53,6 +76,14 @@
             line-height: 1;
             margin-right: 1rem;
             opacity: 0.6;
+        }
+
+        #mobile-menu {
+            display: none;
+        }
+
+        #mobile-menu.active {
+            display: block;
         }
 
         @media (max-width: 640px) {
@@ -64,16 +95,16 @@
 </head>
 <body>
 
-    <nav class="fixed top-0 left-0 w-full z-20 bg-white/95 shadow-sm backdrop-blur-sm">
+    <nav class="fixed top-0 left-0 w-full z-20 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="text-lg sm:text-xl font-bold text-gold tracking-wide">Monica Dube-Sekhwela</a>
                 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-gray-700 hover:text-gold transition-colors">Home</a>
-                    <a href="services.html" class="text-sm font-medium text-gray-700 hover:text-gold transition-colors">Services</a>
-                    <a href="about.html" class="text-sm font-medium text-gray-700 hover:text-gold transition-colors">About</a>
-                    <a href="blog.html" class="text-sm font-medium text-gold border-b-2 border-gold pb-1">Blog</a>
+                    <a href="#" class="text-sm font-medium text-gray-700 hover:text-gold transition-colors">Home</a>
+                    <a href="#" class="text-sm font-medium text-gray-700 hover:text-gold transition-colors">Services</a>
+                    <a href="#" class="text-sm font-medium text-gray-700 hover:text-gold transition-colors">About</a>
+                    <a href="#" class="text-sm font-medium text-gold border-b-2 border-gold pb-1">Blog</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
@@ -84,14 +115,13 @@
                     </button>
                 </div>
             </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-4 py-3 space-y-3">
-                <a href="#" class="block text-sm font-medium text-gray-700 hover:text-gold transition-colors">Home</a>
-                <a href="#" class="block text-sm font-medium text-gray-700 hover:text-gold transition-colors">Services</a>
-                <a href="#" class="block text-sm font-medium text-gray-700 hover:text-gold transition-colors">About</a>
-                <a href="#" class="block text-sm font-medium text-gold">Blog</a>
+            <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+                <div class="px-4 py-3 space-y-3">
+                    <a href="#" class="block text-sm font-medium text-gray-700 hover:text-gold transition-colors">Home</a>
+                    <a href="#" class="block text-sm font-medium text-gray-700 hover:text-gold transition-colors">Services</a>
+                    <a href="#" class="block text-sm font-medium text-gray-700 hover:text-gold transition-colors">About</a>
+                    <a href="#" class="block text-sm font-medium text-gold">Blog</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -102,33 +132,33 @@
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-gray-900 px-4">
                 Why Global Strategies Fail in African Markets (And What Works Instead)
             </h1>
-            <p class="mt-4 text-gray-600 text-sm sm:text-base">By Monica Dube-Sekhwela</p>
+            <p class="mt-4 text-gray-600 text-sm sm:text-base">By Monica Dube-Sekhwela | December 3 2025</p>
         </header>
 
         <figure class="mb-10">
             <img 
                 src="linkedin cover.jpeg" 
-                alt="Banner image illustrating infrastructure versus tactics in business growth" 
+                alt="Banner illustrating the gap between global strategies and local African market realities" 
                 class="blog-image w-full"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x400/F8E8E8/D4AF37?text=Infrastructure+vs.+Tactics+Banner';"
+                onerror="this.onerror=null; this.src='https://placehold.co/800x400/F8E8E8/D4AF37?text=Global+vs+Local+Strategies';"
             >
             <figcaption class="text-center text-sm sm:text-base mt-2 text-gray-500 font-medium">
              The clash between rigid global assumptions and dynamic local contextual realities.
             </figcaption>
         </figure>
 
-        <article class="prose max-w-none text-base sm:text-lg leading-relaxed">
-            <p class="text-lg sm:text-xl text-gray-700 mb-6">The African market represents one of the world's most significant growth opportunities, yet its complexity is routinely underestimated. A marketing strategy that succeeds in London or New York will likely underperform when applied to Johannesburg, Lagos, or Nairobi without substantial adaptation.</p>
+        <article class="prose max-w-none">
+            <p>The African market represents one of the world's most significant growth opportunities, yet its complexity is routinely underestimated. A marketing strategy that succeeds in London or New York will likely underperform when applied to Johannesburg, Lagos, or Nairobi without substantial adaptation.</p>
 
-            <p class="mb-6">The primary challenge is not insufficient consumer demand, but rather a fundamental strategic oversight: implementing global tactics without understanding the local contextual realities that determine success or failure.</p>
+            <p>The primary challenge is not insufficient consumer demand, but rather a fundamental strategic oversight: implementing global tactics without understanding the local contextual realities that determine success or failure.</p>
             
-            <p class="mb-6">For international brands seeking market entry or African entrepreneurs aiming for pan-continental expansion, success requires moving from standardized assumptions to contextual adaptation.</p>
+            <p>For international brands seeking market entry or African entrepreneurs aiming for pan-continental expansion, success requires moving from standardized assumptions to contextual adaptation.</p>
 
             <div class="separator"></div>
 
-            <h2 class="text-2xl sm:text-3xl font-semibold text-gold mt-12 mb-6">Understanding the African Market Context</h2>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-gold">Understanding the African Market Context</h2>
 
-            <p class="mb-6">Africa comprises 54 countries with diverse economies, regulatory environments, and consumer behaviors. According to the World Bank, the continent's GDP exceeded $3 trillion in 2023, with a population of over 1.4 billion people expected to double by 2050. This demographic dividend presents enormous opportunity, but only for organizations that understand three critical contextual realities.</p>
+            <p>Africa comprises 54 countries with diverse economies, regulatory environments, and consumer behaviors. The continent's population exceeds 1.4 billion people, expected to double by 2050. As of February 2025, around 646 million Africans use the internet, with projections reaching over 1.1 billion users by 2029. This demographic dividend presents enormous opportunity, but only for organizations that understand three critical contextual realities.</p>
 
             <div class="flex items-start mt-10 mb-8">
                 <span class="section-number">1</span>
@@ -137,20 +167,21 @@
                 </div>
             </div>
 
-            <p class="mb-6">In Western markets, mobile-first design is a preference driven by convenience. In African markets, mobile access is frequently the only point of digital entry, shaped significantly by cost constraints.</p>
+            <p>In Western markets, mobile-first design is a preference driven by convenience. In African markets, mobile access is frequently the only point of digital entry, shaped significantly by cost constraints.</p>
 
-            <p class="mb-6">The GSMA Intelligence reports that sub-Saharan Africa had 515 million unique mobile subscribers as of 2023, representing 46 percent of the population. However, mobile internet penetration lags at approximately 28 percent, constrained by affordability and infrastructure limitations. Data costs in Africa remain among the highest globally relative to income levels.</p>
+            <p>As of 2025, 416 million people use mobile internet in Africa, representing a 28% penetration rate. However, almost 75% of the population remain unconnected, with 960 million people (64% of the population) not using mobile internet despite living in areas where coverage is available. This usage gap reflects key barriers including device affordability and digital skills.</p>
+
+            <p>As of early January 2024, around 74 percent of web traffic in Africa was via mobile phones, over 14 percentage points higher than the world average. In some countries like Sudan, mobile web usage reaches as high as 92 percent. This is partly due to mobile connections being cheaper and not requiring the infrastructure needed for traditional desktop PCs with fixed-line internet connections.</p>
             
             <figure class="my-10 text-center">
-                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=1000&h=600&fit=crop" alt="Mobile phone usage in Africa" class="blog-image mx-auto" />
                 <figcaption class="text-xs sm:text-sm mt-3 text-gray-500 px-4">
                     Mobile connectivity defines digital access across the continent, requiring lightweight, data-efficient solutions.
                 </figcaption>
             </figure>
 
-            <p class="mb-6">Marketing campaigns that depend on video content, complex landing pages, or high-resolution graphics risk excluding substantial segments of the addressable market. A McKinsey analysis found that data costs can consume up to 10 percent of monthly income for low-income consumers, making data efficiency a critical design principle.</p>
+            <p>As of 2023, Africa's fixed broadband access rates are the highest globally, averaging 14.8% of gross national income, far exceeding recommended levels. Data costs can consume up to 10 percent of monthly income for low-income consumers, making data efficiency a critical design principle.</p>
 
-            <p class="mb-6">Successful organizations optimize for low-bandwidth environments through compressed images, prioritized text content, and alternative service delivery channels. USSD (Unstructured Supplementary Service Data) technology, which functions on basic mobile phones without internet connectivity, processes billions of transactions annually across Africa. WhatsApp Business has emerged as a primary customer service channel, leveraging its data-efficient messaging to serve markets where traditional web platforms prove inaccessible.</p>
+            <p>Successful organizations optimize for low-bandwidth environments through compressed images, prioritized text content, and alternative service delivery channels. USSD (Unstructured Supplementary Service Data) technology, which functions on basic mobile phones without internet connectivity, processes billions of transactions annually across Africa. WhatsApp Business has emerged as a primary customer service channel, leveraging its data-efficient messaging to serve markets where traditional web platforms prove inaccessible.</p>
 
             <div class="separator"></div>
 
@@ -161,13 +192,11 @@
                 </div>
             </div>
 
-            <p class="mb-6">Consumer trust dynamics differ substantially from mature Western markets. In environments experiencing rapid economic transformation and regulatory fragmentation, trust in traditional advertising and foreign institutions operates at lower baseline levels.</p>
+            <p>Consumer trust dynamics differ substantially from mature Western markets. In environments experiencing rapid economic transformation and regulatory fragmentation, trust in traditional advertising and foreign institutions operates at lower baseline levels.</p>
 
-            <p class="mb-6">Research published by Nielsen demonstrates that 84 percent of consumers in Africa trust recommendations from people they know, making word-of-mouth the most influential form of advertising. This trust network extends beyond immediate family to include community leaders, religious figures, and local influencers who command authentic credibility.</p>
+            <p>Research demonstrates that 84 percent of consumers in Africa trust recommendations from people they know, making word-of-mouth the most influential form of advertising. This trust network extends beyond immediate family to include community leaders, religious figures, and local influencers who command authentic credibility.</p>
 
-            <p class="mb-6">Harvard Business Review analysis of African market entry strategies found that successful companies invest heavily in building local partnerships before scaling marketing spend. Unilever's expansion across Africa, for example, relied on recruiting local entrepreneurs as micro-distributors who brought established community relationships and cultural knowledge.</p>
-
-            <p class="mb-6">Market entry strategies centered solely on paid media acquisition typically underperform. Sustainable growth requires authentic community engagement, partnerships with local ambassadors who provide immediate credibility, and distribution models that leverage existing trust networks rather than attempting to build them through advertising alone.</p>
+            <p>Market entry strategies centered solely on paid media acquisition typically underperform. Sustainable growth requires authentic community engagement, partnerships with local ambassadors who provide immediate credibility, and distribution models that leverage existing trust networks rather than attempting to build them through advertising alone.</p>
 
             <div class="separator"></div>
 
@@ -178,88 +207,93 @@
                 </div>
             </div>
 
-            <p class="mb-6">Traditional e-commerce and SaaS business models assume unified banking infrastructure and widespread credit card adoption. African markets operate under fundamentally different financial architectures, defined by mobile money dominance and significant unbanked populations.</p>
+            <p>Traditional e-commerce and SaaS business models assume unified banking infrastructure and widespread credit card adoption. African markets operate under fundamentally different financial architectures, defined by mobile money dominance and significant unbanked populations.</p>
 
-            <p class="mb-6">The World Bank's Global Findex Database indicates that approximately 43 percent of adults in sub-Saharan Africa remain unbanked. However, mobile money accounts have revolutionized financial access. According to GSMA, sub-Saharan Africa processed over $700 billion in mobile money transactions during 2023, with over 186 million active accounts.</p>
+            <p>As of 2023, approximately 350 million adults in Sub-Saharan Africa remain unbanked, representing substantial potential for alternative financial services. However, mobile money accounts have revolutionized financial access. As of 2025, there are 1.1 billion registered mobile money accounts in Sub-Saharan Africa, with Africa now responsible for around 74% of all mobile money transactions globally.</p>
 
             <figure class="my-10 text-center">
-                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1000&h=600&fit=crop" alt="Mobile money transaction" class="blog-image mx-auto" />
                 <figcaption class="text-xs sm:text-sm mt-3 text-gray-500 px-4">
                     Mobile money platforms have become the primary financial infrastructure across African markets.
                 </figcaption>
             </figure>
             
-            <p class="mb-6">Kenya's M-Pesa, launched in 2007, now processes over 11 billion transactions annually and serves more than 50 million customers across seven countries. Similar platforms including MTN Mobile Money, Orange Money, and Airtel Money dominate their respective markets. Yet regulatory frameworks vary significantly by country, creating complexity for organizations seeking multi-market operations.</p>
+            <p>Kenya's M-Pesa reached over 66.2 million customers by March 2024, processing billions of transactions annually. By March 31, 2025, Kenya recorded 45.4 million mobile money users, representing 86.6% penetration of the population. Similar platforms including MTN Mobile Money, Orange Money, and Airtel Money dominate their respective markets.</p>
 
-            <p class="mb-6">Payment integration requires platform-agnostic infrastructure that accommodates multiple mobile money providers, understands local regulatory requirements, and designs conversion flows optimized for mobile money user behavior. Companies that mandate credit card payments effectively exclude the majority of potential customers.</p>
+            <p>Sub-Saharan Africa holds nearly 50% of global mobile money accounts and drives $2.5 billion in daily transactions. Yet regulatory frameworks vary significantly by country, creating complexity for organizations seeking multi-market operations.</p>
 
-            <div class="separator"></div>
-
-            <h2 class="text-2xl sm:text-3xl font-semibold text-gold mt-12 mb-6">Strategic Framework: Context-First Execution</h2>
-
-            <p class="mb-6">The strategic imperative for global organizations is not to compromise on operational excellence, but to design systems that maintain global standards while accommodating local infrastructure realities.</p>
-
-            <p class="mb-6">This requires three foundational approaches:</p>
-
-            <p class="mb-4 ml-4 sm:ml-6">First, hyper-localized content that extends beyond translation to incorporate local narrative structures, proverbs, and cultural references. African storytelling traditions emphasize community, collective experience, and oral narrative structures that differ from Western linear communication styles.</p>
-
-            <p class="mb-4 ml-4 sm:ml-6">Second, investment in local talent with deep market knowledge. Understanding informal market dynamics, navigating regulatory complexity, and interpreting cultural nuances requires teams embedded in local contexts rather than expatriate executives applying headquarters assumptions.</p>
-
-            <p class="mb-6 ml-4 sm:ml-6">Third, phased market entry that tests hypotheses in controlled environments before committing to scale. Successful organizations launch in a single city or country, gather real usage data, calibrate pricing and positioning based on actual consumer behavior, and only then expand to adjacent markets.</p>
+            <p>Payment integration requires platform-agnostic infrastructure that accommodates multiple mobile money providers, understands local regulatory requirements, and designs conversion flows optimized for mobile money user behavior. Companies that mandate credit card payments effectively exclude the majority of potential customers.</p>
 
             <div class="separator"></div>
 
-            <h2 class="text-2xl sm:text-3xl font-semibold text-gold mt-12 mb-6">The Path Forward</h2>
+            <h2 class="text-2xl sm:text-3xl font-semibold text-gold">Strategic Framework: Context-First Execution</h2>
 
-            <p class="mb-6">African markets reward organizations that approach expansion with intellectual humility, contextual understanding, and operational discipline. The opportunity is substantial, but success requires abandoning the assumption that strategies effective in London will translate directly to Lagos.</p>
+            <p>The strategic imperative for global organizations is not to compromise on operational excellence, but to design systems that maintain global standards while accommodating local infrastructure realities.</p>
 
-            <p class="mb-6">Market leaders build for the infrastructure that exists, not the infrastructure they wish existed. They invest in understanding trust networks rather than attempting to bypass them through advertising spend. They design payment systems that serve customers as they are, not as strategic plans imagine them to be.</p>
+            <p>This requires three foundational approaches:</p>
 
-            <p class="mb-6">The organizations that succeed in African markets are those that recognize context as opportunity rather than obstacle, and adaptation as strategic advantage rather than compromise.</p>
+            <p class="ml-4 sm:ml-6">First, hyper-localized content that extends beyond translation to incorporate local narrative structures, proverbs, and cultural references. African storytelling traditions emphasize community, collective experience, and oral narrative structures that differ from Western linear communication styles.</p>
+
+            <p class="ml-4 sm:ml-6">Second, investment in local talent with deep market knowledge. Understanding informal market dynamics, navigating regulatory complexity, and interpreting cultural nuances requires teams embedded in local contexts rather than expatriate executives applying headquarters assumptions.</p>
+
+            <p class="ml-4 sm:ml-6">Third, phased market entry that tests hypotheses in controlled environments before committing to scale. Successful organizations launch in a single city or country, gather real usage data, calibrate pricing and positioning based on actual consumer behavior, and only then expand to adjacent markets.</p>
+
+            <div class="separator"></div>
+
+            <h2 class="text-2xl sm:text-3xl font-semibold text-gold">The Path Forward</h2>
+
+            <p>African markets reward organizations that approach expansion with intellectual humility, contextual understanding, and operational discipline. In 2024, mobile technologies and services generated 7.7% of Africa's GDP, amounting to $220 billion in economic value. By 2030, this contribution is projected to reach $270 billion, driven by the expansion of digital technologies including 4G, 5G, and AI.</p>
+
+            <p>The opportunity is substantial, but success requires abandoning the assumption that strategies effective in London will translate directly to Lagos. Market leaders build for the infrastructure that exists, not the infrastructure they wish existed. They invest in understanding trust networks rather than attempting to bypass them through advertising spend. They design payment systems that serve customers as they are, not as strategic plans imagine them to be.</p>
+
+            <p>The organizations that succeed in African markets are those that recognize context as opportunity rather than obstacle, and adaptation as strategic advantage rather than compromise.</p>
         </article>
+
+        <section class="mt-12 pt-6 border-t border-gray-200 text-xs sm:text-sm">
+            <h3 class="font-semibold text-gray-900 mb-4">Verifiable Sources (2025)</h3>
+            <div class="space-y-3 text-gray-600 leading-relaxed">
+                <p><a href="https://www.statista.com/statistics/1124283/internet-penetration-in-africa-by-country/" target="_blank" class="text-blue-600 hover:underline">Statista (February 2025): Around 646 million internet users in Africa, expected to reach 1.1 billion by 2029. 74% of web traffic via mobile phones.</a></p>
+                <p><a href="https://datareportal.com/reports/digital-2025-south-africa" target="_blank" class="text-blue-600 hover:underline">DataReportal (March 2025): Digital 2025: South Africa shows 78.9% internet penetration with strong mobile-first usage patterns.</a></p>
+                <p><a href="https://www.gsma.com/solutions-and-impact/connectivity-for-good/mobile-economy/africa/" target="_blank" class="text-blue-600 hover:underline">GSMA Mobile Economy Africa 2025: 416 million mobile internet users (28% penetration); 960 million unconnected; mobile generated $220 billion (7.7% of GDP).</a></p>
+                <p><a href="https://www.brookings.edu/articles/accelerating-digital-inclusion-in-africa/" target="_blank" class="text-blue-600 hover:underline">Brookings Institution (May 2025): Africa's fixed broadband costs average 14.8% of gross national income; 37% of Africans use internet.</a></p>
+                <p><a href="https://www.marketdataforecast.com/market-reports/africa-mobile-money-market" target="_blank" class="text-blue-600 hover:underline">Market Data Forecast (August 2025): 350 million unbanked adults in Sub-Saharan Africa; over 709 million mobile money accounts.</a></p>
+                <p><a href="https://techafricanews.com/2025/04/10/1-1-billion-mobile-money-accounts-whats-driving-africas-mobile-money-revolution/" target="_blank" class="text-blue-600 hover:underline">TechAfrica News (April 2025): 1.1 billion mobile money accounts in Sub-Saharan Africa; 74% of global mobile money transactions.</a></p>
+                <p><a href="https://www.statista.com/statistics/1139190/m-pesa-customer-numbers/" target="_blank" class="text-blue-600 hover:underline">Statista (May 2024): M-Pesa reached 66.2 million customers by March 2024.</a></p>
+                <p><a href="https://www.techinafrica.com/top-mobile-money-platforms-for-african-marketplaces/" target="_blank" class="text-blue-600 hover:underline">Tech In Africa (October 2025): Kenya recorded 45.4 million mobile money users (86.6% penetration) by March 2025.</a></p>
+                <p><a href="https://sbs-software.com/insights/digital-wallets-in-africa/" target="_blank" class="text-blue-600 hover:underline">SBS Software (January 2025): Sub-Saharan Africa drives $2.5 billion in daily mobile money transactions; 156 mobile money services.</a></p>
+                <p><a href="https://ourworldindata.org/mobile-money-why-it-matters" target="_blank" class="text-blue-600 hover:underline">Our World in Data (July 2025): Mobile money has lifted households out of poverty and enabled financial inclusion across Africa.</a></p>
+            </div>
+        </section>
 
         <section class="mt-16 pt-8 border-t border-gray-200">
             <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-8 text-center">Continue Reading</h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <a href="tacticinfra.html" class="shadow-md hover:shadow-xl transition duration-300 rounded-lg flex flex-col overflow-hidden bg-white group">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop" alt="Strategy" class="w-full h-40 sm:h-48 object-cover group-hover:opacity-90 transition-opacity duration-300" />
+                <a href="infrastructure-vs-tactics.html" class="shadow-md hover:shadow-xl transition duration-300 rounded-lg flex flex-col overflow-hidden bg-white group">
+                    <img src="https://placehold.co/800x600/D4AF37/FFF?text=Strategy" alt="Strategy" class="w-full h-40 sm:h-48 object-cover group-hover:opacity-90 transition-opacity duration-300" />
                     <div class="p-5 sm:p-6 flex flex-col flex-grow">
                         <h3 class="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-gold transition-colors leading-snug">Infrastructure Over Tactics: Building Sustainable Growth</h3>
                         <p class="mt-3 text-sm text-gray-600 flex-grow">Why strategic infrastructure compounds while tactical wins fade, and how to build systems that scale.</p>
-                        <div class="mt-4 text-xs text-gray-400">5 min read</div>
+                        <div class="mt-4 text-xs text-gray-400">December 3 2025 • 7 min read</div>
                     </div>
                 </a>
                 
-                <a href="scalingstrategicpartnership.html" class="shadow-md hover:shadow-xl transition duration-300 rounded-lg flex flex-col overflow-hidden bg-white group">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=500&fit=crop" alt="Partnerships" class="w-full h-40 sm:h-48 object-cover group-hover:opacity-90 transition-opacity duration-300" />
+                <a href="strategic-partnerships.html" class="shadow-md hover:shadow-xl transition duration-300 rounded-lg flex flex-col overflow-hidden bg-white group">
+                    <img src="https://placehold.co/800x600/F8E8E8/D4AF37?text=Partnerships" alt="Partnerships" class="w-full h-40 sm:h-48 object-cover group-hover:opacity-90 transition-opacity duration-300" />
                     <div class="p-5 sm:p-6 flex flex-col flex-grow">
                         <h3 class="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-gold transition-colors leading-snug">Strategic Partnerships for Cross-Border Scale</h3>
                         <p class="mt-3 text-sm text-gray-600 flex-grow">How African businesses leverage strategic alliances to achieve regional reach without multiplying operational costs.</p>
-                        <div class="mt-4 text-xs text-gray-400">6 min read</div>
+                        <div class="mt-4 text-xs text-gray-400">December 3 2025 • 8 min read</div>
                     </div>
                 </a>
 
-                <a href="zerobudget.html" class="shadow-md hover:shadow-xl transition duration-300 rounded-lg flex flex-col overflow-hidden bg-white group sm:col-span-2 lg:col-span-1">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=500&fit=crop" alt="Low budget growth" class="w-full h-40 sm:h-48 object-cover group-hover:opacity-90 transition-opacity duration-300" />
+                <a href="zero-budget-infrastructure.html" class="shadow-md hover:shadow-xl transition duration-300 rounded-lg flex flex-col overflow-hidden bg-white group sm:col-span-2 lg:col-span-1">
+                    <img src="https://placehold.co/800x600/FFFDD0/2C3E50?text=Low+budget+growth" alt="Low budget growth" class="w-full h-40 sm:h-48 object-cover group-hover:opacity-90 transition-opacity duration-300" />
                     <div class="p-5 sm:p-6 flex flex-col flex-grow">
                         <h3 class="text-lg sm:text-xl font-semibold text-gray-900 group-hover:text-gold transition-colors leading-snug">Building Authority Without Budget</h3>
                         <p class="mt-3 text-sm text-gray-600 flex-grow">Three high-impact, low-cost strategies early-stage companies can implement to establish market credibility.</p>
-                        <div class="mt-4 text-xs text-gray-400">4 min read</div>
+                        <div class="mt-4 text-xs text-gray-400">December 3 2025 • 5 min read</div>
                     </div>
                 </a>
-            </div>
-        </section>
-
-        <section class="mt-12 pt-6 border-t border-gray-200 text-xs sm:text-sm">
-            <h3 class="font-semibold text-gray-900 mb-4">References</h3>
-            <div class="space-y-3 text-gray-600 leading-relaxed">
-                <p>World Bank (2024). Africa's Pulse: An analysis of issues shaping Africa's economic future.</p>
-                <p>GSMA Intelligence (2023). The Mobile Economy: Sub-Saharan Africa Report.</p>
-                <p>McKinsey & Company (2023). Africas digital opportunity: Emerging paths to sustainable and inclusive growth.</p>
-                <p>Nielsen (2023). Consumer Trust in Advertising: African Markets Analysis.</p>
-                <p>World Bank Global Findex Database (2023). Financial Inclusion, Digital Payments, and Resilience.</p>
-                <p>Harvard Business Review (2022). Winning in Africa's Consumer Market.</p>
             </div>
         </section>
 
@@ -267,23 +301,17 @@
             <h3 class="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-900 mb-4">Ready to Enter African Markets?</h3>
             <p class="mb-6 text-gray-700 text-sm sm:text-base max-w-2xl mx-auto">The foundation of successful pan-African expansion is a context-first strategy that minimizes risk while maximizing local market acceptance.</p>
             <a href="https://monicadubesekhwela.com/strategicaudit.html" target="_blank" class="inline-block px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold text-white bg-gold rounded-full hover:bg-yellow-600 transition duration-300 shadow-lg transform hover:scale-105">
-                Schedule Your Consultation
+                Schedule Your Consultation →
             </a>
         </div>
     </div>
-
-    <footer class="bg-gray-50 border-t border-gray-200 mt-16 py-8">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-600">
-            <p>© 2025 Monica Dube-Sekhwela. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script>
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('active');
         });
     </script>
 </body>
