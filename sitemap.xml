@@ -16,6 +16,21 @@
     <loc>https://monicadubesekhwela.com/projects</loc>
     <priority>0.8</priority>
   </url>
+  <loc>https://monicadubesekhwela.com/tacticinfra</loc>
+    <priority>0.8</priority>
+  </url>
+<loc>https://monicadubesekhwela.com/zerobudget</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/globalstrategies</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/scalingstrategicpartnership</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/strategicaudit</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
 ```
 
