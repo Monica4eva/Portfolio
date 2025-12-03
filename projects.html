@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects Case Studies | Monica Dube-Sekhwela</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --muted:#6B5B4A;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f8f4f0;
       color: #3d2b1f;
+    }
+    .serif {
+      font-family: 'Playfair Display', serif;
     }
     h2, h3 {
       font-family: 'Playfair Display', serif;
@@ -32,66 +40,83 @@
         transform: translateY(0);
       }
     }
+    .reveal{ opacity:0; transform: translateY(10px); transition: all .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
   </style>
 </head>
 <body class="text-[#3d2b1f]">
 
   <!-- Header -->
-  <header class="py-6 bg-[#fffaf5] shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-      <h1 class="text-2xl font-semibold text-[#b37a4c]">Monica Dube-Sekhwela</h1>
-      <nav class="space-x-6 hidden md:block">
-        <a href="index.html" class="hover:text-[#d4a373]">Home</a>
-        <a href="about.html" class="hover:text-[#d4a373]">About</a>
-        <a href="services.html" class="hover:text-[#d4a373]">Services</a>
-        <a href="projects.html" class="text-[#d4a373] font-semibold">Projects</a>
-        <a href="blog.html" class="hover:text-[#d4a373]">Blog</a>
-        <a href="contact.html" class="hover:text-[#d4a373]">Contact</a>
-      </nav>
-    </div>
+  <header class="py-6 bg-white shadow-md">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white font-bold">M</span>
+        </div>
+        <div class="serif font-bold text-gray-900">Monica Dube-Sekhwela</div>
+      </a>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="index.html" class="text-gray-900 hover:text-gold transition-colors">Home</a></li>
+        <li><a href="about.html" class="text-gray-900 hover:text-gold transition-colors">About</a></li>
+        <li><a href="services.html" class="text-gray-900 hover:text-gold transition-colors">Services</a></li>
+        <li><a href="projects.html" class="text-gold font-semibold border-b-2 border-gold pb-1">Projects</a></li>
+        <li><a href="blog.html" class="text-gray-900 hover:text-gold transition-colors">Blog</a></li>
+        <li><a href="contact.html" class="px-3 py-2 bg-light-brown text-gray-900 rounded-md transition-colors hover:opacity-80">Contact</a></li>
+      </ul>
+      
+      <div class="md:hidden">
+        <button id="mobile-menu-toggle" class="text-gray-900 p-2 rounded-md hover:text-gold focus:outline-none" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </nav>
   </header>
 
   <!-- Hero -->
   <section class="text-center py-16 bg-gradient-to-b from-[#fffaf5] to-[#f8f4f0] fade-in">
-    <h2 class="text-4xl font-bold text-[#3d2b1f] mb-4"> Projects | Case Studies</h2>
+    <h2 class="text-4xl font-bold text-[#3d2b1f] mb-4">Projects | Case Studies</h2>
     <p class="text-[#6b4b36] text-lg max-w-2xl mx-auto">A collection of brand, strategy, and digital creations crafted to inspire transformation and authentic connection.</p>
   </section>
 
   <!-- Projects Grid -->
   <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10">
     
-    
     <!-- Project 1 -->
     <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
-  <img src="portfolioicon.png" alt="Afro Adventurers Project" class="w-full object-cover h-64">
-  <div class="p-6">
-    <h3 class="text-2xl font-semibold mb-2">Afro Adventurers</h3>
-    <p class="text-[#5b4636] mb-4">Complete brand identity and digital presence for an adventure tourism company showcasing African experiences and cultural exploration.</p>
-    <a href="afroadventurer.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
-  </div>
-</div>
+      <img src="portfolioicon.png" alt="Afro Adventurers Project" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2">Afro Adventurers</h3>
+        <p class="text-[#5b4636] mb-4">Complete brand identity and digital presence for an adventure tourism company showcasing African experiences and cultural exploration.</p>
+        <a href="afroadventurer.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
+      </div>
+    </div>
+
     <!-- Project 2 -->
- <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
-  <img src="portfolioicon.png" alt="Afro Adventurers Project" class="w-full object-cover h-64">
-  <div class="p-6">
-    <h3 class="text-2xl font-semibold mb-2">Professional Development Business</h3>
-    <p class="text-[#5b4636] mb-4"> Personal Development & Professional Training (Botswana) </p>
-    <a href="professionaldevelopment.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
-  </div>
-</div>
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
+      <img src="portfolioicon.png" alt="Professional Development" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2">Professional Development Business</h3>
+        <p class="text-[#5b4636] mb-4">Personal Development & Professional Training (Botswana)</p>
+        <a href="professionaldevelopment.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
+      </div>
+    </div>
+
     <!-- Project 3 -->
     <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
-      <img src="portfolioicon.png" alt="Project 4" class="w-full object-cover h-64">
+      <img src="portfolioicon.png" alt="B Agro Crop" class="w-full object-cover h-64">
       <div class="p-6">
         <h3 class="text-2xl font-semibold mb-2">B Agro Crop</h3>
-        <p class="text-[#5b4636] mb-4">Fractional CMO for aaward winning agro processing woman led business in Ghana</p>
+        <p class="text-[#5b4636] mb-4">Fractional CMO for award winning agro processing woman led business in Ghana</p>
         <a href="bagrocrop.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
       </div>
     </div>
 
     <!-- Project 4 -->
     <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
-      <img src="portfolioicon.png" alt="Project 5" class="w-full object-cover h-64">
+      <img src="portfolioicon.png" alt="UNICAF Case Study" class="w-full object-cover h-64">
       <div class="p-6">
         <h3 class="text-2xl font-semibold mb-2">UNICAF Case Study</h3>
         <p class="text-[#5b4636] mb-4">Helped a startup clarify its vision, define KPIs, and attract investors through data-driven storytelling.</p>
@@ -100,37 +125,44 @@
     </div>
 
     <!-- Project 5 -->
-    <!-- Replace Project 6 (Creative Direction & Photography) with this: -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
+      <img src="portfolioicon.png" alt="Government Innovation Initiative" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2">Digital Transformation for Government Innovation</h3>
+        <p class="text-[#5b4636] mb-4">Complete digital transformation for a national citizen engagement platform—from stalled concept to launch-ready platform with partnership offers in 6 weeks.</p>
+        <a href="governmentinitiative.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
+      </div>
+    </div>
 
-<div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
-  <img src="portfolioicon.png" alt="Government Innovation Initiative" class="w-full object-cover h-64">
-  <div class="p-6">
-    <h3 class="text-2xl font-semibold mb-2">Digital Transformation for Government Innovation</h3>
-    <p class="text-[#5b4636] mb-4">Complete digital transformation for a national citizen engagement platform—from stalled concept to launch-ready platform with partnership offers in 6 weeks.</p>
-    <a href="governmentinitiative.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
-  </div>
-</div>
+    <!-- Project 6 -->
+    <div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
+      <img src="portfolioicon.png" alt="Strategic Partnership Project" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2">Strategic Partnership Initiative</h3>
+        <p class="text-[#5b4636] mb-4">Building strategic alliances and market positioning for sustainable business growth.</p>
+        <a href="scalingstrategicpartnership.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
+      </div>
+    </div>
 
-<div class="bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in">
-  <img src="portfolioicon.png" alt="Government Innovation Initiative" class="w-full object-cover h-64">
-  <div class="p-6">
-    <h3 class="text-2xl font-semibold mb-2">Digital Transformation for Government Innovation</h3>
-    <p class="text-[#5b4636] mb-4">Complete digital transformation for a national citizen engagement platform—from stalled concept to launch-ready platform with partnership offers in 6 weeks.</p>
-    <a href="governmentinitiative.html" class="text-white bg-[#b37a4c] hover:bg-[#d4a373] px-5 py-2 rounded-full transition">View Project</a>
-  </div>
-</div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-[#fffaf5] py-10 mt-10 text-center text-[#6b4b36] border-t border-[#ecd8c8]">
-    <p>&copy; 2025 Monica Dube-Sekhwela | All Rights Reserved.</p>
-  </footer>
-
-</body>
-</html>
+  <footer class="border-t py-8 bg-white">
+    <div class="container mx-auto px-6 text-center text-sm text-gray-600">
+      &copy; <span id="y4"></span> Monica Dube-Sekhwela | All Rights Reserved.
     </div>
   </footer>
 
   <script>
     document.getElementById('y4').textContent = new Date().getFullYear();
+
+    // Intersection Observer for Reveal Effect
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.12});
+    revealEls.forEach(n => io.observe(n));
   </script>
 
+</body>
+</html>
