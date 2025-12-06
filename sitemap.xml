@@ -31,7 +31,25 @@
   <loc>https://monicadubesekhwela.com/strategicaudit</loc>
     <priority>0.8</priority>
   </url>
-</urlset>
+  <loc>https://monicadubesekhwela.com/calendyquiz</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/afroadventur</loc>
+    <priority>0.8</priority>
+    <//url> 
+    <loc>https://monicadubesekhwela.com/unicaf</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/governmentinitiative</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/bagrocrop</loc>
+    <priority>0.8</priority>
+  </url>
+  <loc>https://monicadubesekhwela.com/professionaldevelopment</loc>
+    <priority>0.8</priority>
+  </url>
+ </urlset>
 ```
 
 **Step 3:** Save the file
