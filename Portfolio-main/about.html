@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | Monica Dube-Sekhwela | Strategic Growth Architect</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com">
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --muted:#6B5B4A;
+
+      --dark-bg:#1A202C;
+      --dark-card:#2D3748;
+      --dark-text:#E2E8F0;
+      --dark-muted:#A0AEC0;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#ffffff;
+      color:#111827;
+      overflow-x:hidden; /* prevents sideways overflow */
+    }
+    .serif{ font-family:'Playfair Display',serif; }
+
+    /* Dark mode basics */
+    html.dark body{ background:var(--dark-bg); color:var(--dark-text); }
+    html.dark .text-gray-700{ color:var(--dark-text) !important; }
+    html.dark .text-gray-600, html.dark .text-gray-500{ color:var(--dark-muted) !important; }
+    html.dark header, html.dark footer, html.dark .border-t, html.dark .border-b{ border-color:#3f4a5a !important; }
+    html.dark .bg-gray-50{ background:#2D3748 !important; }
+
+    .soft-panel{
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.06);
+      border: 1px solid rgba(17,24,39,.06);
+      backdrop-filter: blur(6px);
+    }
+    html.dark .soft-panel{
+      background: var(--dark-card);
+      border-color:#3f4a5a;
+    }
+
+    .badge{
+      display:inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border:1px solid var(--light-brown);
+      background: linear-gradient(90deg, rgba(198,156,109,0.15), rgba(220,196,161,0.12));
+    }
+    html.dark .badge{ background: rgba(198,156,109,0.22); }
+
+    .stat-number{
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg,var(--gold),var(--light-brown));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+
+    .card-hover{
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .card-hover:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 18px 55px rgba(16,24,40,.12);
+    }
+    html.dark .card-hover:hover{
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- HEADER -->
+  <header class="py-6 border-b">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center"
+             style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white text-xl">M</span>
+        </div>
+        <div>
+          <div class="serif font-bold text-lg">Monica Dube-Sekhwela</div>
+          <div class="text-xs text-gray-500">Strategic Growth Architect</div>
+        </div>
+      </a>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="about.html" class="hover:text-gray-700 dark:hover:text-gray-300">About</a></li>
+        <li><a href="blog.html" class="hover:text-gray-700 dark:hover:text-gray-300">Insights</a></li>
+        <li><a href="projects.html" class="hover:text-gray-700 dark:hover:text-gray-300">Case Studies</a></li>
+        <li><a href="services.html" class="hover:text-gray-700 dark:hover:text-gray-300">Programs</a></li>
+        <li><a href="contact.html" class="px-4 py-2 rounded-md soft-panel hover:shadow">Let's Talk Growth</a></li>
+
+        <li>
+          <button id="darkModeToggle" class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            <span class="light-mode-icon">☀️</span>
+            <span class="dark-mode-icon hidden">🌙</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="mb-4">
+          <span class="badge">Strategic Growth Architect</span>
+          <span class="badge ml-2">8+ Years Impact</span>
+        </div>
+
+        <h1 class="serif text-5xl md:text-6xl font-extrabold leading-tight">
+          The Journey Behind <span style="color:var(--gold)">Strategic Growth</span>
+        </h1>
+
+        <p class="mt-6 text-xl text-gray-700 max-w-3xl mx-auto">
+          I help businesses achieve measurable growth through strategic positioning, not hustle.
+          Here’s how necessity became my greatest teacher.
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT IMAGE + QUICK PROFILE -->
+    <section class="container mx-auto px-6 pb-10">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+
+        <!-- Image -->
+        <div class="lg:col-span-1">
+          <div class="soft-panel p-3">
+            <img src="aboutpic.png" alt="Monica Dube-Sekhwela"
+                 class="w-full rounded-xl object-cover">
+          </div>
+        </div>
+
+        <!-- Quick Profile -->
+        <div class="lg:col-span-2 space-y-6">
+          <div class="soft-panel p-8">
+            <h2 class="serif text-3xl font-bold mb-4">Quick Profile</h2>
+            <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div><strong>Experience:</strong> 8+ Years</div>
+              <div><strong>Markets Served:</strong> Africa · North America · Europe</div>
+              <div><strong>Specialization:</strong> Digital Transformation & Partnership Development</div>
+              <div><strong>Recognition:</strong> Tony Elumelu Foundation Alumni</div>
+              <div><strong>Education:</strong> Executive Master's in Entrepreneurship</div>
+              <div><strong>Positioning:</strong> Strategy + Systems + Execution</div>
+            </div>
+
+            <div class="mt-6">
+              <h3 class="font-semibold mb-3">Core Competencies</h3>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="badge">Strategic Positioning</span>
+                <span class="badge">Executive Advisory</span>
+                <span class="badge">Community-Led Growth</span>
+                <span class="badge">Partnership Development</span>
+                <span class="badge">Digital Transformation</span>
+                <span class="badge">Revenue Growth</span>
+                <span class="badge">Brand Strategy</span>
+                <span class="badge">Market Intelligence</span>
+                <span class="badge">Stakeholder Engagement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="container mx-auto px-6 py-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="soft-panel p-10">
+          <h2 class="serif text-3xl font-bold mb-6">From Survival to Strategy</h2>
+
+          <div class="space-y-5 text-gray-700 text-lg leading-relaxed">
+            <p>I became a single mother at 22 in the first year of my business degree. My entire childhood, I'd sometimes seen my parents briefly on weekday evenings between their work shifts. I looked at my newborn daughter and made a promise: she wouldn't grow up wondering where her mother was.</p>
+            <p>So I taught myself digital marketing in borrowed hours: late nights while my baby slept, early mornings before she woke. I started with babysitting to make ends meet, then moved into makeup artistry, hair salon management, and restaurant management. Each role taught me something different about customers, operations, and what makes businesses actually work. At 26, I launched Social Connect, a digital marketing consultancy built on everything I'd learned in those survival years.</p>
+            <p>One early client trusted me to market a large-scale cultural event, something that had never been positioned this way in Botswana before. I had no prior production experience. But I secured eight corporate sponsors, national media coverage, and celebrity participation by positioning an overlooked market as a premium opportunity.</p>
+            <p>Strategic clarity opened those doors, not experience, not budget, not connections. That moment revealed something I've built my entire practice around: strategic positioning opens doors that hustle alone never will. Clarity beats effort. Every time.</p>
+            <p>As I've grown and learned, Social Connect has expanded its services beyond digital marketing. What began as a survival strategy has become a platform for building legacy.</p>
+            <p><strong>I work with people who are legacy-driven.</strong> Builders whose past didn't break them but refined them. They've experienced failure, disappointment, and pressure, yet still rise. For them, business isn't just about income; it's about impact, ownership, and building something that lasts beyond them.</p>
+            <p>These leaders understand the value of advice, the importance of implementation, and the necessity of investing in strategy and systems. They know paying for expertise accelerates growth. And many of them share something else in common: their children are watching.</p>
+            <p>The most powerful way to teach the next generation is to live the lesson. Building your dreams is not selfish; it is leadership. It shows what commitment, clarity, and courage look like in real time.</p>
+            <p>This belief is why my work is focused on Africa: partnering with African businesses and with global organizations ready to grow within the continent. Africa is not an emerging market. It is a growth frontier. And the leaders who will win here are those who build clarity, credibility, and infrastructure that compounds.</p>
+</div>
+</div>
+</div>
+</section>
+
+    <!-- IMPACT METRICS (DECORATED TABLE SECTION UNDER STORY) -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-6xl mx-auto">
+        <div class="soft-panel p-10" style="background: linear-gradient(135deg, rgba(198,156,109,0.08), rgba(220,196,161,0.06));">
+          <div class="text-center mb-10">
+            <h2 class="serif text-4xl font-bold">Impact Metrics</h2>
+            <p class="mt-3 text-gray-600 text-lg">A snapshot of measurable outcomes connected to specific case studies.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="soft-panel p-6 card-hover">
+              <div class="stat-number">150%+</div>
+              <p class="mt-2 text-sm text-gray-600">
+                Achieved over <strong>150% engagement growth</strong> through strategic content positioning and organic visibility,
+                outperforming direct competitors in the agri-sector.
+              </p>
+              <a href="bagrocrop.html" class="inline-block mt-3 text-sm underline">View B Agro Crop case study →</a>
+            </div>
+
+            <div class="soft-panel p-6 card-hover">
+              <div class="stat-number">35%</div>
+              <p class="mt-2 text-sm text-gray-600">
+                Led to a <strong>35% enrollment increase</strong> for an international education institution through partnership-led
+                growth strategy and data-informed campaigns.
+              </p>
+              <a href="unicaf.html" class="inline-block mt-3 text-sm underline">View UNICAF Botswana case study →</a>
+            </div>
+
+            <div class="soft-panel p-6 card-hover">
+              <div class="stat-number">44%</div>
+              <p class="mt-2 text-sm text-gray-600">
+                Grew a Pan-African diaspora community by <strong>44%</strong>, driving high engagement, reach, and event activation.
+              </p>
+              <a href="afroadventurer.html" class="inline-block mt-3 text-sm underline">View Afro Adventurer case study →</a>
+            </div>
+
+            <div class="soft-panel p-6 card-hover">
+              <div class="stat-number">5-Fig</div>
+              <p class="mt-2 text-sm text-gray-600">
+                Secured multiple <strong>5-figure corporate and institutional contracts</strong> across education, hospitality,
+                and professional services through strategic positioning.
+              </p>
+              <a href="professionaldevelopment.html" class="inline-block mt-3 text-sm underline">View selected projects →</a>
+            </div>
+
+            <div class="soft-panel p-6 card-hover md:col-span-2">
+              <div class="stat-number">500+</div>
+              <p class="mt-2 text-sm text-gray-600">
+                Delivered <strong>8 professional development workshops</strong>, reaching over <strong>500 entrepreneurs and professionals</strong>
+                across structured capacity-building programs.
+              </p>
+              <a href="professionaldevelopment.html" class="inline-block mt-3 text-sm underline">View Professional Development work →</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGIC GROWTH FRAMEWORK -->
+    <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(220,196,161,0.03));">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="serif text-4xl font-bold">Strategic Growth Framework</h2>
+          <p class="mt-4 text-gray-600 text-lg">My proven methodology that transforms vision into measurable market impact</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="soft-panel p-6 card-hover">
+            <div class="text-4xl font-bold serif mb-3" style="color:var(--gold)">01</div>
+            <h4 class="font-semibold text-lg mb-2">Strategic Discovery</h4>
+            <p class="text-sm text-gray-600">Deep market intelligence and competitive analysis to identify untapped opportunities and positioning gaps</p>
+          </div>
+
+          <div class="soft-panel p-6 card-hover">
+            <div class="text-4xl font-bold serif mb-3" style="color:var(--gold)">02</div>
+            <h4 class="font-semibold text-lg mb-2">Market Positioning</h4>
+            <p class="text-sm text-gray-600">Translate vision into clear value propositions that resonate with stakeholders, partners, and target markets</p>
+          </div>
+
+          <div class="soft-panel p-6 card-hover">
+            <div class="text-4xl font-bold serif mb-3" style="color:var(--gold)">03</div>
+            <h4 class="font-semibold text-lg mb-2">Infrastructure Build</h4>
+            <p class="text-sm text-gray-600">Develop complete credibility foundation: digital presence, marketing systems, and partnership materials</p>
+          </div>
+
+          <div class="soft-panel p-6 card-hover">
+            <div class="text-4xl font-bold serif mb-3" style="color:var(--gold)">04</div>
+            <h4 class="font-semibold text-lg mb-2">Growth Execution</h4>
+            <p class="text-sm text-gray-600">Strategic market entry and continuous optimization that delivers measurable revenue and partnership results</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STRATEGIC ADVANTAGE -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="serif text-4xl font-bold">The Strategic Advantage</h2>
+          <p class="mt-4 text-gray-600 text-lg">What differentiates strategic growth from traditional marketing</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="soft-panel p-8 card-hover">
+            <h3 class="font-bold text-lg mb-3">C-Suite Thinking + Execution</h3>
+            <p class="text-gray-600 text-sm">I combine executive-level strategic thinking with hands-on execution. From pitch decks to partnerships, I deliver the full spectrum without the typical agency overhead.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h3 class="font-bold text-lg mb-3">Tech-Enabled Marketing</h3>
+            <p class="text-gray-600 text-sm">Front-end development skills (HTML, CSS, JavaScript, React) + marketing automation expertise = I build what I design. No developer bottlenecks, faster time to market.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h3 class="font-bold text-lg mb-3">Cross-Sector Intelligence</h3>
+            <p class="text-gray-600 text-sm">Education, AgriTech, hospitality, professional services—I bring pattern recognition across industries. I see opportunities others miss because I've solved similar challenges in different contexts.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h3 class="font-bold text-lg mb-3">Data-Driven Decisions</h3>
+            <p class="text-sm text-gray-600">Every strategy is backed by market intelligence and analytics. I optimize performance continuously based on real metrics, not assumptions.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h3 class="font-bold text-lg mb-3">Partnership DNA</h3>
+            <p class="text-sm text-gray-600">Proven track record securing corporate, government, and institutional partnerships. I don't just market, I open strategic doors that create revenue multipliers.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h3 class="font-bold text-lg mb-3">Entrepreneurial Operator</h3>
+            <p class="text-sm text-gray-600">Tony Elumelu Foundation grant recipient and NGO founder. I understand the founder journey from the inside, the cash flow challenges, the pivot decisions, the scaling anxieties.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERATING PRINCIPLES -->
+    <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(220,196,161,0.03));">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="serif text-4xl font-bold">Operating Principles</h2>
+          <p class="mt-4 text-gray-600 text-lg">The beliefs that guide every strategic decision</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="soft-panel p-8 card-hover">
+            <h4 class="font-semibold text-lg mb-3">Strategic Clarity Over Busy Work</h4>
+            <p class="text-sm text-gray-600">I prioritize actions that move the revenue needle. Not every marketing tactic deserves your time, focus on what creates measurable business outcomes.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h4 class="font-semibold text-lg mb-3">Structure Enables Creativity</h4>
+            <p class="text-sm text-gray-600">You don't have to choose between authentic creativity and professional systems. Structure doesn't kill innovation—it makes creativity sustainable and scalable.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h4 class="font-semibold text-lg mb-3">African Context, Global Standards</h4>
+            <p class="text-sm text-gray-600">I build with African market realities in mind while maintaining international quality standards. Local insight with global reach creates competitive advantage.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h4 class="font-semibold text-lg mb-3">Legacy Over Hustle Culture</h4>
+            <p class="text-sm text-gray-600">I'm building sustainable businesses for myself and my clients—not glorifying burnout. Your children are watching. Show them success doesn't require sacrifice.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h4 class="font-semibold text-lg mb-3">Partnership-First Growth</h4>
+            <p class="text-sm text-gray-600">Strategic partnerships create revenue multipliers that paid ads never will. I prioritize relationships that compound value over transactional marketing tactics.</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover">
+            <h4 class="font-semibold text-lg mb-3">Execution Beats Perfection</h4>
+            <p class="text-sm text-gray-600">A good strategy implemented today beats a perfect strategy delayed six months. I help clients move from analysis paralysis to market momentum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO I PARTNER WITH -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="serif text-4xl font-bold">Who I Partner With</h2>
+          <p class="mt-4 text-gray-600 text-lg">I'm selective about partnerships because strategic fit determines results</p>
+        </div>
+
+        <div class="soft-panel p-10">
+          <p class="text-gray-700 mb-6 text-lg">My best results come from working with purpose-driven entrepreneurs and institutions who:</p>
+
+          <div class="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3"><span style="color:var(--gold)" class="text-lg">✓</span>Are ready to invest in strategic positioning, not just tactical marketing</li>
+              <li class="flex items-start gap-3"><span style="color:var(--gold)" class="text-lg">✓</span>Have powerful vision but struggle to articulate it clearly to stakeholders</li>
+              <li class="flex items-start gap-3"><span style="color:var(--gold)" class="text-lg">✓</span>Are scaling from startup to growth stage and need professional infrastructure</li>
+            </ul>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3"><span style="color:var(--gold)" class="text-lg">✓</span>Value collaboration and are willing to implement strategic guidance</li>
+              <li class="flex items-start gap-3"><span style="color:var(--gold)" class="text-lg">✓</span>Are building for sustainable impact, not just short-term revenue</li>
+              <li class="flex items-start gap-3"><span style="color:var(--gold)" class="text-lg">✓</span>Want structure without losing their authentic mission and values</li>
+            </ul>
+          </div>
+
+          <div class="mt-10 text-center">
+            <p class="text-gray-600 mb-4">If that describes you, let's explore what strategic growth looks like for your business.</p>
+            <a href="contact.html" class="inline-block px-8 py-4 rounded-md serif text-white"
+               style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">
+              Schedule Strategy Call
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEYOND CLIENT WORK -->
+    <section class="container mx-auto px-6 py-16" style="background: linear-gradient(180deg, rgba(198,156,109,0.03), rgba(220,196,161,0.03));">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="serif text-4xl font-bold mb-6">Beyond Client Work</h2>
+        <p class="text-lg text-gray-700 mb-10">I'm actively contributing to ecosystems that create opportunities for emerging entrepreneurs</p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="soft-panel p-8 card-hover text-left">
+            <h3 class="font-semibold mb-3">Mentorship</h3>
+            <p class="text-sm text-gray-600">Business & Marketing Mentor at Henkolu Group and TEFConnect, guiding emerging entrepreneurs across Africa</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover text-left">
+            <h3 class="font-semibold mb-3">Social Impact</h3>
+            <p class="text-sm text-gray-600">Founder & Director of Strength of a Young Mother (STAYM), supporting education access and entrepreneurship training</p>
+          </div>
+
+          <div class="soft-panel p-8 card-hover text-left">
+            <h3 class="font-semibold mb-3">Community Building</h3>
+            <p class="text-sm text-gray-600">Co-Marketing Manager for Afro Adventurers, connecting Pan-African travelers and professionals globally</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="container mx-auto px-6 py-20">
+      <div class="max-w-3xl mx-auto text-center soft-panel p-12">
+        <h2 class="serif text-4xl font-bold mb-6">Let's Talk Strategic Growth</h2>
+        <p class="text-lg text-gray-700 mb-8">
+          I work with leaders who are ready to invest in strategic positioning that creates measurable business outcomes—not just marketing activity.
+        </p>
+
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="contact.html" class="px-8 py-4 rounded-md serif text-white"
+             style="background:linear-gradient(90deg,var(--gold),var(--light-brown));">
+            Schedule Strategy Call
+          </a>
+          <a href="projects.html" class="px-8 py-4 rounded-md border-2 border-gray-200 hover:shadow dark:border-gray-700 dark:text-gray-300">
+            View Case Studies
+          </a>
+        </div>
+
+        <p class="mt-8 text-sm text-gray-500"><strong>I am accepting select clients for Q1 2026 strategic engagements</strong></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t mt-12 py-10">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+
+        <div>
+          <h4 class="font-semibold mb-3">Connect</h4>
+          <div class="text-sm text-gray-600 space-y-2">
+            <div>Email: hello@swiftsocialconnect.com</div>
+            <div><a href="https://www.linkedin.com/in/monica-dube-sekhwela/" class="underline">LinkedIn Profile</a></div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Services</h4>
+          <div class="text-sm text-gray-600 space-y-2">
+            <div><a href="services.html">Transformation Programs</a></div>
+            <div><a href="projects.html">Case Studies</a></div>
+            <div><a href="blog.html">Strategic Insights</a></div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-3">Recognition</h4>
+          <div class="text-sm text-gray-600 space-y-2">
+            <div>Tony Elumelu Foundation Alumni</div>
+            <div>ForbesBLK</div>
+            <div>AWEC Cohort 6</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center text-sm text-gray-600 border-t pt-6">
+        &copy; <span id="year"></span> Monica Dube-Sekhwela. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark mode toggle (kept consistent with your other pages)
+    const toggle = document.getElementById('darkModeToggle');
+    const lightIcon = document.querySelector('.light-mode-icon');
+    const darkIcon = document.querySelector('.dark-mode-icon');
+    const html = document.documentElement;
+
+    const storedPreference = localStorage.getItem('dark');
+    const isDark = storedPreference === 'true';
+
+    if (isDark) {
+      html.classList.add('dark');
+      lightIcon.classList.add('hidden');
+      darkIcon.classList.remove('hidden');
+    } else {
+      lightIcon.classList.remove('hidden');
+      darkIcon.classList.add('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.setItem('dark', 'false');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('dark', 'true');
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>

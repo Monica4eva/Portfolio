@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Growth Infrastructure Audit | Monica Dube-Sekhwela</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#c9a961',
+                        secondary: '#8b7355',
+                        accent: '#e6d5b8',
+                        gold: '#c9a961',
+                        bronze: '#8b7355'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --gold: #c9a961;
+            --light-brown: #8b7355;
+            --muted: #9a8c7e;
+        }
+        body { font-family: 'DM Sans', sans-serif; }
+        .serif { font-family: 'Cormorant Garamond', serif; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,97,0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(201,169,97,0); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        .fade-in { animation: fadeInUp 0.6s ease both; }
+        .fade-in-delay { animation: fadeInUp 0.6s ease 0.2s both; }
+        .fade-in-delay-2 { animation: fadeInUp 0.6s ease 0.4s both; }
+
+        .gold-shimmer {
+            background: linear-gradient(90deg, #c9a961, #e6d5b8, #c9a961);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+
+        .beginner-card {
+            background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 50%, #fef6e8 100%);
+            border: 2px solid #c9a961;
+        }
+
+        .cta-gold {
+            background: linear-gradient(135deg, #c9a961, #8b7355);
+            transition: all 0.3s ease;
+        }
+        .cta-gold:hover {
+            background: linear-gradient(135deg, #8b7355, #c9a961);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201,169,97,0.4);
+        }
+
+        .option-btn {
+            transition: all 0.2s ease;
+            border: 2px solid #e5e7eb;
+        }
+        .option-btn:hover {
+            border-color: #c9a961;
+            background: #fffbf5;
+            transform: translateX(4px);
+        }
+        .option-btn.selected {
+            border-color: #c9a961;
+            background: linear-gradient(135deg, #fffbf5, #fff3e0);
+        }
+
+        .beginner-path {
+            background: linear-gradient(135deg, #2d1b00 0%, #4a2c00 50%, #2d1b00 100%);
+        }
+
+        .star-icon::before { content: "✦"; }
+
+        .score-ring {
+            background: conic-gradient(#c9a961 var(--score-deg), #f3e8d0 0deg);
+        }
+
+        .encouragement-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 min-h-screen">
+
+    <!-- Header -->
+    <header class="py-6 border-b border-amber-100">
+        <nav class="container mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,#c9a961,#8b7355);">
+                    <span class="serif text-white text-xl font-bold">M</span>
+                </div>
+                <div>
+                    <div class="serif font-bold text-lg text-gray-900">Monica Dube-Sekhwela</div>
+                    <div class="text-xs" style="color:var(--muted)">Strategic Growth Architect</div>
+                </div>
+            </a>
+            <ul class="hidden md:flex gap-8 items-center text-sm text-gray-600">
+                <li><a href="about.html" class="hover:text-amber-700 transition-colors">About</a></li>
+                <li><a href="blog.html" class="hover:text-amber-700 transition-colors">Insights</a></li>
+                <li><a href="services.html" class="hover:text-amber-700 transition-colors">Programs</a></li>
+                <li><a href="contact.html" class="px-4 py-2 rounded-lg border border-amber-600 text-amber-700 hover:bg-amber-50 transition-colors">Let's Talk Growth</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="app" class="container mx-auto px-4 py-10 max-w-4xl">
+
+        <!-- ===================== CONTACT FORM ===================== -->
+        <div id="contactForm" class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 fade-in">
+            <div class="text-center mb-10">
+                <div class="inline-block px-4 py-1.5 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium mb-4">
+                    ✦ 2026 Growth Audit
+                </div>
+                <h1 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                    Where Does Your Business<br/>Really Stand?
+                </h1>
+                <p class="text-lg text-gray-500 mb-6 max-w-xl mx-auto">
+                    15 strategic questions. 5 minutes. Your complete infrastructure scorecard — whether you're just starting out or ready to scale.
+                </p>
+                <div class="inline-block bg-gradient-to-r from-amber-50 to-orange-50 px-6 py-3 rounded-xl border border-amber-200">
+                    <p class="text-gray-700 text-sm">
+                        <strong>Works for all stages</strong> — from idea stage to established business
+                    </p>
+                </div>
+            </div>
+
+            <form id="contactFormElement" class="space-y-5">
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
+                        <input type="text" id="firstName" required
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none transition-colors"
+                            placeholder="Your first name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
+                        <input type="text" id="lastName" required
+                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none transition-colors"
+                            placeholder="Your last name">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                    <input type="email" id="email" required
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none transition-colors"
+                        placeholder="you@company.com">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Business / Idea Name</label>
+                    <input type="text" id="company"
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none transition-colors"
+                        placeholder="Or just say 'Still figuring it out'">
+                    <p class="text-xs text-gray-400 mt-1">No business yet? That's completely fine — leave it blank or describe your idea.</p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Where are you right now?</label>
+                    <select id="role"
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none transition-colors bg-white">
+                        <option value="">Select your current stage</option>
+                        <option value="idea">I have a business idea but haven't started yet</option>
+                        <option value="starting">Just started — no clients or revenue yet</option>
+                        <option value="early">Early stage — a few clients, figuring things out</option>
+                        <option value="Founder/CEO">Established founder/CEO with consistent revenue</option>
+                        <option value="Marketing Director">Marketing Director / Growth Lead</option>
+                        <option value="Executive">Executive / C-Suite</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">What is your business's current annual revenue?</label>
+                    <select id="annualRevenue"
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-amber-500 focus:outline-none transition-colors bg-white">
+                        <option value="">Select your revenue range</option>
+                        <option value="none">No revenue yet — pre-launch or idea stage</option>
+                        <option value="under5k">Under $5,000 / year (just getting started)</option>
+                        <option value="5k-25k">$5,000 – $25,000 / year</option>
+                        <option value="25k-100k">$25,000 – $100,000 / year</option>
+                        <option value="100k-500k">$100,000 – $500,000 / year</option>
+                        <option value="500k+">$500,000+ / year</option>
+                    </select>
+                    <p class="text-xs text-gray-400 mt-1">No revenue yet? That's perfectly fine — this helps us personalise your results.</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-5">
+                    <h3 class="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                        <span class="text-amber-600">✦</span> You'll discover:
+                    </h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-start gap-2"><span class="text-amber-600 font-bold mt-0.5">✓</span><span>Your Infrastructure Maturity Score across 7 pillars</span></div>
+                        <div class="flex items-start gap-2"><span class="text-amber-600 font-bold mt-0.5">✓</span><span>Top 3 priority gaps with specific next actions</span></div>
+                        <div class="flex items-start gap-2"><span class="text-amber-600 font-bold mt-0.5">✓</span><span>A personalised path forward — whether you're a beginner or scaling</span></div>
+                        <div class="flex items-start gap-2"><span class="text-amber-600 font-bold mt-0.5">✓</span><span>Custom 90-Day Action Plan to build your competitive edge</span></div>
+                    </div>
+                </div>
+
+                <button type="submit"
+                    class="cta-gold w-full text-white py-4 rounded-xl font-bold text-lg shadow-lg">
+                    Start My Infrastructure Audit →
+                </button>
+
+                <p class="text-xs text-gray-400 text-center">
+                    Your information is secure. No spam, ever. Unsubscribe anytime.
+                </p>
+            </form>
+        </div>
+
+        <!-- ===================== ASSESSMENT ===================== -->
+        <div id="assessment" class="hidden">
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-semibold text-gray-500">
+                        Question <span id="currentQ">1</span> of <span id="totalQ">15</span>
+                    </span>
+                    <span class="text-sm font-semibold text-amber-700">
+                        <span id="progressPercent">7</span>% Complete
+                    </span>
+                </div>
+                <div class="h-2 bg-amber-100 rounded-full overflow-hidden">
+                    <div id="progressBar" class="h-full cta-gold transition-all duration-500" style="width: 7%"></div>
+                </div>
+            </div>
+
+            <div id="questionCard" class="bg-white rounded-3xl shadow-xl p-6 md:p-10 mb-6 fade-in">
+                <div class="mb-6">
+                    <span id="pillarBadge" class="inline-block px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-xs font-semibold mb-4 border border-amber-200"></span>
+                    <h2 id="questionText" class="serif text-2xl md:text-3xl font-bold text-gray-900 leading-snug"></h2>
+                    <p class="text-sm text-gray-400 mt-2">If this doesn't apply to you yet — pick the option closest to where you are or select "Not yet / Not sure"</p>
+                </div>
+                <div id="optionsContainer" class="space-y-3"></div>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <button id="prevBtn"
+                    class="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-500 hover:bg-white hover:shadow-md transition-all">
+                    ← Previous
+                </button>
+                <button id="nextBtn"
+                    class="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gray-200 text-gray-400 cursor-not-allowed transition-all"
+                    disabled>
+                    Next →
+                </button>
+            </div>
+
+            <div class="text-center text-sm text-gray-400">
+                ✓ <span id="answeredCount">0</span> questions answered
+            </div>
+        </div>
+
+        <!-- ===================== RESULTS ===================== -->
+        <div id="results" class="hidden"></div>
+
+        <!-- ===================== BEGINNER PATH ===================== -->
+        <div id="beginnerPath" class="hidden fade-in">
+            <!-- Injected dynamically -->
+        </div>
+
+    </div>
+
+    <script>
+        const questions = [
+            {
+                pillar: "Brand Intelligence Systems",
+                question: "How do you currently keep track of what people are saying about your brand online?",
+                options: [
+                    { text: "I don't have a brand presence online yet", score: 0 },
+                    { text: "We check manually when we remember to", score: 1 },
+                    { text: "We do monthly searches on Google and social media", score: 2 },
+                    { text: "We use a basic tool to monitor social media mentions", score: 3 },
+                    { text: "We have an integrated system that alerts us to brand mentions", score: 4 },
+                    { text: "We use AI-powered tools with real-time dashboards", score: 5 }
+                ]
+            },
+            {
+                pillar: "Brand Intelligence Systems",
+                question: "How often do you review what your competitors are doing?",
+                options: [
+                    { text: "Not yet sure who my competitors are", score: 0 },
+                    { text: "We don't check on competitors regularly", score: 1 },
+                    { text: "We look at their websites when we think about it", score: 2 },
+                    { text: "We follow them on social media and read their updates", score: 3 },
+                    { text: "We create monthly reports on competitor activity", score: 4 },
+                    { text: "We have automated systems that track competitors and alert us to opportunities", score: 5 }
+                ]
+            },
+            {
+                pillar: "Content & Thought Leadership",
+                question: "How often do you or your leadership team share insights and expertise publicly?",
+                options: [
+                    { text: "I haven't started sharing content yet", score: 0 },
+                    { text: "Rarely or never", score: 1 },
+                    { text: "A few times per year when we feel inspired", score: 2 },
+                    { text: "Once or twice a month from team members", score: 3 },
+                    { text: "Weekly content shared across different platforms", score: 4 },
+                    { text: "Multiple times per week with a documented system", score: 5 }
+                ]
+            },
+            {
+                pillar: "Content & Thought Leadership",
+                question: "How do you plan and create content for your business?",
+                options: [
+                    { text: "I haven't created any business content yet", score: 0 },
+                    { text: "We post when someone has time or an idea", score: 1 },
+                    { text: "We schedule posts in advance using basic tools", score: 2 },
+                    { text: "We plan content 2-4 weeks ahead", score: 3 },
+                    { text: "We have a 90-day content plan with multi-channel distribution", score: 4 },
+                    { text: "We have a systematic content creation process with AI tools and tracking", score: 5 }
+                ]
+            },
+            {
+                pillar: "Marketing Attribution & Analytics",
+                question: "Can you track how customers found you and what steps they took before buying?",
+                options: [
+                    { text: "I don't have customers yet", score: 0 },
+                    { text: "We don't know how customers find us", score: 1 },
+                    { text: "We know the last thing they did before buying", score: 2 },
+                    { text: "We track 2-3 major touchpoints in their journey", score: 3 },
+                    { text: "We track 5-7 touchpoints across different channels", score: 4 },
+                    { text: "We track the complete customer journey with predictive analytics", score: 5 }
+                ]
+            },
+            {
+                pillar: "Marketing Attribution & Analytics",
+                question: "How do you measure whether your marketing efforts are working?",
+                options: [
+                    { text: "I haven't started marketing yet", score: 0 },
+                    { text: "We don't measure marketing ROI systematically", score: 1 },
+                    { text: "We only look at website traffic numbers", score: 2 },
+                    { text: "We track leads and conversion rates", score: 3 },
+                    { text: "We connect revenue back to major campaigns", score: 4 },
+                    { text: "We have real-time dashboards with cost-per-customer and lifetime value", score: 5 }
+                ]
+            },
+            {
+                pillar: "Partnership Development",
+                question: "How do you approach building partnerships with other businesses?",
+                options: [
+                    { text: "I haven't thought about partnerships yet", score: 0 },
+                    { text: "We don't have a partnership strategy", score: 1 },
+                    { text: "We consider partnerships when others approach us", score: 2 },
+                    { text: "We've identified potential partners but haven't reached out systematically", score: 3 },
+                    { text: "We actively reach out to potential partners regularly", score: 4 },
+                    { text: "We have a documented partnership system with outreach schedules and co-marketing plans", score: 5 }
+                ]
+            },
+            {
+                pillar: "Revenue Operations Alignment",
+                question: "How well do your marketing, sales, and customer success teams work together?",
+                options: [
+                    { text: "It's just me right now — no teams yet", score: 0 },
+                    { text: "Teams work separately with little communication", score: 1 },
+                    { text: "We meet once a month to update each other", score: 2 },
+                    { text: "We share goals but use different systems", score: 3 },
+                    { text: "We meet weekly and share dashboards", score: 4 },
+                    { text: "We have unified systems, shared KPIs, and a revenue attribution model", score: 5 }
+                ]
+            },
+            {
+                pillar: "Revenue Operations Alignment",
+                question: "How does your marketing team pass leads to your sales team?",
+                options: [
+                    { text: "I handle everything myself at this point", score: 0 },
+                    { text: "Sales finds their own leads; no formal process", score: 1 },
+                    { text: "Marketing emails sales when they find a hot lead", score: 2 },
+                    { text: "We score leads and manually hand them off", score: 3 },
+                    { text: "Leads are automatically routed based on criteria", score: 4 },
+                    { text: "We use AI-powered scoring, automated enrichment, and intelligent routing", score: 5 }
+                ]
+            },
+            {
+                pillar: "Market Positioning Framework",
+                question: "How clearly can you explain what makes your business different from competitors?",
+                options: [
+                    { text: "I'm still figuring out what my business will offer", score: 0 },
+                    { text: "We find it hard to explain what makes us different", score: 1 },
+                    { text: "We focus on listing our features", score: 2 },
+                    { text: "We have a clear value proposition but don't always communicate it consistently", score: 3 },
+                    { text: "We have documented positioning used across all channels", score: 4 },
+                    { text: "We have category-defining positioning with a strategy to win market share", score: 5 }
+                ]
+            },
+            {
+                pillar: "Market Positioning Framework",
+                question: "Are you planning to expand to new markets or regions?",
+                options: [
+                    { text: "I'm focused on establishing my first market first", score: 0 },
+                    { text: "We haven't considered expanding yet", score: 1 },
+                    { text: "We're interested but have no concrete plans", score: 2 },
+                    { text: "We're researching potential markets", score: 3 },
+                    { text: "We're developing a market entry strategy", score: 4 },
+                    { text: "We're ready to expand with compliance, partnerships, and localized strategies in place", score: 5 }
+                ]
+            },
+            {
+                pillar: "Digital Asset Management",
+                question: "How organized are your marketing materials — logos, images, documents, templates?",
+                options: [
+                    { text: "I don't have any marketing materials yet", score: 0 },
+                    { text: "Files are scattered across different computers", score: 1 },
+                    { text: "We use shared folders with basic organization", score: 2 },
+                    { text: "We use cloud storage with a folder structure", score: 3 },
+                    { text: "We have a central library with version control", score: 4 },
+                    { text: "We have a full asset management system with metadata and usage tracking", score: 5 }
+                ]
+            },
+            {
+                pillar: "Digital Asset Management",
+                question: "If a partner or journalist asked for your brand materials today, how quickly could you provide them?",
+                options: [
+                    { text: "I don't have brand materials yet", score: 0 },
+                    { text: "It would take days to gather everything", score: 1 },
+                    { text: "We have some materials but they're not organized", score: 2 },
+                    { text: "We have a basic press kit ready", score: 3 },
+                    { text: "We have a comprehensive brand toolkit with guidelines", score: 4 },
+                    { text: "We have a self-service portal with customizable templates and automated delivery", score: 5 }
+                ]
+            },
+            {
+                pillar: "AI & Automation Infrastructure",
+                question: "How are you using AI tools in your business operations?",
+                options: [
+                    { text: "Not yet — still learning what AI tools even exist", score: 0 },
+                    { text: "We're not using AI tools yet", score: 1 },
+                    { text: "We occasionally use ChatGPT or similar tools", score: 2 },
+                    { text: "We use AI for creating content", score: 3 },
+                    { text: "AI is integrated into 3-5 of our workflows", score: 4 },
+                    { text: "AI-powered automation runs across content, analytics, lead scoring, and personalization", score: 5 }
+                ]
+            },
+            {
+                pillar: "AI & Automation Infrastructure",
+                question: "What percentage of your repetitive marketing tasks run automatically?",
+                options: [
+                    { text: "None — I do everything manually or haven't started yet", score: 0 },
+                    { text: "0-10% (mostly done manually)", score: 1 },
+                    { text: "11-25% (basic email automation only)", score: 2 },
+                    { text: "26-50% (some workflows are automated)", score: 3 },
+                    { text: "51-75% (most routine tasks are automated)", score: 4 },
+                    { text: "76%+ (comprehensive automation with AI enhancement)", score: 5 }
+                ]
+            }
+        ];
+
+        const pillarWeights = {
+            "Brand Intelligence Systems": 0.15,
+            "Content & Thought Leadership": 0.15,
+            "Marketing Attribution & Analytics": 0.15,
+            "Partnership Development": 0.10,
+            "Revenue Operations Alignment": 0.15,
+            "Market Positioning Framework": 0.15,
+            "Digital Asset Management": 0.10,
+            "AI & Automation Infrastructure": 0.05
+        };
+
+        let currentStep = 0;
+        let answers = {};
+        let userData = {};
+
+        const contactForm = document.getElementById('contactForm');
+        const contactFormElement = document.getElementById('contactFormElement');
+        const assessment = document.getElementById('assessment');
+        const results = document.getElementById('results');
+        const beginnerPath = document.getElementById('beginnerPath');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        contactFormElement.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            userData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value || 'Not specified',
+                role: document.getElementById('role').value,
+                annualRevenue: document.getElementById('annualRevenue').value || 'Not specified'
+            };
+            await sendEmail(userData, null, 'contact');
+            contactForm.classList.add('hidden');
+            assessment.classList.remove('hidden');
+            renderQuestion();
+        });
+
+        function renderQuestion() {
+            const q = questions[currentStep];
+            document.getElementById('currentQ').textContent = currentStep + 1;
+            document.getElementById('totalQ').textContent = questions.length;
+            document.getElementById('progressPercent').textContent = Math.round(((currentStep + 1) / questions.length) * 100);
+            document.getElementById('progressBar').style.width = `${((currentStep + 1) / questions.length) * 100}%`;
+            document.getElementById('pillarBadge').textContent = q.pillar;
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('answeredCount').textContent = Object.keys(answers).length;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((option) => {
+                const isSelected = answers[currentStep] === option.score;
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = `option-btn w-full text-left p-4 rounded-xl ${isSelected ? 'selected' : ''}`;
+                button.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all ${isSelected ? 'bg-amber-500 border-amber-500' : 'border-gray-300'}">
+                            ${isSelected ? '<span class="text-white text-xs font-bold">✓</span>' : ''}
+                        </div>
+                        <span class="text-gray-800 text-sm">${option.text}</span>
+                    </div>
+                `;
+                button.addEventListener('click', () => selectAnswer(option.score));
+                optionsContainer.appendChild(button);
+            });
+
+            updateNavigation();
+        }
+
+        function selectAnswer(score) {
+            answers[currentStep] = score;
+            renderQuestion();
+        }
+
+        function updateNavigation() {
+            const isAnswered = answers[currentStep] !== undefined;
+            prevBtn.disabled = currentStep === 0;
+            prevBtn.className = currentStep === 0
+                ? 'flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-300 cursor-not-allowed'
+                : 'flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-gray-600 hover:bg-white hover:shadow-md transition-all';
+            nextBtn.disabled = !isAnswered;
+            nextBtn.className = !isAnswered
+                ? 'flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-gray-200 text-gray-400 cursor-not-allowed'
+                : 'flex items-center gap-2 px-6 py-3 rounded-xl font-semibold cta-gold text-white shadow-lg';
+            nextBtn.textContent = currentStep === questions.length - 1 ? 'See My Results →' : 'Next →';
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) { currentStep--; renderQuestion(); }
+        });
+
+        nextBtn.addEventListener('click', async () => {
+            if (currentStep < questions.length - 1) {
+                currentStep++;
+                renderQuestion();
+            } else {
+                const resultsData = calculateResults();
+                await sendEmail(userData, resultsData, 'complete');
+                const isBeginner = checkIfBeginner(resultsData);
+                if (isBeginner) {
+                    showBeginnerPath(resultsData);
+                } else {
+                    showResults(resultsData);
+                }
+            }
+        });
+
+        function checkIfBeginner(resultsData) {
+            // Beginner = early stage role OR low/no revenue OR overall score under 25
+            const earlyRoles = ['idea', 'starting', 'early'];
+            const lowRevenue = ['none', 'under5k', '5k-25k', ''];
+            const isEarlyRole = earlyRoles.includes(userData.role);
+            const isLowRevenue = lowRevenue.includes(userData.annualRevenue);
+            return resultsData.overallScore < 25 || isEarlyRole || isLowRevenue;
+        }
+
+        function calculateResults() {
+            const pillarScores = {};
+            const pillarMaxScores = {};
+            questions.forEach((q, idx) => {
+                const answer = answers[idx];
+                if (answer !== undefined) {
+                    if (!pillarScores[q.pillar]) { pillarScores[q.pillar] = 0; pillarMaxScores[q.pillar] = 0; }
+                    pillarScores[q.pillar] += answer;
+                    pillarMaxScores[q.pillar] += 5;
+                }
+            });
+            const pillarPercentages = {};
+            let weightedTotal = 0;
+            Object.keys(pillarScores).forEach(pillar => {
+                const percentage = (pillarScores[pillar] / pillarMaxScores[pillar]) * 100;
+                pillarPercentages[pillar] = percentage;
+                weightedTotal += percentage * pillarWeights[pillar];
+            });
+            const overallScore = Math.round(weightedTotal);
+            const sortedPillars = Object.entries(pillarPercentages).sort((a, b) => a[1] - b[1]).slice(0, 3);
+            return { overallScore, pillarPercentages, topGaps: sortedPillars };
+        }
+
+        function showBeginnerPath(resultsData) {
+            assessment.classList.add('hidden');
+            beginnerPath.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const roleMessages = {
+                idea: { title: "You Have a Vision. That's Where Every Empire Starts.", sub: "The fact that you're here — asking the right questions before you even launch — puts you ahead of 90% of people who simply wing it." },
+                starting: { title: "You've Taken the Leap. Now Let's Build the Foundation Right.", sub: "Starting is the hardest part and you've already done it. What you build next will determine how fast everything else grows." },
+                early: { title: "You're in the Most Powerful Stage of Business Growth.", sub: "Early stage is where the biggest decisions are made. The businesses that scale quickly are those that build the right systems now — not later." },
+                default: { title: "Every Expert Was Once a Beginner.", sub: "Your honesty in this assessment is already a sign you're serious about growth. That clarity? It's rare, and it's the first ingredient." }
+            };
+
+            const msg = roleMessages[userData.role] || roleMessages.default;
+            const name = userData.firstName;
+
+            beginnerPath.innerHTML = `
+                <!-- Dark Hero Section -->
+                <div class="beginner-path rounded-3xl p-8 md:p-14 text-white mb-8 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10" style="background:radial-gradient(circle, #c9a961, transparent); transform: translate(30%, -30%);"></div>
+                    <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full opacity-10" style="background:radial-gradient(circle, #c9a961, transparent); transform: translate(-30%, 30%);"></div>
+
+                    <div class="relative z-10">
+                        <div class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold mb-6 border border-amber-400/40 text-amber-300">
+                            ✦ Your Growth Foundation Report — ${name}
+                        </div>
+
+                        <h1 class="serif text-3xl md:text-5xl font-bold mb-5 leading-tight">
+                            ${msg.title}
+                        </h1>
+
+                        <p class="text-amber-100/80 text-lg leading-relaxed max-w-2xl mb-8">
+                            ${msg.sub}
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 max-w-md">
+                            <div class="text-center p-4 rounded-2xl" style="background:rgba(201,169,97,0.15); border: 1px solid rgba(201,169,97,0.3)">
+                                <div class="serif text-3xl font-bold text-amber-300">${resultsData.overallScore}</div>
+                                <div class="text-xs text-amber-100/60 mt-1">Current Score</div>
+                            </div>
+                            <div class="text-center p-4 rounded-2xl" style="background:rgba(201,169,97,0.15); border: 1px solid rgba(201,169,97,0.3)">
+                                <div class="serif text-3xl font-bold text-amber-300">7</div>
+                                <div class="text-xs text-amber-100/60 mt-1">Growth Pillars</div>
+                            </div>
+                            <div class="text-center p-4 rounded-2xl" style="background:rgba(201,169,97,0.15); border: 1px solid rgba(201,169,97,0.3)">
+                                <div class="serif text-3xl font-bold text-amber-300">100</div>
+                                <div class="text-xs text-amber-100/60 mt-1">Your Potential</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Encouragement Section -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-8">
+                    <div class="max-w-2xl mx-auto text-center">
+                        <div class="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a961,#8b7355)">
+                            <span class="text-white text-2xl serif font-bold">M</span>
+                        </div>
+                        <p class="encouragement-text text-gray-700 mb-6 italic">
+                            "Your score today doesn't define your ceiling — it defines your starting point. The entrepreneurs I've watched build the most powerful businesses in Africa didn't start with everything in place. They started with a clear intention and the right guidance. That's exactly what this moment is."
+                        </p>
+                        <p class="text-amber-700 font-semibold">— Monica Dube-Sekhwela</p>
+                        <p class="text-sm text-gray-400">Strategic Growth Architect • Tony Elumelu Fellow • ForbesBLK Member</p>
+                    </div>
+                </div>
+
+                <!-- What You Need Now -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-8">
+                    <h2 class="serif text-3xl font-bold text-gray-900 mb-2 text-center">What You Need Right Now</h2>
+                    <p class="text-gray-500 text-center mb-8">Before strategy comes clarity. Here's your honest starting map:</p>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+                            <div class="text-3xl mb-3">🧭</div>
+                            <h3 class="font-bold text-gray-900 mb-2">Clarity on Direction</h3>
+                            <p class="text-sm text-gray-600">Know your niche, your ideal client, and what you're really selling before spending a single thebe on marketing.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+                            <div class="text-3xl mb-3">🏗️</div>
+                            <h3 class="font-bold text-gray-900 mb-2">Foundational Systems</h3>
+                            <p class="text-sm text-gray-600">A simple brand presence, one lead generation channel, and a way to follow up with potential clients consistently.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+                            <div class="text-3xl mb-3">🤝</div>
+                            <h3 class="font-bold text-gray-900 mb-2">Strategic Guidance</h3>
+                            <p class="text-sm text-gray-600">Not generic advice from the internet. A personalised roadmap built for your specific business, market, and goals.</p>
+                        </div>
+                    </div>
+
+                    <!-- Your Top Gap Pillars -->
+                    <div class="border-t border-amber-100 pt-8">
+                        <h3 class="font-bold text-gray-900 mb-4">Your Lowest Infrastructure Areas:</h3>
+                        <div class="space-y-3">
+                            ${resultsData.topGaps.map(([pillar, score], idx) => `
+                                <div class="flex items-center gap-4 p-4 rounded-xl bg-amber-50 border border-amber-100">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0" style="background:linear-gradient(135deg,#c9a961,#8b7355)">${idx+1}</div>
+                                    <div class="flex-1">
+                                        <div class="font-semibold text-gray-800 text-sm">${pillar}</div>
+                                        <div class="text-xs text-gray-400">This is a key area to build as your business grows</div>
+                                    </div>
+                                    <div class="text-amber-600 font-bold text-sm">${Math.round(score)}%</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-8">
+                    <div class="text-center mb-8">
+                        <h2 class="serif text-3xl md:text-4xl font-bold text-gray-900 mb-3">Ready to Truly Grow?</h2>
+                        <p class="text-gray-500 max-w-lg mx-auto">Choose the path that fits where you are right now. No pressure, no cookie-cutter advice — just the right next step for you.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <!-- Strategy Reading / Clarity Session -->
+                        <div class="border-2 border-amber-400 rounded-2xl p-6 hover:shadow-xl transition-all relative overflow-hidden">
+                            <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full">BEST FIRST STEP</div>
+                            <div class="text-3xl mb-4">🔮</div>
+                            <h3 class="serif text-xl font-bold text-gray-900 mb-2">Business Clarity Reading</h3>
+                            <p class="text-sm text-gray-600 mb-4">A personalised 1:1 session where we cut through the noise and map out exactly what your business needs to gain momentum — based on where you actually are, not where you think you should be.</p>
+                            <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> 60-minute deep dive session</li>
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Personalised action roadmap</li>
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Clarity on your positioning & niche</li>
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Your top 3 priority moves</li>
+                            </ul>
+                            <a href="https://calendly.com/monicadubesekhwela/30min" target="_blank"
+                                class="cta-gold w-full block text-center text-white py-3 rounded-xl font-bold text-sm">
+                                Book My Clarity Reading →
+                            </a>
+                        </div>
+
+                        <!-- Starter Package -->
+                        <div class="border-2 border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:border-amber-200 transition-all">
+                            <div class="text-3xl mb-4">🚀</div>
+                            <h3 class="serif text-xl font-bold text-gray-900 mb-2">Beginner Growth Package</h3>
+                            <p class="text-sm text-gray-600 mb-4">A structured program designed specifically for early-stage entrepreneurs ready to build real business foundations — brand, positioning, lead generation, and your first systems.</p>
+                            <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Brand foundation & positioning</li>
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> First lead generation system</li>
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Content strategy starter kit</li>
+                                <li class="flex items-center gap-2"><span class="text-amber-500">✓</span> Monthly check-ins with Monica</li>
+                            </ul>
+                            <a href="https://monicadubesekhwela.com/services" target="_blank"
+                                class="w-full block text-center py-3 rounded-xl font-bold text-sm border-2 border-amber-600 text-amber-700 hover:bg-amber-50 transition-colors">
+                                Explore Starter Programs →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Social Proof / Encouragement Footer -->
+                    <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 text-center border border-amber-200">
+                        <p class="text-gray-700 font-medium mb-1">
+                            "Not knowing where to start is not the problem. Starting without direction is."
+                        </p>
+                        <p class="text-sm text-amber-700 font-semibold">— Monica Dube-Sekhwela</p>
+                        <p class="text-xs text-gray-400 mt-3">Tony Elumelu Foundation Fellow • AWEP Fellow • ForbesBLK Member</p>
+                    </div>
+                </div>
+
+                <!-- Also take the full audit CTA -->
+                <div class="text-center pb-12">
+                    <p class="text-gray-500 text-sm mb-3">Want to revisit this audit when your business has grown?</p>
+                    <button onclick="location.reload()" class="text-amber-700 hover:text-amber-800 font-semibold text-sm underline underline-offset-2">
+                        Retake the Audit →
+                    </button>
+                </div>
+            `;
+        }
+
+        function showResults(resultsData) {
+            assessment.classList.add('hidden');
+            results.classList.remove('hidden');
+
+            const { overallScore, pillarPercentages, topGaps } = resultsData;
+
+            let scoreLabel, scoreColor, scoreBg;
+            if (overallScore >= 80) { scoreLabel = "Market Leader"; scoreColor = "text-emerald-700"; scoreBg = "bg-emerald-50"; }
+            else if (overallScore >= 60) { scoreLabel = "Strong Foundation"; scoreColor = "text-amber-700"; scoreBg = "bg-amber-50"; }
+            else if (overallScore >= 40) { scoreLabel = "Building Momentum"; scoreColor = "text-orange-700"; scoreBg = "bg-orange-50"; }
+            else { scoreLabel = "Early Stage"; scoreColor = "text-red-700"; scoreBg = "bg-red-50"; }
+
+            let interpretation = '';
+            if (overallScore >= 80) interpretation = "You're operating at market leader level with systematic advantage across most infrastructure pillars. Your focus should be on maintaining momentum and exploring advanced capabilities like AI-powered predictive analytics and ecosystem development.";
+            else if (overallScore >= 60) interpretation = "You've built a strong foundation with solid systems in place. You're outpacing competitors who rely on tactics alone. Your next phase is eliminating remaining gaps and advancing your strongest pillars to world-class status.";
+            else if (overallScore >= 40) interpretation = "You're building momentum with some infrastructure in place, but significant gaps remain. Competitors with stronger systems are likely outmaneuvering you. The good news? You're aware of the infrastructure imperative — now it's about systematic execution.";
+            else interpretation = "You're in the early stages of infrastructure development. You're likely competing on tactics and hustle rather than systematic advantage. This leaves you vulnerable to competitors who've built compounding systems. The opportunity? Small infrastructure investments now yield exponential returns.";
+
+            const pillarsHTML = Object.entries(pillarPercentages).map(([pillar, score]) => {
+                const barColor = score >= 70 ? 'bg-emerald-500' : score >= 40 ? 'bg-amber-500' : 'bg-red-400';
+                return `
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium text-gray-700 text-sm">${pillar}</span>
+                            <span class="text-sm font-bold text-gray-900">${Math.round(score)}%</span>
+                        </div>
+                        <div class="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full transition-all duration-1000 ${barColor} rounded-full" style="width: ${score}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const recommendations = {
+                "Brand Intelligence Systems": { low: "Start with Google Alerts for your brand name and your top 3 competitors. Check these weekly.", medium: "Create a weekly routine to review brand mentions and competitor activities.", high: "Your brand monitoring is strong. Consider adding AI-powered sentiment analysis to catch trends earlier." },
+                "Content & Thought Leadership": { low: "Pick one platform and commit to posting once per week. Start a simple content calendar.", medium: "Increase output using AI tools for ideas and drafts. Create a system to repurpose content.", high: "Excellent content foundation. Focus on optimizing distribution and strategic amplification." },
+                "Marketing Attribution & Analytics": { low: "Set up basic website analytics (Google Analytics) and track how visitors find you.", medium: "Connect marketing to sales. Track which campaigns generate leads that convert.", high: "Strong analytics. Add predictive modeling to forecast which leads will convert." },
+                "Partnership Development": { low: "List 5-10 companies that serve your ideal customer but don't compete. These are potential partners.", medium: "Create partnership outreach templates and set a regular schedule (2 per month).", high: "Solid approach. Consider creating a formal partner program with clear collaboration benefits." },
+                "Revenue Operations Alignment": { low: "Start with monthly meetings across marketing, sales, and customer success. Define 2-3 shared goals.", medium: "Use one shared CRM where all teams see customer interactions and define lead handoff rules.", high: "Strong alignment. Consider implementing revenue forecasting and predictive analytics." },
+                "Market Positioning Framework": { low: "Write what makes your business different in simple terms. Test this message with real customers.", medium: "Review competitor positioning. Refine your angle and ensure your team communicates it consistently.", high: "Clear positioning established. Consider defining a new category or repositioning for new markets." },
+                "Digital Asset Management": { low: "Move all marketing files to one cloud location. Create basic folders to organize them.", medium: "Add version control and create brand guidelines so everyone uses materials correctly.", high: "Well-organized assets. Consider building a self-service partner portal." },
+                "AI & Automation Infrastructure": { low: "Start experimenting with AI for content ideas and basic email automation for follow-ups.", medium: "Expand AI use to analytics and personalization. Automate more repetitive tasks.", high: "Strong AI integration. Focus on predictive analytics and conversational AI." }
+            };
+
+            const gapsHTML = topGaps.map(([pillar, score], idx) => {
+                const rec = score < 40 ? recommendations[pillar].low : score < 70 ? recommendations[pillar].medium : recommendations[pillar].high;
+                return `
+                    <div class="border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-shadow">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm" style="background:linear-gradient(135deg,#c9a961,#8b7355)">${idx + 1}</div>
+                            <div class="flex-1">
+                                <h3 class="font-bold text-gray-900 mb-1">${pillar}</h3>
+                                <p class="text-sm text-gray-400 mb-3">Current Score: ${Math.round(score)}%</p>
+                                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg">
+                                    <p class="text-sm text-gray-700"><strong>Next Action:</strong> ${rec}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            results.innerHTML = `
+                <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+                    <div class="text-center mb-12">
+                        <div class="inline-flex items-center gap-2 ${scoreBg} ${scoreColor} px-5 py-2 rounded-full mb-5 text-sm font-bold">
+                            ✦ ${scoreLabel}
+                        </div>
+                        <h1 class="serif text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+                            ${userData.firstName}, Your Score: ${overallScore}/100
+                        </h1>
+                        <p class="text-lg text-gray-500">
+                            Here's how <strong>${userData.company}</strong>'s growth infrastructure stacks up — and where to focus next
+                        </p>
+                    </div>
+
+                    <div class="mb-12 p-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl border border-amber-200">
+                        <h2 class="serif text-2xl font-bold text-gray-900 mb-3">What This Means</h2>
+                        <p class="text-gray-700 leading-relaxed">${interpretation}</p>
+                    </div>
+
+                    <div class="mb-12">
+                        <h2 class="serif text-2xl font-bold text-gray-900 mb-6">Infrastructure Breakdown</h2>
+                        <div class="space-y-5">${pillarsHTML}</div>
+                    </div>
+
+                    <div class="mb-12">
+                        <h2 class="serif text-2xl font-bold text-gray-900 mb-6">Your Top 3 Priority Areas</h2>
+                        <div class="space-y-5">${gapsHTML}</div>
+                    </div>
+
+                    <div class="mb-12 p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200">
+                        <h2 class="serif text-2xl font-bold text-gray-900 mb-3">Estimated ROI Impact</h2>
+                        <p class="text-gray-600 mb-4">Based on your gaps, addressing your top 3 infrastructure priorities could yield:</p>
+                        <div class="space-y-2 text-gray-700">
+                            <div class="flex items-center gap-2"><span class="text-emerald-600 font-bold text-lg">✓</span><span><strong>3-5x increase</strong> in qualified lead generation within 90 days</span></div>
+                            <div class="flex items-center gap-2"><span class="text-emerald-600 font-bold text-lg">✓</span><span><strong>40-60% reduction</strong> in customer acquisition costs</span></div>
+                            <div class="flex items-center gap-2"><span class="text-emerald-600 font-bold text-lg">✓</span><span><strong>4-6x ROI</strong> on infrastructure investments within 6 months</span></div>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-amber-100 pt-10">
+                        <h2 class="serif text-2xl font-bold text-gray-900 mb-6 text-center">Ready to Build This Infrastructure?</h2>
+                        <div class="grid md:grid-cols-2 gap-5 mb-8">
+                            <a href="https://calendly.com/monicadubesekhwela/30min" target="_blank"
+                               class="flex flex-col items-center p-6 border-2 border-emerald-500 rounded-2xl hover:bg-emerald-50 transition-all text-center group">
+                                <span class="text-3xl mb-3">📅</span>
+                                <span class="font-bold text-gray-900 mb-1">Book Strategy Call</span>
+                                <span class="text-sm text-gray-500">30-min Growth Readiness Consultation</span>
+                            </a>
+                            <a href="https://monicadubesekhwela.com/services" target="_blank"
+                               class="flex flex-col items-center p-6 border-2 border-amber-500 rounded-2xl hover:bg-amber-50 transition-all text-center">
+                                <span class="text-3xl mb-3">⚡</span>
+                                <span class="font-bold text-gray-900 mb-1">Explore Programs</span>
+                                <span class="text-sm text-gray-500">Monthly infrastructure & strategic intensives</span>
+                            </a>
+                        </div>
+
+                        <div class="text-center p-8 rounded-2xl text-white" style="background:linear-gradient(135deg,#c9a961,#8b7355)">
+                            <h3 class="serif text-2xl font-bold mb-2">Want Help Building This Infrastructure?</h3>
+                            <p class="text-amber-100 mb-5">I help businesses build systematic growth infrastructure that compounds month over month.</p>
+                            <a href="https://monicadubesekhwela.com/services" target="_blank"
+                               class="inline-block bg-white text-amber-800 px-8 py-3 rounded-xl font-bold hover:bg-amber-50 transition-colors">
+                                View Growth Programs →
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <p class="text-sm text-gray-400 mb-3">Check your inbox — I've sent your Infrastructure Scorecard with detailed recommendations!</p>
+                        <button onclick="window.print()" class="text-amber-700 hover:text-amber-800 font-semibold text-sm">📄 Print/Save Your Results</button>
+                    </div>
+                </div>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        async function sendEmail(userData, resultsData, stage) {
+            const formData = new FormData();
+            if (stage === 'contact') {
+                formData.append('subject', `🎯 New Audit Started: ${userData.firstName} ${userData.lastName} - ${userData.company}`);
+                formData.append('message', `New Growth Infrastructure Audit Started\n\nName: ${userData.firstName} ${userData.lastName}\nEmail: ${userData.email}\nCompany: ${userData.company}\nRole: ${userData.role || 'Not specified'}\nAnnual Revenue: ${userData.annualRevenue || 'Not specified'}\nStatus: Started assessment`);
+            } else {
+                const isBeginner = checkIfBeginner(resultsData);
+                formData.append('subject', `${isBeginner ? '🌱 Beginner Path' : '✅ Audit Completed'}: ${userData.firstName} ${userData.lastName} - Score ${resultsData.overallScore}/100`);
+                formData.append('message', `Growth Infrastructure Audit COMPLETED\n\nName: ${userData.firstName} ${userData.lastName}\nEmail: ${userData.email}\nCompany: ${userData.company}\nRole: ${userData.role}\nAnnual Revenue: ${userData.annualRevenue || 'Not specified'}\nPath: ${isBeginner ? 'BEGINNER PATH' : 'FULL AUDIT'}\nOverall Score: ${resultsData.overallScore}/100\n\nPillar Breakdown:\n${Object.entries(resultsData.pillarPercentages).map(([p, s]) => `• ${p}: ${Math.round(s)}%`).join('\n')}\n\nTop 3 Gaps:\n${resultsData.topGaps.map(([p, s], i) => `${i+1}. ${p} (${Math.round(s)}%)`).join('\n')}`);
+            }
+            formData.append('name', `${userData.firstName} ${userData.lastName}`);
+            formData.append('email', userData.email);
+            formData.append('company', userData.company);
+            try {
+                const response = await fetch('https://formspree.io/f/xyzvryvw', { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } });
+                if (response.ok) console.log('Email sent!');
+            } catch (error) { console.error('Email error:', error); }
+        }
+    </script>
+</body>
+</html>

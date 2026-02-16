@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects Case Studies | Monica Dube-Sekhwela</title>
+
+  <script src="https://cdn.tailwindcss.com">
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --gold:#C69C6D;
+      --light-brown:#DCC4A1;
+      --muted:#6B5B4A;
+
+      --dark-bg:#1A202C;
+      --dark-card:#2D3748;
+      --dark-text:#E2E8F0;
+      --dark-muted:#A0AEC0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f4f0;
+      color: #3d2b1f;
+      overflow-x:hidden;
+    }
+    .serif { font-family: 'Playfair Display', serif; }
+    h2, h3 { font-family: 'Playfair Display', serif; }
+
+    .hover-zoom img { transition: transform 0.6s ease; }
+    .hover-zoom:hover img { transform: scale(1.05); }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal{ opacity:0; transform: translateY(10px); transition: all .6s ease; }
+    .reveal.visible{ opacity:1; transform: translateY(0); }
+
+    /* Simple panel style used across your site */
+    .soft-panel{
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.06);
+      border: 1px solid rgba(17,24,39,.06);
+      backdrop-filter: blur(6px);
+    }
+
+    /* DARK MODE OVERRIDES */
+    html.dark body{
+      background: var(--dark-bg);
+      color: var(--dark-text);
+    }
+    html.dark header,
+    html.dark footer{
+      background: #111827 !important;
+      border-color: #3f4a5a !important;
+    }
+    html.dark .hero-bg{
+      background: linear-gradient(to bottom, rgba(17,24,39,0.35), rgba(26,32,44,1)) !important;
+    }
+    html.dark .card-bg{
+      background: var(--dark-card) !important;
+      border-color: #3f4a5a !important;
+    }
+    html.dark .text-dark-mode{
+      color: var(--dark-text) !important;
+    }
+    html.dark .text-muted-mode{
+      color: var(--dark-muted) !important;
+    }
+    html.dark .soft-panel{
+      background: var(--dark-card);
+      border-color:#3f4a5a;
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+    }
+  </style>
+</head>
+
+<body class="text-[#3d2b1f]">
+
+  <!-- Header -->
+  <header class="py-6 bg-white shadow-md border-b border-gray-100">
+    <nav class="container mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+          <span class="serif text-white font-bold">M</span>
+        </div>
+        <div class="serif font-bold text-gray-900 text-dark-mode">Monica Dube-Sekhwela</div>
+      </a>
+
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="index.html" class="text-gray-900 text-dark-mode hover:opacity-80 transition-colors">Home</a></li>
+        <li><a href="about.html" class="text-gray-900 text-dark-mode hover:opacity-80 transition-colors">About</a></li>
+        <li><a href="services.html" class="text-gray-900 text-dark-mode hover:opacity-80 transition-colors">Services</a></li>
+        <li><a href="projects.html" class="font-semibold border-b-2 pb-1" style="color:var(--gold); border-color:var(--gold);">Projects</a></li>
+        <li><a href="blog.html" class="text-gray-900 text-dark-mode hover:opacity-80 transition-colors">Blog</a></li>
+        <li><a href="contact.html" class="px-3 py-2 rounded-md transition-colors hover:opacity-90"
+               style="background: var(--light-brown); color:#111827;">Contact</a></li>
+
+        <!-- ✅ Dark Mode Button -->
+        <li>
+          <button id="darkModeToggle"
+                  class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                  aria-label="Toggle dark mode">
+            <span class="light-mode-icon">☀️</span>
+            <span class="dark-mode-icon hidden">🌙</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="md:hidden flex items-center gap-2">
+        <!-- ✅ Dark Mode Button (Mobile) -->
+        <button id="darkModeToggleMobile"
+                class="soft-panel p-2 rounded-full text-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                aria-label="Toggle dark mode">
+          <span class="light-mode-icon-m">☀️</span>
+          <span class="dark-mode-icon-m hidden">🌙</span>
+        </button>
+
+        <button id="mobile-menu-toggle"
+                class="text-gray-900 text-dark-mode p-2 rounded-md hover:opacity-80 focus:outline-none"
+                aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (optional simple dropdown) -->
+    <div id="mobileMenu" class="md:hidden hidden">
+      <div class="container mx-auto px-6 pb-4 pt-2 space-y-3 text-sm">
+        <a href="index.html" class="block text-gray-900 text-dark-mode hover:opacity-80">Home</a>
+        <a href="about.html" class="block text-gray-900 text-dark-mode hover:opacity-80">About</a>
+        <a href="services.html" class="block text-gray-900 text-dark-mode hover:opacity-80">Services</a>
+        <a href="projects.html" class="block font-semibold" style="color:var(--gold);">Projects</a>
+        <a href="blog.html" class="block text-gray-900 text-dark-mode hover:opacity-80">Blog</a>
+        <a href="contact.html" class="inline-block px-3 py-2 rounded-md"
+           style="background: var(--light-brown); color:#111827;">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-bg text-center py-16 bg-gradient-to-b from-[#fffaf5] to-[#f8f4f0] fade-in">
+    <h2 class="text-4xl font-bold text-[#3d2b1f] text-dark-mode mb-4">Projects | Case Studies</h2>
+    <p class="text-[#6b4b36] text-muted-mode text-lg max-w-2xl mx-auto">
+      A collection of brand, strategy, and digital creations crafted to inspire transformation and authentic connection.
+    </p>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10">
+
+    <!-- Project 1 -->
+    <div class="card-bg bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in border border-gray-100">
+      <img src="portfolioicon.png" alt="Afro Adventurers Project" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2 text-dark-mode">Afro Adventurers</h3>
+        <p class="text-[#5b4636] text-muted-mode mb-4">
+          Complete brand identity and digital presence for an adventure tourism company showcasing African experiences and cultural exploration.
+        </p>
+        <a href="afroadventurer.html" class="text-white px-5 py-2 rounded-full transition hover:opacity-90"
+           style="background: linear-gradient(90deg, var(--gold), var(--light-brown));">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="card-bg bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in border border-gray-100">
+      <img src="portfolioicon.png" alt="Professional Development" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2 text-dark-mode">Professional Development Business</h3>
+        <p class="text-[#5b4636] text-muted-mode mb-4">Personal Development & Professional Training (Botswana)</p>
+        <a href="professionaldevelopment.html" class="text-white px-5 py-2 rounded-full transition hover:opacity-90"
+           style="background: linear-gradient(90deg, var(--gold), var(--light-brown));">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="card-bg bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in border border-gray-100">
+      <img src="portfolioicon.png" alt="B Agro Crop" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2 text-dark-mode">B Agro Crop</h3>
+        <p class="text-[#5b4636] text-muted-mode mb-4">Fractional CMO for award winning agro processing woman led business in Ghana</p>
+        <a href="bagrocrop.html" class="text-white px-5 py-2 rounded-full transition hover:opacity-90"
+           style="background: linear-gradient(90deg, var(--gold), var(--light-brown));">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="card-bg bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in border border-gray-100">
+      <img src="portfolioicon.png" alt="UNICAF Case Study" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2 text-dark-mode">UNICAF Case Study</h3>
+        <p class="text-[#5b4636] text-muted-mode mb-4">
+          Led to measurable growth through partnership-led strategy and data-informed campaigns for an international education institution.
+        </p>
+        <a href="unicaf.html" class="text-white px-5 py-2 rounded-full transition hover:opacity-90"
+           style="background: linear-gradient(90deg, var(--gold), var(--light-brown));">
+          View Project
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="card-bg bg-white rounded-2xl shadow-md overflow-hidden hover-zoom fade-in border border-gray-100">
+      <img src="portfolioicon.png" alt="Government Innovation Initiative" class="w-full object-cover h-64">
+      <div class="p-6">
+        <h3 class="text-2xl font-semibold mb-2 text-dark-mode">Digital Transformation for Government Innovation</h3>
+        <p class="text-[#5b4636] text-muted-mode mb-4">
+          Complete digital transformation for a national citizen engagement platform—from stalled concept to launch-ready platform with partnership offers in 6 weeks.
+        </p>
+        <a href="governmentinitiative.html" class="text-white px-5 py-2 rounded-full transition hover:opacity-90"
+           style="background: linear-gradient(90deg, var(--gold), var(--light-brown));">
+          View Project
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t py-8 bg-white">
+    <div class="container mx-auto px-6 text-center text-sm text-gray-600 text-muted-mode">
+      &copy; <span id="y4"></span> Monica Dube-Sekhwela | All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y4').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileToggle && mobileMenu) {
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Dark mode toggle (desktop + mobile)
+    const html = document.documentElement;
+
+    const toggleDesktop = document.getElementById
