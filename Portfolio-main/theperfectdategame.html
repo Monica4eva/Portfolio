@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Case Study: The Perfect Date Game LLC | From Startup to Walmart.com</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/c1cc385413.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --gold: #C69C6D;
+      --light-brown: #DCC4A1;
+      --bg-color: #ffffff;
+      --text-color: #1f2937;
+      --soft-panel-bg-light: rgba(248,200,216,0.08), rgba(198,156,109,0.04);
+      --glitter-bg-light: rgba(248,200,216,0.15), rgba(198,156,109,0.08);
+      --border-color: #e5e7eb;
+      --challenge-color: #ef4444;
+    }
+    .dark-mode {
+      --bg-color: #1a1a2e;
+      --text-color: #f0f0f0;
+      --soft-panel-bg-light: rgba(255,255,255,0.05), rgba(198,156,109,0.05);
+      --glitter-bg-light: rgba(198,156,109,0.1), rgba(16,31,66,0.15);
+      --border-color: #3f3f46;
+      --challenge-color: #f87171;
+    }
+    body { font-family:'Poppins',sans-serif; background-color:var(--bg-color); color:var(--text-color); transition:background-color 0.3s,color 0.3s; }
+    .serif { font-family:'Playfair Display',serif; }
+    .text-gray-700 { color:var(--text-color); }
+    .dark-mode .text-gray-700 { color:#cccccc; }
+    .text-gray-600 { color:#4b5563; }
+    .dark-mode .text-gray-600 { color:#a1a1aa; }
+    .glitter { background:linear-gradient(90deg,var(--glitter-bg-light)); border-radius:10px; padding:10px; transition:background-color 0.3s; }
+    .soft-panel { background:linear-gradient(135deg,var(--soft-panel-bg-light)); border:1px solid rgba(198,156,109,0.2); transition:background-color 0.3s,border-color 0.3s; }
+    .dark-mode .soft-panel { border:1px solid var(--border-color); }
+    .dark-mode header, .dark-mode footer { background-color:var(--bg-color); }
+    .reveal { opacity:0; transform:translateY(10px); transition:all .6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .card-hover { transition:all 0.3s ease; }
+    .card-hover:hover { transform:translateY(-4px); box-shadow:0 10px 30px rgba(198,156,109,0.15); }
+    .metric-card { border-left:4px solid var(--gold); }
+    .challenge-card { border-left:4px solid var(--challenge-color); background:linear-gradient(135deg,rgba(239,68,68,0.05),rgba(239,68,68,0.02)); }
+    .dark-mode .challenge-card { background:linear-gradient(135deg,rgba(248,113,113,0.1),rgba(248,113,113,0.05)); }
+    .nav-tab { padding:12px 24px; border-radius:8px; cursor:pointer; transition:all 0.3s; color:var(--text-color); background:none; border:none; font-family:'Poppins',sans-serif; font-size:0.875rem; }
+    .nav-tab.active { background:linear-gradient(90deg,var(--gold),var(--light-brown)); color:white !important; }
+    .hidden-section { display:none; }
+    .sticky-nav { position:sticky; top:0; z-index:10; background-color:var(--bg-color); transition:background-color 0.3s; }
+    .gallery-slot { aspect-ratio:4/3; background:linear-gradient(135deg,rgba(248,200,216,0.2),rgba(198,156,109,0.1)); position:relative; overflow:hidden; }
+    .gallery-slot img { width:100%; height:100%; object-fit:cover; }
+    .gallery-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; transition:opacity 0.2s; }
+    .gallery-placeholder:hover { opacity:0.75; }
+    .gallery-remove { position:absolute; top:8px; right:8px; width:32px; height:32px; border-radius:50%; background:rgba(0,0,0,0.55); color:white; font-size:14px; font-weight:bold; display:none; align-items:center; justify-content:center; cursor:pointer; border:none; transition:transform 0.2s; z-index:2; }
+    .gallery-remove:hover { transform:scale(1.1); }
+    .caption-input { width:100%; font-size:0.875rem; background:transparent; border:none; border-bottom:1px solid rgba(198,156,109,0.4); outline:none; padding:6px 0; color:var(--text-color); transition:border-color 0.2s; font-family:'Poppins',sans-serif; }
+    .caption-input:focus { border-bottom-color:var(--gold); }
+    .caption-input::placeholder { color:#9ca3af; }
+  </style>
+</head>
+<body>
+
+<header class="py-6 border-b border-gray-200 sticky-nav">
+  <nav class="container mx-auto px-6 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+        <span class="serif text-white text-lg">M</span>
+      </div>
+      <div class="serif font-bold text-base" style="color:var(--text-color);">Monica Dube-Sekhwela</div>
+    </a>
+    <div class="flex items-center gap-6">
+      <button onclick="toggleDarkMode()" class="text-xl p-2 rounded-full transition-colors hover:shadow-md" style="color:var(--gold);border:1px solid var(--gold);">
+        <i class="fas fa-moon" id="toggleIcon"></i>
+      </button>
+      <ul class="hidden md:flex gap-8 items-center text-sm">
+        <li><a href="index.html" style="color:var(--text-color);">Home</a></li>
+        <li><a href="blog.html" style="color:var(--text-color);">Insights</a></li>
+        <li><a href="services.html" style="color:var(--text-color);">Programs</a></li>
+        <li><a href="contact.html" class="px-3 py-2 soft-panel rounded-md" style="color:var(--text-color);">Start Your Transformation</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<section class="py-12 glitter" style="background:linear-gradient(135deg,var(--glitter-bg-light));">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <div class="inline-block px-4 py-2 rounded-full soft-panel mb-4 text-sm font-semibold" style="color:var(--gold);">
+        🏆 PORTFOLIO CASE STUDY
+      </div>
+      <h1 class="serif text-5xl font-bold mb-6" style="color:var(--text-color);">From Startup Concept to Walmart.com: Building The Perfect Date Game Brand</h1>
+      <p class="text-xl text-gray-700 mb-8">A full-service digital marketing engagement spanning 2+ years that took TPDG from zero digital presence to a product listed on Walmart.com at $55.99, with an international customer base across the USA, Canada, Botswana, and beyond.</p>
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <div class="soft-panel px-4 py-2 rounded-lg" style="color:var(--text-color);"><strong>Role:</strong> Digital Marketing Consultant</div>
+        <div class="soft-panel px-4 py-2 rounded-lg" style="color:var(--text-color);"><strong>Duration:</strong> Mid-2020 to 2022 (2+ Years)</div>
+        <div class="soft-panel px-4 py-2 rounded-lg" style="color:var(--text-color);"><strong>Location:</strong> Scottsdale, AZ (Remote)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 reveal">
+      <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+        <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">$55.99</div>
+        <div class="font-semibold mb-1" style="color:var(--text-color);">Walmart.com Listing</div>
+        <div class="text-sm text-gray-600">Product listed on one of the largest US retail platforms</div>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+        <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">70+</div>
+        <div class="font-semibold mb-1" style="color:var(--text-color);">Content Pieces</div>
+        <div class="text-sm text-gray-600">Consistent brand identity maintained over 24+ months</div>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+        <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">4+</div>
+        <div class="font-semibold mb-1" style="color:var(--text-color);">Media Features</div>
+        <div class="text-sm text-gray-600">Swanodown, Diamond Elite Magazine, City Lifestyle &amp; more</div>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover metric-card">
+        <div class="text-4xl font-bold serif mb-2" style="color:var(--gold);">4+</div>
+        <div class="font-semibold mb-1" style="color:var(--text-color);">Countries Reached</div>
+        <div class="text-sm text-gray-600">USA, Canada, Botswana &amp; international markets</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-4 sticky-nav" style="border-bottom:1px solid var(--border-color);">
+  <div class="container mx-auto px-6">
+    <div class="soft-panel p-2 rounded-xl flex flex-wrap gap-2 justify-center reveal">
+      <button class="nav-tab" onclick="showSection('overview')">Overview</button>
+      <button class="nav-tab" onclick="showSection('challenge')">Challenge</button>
+      <button class="nav-tab" onclick="showSection('strategy')">Strategy</button>
+      <button class="nav-tab" onclick="showSection('execution')">Execution</button>
+      <button class="nav-tab" onclick="showSection('results')">Results</button>
+      <button class="nav-tab" onclick="showSection('skills')">Skills</button>
+      <button class="nav-tab" onclick="showSection('gallery')">Gallery</button>
+    </div>
+  </div>
+</section>
+
+<main class="container mx-auto px-6 pb-12">
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);">Project Overview</h2>
+    <div class="glitter p-6 mb-8">
+      <h3 class="text-xl font-semibold mb-3" style="color:var(--gold);"> The Engagement</h3>
+      <p class="text-gray-700 leading-relaxed">The Perfect Date Game LLC (TPDG), founded by S. Angel (Angel Hews) in Scottsdale, Arizona, is a relationship card game brand built around the Open UP Deck — a physical product designed to help couples, partners, and friends deepen connection through structured conversation.<br><br>Monica Dube-Sekhwela of The Social Connect served as the primary digital marketing partner from mid-2020 through 2022, providing end-to-end social media management, content strategy, blog writing, email marketing, and graphic design. The engagement began during the height of COVID-19 and culminated in a Walmart.com product listing,  a transformational milestone for the brand.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="soft-panel p-6 rounded-xl">
+        <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Monica's Mission</h4>
+        <p class="text-sm text-gray-700">Build a recognizable, cohesive brand identity from zero and activate a cross-platform content ecosystem that converts community engagement into product sales and retail listings.</p>
+      </div>
+      <div class="soft-panel p-6 rounded-xl">
+        <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Key Achievement</h4>
+        <p class="text-sm text-gray-700">Established the <strong>#dateready</strong> content framework — a recurring series that positioned TPDG as a relationship resource, not just a product,  driving the highest community engagement of the entire feed.</p>
+      </div>
+      <div class="soft-panel p-6 rounded-xl">
+        <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Business Impact</h4>
+        <p class="text-sm text-gray-700">Navigated the brand through COVID-19 disruption, executed the Walmart.com launch campaign, and built a verified international customer base spanning 4+ countries.</p>
+      </div>
+    </div>
+    <div class="soft-panel p-8 rounded-xl mb-8">
+      <h3 class="text-2xl font-semibold mb-4 serif" style="color:var(--text-color);">About This Project</h3>
+      <p class="text-gray-700 leading-relaxed mb-4">This case study showcases Monica's ability to serve as a trusted, full-service digital marketing partner for a solo founder,  managing strategy, execution, and creative simultaneously across a 2+ year engagement.</p>
+      <p class="text-gray-700 leading-relaxed">The work demonstrates expertise in brand identity construction, social media management, long-form content strategy, and cross-platform ecosystem building, with a special emphasis on community-first marketing that drives retail conversion.</p>
+    </div>
+    <div class="glitter p-6 border-l-4 rounded-xl mb-8" style="border-color:var(--gold);">
+      <h4 class="font-semibold mb-3" style="color:var(--text-color);">✨ What Makes This Work Stand Out</h4>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+        <div><strong>✓ COVID-19 Pivot:</strong> Repositioned physical game as a virtual date night tool in real-time</div>
+        <div><strong>✓ Sustained Consistency:</strong> 70+ posts over 24+ months with zero brand drift</div>
+        <div><strong>✓ Full-Funnel Ownership:</strong> Social + Blog + Email working as one integrated system</div>
+        <div><strong>✓ Retail Milestone:</strong> Content directly supported a Walmart.com listing achievement</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);">The Challenge: Zero to Brand</h2>
+    <div class="space-y-4 mb-8">
+      <div class="challenge-card p-6 rounded-xl soft-panel">
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--challenge-color);">❌ Zero Digital Presence or Brand Identity</h3>
+        <p class="text-gray-700 text-sm">TPDG launched with no established social media presence, no brand visual identity, no content strategy, and no community. Monica was tasked with building everything from scratch.</p>
+      </div>
+      <div class="challenge-card p-6 rounded-xl soft-panel">
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--challenge-color);">❌ Physical Product with No Visual Storytelling</h3>
+        <p class="text-gray-700 text-sm">A card game product needs to be seen and felt to be understood. With no video content, no lifestyle photography framework, and no demonstrated use cases, the product's emotional value proposition was invisible online.</p>
+      </div>
+      <div class="challenge-card p-6 rounded-xl soft-panel">
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--challenge-color);">❌ Solo Founder with Competing Demands</h3>
+        <p class="text-gray-700 text-sm">S. Angel was managing the business solo while holding a full-time job and later welcoming a new baby. Monica needed to function as a fully independent, trusted extension of the business with minimal oversight.</p>
+      </div>
+      <div class="challenge-card p-6 rounded-xl soft-panel">
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--challenge-color);">❌ COVID-19 Disruption at Launch</h3>
+        <p class="text-gray-700 text-sm">The brand launched in 2020 during peak pandemic lockdowns — a period when in-person dating was severely disrupted. The core product value proposition required a real-time strategic pivot to remain relevant.</p>
+      </div>
+      <div class="challenge-card p-6 rounded-xl soft-panel">
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--challenge-color);">❌ Highly Competitive Adjacent Market</h3>
+        <p class="text-gray-700 text-sm">TPDG competed in a space adjacent to established relationship games and card products. Differentiation required content that elevated the brand beyond the product category — into relationship education and community identity.</p>
+      </div>
+    </div>
+    <div class="glitter p-6 rounded-xl">
+      <h3 class="font-semibold text-xl mb-3 serif" style="color:var(--gold);"> The Stakes</h3>
+      <p class="text-gray-700 leading-relaxed">Success meant building a brand strong enough to earn a major retail listing and an international customer base — from an empty Instagram page, during a global pandemic, for a solo founder with limited bandwidth. Failure meant invisibility in an increasingly crowded digital marketplace.</p>
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section id="strategy" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);"> My Strategic Approach</h2>
+    <div class="space-y-8">
+      <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+            <span class="serif text-white font-bold text-xl">1</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Brand Identity Construction (From Zero)</h3>
+            <p class="text-gray-700 mb-4">Built a coherent, recognizable visual and tonal brand identity that held consistently across all content for 24+ months:</p>
+            <div class="glitter p-4 rounded-lg">
+              <h4 class="font-semibold mb-3" style="color:var(--text-color);">Core Brand Elements Established</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="soft-panel p-4 rounded-lg" style="background-color:var(--bg-color);">
+                  <div class="font-semibold mb-1" style="color:var(--gold);">Visual Identity</div>
+                  <div class="text-sm text-gray-600">Pink color palette, yin-yang logo usage, and consistent typography across all touchpoints</div>
+                </div>
+                <div class="soft-panel p-4 rounded-lg" style="background-color:var(--bg-color);">
+                  <div class="font-semibold mb-1" style="color:var(--gold);">Brand Voice</div>
+                  <div class="text-sm text-gray-600">Warm, relatable, and empowering,  making the emotional value proposition of deeper connection tangible</div>
+                </div>
+                <div class="soft-panel p-4 rounded-lg" style="background-color:var(--bg-color);">
+                  <div class="font-semibold mb-1" style="color:var(--gold);">Community Identity</div>
+                  <div class="text-sm text-gray-600">#dateready and #TPDG established as core community identifiers with consistent usage</div>
+                </div>
+                <div class="soft-panel p-4 rounded-lg" style="background-color:var(--bg-color);">
+                  <div class="font-semibold mb-1" style="color:var(--gold);">Graphic Templates</div>
+                  <div class="text-sm text-gray-600">Quote card overlays, question card formats, promotional graphicS,  all brand-consistent</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+            <span class="serif text-white font-bold text-xl">2</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Multi-Pillar Content Strategy (4 Core Pillars)</h3>
+            <p class="text-gray-700 mb-4">Developed a multi-layered content strategy across four content pillars to serve distinct audience needs and funnel stages simultaneously:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+              <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);"> Educational Content</strong><br/><span class="text-gray-600">Relationship science, dating psychology, and product education — establishing authority</span></div>
+              <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);"> Community Content</strong><br/><span class="text-gray-600">#dateready quiz formats and self-reflection questions — the highest-engagement series</span></div>
+              <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);"> Social Proof Content</strong><br/><span class="text-gray-600">Testimonials from real customers with photos and location tags across USA, Canada, Botswana</span></div>
+              <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);"> Conversion Content</strong><br/><span class="text-gray-600">Promotional campaigns, launch announcements, giveaways, and seasonal Black Friday offers</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="soft-panel p-6 rounded-xl border-l-4" style="border-color:var(--gold);">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+            <span class="serif text-white font-bold text-xl">3</span>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-3 serif" style="color:var(--gold);">Cross-Platform Content Ecosystem</h3>
+            <p class="text-gray-700 mb-4">Built a complete digital funnel spanning three interconnected channels — creating a content loop that extended organic reach and maximized every piece of content:</p>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-start gap-2" style="color:var(--text-color);"><span style="color:var(--gold);">→</span><span><strong>Instagram:</strong> Community building, brand identity, and direct product promotion via @theperfectdategame</span></li>
+              <li class="flex items-start gap-2" style="color:var(--text-color);"><span style="color:var(--gold);">→</span><span><strong>Blog:</strong> SEO-driven long-form articles authored by Monica, seeding social content and driving return traffic</span></li>
+              <li class="flex items-start gap-2" style="color:var(--text-color);"><span style="color:var(--gold);">→</span><span><strong>Email Marketing:</strong> Customer retention, product announcements, and community nurturing to close the funnel loop</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTION -->
+  <section id="execution" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);"> Execution Excellence</h2>
+    <div class="glitter p-6 rounded-xl mb-8">
+      <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Key Campaigns &amp; Milestones</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);"> The Date Ready Challenge</h4>
+          <p class="text-sm text-gray-700">An early campaign featuring 12 structured self-reflection questions in a grid format. Established #dateready as a community identity and positioned TPDG as a self-development tool alongside a dating product.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Black Friday 2021</h4>
+          <p class="text-sm text-gray-700">Monica produced a 20% off promotional campaign running through November 30, 2021 with strong conversion copy: "Turn down mediocre date nights and turn up game changer dating experiences with #TPDG."</p>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-6 mb-8">
+      <div class="soft-panel p-6 rounded-xl">
+        <h4 class="font-semibold mb-3 text-lg" style="color:var(--text-color);"> Walmart.com Launch — December 2021</h4>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div>The culmination of two years of brand-building work. TPDG was listed on Walmart.com at $55.99 — one of the largest retail platforms in the United States.</div>
+          <div>Monica supported the full launch announcement campaign, accompanied by a community giveaway to reward the audience who had grown alongside the brand.</div>
+          <div class="pt-2"><strong style="color:var(--gold);">Result:</strong> Brand milestone achieved with community celebration and sustained momentum.</div>
+        </div>
+      </div>
+      <div class="soft-panel p-6 rounded-xl">
+        <h4 class="font-semibold mb-3 text-lg" style="color:var(--text-color);"> Giveaway Campaign — January 2022</h4>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div>A structured three-step giveaway mechanic: Follow → Share to Story → Comment &amp; Tag 3 Friends. Designed to drive follower growth, extend organic reach, and reinforce brand loyalty post-Walmart launch.</div>
+          <div>Four winners were publicly announced, creating a celebratory community moment.</div>
+          <div class="pt-2"><strong style="color:var(--gold);">Result:</strong> New follower growth and heightened post-launch community engagement.</div>
+        </div>
+      </div>
+      <div class="soft-panel p-6 rounded-xl">
+        <h4 class="font-semibold mb-3 text-lg" style="color:var(--text-color);"> Blog Content Strategy — 5 Published Articles</h4>
+        <div class="space-y-3 text-sm text-gray-700">
+          <div>Monica authored and managed the TPDG blog as a named contributor alongside S. Angel, writing psychologically grounded, SEO-optimized long-form articles extending brand reach beyond Instagram.</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3">
+            <div class="glitter p-3 rounded soft-panel text-xs"><strong style="color:var(--gold);">Oct 2021:</strong> The Perfect Date for Your Attachment Style</div>
+            <div class="glitter p-3 rounded soft-panel text-xs"><strong style="color:var(--gold);">Nov 2021:</strong> Dealing with Anxiety on the Dating Scene</div>
+            <div class="glitter p-3 rounded soft-panel text-xs"><strong style="color:var(--gold);">Feb 2022:</strong> 65% of Couples Admit They Rushed the Process</div>
+            <div class="glitter p-3 rounded soft-panel text-xs"><strong style="color:var(--gold);">Apr 2022:</strong> Keeping the Love Vibration Going</div>
+          </div>
+          <div class="pt-2"><strong style="color:var(--gold);">Result:</strong> Cross-platform content loop — blog seeded social posts, social drove blog traffic.</div>
+        </div>
+      </div>
+    </div>
+    <div class="glitter p-6 rounded-xl">
+      <h3 class="font-bold text-2xl mb-4 serif" style="color:var(--gold);">Testimonial Campaign Execution</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Real Customers, Real Locations</h4>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>✓ Florida, Connecticut, Virginia, Missouri, Arizona</li>
+            <li>✓ Alberta, Canada</li>
+            <li>✓ Botswana, Africa</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Format &amp; Authenticity</h4>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>✓ Real customer photos with name attribution</li>
+            <li>✓ Location tags for international proof</li>
+            <li>✓ Sustained series throughout engagement</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);"> Strategic Value</h4>
+          <ul class="text-sm text-gray-700 space-y-2">
+            <li>✓ Built social proof for Walmart listing pitch</li>
+            <li>✓ Demonstrated international market demand</li>
+            <li>✓ Most powerful conversion asset in the feed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);"> Results &amp; Business Impact</h2>
+    <div class="glitter p-8 rounded-xl mb-8">
+      <h3 class="text-2xl font-bold serif mb-6 text-center" style="color:var(--gold);"> Verified Achievements</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="soft-panel p-6 rounded-xl">
+          <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">$55.99</div>
+          <div class="font-semibold mb-2" style="color:var(--text-color);">Walmart.com Listed</div>
+          <div class="text-sm text-gray-600">Product successfully listed on one of the largest US retail platforms in the world.</div>
+        </div>
+        <div class="soft-panel p-6 rounded-xl">
+          <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">70+</div>
+          <div class="font-semibold mb-2" style="color:var(--text-color);">Content Pieces Produced</div>
+          <div class="text-sm text-gray-600">Consistent brand identity maintained across every post for 24+ months.</div>
+        </div>
+        <div class="soft-panel p-6 rounded-xl">
+          <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">4+</div>
+          <div class="font-semibold mb-2" style="color:var(--text-color);">Media Features</div>
+          <div class="text-sm text-gray-600">Swanodown, Martin Gregov Fitness, Diamond Elite Magazine, City Lifestyle.</div>
+        </div>
+        <div class="soft-panel p-6 rounded-xl">
+          <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">4+</div>
+          <div class="font-semibold mb-2" style="color:var(--text-color);">Countries in Customer Base</div>
+          <div class="text-sm text-gray-600">Verified international reach: USA, Canada, Botswana, and beyond.</div>
+        </div>
+        <div class="soft-panel p-6 rounded-xl">
+          <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">3</div>
+          <div class="font-semibold mb-2" style="color:var(--text-color);">Platform Ecosystem</div>
+          <div class="text-sm text-gray-600">Instagram + Blog + Email working as one integrated cross-platform system.</div>
+        </div>
+        <div class="soft-panel p-6 rounded-xl">
+          <div class="text-5xl font-bold serif mb-2" style="color:var(--gold);">5</div>
+          <div class="font-semibold mb-2" style="color:var(--text-color);">SEO Blog Articles</div>
+          <div class="text-sm text-gray-600">Authored under Monica's name — psychology-grounded, SEO-optimized, cross-referenced.</div>
+        </div>
+      </div>
+    </div>
+    <div class="soft-panel p-6 rounded-xl mb-8">
+      <h3 class="text-2xl font-bold serif mb-6" style="color:var(--gold);"> Strategic Business Outcomes</h3>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold" style="background:var(--gold);">1</div>
+          <div>
+            <h4 class="font-semibold mb-2" style="color:var(--text-color);">Retail Milestone — Walmart.com Listing</h4>
+            <p class="text-sm text-gray-700">The brand successfully graduated from a solo founder's concept to a product listed on Walmart.com at $55.99 — a credibility signal that validates the two-year content investment.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold" style="background:var(--gold);">2</div>
+          <div>
+            <h4 class="font-semibold mb-2" style="color:var(--text-color);">International Customer Base Verified</h4>
+            <p class="text-sm text-gray-700">Real customer testimonials with location tags from Florida, Connecticut, Alberta, Botswana, and more demonstrated authentic international demand — not just vanity metrics.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold" style="background:var(--gold);">3</div>
+          <div>
+            <h4 class="font-semibold mb-2" style="color:var(--text-color);">Pandemic Pivot Executed Successfully</h4>
+            <p class="text-sm text-gray-700">When in-person dating was disrupted by COVID-19, Monica repositioned the product as a virtual date night tool — maintaining brand relevance throughout one of the most challenging periods for experiential products.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="soft-panel p-6 rounded-xl border-l-4 mb-8" style="border-color:var(--gold);">
+      <h4 class="font-semibold mb-3" style="color:var(--gold);"> Client Testimonial</h4>
+      <blockquote class="text-gray-700 italic mb-4 text-sm leading-relaxed">"She's been such a great content manager and so much more for me! I'm usually very hands on but lately, with so many projects in the pipeline, a new baby, and still the full time job, Monica has been that extra pair of hands I've needed and it feels so good having someone I can trust with my business. She's helping with social media management, content creation strategy, blog strategy, email marketing, basic graphics... and she's always adding new services that can help my business processes as a whole. I don't even want to share her, but she's that good."</blockquote>
+      <div class="text-sm font-semibold" style="color:var(--gold);">— Angel Hews (S. Angel), Founder, The Perfect Date Game LLC</div>
+      <div class="text-xs text-gray-600 mt-1">Public Facebook testimonial, tagging @thesocialconnectbw • Confirmed by formal written letter on company letterhead, August 2022</div>
+    </div>
+    <div class="glitter p-6 rounded-xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);">Content Investment:</strong> 70+ strategic posts over 24 months</div>
+        <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);">Direct Returns:</strong> Walmart listing + international sales</div>
+        <div class="glitter p-3 rounded soft-panel"><strong style="color:var(--text-color);">Long-term Value:</strong> Brand identity + media features</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);"> Skills Demonstrated</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+        <h3 class="font-bold text-xl mb-4" style="color:var(--gold);"> Social Media Management</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>2+ year consistent account management for @theperfectdategame</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Visual brand identity establishment (pink palette, yin-yang logo, typography)</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>#dateready content framework development and community building</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Quiz and poll format strategy (highest engagement of entire feed)</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Seasonal and promotional campaign coordination</span></li>
+        </ul>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+        <h3 class="font-bold text-xl mb-4" style="color:var(--gold);"> Content Creation &amp; Copywriting</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>SEO-optimized long-form blog articles (5 published, named contributor)</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Psychologically grounded content (attachment theory, dating anxiety, relationship science)</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Conversion copywriting for product promotions and launches</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Social media microcopy with distinct brand voice</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Cross-platform internal linking strategy between blog and social</span></li>
+        </ul>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+        <h3 class="font-bold text-xl mb-4" style="color:var(--gold);"> Graphic Design &amp; Visual Branding</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Quote card overlays and #dateready question card format templates</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Promotional sale graphics (Black Friday) aligned to brand palette</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Date Ready Challenge grid design</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Pink/black/white color system maintained consistently across 70+ pieces</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Complete brand visual identity built from zero</span></li>
+        </ul>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+        <h3 class="font-bold text-xl mb-4" style="color:var(--gold);"> Email Marketing &amp; Strategy</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Customer retention email strategy development</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Product announcement and launch email campaigns</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Community nurturing sequences supporting social strategy</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Complete digital funnel integration: social → blog → email</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Complementary channel strategy to maximize touchpoints</span></li>
+        </ul>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+        <h3 class="font-bold text-xl mb-4" style="color:var(--gold);"> Strategic Marketing &amp; Analysis</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Content performance analysis (quiz format identified as top engagement driver)</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Real-time COVID-19 strategic pivot — repositioning physical product as virtual tool</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Competitive differentiation through relationship education positioning</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Multi-channel funnel architecture and optimization</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>ROI measurement connecting content to retail milestone outcomes</span></li>
+        </ul>
+      </div>
+      <div class="soft-panel p-6 rounded-xl card-hover border-l-4" style="border-color:var(--gold);">
+        <h3 class="font-bold text-xl mb-4" style="color:var(--gold);"> Campaign Management</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Giveaway campaign execution (3-step mechanic, 4 winners announced)</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Walmart.com launch campaign strategy and execution</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Black Friday promotional campaign with conversion copy</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Date Ready Challenge — community activation and hashtag growth</span></li>
+          <li class="flex items-start gap-2"><span style="color:var(--gold);">✓</span><span>Sustained testimonial series over 24+ months</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="glitter p-8 rounded-xl">
+      <h3 class="text-2xl font-bold serif mb-6" style="color:var(--gold);"> Soft Skills &amp; Differentiators</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);">Professional Excellence</h4>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Trusted Autonomy:</strong> Founder felt confident delegating full creative ownership</span></li>
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Sustained Execution:</strong> 24+ months without brand drift or quality decline</span></li>
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Crisis Adaptability:</strong> Pivoted strategy in real-time during COVID-19</span></li>
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Results Orientation:</strong> Focused on retail conversion, not vanity metrics</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3" style="color:var(--text-color);">Strategic Intelligence</h4>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Psychological Depth:</strong> Used attachment theory and dating science to build authority</span></li>
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Community First:</strong> Built identity around #dateready before pushing product</span></li>
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>Content Recycling:</strong> Every blog seeded social posts; every social post drove blog traffic</span></li>
+            <li class="flex items-start gap-2"><span style="color:var(--gold);">→</span><span><strong>International Vision:</strong> Built proof of global demand from the beginning</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="content-section hidden-section reveal">
+    <h2 class="serif text-4xl font-bold mb-8 mt-10" style="color:var(--text-color);"> Campaign Gallery</h2>
+    <div class="glitter p-4 rounded-xl mb-8 text-center">
+      <p class="text-sm text-gray-700">Click any slot to upload your campaign images. Add a caption to each one.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+
+      <div class="soft-panel rounded-xl overflow-hidden card-hover">
+        <div class="gallery-slot">
+          <img id="img1" src="" alt="" style="display:none;" />
+          <label for="upload1" class="gallery-placeholder" id="ph1">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="text-white text-3xl font-light leading-none">+</span>
+            </div>
+            <span class="text-sm font-semibold" style="color:var(--gold);">Click to upload image</span>
+            <span class="text-xs text-gray-600 mt-1">JPG, PNG, WEBP</span>
+          </label>
+          <input type="file" id="upload1" accept="image/*" style="display:none;" onchange="loadImg(this,1)" />
+          <button class="gallery-remove" id="rm1" onclick="removeImg(1)">&#x2715;</button>
+        </div>
+        <div class="p-4"><input type="text" placeholder="Add a caption for this image…" class="caption-input" /></div>
+      </div>
+
+      <div class="soft-panel rounded-xl overflow-hidden card-hover">
+        <div class="gallery-slot">
+          <img id="img2" src="" alt="" style="display:none;" />
+          <label for="upload2" class="gallery-placeholder" id="ph2">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="text-white text-3xl font-light leading-none">+</span>
+            </div>
+            <span class="text-sm font-semibold" style="color:var(--gold);">Click to upload image</span>
+            <span class="text-xs text-gray-600 mt-1">JPG, PNG, WEBP</span>
+          </label>
+          <input type="file" id="upload2" accept="image/*" style="display:none;" onchange="loadImg(this,2)" />
+          <button class="gallery-remove" id="rm2" onclick="removeImg(2)">&#x2715;</button>
+        </div>
+        <div class="p-4"><input type="text" placeholder="Add a caption for this image…" class="caption-input" /></div>
+      </div>
+
+      <div class="soft-panel rounded-xl overflow-hidden card-hover">
+        <div class="gallery-slot">
+          <img id="img3" src="" alt="" style="display:none;" />
+          <label for="upload3" class="gallery-placeholder" id="ph3">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="text-white text-3xl font-light leading-none">+</span>
+            </div>
+            <span class="text-sm font-semibold" style="color:var(--gold);">Click to upload image</span>
+            <span class="text-xs text-gray-600 mt-1">JPG, PNG, WEBP</span>
+          </label>
+          <input type="file" id="upload3" accept="image/*" style="display:none;" onchange="loadImg(this,3)" />
+          <button class="gallery-remove" id="rm3" onclick="removeImg(3)">&#x2715;</button>
+        </div>
+        <div class="p-4"><input type="text" placeholder="Add a caption for this image…" class="caption-input" /></div>
+      </div>
+
+      <div class="soft-panel rounded-xl overflow-hidden card-hover">
+        <div class="gallery-slot">
+          <img id="img4" src="" alt="" style="display:none;" />
+          <label for="upload4" class="gallery-placeholder" id="ph4">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center mb-3" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
+              <span class="text-white text-3xl font-light leading-none">+</span>
+            </div>
+            <span class="text-sm font-semibold" style="color:var(--gold);">Click to upload image</span>
+            <span class="text-xs text-gray-600 mt-1">JPG, PNG, WEBP</span>
+          </label>
+          <input type="file" id="upload4" accept="image/*" style="display:none;" onchange="loadImg(this,4)" />
+          <button class="gallery-remove" id="rm4" onclick="removeImg(4)">&#x2715;</button>
+        </div>
+        <div class="p-4"><input type="text" placeholder="Add a caption for this image…" class="caption-input" /></div>
+      </div>
+
+    </div>
+    <div class="glitter p-4 rounded-xl text-center">
+      <p class="text-xs text-gray-600"> <strong style="color:var(--gold);">Tip:</strong> Images load locally in your browser. To make them permanent, replace the upload slots with direct image tags in the HTML file.</p>
+    </div>
+  </section>
+
+</main>
+
+<section class="py-16 glitter" style="background:linear-gradient(135deg,var(--glitter-bg-light));">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <h2 class="serif text-4xl font-bold mb-6" style="color:var(--text-color);">Ready to Build a Brand That Reaches Global Markets?</h2>
+      <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">I specialize in building <strong>cross-platform content ecosystems</strong> that grow communities into customers — from startup concept to retail-ready brand. Whether you're launching from zero or scaling an existing product, I bring proven frameworks and sustained execution.</p>
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" class="px-8 py-3 rounded-lg font-semibold transition-all" style="background:linear-gradient(90deg,var(--gold),var(--light-brown));color:white;">Connect on LinkedIn</a>
+        <a href="mailto:monicadubesekhwela@gmail.com" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg" style="color:var(--text-color);">Email Me</a>
+        <a href="contact.html" class="px-8 py-3 rounded-lg font-semibold soft-panel transition-all hover:shadow-lg" style="color:var(--text-color);">Start Your Project</a>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <h3 class="text-2xl font-bold serif mb-6" style="color:var(--text-color);">What I Can Do For Your Brand</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="soft-panel p-6 rounded-xl text-left card-hover">
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Brand Building</div>
+            <div class="text-sm text-gray-600">Complete identity development from zero — visual system, voice, and community identity</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl text-left card-hover">
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Content Strategy</div>
+            <div class="text-sm text-gray-600">Multi-pillar ecosystems that eliminate burnout and consistently drive engagement</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl text-left card-hover">
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Blog &amp; SEO Writing</div>
+            <div class="text-sm text-gray-600">Psychologically grounded, SEO-optimized long-form content that builds authority</div>
+          </div>
+          <div class="soft-panel p-6 rounded-xl text-left card-hover">
+            <div class="font-semibold mb-2" style="color:var(--text-color);">Campaign Management</div>
+            <div class="text-sm text-gray-600">Full-cycle execution — from launch strategy through community conversion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="border-t py-8" style="background-color:var(--bg-color);border-color:var(--border-color);">
+  <div class="container mx-auto px-6 text-center">
+    <h3 class="serif text-xl font-bold mb-2" style="color:var(--text-color);">Monica Dube-Sekhwela</h3>
+    <p class="text-sm text-gray-600 mb-2">Digital Marketing Consultant | Content Strategist | Brand Builder</p>
+    <p class="text-sm text-gray-600 mb-4">Botswana 🇧🇼 • Building Brands That Reach Global Markets</p>
+    <div class="flex justify-center gap-6 mb-6 text-2xl">
+      <a href="https://www.linkedin.com/in/monica-dube-sekhwela" target="_blank" class="hover:opacity-70 transition-opacity" style="color:var(--text-color);"></a>
+      <a href="mailto:monicadubesekhwela@gmail.com" class="hover:opacity-70 transition-opacity" style="color:var(--text-color);"></a>
+    </div>
+    <div class="text-sm text-gray-600">&copy; <span id="yearFooter"></span> The Social Connect | Monica Dube-Sekhwela</div>
+    <div class="text-xs text-gray-600 mt-2">Case Study: The Perfect Date Game LLC • Mid-2020 – 2022</div>
+  </div>
+</footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    var isDark = document.body.classList.contains('dark-mode');
+    document.getElementById('toggleIcon').className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+  }
+
+  function loadImg(input, n) {
+    var file = input.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var img = document.getElementById('img' + n);
+      var ph  = document.getElementById('ph' + n);
+      var rm  = document.getElementById('rm' + n);
+      img.src = e.target.result;
+      img.style.display = 'block';
+      ph.style.display  = 'none';
+      rm.style.display  = 'flex';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function removeImg(n) {
+    var img = document.getElementById('img' + n);
+    var ph  = document.getElementById('ph' + n);
+    var rm  = document.getElementById('rm' + n);
+    var up  = document.getElementById('upload' + n);
+    img.src = '';
+    img.style.display = 'none';
+    ph.style.display  = 'flex';
+    rm.style.display  = 'none';
+    up.value = '';
+  }
+
+  function showSection(id) {
+    var sections = document.querySelectorAll('.content-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].classList.add('hidden-section');
+    }
+    var tabs = document.querySelectorAll('.nav-tab');
+    for (var j = 0; j < tabs.length; j++) {
+      tabs[j].classList.remove('active');
+    }
+    var sec = document.getElementById(id);
+    if (sec) {
+      sec.classList.remove('hidden-section');
+      setTimeout(function() {
+        document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+    for (var k = 0; k < tabs.length; k++) {
+      var fn = tabs[k].getAttribute('onclick');
+      if (fn && fn.indexOf("'" + id + "'") !== -1) {
+        tabs[k].classList.add('active');
+      }
+    }
+  }
+
+  function initReveal() {
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(function(el) { io.observe(el); });
+  }
+
+  window.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('toggleIcon').className = 'fas fa-sun';
+    }
+    showSection('overview');
+    document.getElementById('yearFooter').textContent = new Date().getFullYear();
+    initReveal();
+  });
+</script>
+
+</body>
+</html>
