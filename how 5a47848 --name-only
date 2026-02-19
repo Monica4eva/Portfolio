@@ -1,0 +1,132 @@
+[33mcommit ee267b69307a247b44706de1adfd3799c1c78314[m
+Author: Monica Dube-Sekhwela <monicadubesekhwela@gmail.com>
+Date:   Mon Feb 16 22:49:30 2026 +0200
+
+    initial commit
+
+Portfolio-main/.vscode/settings.json
+Portfolio-main/2.png
+Portfolio-main/3.png
+Portfolio-main/4.png
+Portfolio-main/Afro Adventurers_20251109_210526_0000.png
+Portfolio-main/Blog article banner(1).png
+Portfolio-main/Homepage.png
+Portfolio-main/Motivation .png
+Portfolio-main/Motivation with Monica(5).png
+Portfolio-main/My Happy Place Logo - 4.png
+Portfolio-main/Tree-Planting-Activity-Botswana.png
+Portfolio-main/about.html
+Portfolio-main/aboutpic.png
+Portfolio-main/afroadventurer.html
+Portfolio-main/b agro crop logo.png
+Portfolio-main/bagrocrop.html
+Portfolio-main/blog.html
+Portfolio-main/blogarticle.png
+Portfolio-main/busex1.png
+Portfolio-main/busex2.png
+Portfolio-main/busex3.png
+Portfolio-main/busex4.png
+Portfolio-main/businessexpansion.html
+Portfolio-main/calendyquiz.html
+Portfolio-main/community.jpg
+Portfolio-main/contact.html
+Portfolio-main/contact.png
+Portfolio-main/css/style.css
+Portfolio-main/extra.html
+Portfolio-main/globalstrategies.html
+Portfolio-main/golden office.jpg
+Portfolio-main/governmentinitiative.html
+Portfolio-main/growthinfrastructureaudit.html
+Portfolio-main/hero11.png
+Portfolio-main/hero2.png
+Portfolio-main/index.html
+Portfolio-main/linkedin cover.jpeg
+Portfolio-main/llms.txt
+Portfolio-main/logos.png
+Portfolio-main/node_modules/.package-lock.json
+Portfolio-main/node_modules/@vercel/analytics/LICENSE
+Portfolio-main/node_modules/@vercel/analytics/README.md
+Portfolio-main/node_modules/@vercel/analytics/dist/astro/component.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/astro/index.astro
+Portfolio-main/node_modules/@vercel/analytics/dist/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/next/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/next/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/next/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/next/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/next/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/next/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/nuxt/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/nuxt/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/nuxt/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/nuxt/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/nuxt/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/nuxt/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/react/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/react/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/react/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/react/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/react/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/react/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/remix/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/remix/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/remix/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/remix/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/remix/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/remix/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/server/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/server/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/server/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/server/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/server/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/server/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/sveltekit/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/sveltekit/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/sveltekit/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/sveltekit/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/sveltekit/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/sveltekit/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/dist/vue/index.d.mts
+Portfolio-main/node_modules/@vercel/analytics/dist/vue/index.d.ts
+Portfolio-main/node_modules/@vercel/analytics/dist/vue/index.js
+Portfolio-main/node_modules/@vercel/analytics/dist/vue/index.js.map
+Portfolio-main/node_modules/@vercel/analytics/dist/vue/index.mjs
+Portfolio-main/node_modules/@vercel/analytics/dist/vue/index.mjs.map
+Portfolio-main/node_modules/@vercel/analytics/jest.config.js
+Portfolio-main/node_modules/@vercel/analytics/package.json
+Portfolio-main/node_modules/@vercel/analytics/test.setup.ts
+Portfolio-main/node_modules/@vercel/analytics/tsconfig.json
+Portfolio-main/node_modules/@vercel/analytics/tsup.config.js
+Portfolio-main/node_modules/@vercel/analytics/vitest.config.mts
+Portfolio-main/package-lock.json
+Portfolio-main/package.json
+Portfolio-main/pitch .png
+Portfolio-main/portfolioicon.png
+Portfolio-main/portfolioprojecticon.png
+Portfolio-main/professionaldevelopment.html
+Portfolio-main/projects.html
+Portfolio-main/rename3.png
+Portfolio-main/robots.txt
+Portfolio-main/scalingstrategicpartnership.html
+Portfolio-main/script.js
+Portfolio-main/services banner.jpg
+Portfolio-main/services.html
+Portfolio-main/shop.html
+Portfolio-main/sitemap.xml
+Portfolio-main/speak.jpg
+Portfolio-main/strategicaudit.html
+Portfolio-main/strategy.png
+Portfolio-main/studentsunicaf.jpg
+Portfolio-main/style.css
+Portfolio-main/tacticinfra.html
+Portfolio-main/tea.png
+Portfolio-main/tscservices.html
+Portfolio-main/unicaf.html
+Portfolio-main/unicaf.png
+Portfolio-main/vercel.json
+Portfolio-main/womensbrunch.jpg
+Portfolio-main/zerobudget.html
