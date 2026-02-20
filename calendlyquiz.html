@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Growth Qualifier — Monica Dube-Sekhwela</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c9a961;
+            --gold-dark: #8b7355;
+            --gold-light: #e6d5b8;
+            --cream: #fef9f2;
+            --dark: #1a1109;
+            --muted: #9a8c7e;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            min-height: 100vh;
+            color: #2d2016;
+            overflow-x: hidden;
+        }
+
+        .serif { font-family: 'Cormorant Garamond', serif; }
+
+        /* ── BACKGROUND TEXTURE ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 20% -10%, rgba(201,169,97,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 85% 110%, rgba(139,115,85,0.10) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── HEADER ── */
+        .site-header {
+            position: relative;
+            z-index: 10;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(201,169,97,0.2);
+            background: rgba(254,249,242,0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(160deg, var(--gold), var(--gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-text { line-height: 1.2; }
+        .logo-name { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 700; color: var(--dark); }
+        .logo-title { font-size: 11px; color: var(--muted); letter-spacing: 0.03em; }
+
+        /* ── MAIN WRAPPER ── */
+        #app {
+            position: relative;
+            z-index: 1;
+            min-height: calc(100vh - 85px);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 20px 80px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 640px;
+        }
+
+        /* ── CARD ── */
+        .card {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow:
+                0 2px 4px rgba(139,115,85,0.06),
+                0 12px 40px rgba(139,115,85,0.12),
+                0 0 0 1px rgba(201,169,97,0.12);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ── PROGRESS ── */
+        .progress-track {
+            height: 3px;
+            background: rgba(201,169,97,0.15);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ── CARD CONTENT ── */
+        .card-body {
+            padding: 40px 44px 44px;
+        }
+
+        @media (max-width: 600px) {
+            .card-body { padding: 28px 24px 32px; }
+            .site-header { padding: 16px 20px; }
+        }
+
+        /* ── PHASE LABEL ── */
+        .phase-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            background: rgba(201,169,97,0.1);
+            border: 1px solid rgba(201,169,97,0.25);
+            padding: 5px 12px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .step-counter {
+            font-size: 12px;
+            color: var(--muted);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .question-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .question-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        /* ── OPTIONS ── */
+        .options { display: flex; flex-direction: column; gap: 10px; }
+
+        .option-btn {
+            position: relative;
+            width: 100%;
+            text-align: left;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1.5px solid #e8e0d5;
+            background: #fdfaf7;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #3a2c1e;
+            font-weight: 500;
+        }
+
+        .option-btn:hover {
+            border-color: var(--gold);
+            background: rgba(201,169,97,0.06);
+            transform: translateX(3px);
+        }
+
+        .option-btn.selected {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, rgba(201,169,97,0.08), rgba(201,169,97,0.04));
+        }
+
+        .option-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #d5c9b8;
+            flex-shrink: 0;
+            transition: all 0.18s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-btn.selected .option-indicator {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .option-btn.selected .option-indicator::after {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        /* ── NAVIGATION ── */
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 32px;
+        }
+
+        .btn-back {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px 0;
+            transition: color 0.15s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-back:hover { color: var(--dark); }
+        .btn-back.invisible { visibility: hidden; pointer-events: none; }
+
+        .btn-next {
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border: none;
+            border-radius: 10px;
+            padding: 12px 28px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 16px rgba(201,169,97,0.3);
+        }
+
+        .btn-next:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(201,169,97,0.45);
+        }
+
+        .btn-next:disabled {
+            background: linear-gradient(135deg, #d5c9b8, #c0b49e);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        /* ── LEAD CAPTURE ── */
+        .lead-form { display: flex; flex-direction: column; gap: 16px; }
+
+        .form-intro {
+            padding: 16px 18px;
+            background: rgba(201,169,97,0.06);
+            border: 1px solid rgba(201,169,97,0.2);
+            border-radius: 12px;
+            font-size: 13px;
+            color: #5a4632;
+            line-height: 1.6;
+            margin-bottom: 4px;
+        }
+
+        .field-group { display: flex; flex-direction: column; gap: 6px; }
+
+        .field-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #5a4632;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .field-input {
+            padding: 12px 16px;
+            border: 1.5px solid #e8e0d5;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--dark);
+            background: #fdfaf7;
+            transition: border-color 0.15s;
+            outline: none;
+        }
+
+        .field-input:focus {
+            border-color: var(--gold);
+            background: white;
+        }
+
+        .field-input::placeholder { color: #b5a898; }
+
+        /* ── RESULT SCREENS ── */
+        #result-screen { display: none; animation: fadeUp 0.5s ease both; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Qualified result */
+        .result-qualified-hero {
+            background: linear-gradient(160deg, #1a1109 0%, #2d1f0a 40%, #1a1109 100%);
+            border-radius: 20px 20px 0 0;
+            padding: 44px 44px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-qualified-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 220px; height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,169,97,0.2), transparent);
+            pointer-events: none;
+        }
+
+        .result-qualified-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40px; left: -40px;
+            width: 160px; height: 160px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,169,97,0.12), transparent);
+            pointer-events: none;
+        }
+
+        .result-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid rgba(201,169,97,0.35);
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+        }
+
+        .result-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: white;
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .result-sub {
+            font-size: 15px;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.65;
+            max-width: 480px;
+        }
+
+        .result-body {
+            padding: 36px 44px 44px;
+            background: white;
+            border-radius: 0 0 20px 20px;
+        }
+
+        @media (max-width: 600px) {
+            .result-qualified-hero { padding: 32px 24px 28px; }
+            .result-body { padding: 28px 24px 36px; }
+            .result-headline { font-size: 28px; }
+        }
+
+        /* Next step cards */
+        .next-steps { display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+
+        .next-step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            background: #fdfaf7;
+            border-radius: 12px;
+            border: 1px solid #ede5d8;
+        }
+
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-text strong { font-size: 14px; color: var(--dark); display: block; margin-bottom: 2px; }
+        .step-text span { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+        /* CTA buttons */
+        .cta-primary {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(201,169,97,0.35);
+            margin-bottom: 10px;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(201,169,97,0.5);
+        }
+
+        .cta-secondary {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 14px 24px;
+            background: transparent;
+            color: var(--gold-dark);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 1.5px solid rgba(201,169,97,0.5);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 10px;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(201,169,97,0.06);
+            border-color: var(--gold);
+        }
+
+        .cta-ghost {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            padding: 10px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+            transition: color 0.15s;
+        }
+
+        .cta-ghost:hover { color: var(--dark); }
+
+        /* Not-qualified section */
+        .result-notqualified-hero {
+            background: linear-gradient(160deg, #2a2016 0%, #3d2e14 50%, #2a2016 100%);
+            border-radius: 20px 20px 0 0;
+            padding: 44px 44px 36px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Audit preview teaser (both paths) */
+        .audit-teaser {
+            margin-top: 28px;
+            padding: 24px;
+            background: linear-gradient(135deg, #fdfaf7, #fff8ed);
+            border: 1.5px solid rgba(201,169,97,0.25);
+            border-radius: 16px;
+        }
+
+        .audit-teaser-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .audit-teaser-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 16px;
+            line-height: 1.55;
+        }
+
+        .audit-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .audit-pillar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #5a4632;
+            font-weight: 500;
+        }
+
+        .pillar-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,97,0.3), transparent);
+            margin: 28px 0;
+        }
+
+        .footnote {
+            font-size: 12px;
+            color: #b5a898;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        /* Inline field errors */
+        .field-error { font-size: 12px; color: #c0392b; margin-top: 4px; display: none; }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+    <a href="https://monicadubesekhwela.com" class="logo">
+        <div class="logo-circle">M</div>
+        <div class="logo-text">
+            <div class="logo-name">Monica Dube-Sekhwela</div>
+            <div class="logo-title">Strategic Growth Architect</div>
+        </div>
+    </a>
+</header>
+
+<div id="app">
+    <div class="container">
+
+        <!-- ══════════════════════════════════════
+             QUIZ CARD
+        ══════════════════════════════════════ -->
+        <div class="card" id="quiz-card">
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+            <div class="card-body" id="card-body">
+                <!-- Injected by JS -->
+            </div>
+        </div>
+
+        <!-- ══════════════════════════════════════
+             RESULT SCREEN
+        ══════════════════════════════════════ -->
+        <div id="result-screen">
+            <!-- Injected by JS -->
+        </div>
+
+    </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════
+// DATA
+// ═══════════════════════════════════════════════
+
+const QUESTIONS = [
+    {
+        id: 'role',
+        phase: 'About You',
+        text: 'What best describes your role?',
+        sub: 'Be honest — this shapes your results.',
+        options: [
+            { label: 'Founder / Business Owner',        qualifies: true  },
+            { label: 'Consultant or Freelancer',        qualifies: true  },
+            { label: 'Coach / Trainer / Advisor',       qualifies: true  },
+            { label: 'Employee (not a decision-maker)', qualifies: false },
+            { label: 'Just exploring ideas',            qualifies: false }
+        ]
+    },
+    {
+        id: 'stage',
+        phase: 'Business Stage',
+        text: 'Where is your business right now?',
+        sub: 'Select the option that most accurately describes your current situation.',
+        options: [
+            { label: 'Established — consistent clients & revenue',    qualifies: true  },
+            { label: 'Growing — clients coming in, need more clarity', qualifies: true  },
+            { label: 'Early stage — a few clients, still figuring it out', qualifies: false },
+            { label: 'Pre-launch — still in idea or planning phase', qualifies: false }
+        ]
+    },
+    {
+        id: 'revenue',
+        phase: 'Revenue',
+        text: 'What is your approximate annual business revenue?',
+        sub: 'This stays between us — it helps tailor what\'s possible for you.',
+        options: [
+            { label: '$100,000+ per year',           qualifies: true  },
+            { label: '$25,000 – $100,000 per year',  qualifies: true  },
+            { label: '$5,000 – $25,000 per year',    qualifies: false },
+            { label: 'Under $5,000 / No revenue yet', qualifies: false }
+        ]
+    },
+    {
+        id: 'goal',
+        phase: 'Your Goals',
+        text: 'What is your primary business goal for the next 90 days?',
+        sub: 'Pick the one that feels most urgent right now.',
+        options: [
+            { label: 'Land 1–2 strategic partnerships',              qualifies: true  },
+            { label: 'Grow revenue 25%+ through better positioning', qualifies: true  },
+            { label: 'Attract higher-value clients consistently',    qualifies: true  },
+            { label: 'Not sure yet / still figuring it out',         qualifies: false }
+        ]
+    },
+    {
+        id: 'challenge',
+        phase: 'Core Challenge',
+        text: 'What is the #1 challenge holding your business back?',
+        sub: 'Be specific — this is where the real work begins.',
+        options: [
+            { label: 'Unclear positioning or messaging',            qualifies: true  },
+            { label: 'Not enough visibility, leads, or referrals',  qualifies: true  },
+            { label: 'Struggling to land partnerships or collaborations', qualifies: true },
+            { label: 'I just need to implement what I already know', qualifies: false }
+        ]
+    },
+    {
+        id: 'investment_horizon',
+        phase: 'Investment Readiness',
+        text: 'If you found the right strategic partner, how quickly could you move forward?',
+        sub: 'No pressure — this tells us where you are in the decision process.',
+        options: [
+            { label: 'Immediately — I\'m actively looking right now',   qualifies: true  },
+            { label: 'Within the next 30 days — nearly ready',         qualifies: true  },
+            { label: 'In 3–6 months — exploring options first',        qualifies: false },
+            { label: 'No timeline — just gathering information',       qualifies: false }
+        ]
+    },
+    {
+        id: 'investment_range',
+        phase: 'Investment Readiness',
+        text: 'What level of investment are you prepared to make in strategic support?',
+        sub: 'Strategic partnerships deliver compounding returns — this helps us match the right offer.',
+        options: [
+            { label: '$3,000+ for the right solution',    qualifies: true  },
+            { label: '$1,000–$3,000 depending on value',  qualifies: true  },
+            { label: 'Under $1,000 for now',              qualifies: false },
+            { label: 'Only open to free resources',       qualifies: false }
+        ]
+    },
+    {
+        id: 'decision',
+        phase: 'Decision Process',
+        text: 'When it comes to investing in your business growth, who makes the final call?',
+        sub: 'We want to work with decision-makers — not gatekeepers.',
+        options: [
+            { label: 'I make the decision — no one else to consult', qualifies: true  },
+            { label: 'I decide, but like to inform a partner or co-founder', qualifies: true },
+            { label: 'I need approval from a board, investor, or partner', qualifies: false },
+            { label: 'Not sure / I\'m not the decision-maker',         qualifies: false }
+        ]
+    }
+];
+
+// Lead capture comes before question 1
+const LEAD_STEP = { type: 'lead' };
+
+// Full flow = [lead, q0, q1, ... q7]
+const TOTAL_STEPS = QUESTIONS.length + 1;
+
+let currentStep = 0; // 0 = lead form, 1..8 = questions
+let answers = {};
+let leadData = {};
+
+// ═══════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════
+
+function qIndex() { return currentStep - 1; } // question array index
+
+function calcQualified() {
+    let qualifying = 0;
+    QUESTIONS.forEach((q, i) => {
+        const a = answers[i];
+        if (a !== undefined && QUESTIONS[i].options[a].qualifies) qualifying++;
+    });
+    // Must qualify on 6+ of 8 questions
+    return qualifying >= 6;
+}
+
+function progress() {
+    return Math.round((currentStep / TOTAL_STEPS) * 100);
+}
+
+// ═══════════════════════════════════════════════
+// RENDERING
+// ═══════════════════════════════════════════════
+
+function render() {
+    document.getElementById('progress-fill').style.width = progress() + '%';
+    const body = document.getElementById('card-body');
+
+    if (currentStep === 0) {
+        renderLead(body);
+    } else {
+        renderQuestion(body, qIndex());
+    }
+}
+
+function renderLead(body) {
+    body.innerHTML = `
+        <div class="phase-label">✦ Quick Qualifier</div>
+        <h2 class="question-text">Let's Find Out If We're in Alignment</h2>
+        <p class="question-sub" style="margin-bottom:24px">Before the questions, share a few details so your results are personalised to you.</p>
+
+        <div class="form-intro">
+            🔒 Your information is completely private. No spam — ever. This takes under 2 minutes.
+        </div>
+
+        <div class="lead-form" id="lead-form" style="margin-top:16px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                <div class="field-group">
+                    <label class="field-label">First Name *</label>
+                    <input class="field-input" id="f-first" type="text" placeholder="First name" autocomplete="given-name">
+                    <div class="field-error" id="e-first">Required</div>
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Last Name *</label>
+                    <input class="field-input" id="f-last" type="text" placeholder="Last name" autocomplete="family-name">
+                    <div class="field-error" id="e-last">Required</div>
+                </div>
+            </div>
+            <div class="field-group">
+                <label class="field-label">Email Address *</label>
+                <input class="field-input" id="f-email" type="email" placeholder="you@business.com" autocomplete="email">
+                <div class="field-error" id="e-email">Enter a valid email</div>
+            </div>
+            <div class="field-group">
+                <label class="field-label">Business Name</label>
+                <input class="field-input" id="f-company" type="text" placeholder="Your business or brand name" autocomplete="organization">
+            </div>
+        </div>
+
+        <div class="nav">
+            <button class="btn-back invisible">←</button>
+            <button class="btn-next" id="lead-next-btn" onclick="submitLead()">Begin Qualifier →</button>
+        </div>
+    `;
+}
+
+function submitLead() {
+    const first = document.getElementById('f-first').value.trim();
+    const last = document.getElementById('f-last').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const company = document.getElementById('f-company').value.trim();
+
+    let valid = true;
+
+    if (!first) { document.getElementById('e-first').style.display = 'block'; valid = false; }
+    else document.getElementById('e-first').style.display = 'none';
+
+    if (!last) { document.getElementById('e-last').style.display = 'block'; valid = false; }
+    else document.getElementById('e-last').style.display = 'none';
+
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRe.test(email)) { document.getElementById('e-email').style.display = 'block'; valid = false; }
+    else document.getElementById('e-email').style.display = 'none';
+
+    if (!valid) return;
+
+    leadData = { first, last, email, company: company || 'Not specified' };
+    sendToFormspree('start');
+    currentStep = 1;
+    render();
+}
+
+function renderQuestion(body, qi) {
+    const q = QUESTIONS[qi];
+    const selected = answers[qi];
+    const hasAnswer = selected !== undefined;
+
+    body.innerHTML = `
+        <div class="phase-label">✦ ${q.phase}</div>
+        <p class="step-counter">Question ${qi + 1} of ${QUESTIONS.length}</p>
+        <h2 class="question-text">${q.text}</h2>
+        <p class="question-sub">${q.sub}</p>
+
+        <div class="options" id="options-container">
+            ${q.options.map((opt, i) => `
+                <button class="option-btn${selected === i ? ' selected' : ''}" onclick="selectAnswer(${i})">
+                    <div class="option-indicator"></div>
+                    <span>${opt.label}</span>
+                </button>
+            `).join('')}
+        </div>
+
+        <div class="nav">
+            <button class="btn-back${currentStep <= 1 ? ' invisible' : ''}" onclick="goBack()">← Back</button>
+            <button class="btn-next" id="next-btn" ${!hasAnswer ? 'disabled' : ''} onclick="goNext()">
+                ${qi === QUESTIONS.length - 1 ? 'See My Results →' : 'Next →'}
+            </button>
+        </div>
+    `;
+}
+
+function selectAnswer(idx) {
+    const qi = qIndex();
+    answers[qi] = idx;
+    renderQuestion(document.getElementById('card-body'), qi);
+}
+
+function goBack() {
+    if (currentStep > 0) { currentStep--; render(); }
+}
+
+function goNext() {
+    if (currentStep < TOTAL_STEPS) {
+        currentStep++;
+        if (currentStep > QUESTIONS.length) {
+            showResult();
+        } else {
+            render();
+        }
+    } else {
+        showResult();
+    }
+}
+
+// ═══════════════════════════════════════════════
+// RESULTS
+// ═══════════════════════════════════════════════
+
+function showResult() {
+    const qualified = calcQualified();
+    sendToFormspree(qualified ? 'qualified' : 'notqualified');
+
+    document.getElementById('quiz-card').style.display = 'none';
+    const rs = document.getElementById('result-screen');
+    rs.style.display = 'block';
+
+    if (qualified) {
+        renderQualifiedResult(rs);
+    } else {
+        renderNotQualifiedResult(rs);
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderQualifiedResult(container) {
+    const name = leadData.first;
+    container.innerHTML = `
+        <!-- Dark Hero -->
+        <div class="result-qualified-hero">
+            <div class="result-badge" style="position:relative;z-index:1">✦ We're in Alignment</div>
+            <h1 class="result-headline" style="position:relative;z-index:1">
+                ${name}, we're in alignment.
+            </h1>
+            <p class="result-sub" style="position:relative;z-index:1">
+                Your answers show you're a growth-ready founder with real stakes, a clear direction, and the readiness to invest in building an unfair competitive advantage. That's rare — and it's the right starting place.
+            </p>
+        </div>
+
+        <!-- Body -->
+        <div class="result-body">
+            <p style="font-size:14px;color:var(--muted);margin-bottom:4px">Your next step</p>
+            <p class="serif" style="font-size:22px;font-weight:700;color:var(--dark);margin-bottom:20px">Book Your Strategic Audit Call</p>
+
+            <div class="next-steps">
+                <div class="next-step-item">
+                    <div class="step-icon">🔍</div>
+                    <div class="step-text">
+                        <strong>Diagnose positioning & partnership gaps</strong>
+                        <span>We'll identify exactly what's blocking your next growth leap — not generic advice, your specific situation.</span>
+                    </div>
+                </div>
+                <div class="next-step-item">
+                    <div class="step-icon">🤝</div>
+                    <div class="step-text">
+                        <strong>Uncover immediate partnership opportunities</strong>
+                        <span>I'll show you which partnerships would compound fastest given your current market position.</span>
+                    </div>
+                </div>
+                <div class="next-step-item">
+                    <div class="step-icon">🗺️</div>
+                    <div class="step-text">
+                        <strong>Leave with a clear 90-day roadmap</strong>
+                        <span>Not a vague direction — a specific, prioritised action plan built for your business.</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="YOUR_CALENDLY_LINK_HERE" target="_blank" rel="noopener noreferrer" class="cta-primary">
+                Book My Strategic Audit — 30 mins →
+            </a>
+            <p class="footnote" style="margin-bottom:24px">No pressure. No pitch. Just clarity and a roadmap.</p>
+
+            <div class="divider"></div>
+
+            <!-- Audit Teaser -->
+            ${auditTeaserHTML('After your call, unlock your full Infrastructure Scorecard:')}
+
+            <div class="divider"></div>
+
+            <a href="https://monicadubesekhwela.com" class="cta-ghost">← Return to Homepage</a>
+        </div>
+    `;
+}
+
+function renderNotQualifiedResult(container) {
+    const name = leadData.first;
+    container.innerHTML = `
+        <!-- Dark Hero (warmer tone) -->
+        <div class="result-notqualified-hero">
+            <div class="result-badge" style="position:relative;z-index:1;color:var(--gold-light);border-color:rgba(201,169,97,0.3)">
+                ✦ Your Growth Foundation Report
+            </div>
+            <h1 class="result-headline" style="position:relative;z-index:1">
+                ${name}, every expert<br/>started exactly here.
+            </h1>
+            <p class="result-sub" style="position:relative;z-index:1">
+                Based on your answers, you're in an earlier stage of growth — and that's completely fine. The entrepreneurs who scale fastest are those who build the right foundation before they pour fuel on the fire.
+            </p>
+        </div>
+
+        <!-- Body -->
+        <div class="result-body">
+            <p class="serif" style="font-size:20px;font-weight:700;color:var(--dark);margin-bottom:6px">What You Need Right Now</p>
+            <p style="font-size:14px;color:var(--muted);margin-bottom:20px">Before strategy comes clarity. Here's your honest starting map:</p>
+
+            <div class="next-steps">
+                <div class="next-step-item">
+                    <div class="step-icon">🧭</div>
+                    <div class="step-text">
+                        <strong>Clarity on Direction</strong>
+                        <span>Know your niche, ideal client, and what you're truly selling before spending on marketing.</span>
+                    </div>
+                </div>
+                <div class="next-step-item">
+                    <div class="step-icon">🏗️</div>
+                    <div class="step-text">
+                        <strong>Foundational Systems</strong>
+                        <span>One strong lead channel, simple brand presence, and a consistent follow-up process.</span>
+                    </div>
+                </div>
+                <div class="next-step-item">
+                    <div class="step-icon">📈</div>
+                    <div class="step-text">
+                        <strong>Personalised Guidance</strong>
+                        <span>Not generic internet advice — a roadmap built for your specific market and goals.</span>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://calendly.com/monicadubesekhwela/30min" target="_blank" rel="noopener noreferrer" class="cta-secondary">
+                Book a Business Clarity Reading →
+            </a>
+            <a href="https://monicadubesekhwela.com/services" target="_blank" rel="noopener noreferrer" class="cta-secondary">
+                Explore Starter Programs →
+            </a>
+
+            <div style="background:rgba(201,169,97,0.06);border:1px solid rgba(201,169,97,0.2);border-radius:12px;padding:18px 20px;margin-top:8px">
+                <p class="serif" style="font-size:17px;font-style:italic;color:var(--dark);line-height:1.6;margin-bottom:8px">
+                    "Not knowing where to start is not the problem. Starting without direction is."
+                </p>
+                <p style="font-size:12px;color:var(--muted);font-weight:600">— Monica Dube-Sekhwela</p>
+                <p style="font-size:11px;color:#c0b49e;margin-top:2px">Tony Elumelu Fellow · AWEP Fellow · ForbesBLK Member</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Audit Teaser -->
+            ${auditTeaserHTML('When you\'re ready to scale, take the full 15-question Infrastructure Audit:')}
+
+            <div class="divider"></div>
+
+            <button class="cta-ghost" onclick="retake()">Retake the Qualifier →</button>
+        </div>
+    `;
+}
+
+function auditTeaserHTML(intro) {
+    return `
+        <div class="audit-teaser">
+            <p style="font-size:12px;color:var(--muted);margin-bottom:6px">${intro}</p>
+            <p class="audit-teaser-title">2026 Growth Infrastructure Audit</p>
+            <p class="audit-teaser-sub">15 strategic questions across 7 growth pillars. 5 minutes. Your complete Infrastructure Scorecard — from beginner to market leader.</p>
+            <div class="audit-pillars">
+                <div class="audit-pillar"><div class="pillar-dot"></div>Brand Intelligence</div>
+                <div class="audit-pillar"><div class="pillar-dot"></div>Thought Leadership</div>
+                <div class="audit-pillar"><div class="pillar-dot"></div>Marketing Analytics</div>
+                <div class="audit-pillar"><div class="pillar-dot"></div>Partnership Strategy</div>
+                <div class="audit-pillar"><div class="pillar-dot"></div>Revenue Operations</div>
+                <div class="audit-pillar"><div class="pillar-dot"></div>Market Positioning</div>
+                <div class="audit-pillar"><div class="pillar-dot"></div>AI & Automation</div>
+            </div>
+            <a href="audit.html" class="cta-primary" style="margin-bottom:0">
+                Take the Full Growth Audit →
+            </a>
+        </div>
+    `;
+}
+
+function retake() {
+    currentStep = 0;
+    answers = {};
+    leadData = {};
+    document.getElementById('quiz-card').style.display = 'block';
+    document.getElementById('result-screen').style.display = 'none';
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ═══════════════════════════════════════════════
+// FORMSPREE
+// ═══════════════════════════════════════════════
+
+async function sendToFormspree(stage) {
+    try {
+        const qualified = stage === 'qualified';
+        let msg = '';
+        if (stage === 'start') {
+            msg = `New Qualifier Started\n\nName: ${leadData.first} ${leadData.last}\nEmail: ${leadData.email}\nCompany: ${leadData.company}\nStatus: Started`;
+        } else {
+            const answersText = QUESTIONS.map((q, i) => {
+                const a = answers[i];
+                return `• ${q.text}\n  → ${a !== undefined ? q.options[a].label : 'Not answered'}`;
+            }).join('\n');
+            msg = `Qualifier COMPLETED — ${stage.toUpperCase()}\n\nName: ${leadData.first} ${leadData.last}\nEmail: ${leadData.email}\nCompany: ${leadData.company}\nOutcome: ${stage}\n\nAnswers:\n${answersText}`;
+        }
+
+        const fd = new FormData();
+        fd.append('name', `${leadData.first} ${leadData.last}`);
+        fd.append('email', leadData.email);
+        fd.append('company', leadData.company);
+        fd.append('subject', stage === 'start'
+            ? `🎯 Qualifier Started: ${leadData.first} ${leadData.last}`
+            : `${qualified ? '✅ QUALIFIED' : '🌱 Not Yet'}: ${leadData.first} ${leadData.last} — ${leadData.company}`);
+        fd.append('message', msg);
+
+        await fetch('https://formspree.io/f/xwvqdlwz', {
+            method: 'POST',
+            body: fd,
+            headers: { Accept: 'application/json' }
+        });
+    } catch(e) { console.warn('Form submission error:', e); }
+}
+
+// ═══════════════════════════════════════════════
+// BOOT
+// ═══════════════════════════════════════════════
+render();
+</script>
+</body>
+</html>
