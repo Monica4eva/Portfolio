@@ -14,9 +14,7 @@
       --light-brown:#DCC4A1;
       --muted:#6B5B4A;
     }
-    body{ 
-        font-family:'Poppins',sans-serif; 
-    }
+    body{ font-family:'Poppins',sans-serif; }
     .serif{ font-family:'Playfair Display',serif; }
     .reveal{ opacity:0; transform: translateY(10px); transition: all .6s ease; }
     .reveal.visible{ opacity:1; transform: translateY(0); }
@@ -42,64 +40,91 @@
         <li><a href="services.html" class="text-gray-900 hover:text-gold transition-colors">Services</a></li>
         <li><a href="contact.html" class="px-3 py-2 bg-light-brown text-gray-900 rounded-md transition-colors hover:opacity-80">Contact</a></li>
       </ul>
-      
-      </nav>
+    </nav>
   </header>
 
- <main class="container mx-auto px-6 py-12">
+  <main class="container mx-auto px-6 py-12">
     <div class="text-center mb-12 reveal">
         <h1 class="serif text-4xl font-bold text-gray-900">Insights & Stories</h1>
         <p class="mt-3 text-gray-600">Articles, guides and thoughts on branding, growth and business for entrepreneurs seeking growth in themselves and their businesses.</p>
     </div>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <a href="marketingandoperations.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
-            <img src="blogarticle.png" alt="Business expansion strategy" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Marketing and Operations</h3>
-                <p class="mt-3 text-sm text-gray-600 flex-grow">Your Marketing Invites Them In, Your Operations Are What They Experience.</p>
-                <div class="mt-4 text-xs text-gray-400">March 16, 2026 • 12 min read</div>
-            </div>
-        </a>
-        
-        <a href="tacticinfra.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
-            <img src="blogarticle.png" alt="Post thumbnail image" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Infrastructure is the compounding asset; Tactics are just a temporary fix</h3>
-                <p class="mt-3 text-sm text-gray-600 flex-grow">Most businesses are drowning in marketing tactics but starving for sustainable growth.</p>
-                <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 3 min read</div>
-            </div>
-        </a>
-        
-        <a href="globalstrategies.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
-            <img src="blogarticle.png" alt="Post thumbnail image" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Why Global Strategies Fail in African Markets (And What Works Instead)</h3>
-                <p class="mt-3 text-sm text-gray-600 flex-grow">The clash between rigid global assumptions and dynamic local contextual realities.</p>
-                <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 4 min read</div>
-            </div>
-        </a>
-        
-        <a href="zerobudget.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
-            <img src="blogarticle.png" alt="Post thumbnail image" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Zero-Budget Infrastructure: Building Authority with Discipline</h3>
-                <p class="mt-3 text-sm text-gray-600 flex-grow">Sustainable authority doesn't require budget; it requires discipline.</p>
-                <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 4 min read</div>
-            </div>
-        </a>
-        
-        <a href="scalingstrategicpartnership.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
-            <img src="blogarticle.png" alt="Post thumbnail image" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
-            <div class="p-6 flex flex-col flex-grow">
-                <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Scaling Beyond Borders: The Power of Strategic Partnerships</h3>
-                <p class="mt-3 text-sm text-gray-600 flex-grow">Strategic alliances turn operational friction into systematic leverage.</p>
-                <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 3 min read</div>
-            </div>
-        </a>
+
+      <!-- Post 1 — LATEST: Marketing and Operations -->
+      <a href="marketingandoperations.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
+          <div class="relative">
+            <img src="blogarticle.png" alt="Marketing and Operations" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
+            <span class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--gold);color:#fff;">Latest</span>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+              <span class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--gold);">Marketing Strategy</span>
+              <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Your Marketing Invites Them In. Your Operations Are What They Experience.</h3>
+              <p class="mt-3 text-sm text-gray-600 flex-grow">The gap between what you promise in your marketing and what clients actually experience is one of the quietest reasons businesses stop growing.</p>
+              <div class="mt-4 text-xs text-gray-400">March 16, 2026 • 9 min read</div>
+          </div>
+      </a>
+
+      <!-- Post 2 — LATEST: Content Strategy -->
+      <a href="contentstrategy.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
+          <div class="relative">
+            <img src="blogarticle.png" alt="Content Strategy" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
+            <span class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full" style="background:var(--gold);color:#fff;">Latest</span>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+              <span class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--gold);">Content Strategy</span>
+              <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">One Offer. Three Different Customers. Is Your Content Speaking to All of Them?</h3>
+              <p class="mt-3 text-sm text-gray-600 flex-grow">The same product or service is experienced completely differently by different types of clients. If your content only speaks to one of them, you are quietly losing the rest.</p>
+              <div class="mt-4 text-xs text-gray-400">March 16, 2026 • 10 min read</div>
+          </div>
+      </a>
+
+      <!-- Post 3 -->
+      <a href="tacticinfra.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
+          <img src="blogarticle.png" alt="Infrastructure vs Tactics" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
+          <div class="p-6 flex flex-col flex-grow">
+              <span class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--muted);">Growth Strategy</span>
+              <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Infrastructure is the Compounding Asset. Tactics are a Temporary Fix.</h3>
+              <p class="mt-3 text-sm text-gray-600 flex-grow">Most businesses are drowning in marketing tactics but starving for sustainable growth.</p>
+              <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 3 min read</div>
+          </div>
+      </a>
+
+      <!-- Post 4 -->
+      <a href="globalstrategies.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
+          <img src="blogarticle.png" alt="Global Strategies in African Markets" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
+          <div class="p-6 flex flex-col flex-grow">
+              <span class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--muted);">Market Entry</span>
+              <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Why Global Strategies Fail in African Markets (And What Works Instead)</h3>
+              <p class="mt-3 text-sm text-gray-600 flex-grow">The clash between rigid global assumptions and dynamic local contextual realities.</p>
+              <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 4 min read</div>
+          </div>
+      </a>
+
+      <!-- Post 5 -->
+      <a href="zerobudget.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
+          <img src="blogarticle.png" alt="Zero Budget Infrastructure" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
+          <div class="p-6 flex flex-col flex-grow">
+              <span class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--muted);">Authority Building</span>
+              <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Zero-Budget Infrastructure: Building Authority with Discipline</h3>
+              <p class="mt-3 text-sm text-gray-600 flex-grow">Sustainable authority does not require budget. It requires discipline.</p>
+              <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 4 min read</div>
+          </div>
+      </a>
+
+      <!-- Post 6 -->
+      <a href="scalingstrategicpartnership.html" class="reveal card-hover shadow-lg hover:shadow-xl transition duration-300 rounded-xl flex flex-col overflow-hidden bg-gray-50 group">
+          <img src="blogarticle.png" alt="Strategic Partnerships" class="w-full h-44 object-cover group-hover:opacity-85 transition-opacity duration-300" />
+          <div class="p-6 flex flex-col flex-grow">
+              <span class="text-xs font-semibold uppercase tracking-widest mb-2" style="color:var(--muted);">Expansion</span>
+              <h3 class="serif text-xl font-bold text-gray-900 group-hover:text-gold transition-colors">Scaling Beyond Borders: The Power of Strategic Partnerships</h3>
+              <p class="mt-3 text-sm text-gray-600 flex-grow">Strategic alliances turn operational friction into systematic leverage.</p>
+              <div class="mt-4 text-xs text-gray-400">December 3, 2025 • 3 min read</div>
+          </div>
+      </a>
+
     </div>
-</main>
+  </main>
 
   <footer class="border-t py-8 bg-white">
     <div class="container mx-auto px-6 text-center text-sm text-gray-600">
@@ -109,7 +134,6 @@
 
   <script>
     document.getElementById('y2').textContent = new Date().getFullYear();
-
     const revealEls = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
