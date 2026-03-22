@@ -3,216 +3,616 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Contact | Monica Dube-Sekhwela</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- SEO META TAGS -->
+<title>Work With Monica Dube-Sekhwela | Strategic Growth Architect & Fractional CMO</title>
+<meta name="description" content="Ready to scale your business across Africa or enter African markets? Book a strategy call with Monica Dube-Sekhwela, Fractional CMO and Strategic Growth Architect based in Gaborone, Botswana.">
+<meta name="keywords" content="hire fractional CMO Africa, strategic growth consultant Botswana, African market entry consultant, book strategy call Monica Dube-Sekhwela, pan-African business growth">
+<meta name="author" content="Monica Dube-Sekhwela">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://monicadubesekhwela.com/contact">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://monicadubesekhwela.com/contact">
+<meta property="og:title" content="Work With Monica Dube-Sekhwela | Strategic Growth Architect">
+<meta property="og:description" content="Ready to scale your business or enter African markets? Book a strategy call with Monica Dube-Sekhwela, Fractional CMO based in Gaborone, Botswana.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --gold:#C69C6D;
-  --light-brown:#DCC4A1;
-  --muted:#6B5B4A;
+:root {
+  --gold: #C69C6D;
+  --gold-light: #DCC4A1;
+  --gold-pale: rgba(198,156,109,0.08);
+  --pink: #F8C8D8;
+  --muted: #6B5B4A;
+  --dark: #1a0f07;
+  --dark2: #2d1810;
+  --text: #1f1209;
+  --text-body: #3d2e22;
+  --text-muted: #7a6a5a;
+  --bg: #fffdf9;
+  --bg2: #fff8f2;
+  --border: rgba(198,156,109,0.18);
 }
-body{ font-family:'Poppins',sans-serif; background:#FAFAF8; }
-.serif{ font-family:'Playfair Display',serif; }
-.reveal{ opacity:0; transform: translateY(16px); transition: all .6s ease; }
-.reveal.visible{ opacity:1; transform: translateY(0); }
 
-/* Beautiful form styling */
-.form-group { margin-bottom: 1.5rem; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text-body);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: 'Playfair Display', serif; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,253,249,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  text-decoration: none;
+}
+.nav-avatar {
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--gold), var(--gold-light));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700;
+  flex-shrink: 0;
+}
+.nav-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: .95rem; color: var(--dark); }
+.nav-sub { font-size: .62rem; color: var(--muted); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { text-decoration: none; font-size: .82rem; font-weight: 500; color: var(--text-muted); transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  font-size: .78rem; font-weight: 700;
+  padding: .5rem 1.25rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  color: #fff; text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .88; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: .25rem; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--muted); margin: 4px 0; border-radius: 2px; }
+.mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem; z-index: 99; }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; padding: .6rem 0; font-size: .9rem; font-weight: 500; color: var(--text-body); text-decoration: none; border-bottom: 1px solid var(--border); }
+.mobile-menu a:last-child { border-bottom: none; }
+
+/* ── HERO ── */
+.hero {
+  padding: 8rem 1.5rem 4rem;
+  background: linear-gradient(160deg, #fffdf9, var(--bg2));
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -6rem; right: -6rem;
+  width: 32rem; height: 32rem;
+  background: radial-gradient(circle, rgba(198,156,109,0.1), transparent 65%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -4rem; left: -4rem;
+  width: 22rem; height: 22rem;
+  background: radial-gradient(circle, rgba(248,200,216,0.08), transparent 65%);
+  border-radius: 50%; pointer-events: none;
+}
+.hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--gold); margin-bottom: 1.25rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; display: block; width: 1.5rem; height: 1px; background: var(--gold);
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--dark);
+  margin-bottom: 1.25rem;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+.hero-badges {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem;
+  margin-bottom: 0;
+}
+.badge {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .35rem .9rem;
+  border-radius: 999px;
+  font-size: .72rem; font-weight: 600;
+  background: rgba(198,156,109,0.1);
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ── MAIN GRID ── */
+.main-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── FORM ── */
+.form-panel {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(26,15,7,0.06);
+  padding: 2.5rem;
+}
+.form-panel-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: .5rem;
+}
+.form-panel-sub { font-size: .85rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.6; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.form-group { margin-bottom: 1.25rem; }
 .form-label {
-  display:block;
-  font-size:14px;
-  font-weight:600;
-  color:#4A4A4A;
-  margin-bottom:.5rem;
+  display: block;
+  font-size: .78rem; font-weight: 600;
+  color: var(--dark);
+  margin-bottom: .4rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
 }
-.form-input, .form-textarea{
-  width:100%;
-  padding:14px 16px;
-  border:2px solid #E8E8E8;
-  border-radius:12px;
-  font-size:15px;
-  transition: all .3s ease;
-  background:white;
-  font-family:'Poppins',sans-serif;
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: .85rem 1rem;
+  border: 1.5px solid rgba(198,156,109,0.22);
+  border-radius: 10px;
+  font-size: .9rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-body);
+  background: var(--bg);
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
 }
-.form-input:focus, .form-textarea:focus{
-  outline:none;
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(198,156,109,.12);
+  box-shadow: 0 0 0 3px rgba(198,156,109,0.12);
+  background: #fff;
 }
-.form-textarea{ min-height: 140px; resize: vertical; }
+.form-input::placeholder, .form-textarea::placeholder { color: #b8a898; }
+.form-textarea { min-height: 130px; resize: vertical; }
+.form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B5B4A' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer; }
 
-.submit-btn{
-  background: linear-gradient(135deg, var(--gold), var(--light-brown));
-  color:white;
-  padding:14px 32px;
-  border-radius:12px;
-  font-weight:600;
-  border:none;
-  cursor:pointer;
-  transition: all .3s ease;
-  width:100%;
-  font-size:16px;
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  margin-top: .5rem;
 }
-.submit-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(198,156,109,.28);
-}
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(198,156,109,0.35); }
 
-.soft-panel{
-  background:white;
-  border-radius:16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,.06);
-}
+.form-note { font-size: .72rem; color: var(--text-muted); text-align: center; margin-top: .75rem; line-height: 1.5; }
 
-/* RIGHT COLUMN CARDS (clean alignment) */
-.info-card{
-  background: linear-gradient(135deg, rgba(198,156,109,.10), rgba(220,196,161,.10));
-  border-radius:16px;
+/* Success message */
+.success-msg {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+.success-msg .check {
+  width: 3.5rem; height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+}
+.success-msg h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; color: var(--dark); margin-bottom: .5rem; }
+.success-msg p { font-size: .88rem; color: var(--text-muted); }
+
+/* ── SIDE PANEL ── */
+.side-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.info-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--border);
   padding: 1.5rem;
-  border:1px solid rgba(198,156,109,.18);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
-.contact-icon{
-  width:40px;
-  height:40px;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: linear-gradient(135deg, var(--gold), var(--light-brown));
-  color:white;
-  font-size:18px;
-  flex: 0 0 auto;
+.info-card-gold {
+  background: linear-gradient(135deg, var(--dark), var(--dark2));
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
 }
-.mini-divider{ height:1px; background: rgba(0,0,0,.06); margin: 16px 0; }
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:.4rem;
-  padding:.35rem .7rem;
-  border-radius:999px;
-  font-size:.75rem;
-  font-weight:600;
-  border: 1px solid rgba(198,156,109,.25);
-  background: rgba(255,255,255,.65);
+.info-card-gold::before {
+  content: '';
+  position: absolute; top: -3rem; right: -3rem;
+  width: 12rem; height: 12rem;
+  background: radial-gradient(circle, rgba(198,156,109,0.2), transparent 60%);
+  border-radius: 50%;
 }
-.small-note{ font-size: 12px; color:#6b7280; line-height:1.4; }
+.card-label {
+  font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--gold); margin-bottom: .75rem;
+}
+.card-label-light {
+  font-size: .65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--gold-light); margin-bottom: .75rem;
+}
+
+.contact-row {
+  display: flex; align-items: center; gap: .85rem;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+.contact-icon {
+  width: 2.25rem; height: 2.25rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; flex-shrink: 0;
+}
+.contact-row-label { font-size: .7rem; color: var(--text-muted); font-weight: 500; }
+.contact-row-value { font-size: .85rem; font-weight: 600; color: var(--dark); }
+.contact-row-value a { color: var(--gold); text-decoration: none; }
+.contact-row-value a:hover { text-decoration: underline; }
+
+.steps-list { display: flex; flex-direction: column; gap: .85rem; }
+.step-item { display: flex; align-items: flex-start; gap: .85rem; }
+.step-dot {
+  width: 1.75rem; height: 1.75rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: .8rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: .1rem;
+}
+.step-text { font-size: .85rem; color: var(--text-body); line-height: 1.6; }
+.step-text strong { color: var(--dark); font-weight: 600; }
+
+.availability-dot {
+  width: .5rem; height: .5rem; border-radius: 50%;
+  background: #22c55e; display: inline-block; margin-right: .35rem;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .4; }
+}
+
+.creds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin-top: .75rem; }
+.cred-chip {
+  font-size: .68rem; font-weight: 600;
+  padding: .4rem .65rem;
+  border-radius: 6px;
+  background: rgba(198,156,109,0.12);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: .78rem;
+  color: var(--text-muted);
+  background: var(--bg);
+}
+
+/* ── FADE ANIMATIONS ── */
+.fade-up { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; }
+.d2 { transition-delay: .2s; }
+.d3 { transition-delay: .3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .main-wrap { grid-template-columns: 1fr; }
+  .side-panel { order: -1; }
+}
+@media (max-width: 640px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: block; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero { padding: 6rem 1.25rem 3rem; }
+  .form-panel { padding: 1.75rem; }
+  .creds-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
-
 <body>
-<header class="py-6">
-  <nav class="container mx-auto px-6 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(180deg,var(--gold),var(--light-brown));">
-        <span class="serif text-white text-lg">M</span>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-avatar">M</div>
+      <div>
+        <div class="nav-name">Monica Dube-Sekhwela</div>
+        <div class="nav-sub">Strategic Growth Architect</div>
       </div>
-      <div class="serif font-bold text-lg">Monica Dube-Sekhwela</div>
     </a>
-    <ul class="hidden md:flex gap-8 items-center text-sm font-medium">
-      <li><a href="about.html" class="hover:text-gray-600 transition">About</a></li>
-      <li><a href="blog.html" class="hover:text-gray-600 transition">Blog</a></li>
-      <li><a href="services.html" class="hover:text-gray-600 transition">Services</a></li>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Insights</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="projects.html">Case Studies</a></li>
     </ul>
-  </nav>
-</header>
-
-<main class="container mx-auto px-6 py-16">
-  <div class="text-center mb-12 reveal">
-    <h1 class="serif text-4xl md:text-5xl font-bold mb-4">Let's Work Together</h1>
-    <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-      Tell me about your project and I'll get back to you within 48 hours. Whether you're just starting out or scaling up, I'm here to help.
-    </p>
+    <a href="contact.html" class="nav-cta" style="background:var(--dark);color:#fff;">Contact</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="blog.html">Insights</a>
+  <a href="services.html">Programs</a>
+  <a href="projects.html">Case Studies</a>
+</div>
 
-  <div class="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-    <!-- Form Section -->
-    <div class="reveal soft-panel p-8 md:p-10">
-      <form action="https://formspree.io/f/xyzvryvw" method="POST" id="contactForm">
-        <div class="form-group">
-          <label class="form-label" for="name">Your Name</label>
-          <input id="name" type="text" name="name" class="form-input" placeholder="Jane Doe" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="email">Email Address</label>
-          <input id="email" type="email" name="email" class="form-input" placeholder="jane@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="message">What can I help you with?</label>
-          <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your business goals, challenges, or the project you have in mind..." required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-eyebrow">Work With Monica</div>
+    <h1>Let's build something that <em>actually scales.</em></h1>
+    <p class="hero-sub">Whether you're an African founder ready to cross borders or an international organisation entering the continent, the conversation starts here. Tell me where you are and where you're trying to go.</p>
+    <div class="hero-badges">
+      <span class="badge"><span class="availability-dot"></span> Accepting Q2 2026 Engagements</span>
+      <span class="badge">⏱ Reply within 48 hrs</span>
+      <span class="badge">🌍 Remote-first · Africa & Global</span>
     </div>
+  </div>
+</section>
 
-    <!-- Side Panel -->
-    <div class="reveal space-y-6">
-      <!-- Email Card -->
-      <div class="info-card">
-        <!-- TOP ROW aligned -->
-        <div class="flex items-start gap-4">
-          <div class="contact-icon">✉️</div>
-          <div class="flex-1">
-            <h3 class="font-semibold text-lg leading-tight">Email Me Directly</h3>
-            <a href="mailto:hello@swiftsocialconnect.com" class="text-sm text-gray-700 underline underline-offset-4">
-              hello@swiftsocialconnect.com
-            </a>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <span class="badge">⏱ Reply within 48 hrs</span>
-              <span class="badge">🌍 Remote-first</span>
-            </div>
+<!-- MAIN GRID -->
+<div class="main-wrap">
+
+  <!-- FORM -->
+  <div class="form-panel fade-up">
+    <div id="form-wrap">
+      <h2 class="form-panel-title">Start the conversation</h2>
+      <p class="form-panel-sub">The more context you give me, the more useful my reply will be. Two minutes now saves us both a lot of back-and-forth later.</p>
+
+      <form action="https://formspree.io/f/xyzvryvw" method="POST" id="contactForm">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Your Name</label>
+            <input id="name" type="text" name="name" class="form-input" placeholder="Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input id="email" type="email" name="email" class="form-input" placeholder="jane@company.com" required>
           </div>
         </div>
 
-        <div class="mini-divider"></div>
-
-        <!-- SECOND CARD properly nested & aligned -->
-        <div class="soft-panel p-6">
-          <h3 class="font-semibold text-lg mb-3">Need help choosing?</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            If you're unsure which service fits your needs, share your goals in the form.
-            I'll recommend the best package for your stage and budget.
-          </p>
-          <p class="small-note mt-4">
-            Tip: Include your industry, current monthly revenue (if any), and your biggest growth blocker.
-          </p>
+        <div class="form-group">
+          <label class="form-label" for="company">Business / Organisation</label>
+          <input id="company" type="text" name="company" class="form-input" placeholder="Your company name">
         </div>
-      </div>
 
-      <!-- OPTIONAL: add a tiny “what happens next” strip (keeps alignment + boosts conversions) -->
-      <div class="soft-panel p-6">
-        <h4 class="font-semibold mb-3">What happens next</h4>
-        <ol class="text-sm text-gray-600 space-y-2">
-          <li><span class="font-semibold text-gray-800">1.</span> You submit the form (2 minutes)</li>
-          <li><span class="font-semibold text-gray-800">2.</span> I reply within 48 hours with questions + next steps</li>
-          <li><span class="font-semibold text-gray-800">3.</span> If it's a fit, we book a strategy call</li>
-        </ol>
-      </div>
+        <div class="form-group">
+          <label class="form-label" for="interest">What are you looking for?</label>
+          <select id="interest" name="interest" class="form-select">
+            <option value="" disabled selected>Select an option</option>
+            <option>Fractional CMO / Strategic Advisory</option>
+            <option>Africa Market Entry Strategy</option>
+            <option>Pan-African Expansion Planning</option>
+            <option>Growth Infrastructure Audit</option>
+            <option>Go-To-Market Strategy</option>
+            <option>Something else / Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Tell me about your situation</label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="What's your biggest growth challenge right now? Where are you trying to be in 12 months? The more specific you are, the more useful my reply will be." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message →</button>
+        <p class="form-note">No pitch decks. No sales calls unless it makes sense. Just an honest conversation about whether and how I can help.</p>
+      </form>
+    </div>
+
+    <!-- Success state -->
+    <div class="success-msg" id="success-msg">
+      <div class="check">✓</div>
+      <h3>Message received.</h3>
+      <p>Thank you for reaching out. I'll review what you've shared and reply within 48 hours with honest thoughts on next steps.</p>
     </div>
   </div>
-</main>
 
-<footer class="border-t py-8 mt-20">
-  <div class="container mx-auto px-6 text-center text-sm text-gray-600">
-    &copy; <span id="y4"></span> Monica Dube-Sekhwela. Building businesses that honor both ambition and presence.
+  <!-- SIDE PANEL -->
+  <div class="side-panel">
+
+    <!-- Availability + Contact -->
+    <div class="info-card fade-up d1">
+      <div class="card-label">Reach Me Directly</div>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-row-label">Email</div>
+          <div class="contact-row-value"><a href="mailto:hello@swiftsocialconnect.com">hello@swiftsocialconnect.com</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-row-label">WhatsApp</div>
+          <div class="contact-row-value"><a href="https://wa.me/26774310425">+267 74 310 425</a></div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-row-label">Based in</div>
+          <div class="contact-row-value">Gaborone, Botswana · Serves Africa & Global</div>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">🔗</div>
+        <div>
+          <div class="contact-row-label">LinkedIn</div>
+          <div class="contact-row-value"><a href="https://www.linkedin.com/in/monica-dube-sekhwela/" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What happens next -->
+    <div class="info-card fade-up d2">
+      <div class="card-label">What Happens Next</div>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-dot">1</div>
+          <div class="step-text"><strong>You submit the form</strong> — takes about two minutes. The more context you give, the better.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-dot">2</div>
+          <div class="step-text"><strong>I reply within 48 hours</strong> with honest thoughts, questions, and suggested next steps.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-dot">3</div>
+          <div class="step-text"><strong>If it's a fit</strong>, we book a focused strategy call and go from there. No pressure, no pitch.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dark card: who this is for -->
+    <div class="info-card-gold fade-up d3">
+      <div class="card-label-light">Who I Work With</div>
+      <p style="color: var(--gold-light); font-size: .88rem; line-height: 1.75; position: relative; z-index: 1; margin-bottom: 1rem;">I work with a select number of founders and organisations each quarter. The best fit is someone who has traction, is ready to invest in strategy, and wants a partner who is fully in.</p>
+      <div class="creds-grid" style="position: relative; z-index: 1;">
+        <div class="cred-chip" style="background: rgba(198,156,109,0.15); color: var(--gold-light); border-color: rgba(198,156,109,0.25);">TEF Alumna</div>
+        <div class="cred-chip" style="background: rgba(198,156,109,0.15); color: var(--gold-light); border-color: rgba(198,156,109,0.25);">ForbesBLK Member</div>
+        <div class="cred-chip" style="background: rgba(198,156,109,0.15); color: var(--gold-light); border-color: rgba(198,156,109,0.25);">AWEC Fellow</div>
+        <div class="cred-chip" style="background: rgba(198,156,109,0.15); color: var(--gold-light); border-color: rgba(198,156,109,0.25);">MSc Entrepreneurship</div>
+      </div>
+    </div>
+
   </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; <span id="yr"></span> Monica Dube-Sekhwela. Building businesses that honour both ambition and presence.</p>
 </footer>
 
 <script>
-document.getElementById('y4').textContent = new Date().getFullYear();
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
-}, {threshold:0.15});
-revealEls.forEach(n => io.observe(n));
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+// Fade-up on scroll
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+fadeEls.forEach(el => observer.observe(el));
+
+// Form: show success state
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('.submit-btn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      document.getElementById('form-wrap').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    } else {
+      btn.textContent = 'Something went wrong. Try emailing directly.';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Something went wrong. Try emailing directly.';
+    btn.disabled = false;
+  }
+});
 </script>
 </body>
 </html>
