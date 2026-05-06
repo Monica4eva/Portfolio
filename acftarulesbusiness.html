@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AfCFTA Is Rewriting the Rules of African Business | Monica Dube-Sekhwela</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-dark: #8B6914;
+    --ink: #1A1A1A;
+    --text-body: #2C2820;
+    --text-muted: #6B6560;
+    --cream: #FAF7F2;
+    --warm-mid: #F0EAE0;
+    --border: #E8E2D9;
+    --max-width: 760px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: var(--text-body);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* NAV */
+  nav {
+    padding: 1.25rem 2rem;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 13px; font-weight: 500; color: var(--text-muted);
+    text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-dark); }
+
+  /* ARTICLE WRAPPER */
+  .article-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .article-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold-dark);
+    margin-bottom: 1.25rem; display: block;
+  }
+
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 600; line-height: 1.2;
+    color: var(--ink); margin-bottom: 1.25rem;
+  }
+
+  .article-subtitle {
+    font-size: 1.1rem; font-weight: 300; color: var(--text-muted);
+    line-height: 1.7; margin-bottom: 1.5rem;
+    border-left: 3px solid var(--gold); padding-left: 1rem;
+  }
+
+  .article-meta {
+    font-size: 13px; color: var(--text-muted);
+    margin-bottom: 2.5rem; padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .article-meta span { margin-right: 1.5rem; }
+
+  /* HERO */
+  .article-hero {
+    width: 100%; border-radius: 10px; overflow: hidden; margin-bottom: 3rem;
+    background: linear-gradient(135deg, #1A1A1A 0%, #2C2820 60%, #8B6914 100%);
+    padding: 3rem 2rem; text-align: center; position: relative;
+  }
+  .hero-continent {
+    font-size: 6rem; line-height: 1; margin-bottom: 1rem; filter: grayscale(20%);
+  }
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: #fff; font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .hero-sub {
+    font-size: 13px; color: rgba(201,168,76,0.9); letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 500;
+  }
+  .hero-badges {
+    display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .hero-badge {
+    background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); font-size: 11px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 20px;
+  }
+
+  /* BODY */
+  .article-body p { margin-bottom: 1.5rem; color: var(--text-body); }
+  .article-body h2 {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem;
+    font-weight: 600; color: var(--ink); margin: 2.5rem 0 1rem; padding-top: 1rem;
+  }
+  .article-body h3 {
+    font-size: 1rem; font-weight: 600; color: var(--ink);
+    margin: 2rem 0 0.75rem; letter-spacing: 0.02em;
+  }
+
+  /* PULLQUOTE */
+  .pullquote {
+    border-left: 3px solid var(--gold); padding: 1rem 1.5rem;
+    margin: 2.5rem 0; background: var(--cream); border-radius: 0 6px 6px 0;
+  }
+  .pullquote p {
+    font-family: 'Playfair Display', serif; font-size: 1.15rem;
+    font-style: italic; font-weight: 400; color: var(--ink);
+    margin: 0 !important; line-height: 1.6;
+  }
+
+  /* DIAGRAM WRAPPER */
+  .diagram-wrap {
+    background: var(--cream); border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 2rem; margin: 2.5rem 0;
+  }
+  .diagram-title {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 1.5rem; text-align: center;
+  }
+  .diagram-note {
+    font-size: 11px; color: var(--text-muted);
+    text-align: center; margin-top: 1rem;
+  }
+
+  /* DIAGRAM 1: CONTINENT MAP OF 3 KEY SECTORS */
+  .sector-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;
+  }
+  .sector-card {
+    background: #fff; border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 1.25rem; text-align: center;
+    border-top: 3px solid var(--gold);
+  }
+  .sector-icon { font-size: 2.2rem; margin-bottom: 0.5rem; }
+  .sector-title {
+    font-size: 13px; font-weight: 600; color: var(--ink);
+    margin-bottom: 0.4rem; line-height: 1.3;
+  }
+  .sector-desc { font-size: 11px; color: var(--text-muted); line-height: 1.55; }
+  .sector-tag {
+    display: inline-block; margin-top: 0.75rem;
+    background: rgba(201,168,76,0.1); color: var(--gold-dark);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 20px;
+  }
+
+  /* DIAGRAM 2: MARKET READINESS TABLE */
+  .market-table {
+    width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 13px;
+  }
+  .market-table th {
+    background: var(--ink); color: #fff; padding: 10px 14px;
+    text-align: left; font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .market-table td {
+    padding: 10px 14px; border-bottom: 0.5px solid var(--border);
+    color: var(--text-body); vertical-align: middle;
+  }
+  .market-table tr:nth-child(even) td { background: rgba(201,168,76,0.04); }
+  .status-pill {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .pill-fast { background: rgba(39,174,96,0.12); color: #27AE60; }
+  .pill-mid  { background: rgba(201,168,76,0.15); color: #8B6914; }
+  .pill-slow { background: rgba(192,57,43,0.10); color: #C0392B; }
+
+  /* DIAGRAM 3: COMMON MISTAKES */
+  .mistake-flow { display: flex; flex-direction: column; gap: 0; }
+  .mistake-item {
+    display: grid; grid-template-columns: 44px 1fr; gap: 0 16px; align-items: stretch;
+  }
+  .mistake-spine { display: flex; flex-direction: column; align-items: center; }
+  .mistake-dot {
+    width: 16px; height: 16px; border-radius: 50%; background: #C0392B;
+    flex-shrink: 0; margin-top: 6px; position: relative; z-index: 1;
+  }
+  .mistake-line { width: 1px; flex: 1; background: rgba(192,57,43,0.25); min-height: 20px; }
+  .mistake-content { padding: 0 0 24px; }
+  .mistake-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #C0392B; margin-bottom: 3px;
+  }
+  .mistake-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .mistake-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+  /* DIAGRAM 4: GLIDE FRAMEWORK POSITIONING */
+  .glide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
+  .glide-card {
+    background: #fff; border: 0.5px solid var(--border);
+    border-radius: 8px; padding: 1rem;
+  }
+  .glide-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 600; color: var(--gold);
+    line-height: 1; margin-bottom: 0.25rem;
+  }
+  .glide-word { font-size: 12px; font-weight: 700; color: var(--ink); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .glide-desc { font-size: 11px; color: var(--text-muted); line-height: 1.55; }
+  .glide-full {
+    background: var(--ink); border-radius: 8px; padding: 1rem; text-align: center;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .glide-letters-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 600; letter-spacing: 0.3em; color: var(--gold);
+  }
+
+  /* DIAGRAM 5: CONTINENTAL THESIS */
+  .thesis-checklist { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+  .thesis-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: #fff; border: 0.5px solid var(--border);
+    border-radius: 8px; padding: 12px 14px;
+  }
+  .thesis-check {
+    width: 20px; height: 20px; border-radius: 4px;
+    border: 1.5px solid var(--gold); flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .thesis-check svg { display: none; }
+  .thesis-text { font-size: 13px; color: var(--text-body); line-height: 1.5; }
+  .thesis-text strong { color: var(--ink); font-weight: 600; }
+
+  /* KEY TAKEAWAY */
+  .key-takeaway {
+    background: var(--ink); color: #fff; border-radius: 10px;
+    padding: 2rem; margin: 3rem 0;
+  }
+  .key-takeaway-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .key-takeaway p {
+    font-size: 1rem; line-height: 1.7;
+    color: rgba(255,255,255,0.9); margin: 0 !important;
+  }
+
+  /* STAT CALLOUTS */
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+  .stat-card {
+    background: var(--cream); border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 1.25rem; text-align: center;
+  }
+  .stat-number {
+    font-family: 'Playfair Display', serif; font-size: 2rem;
+    font-weight: 600; color: var(--gold-dark); line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* CTA */
+  .article-cta {
+    background: var(--cream); border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 2rem; text-align: center; margin: 3rem 0;
+  }
+  .article-cta h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    color: var(--ink); margin-bottom: 0.75rem;
+  }
+  .article-cta p { font-size: 14px; color: var(--text-muted); margin-bottom: 1.25rem; }
+  .cta-btn {
+    display: inline-block; padding: 12px 30px;
+    background: var(--ink); color: #fff; font-size: 13px;
+    font-weight: 500; letter-spacing: 0.05em;
+    text-decoration: none; border-radius: 4px; transition: background 0.2s;
+  }
+  .cta-btn:hover { background: var(--gold-dark); }
+
+  /* RELATED */
+  .related-section { margin-top: 4rem; }
+  .related-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .related-card {
+    border: 0.5px solid var(--border); border-radius: 8px;
+    padding: 1.25rem; text-decoration: none; transition: border-color 0.2s;
+  }
+  .related-card:hover { border-color: var(--gold); }
+  .related-card-tag {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold-dark);
+    margin-bottom: 0.5rem; display: block;
+  }
+  .related-card h4 {
+    font-size: 14px; font-weight: 600; color: var(--ink);
+    line-height: 1.4; margin-bottom: 0.5rem;
+  }
+  .related-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.5);
+    text-align: center; padding: 2rem; font-size: 12px;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .sector-grid { grid-template-columns: 1fr; }
+    .glide-grid { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: 1fr; }
+    .market-table { font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://monicadubesekhwela.com" class="nav-logo">Monica Dube-Sekhwela</a>
+  <ul class="nav-links">
+    <li><a href="https://monicadubesekhwela.com/about">About</a></li>
+    <li><a href="https://monicadubesekhwela.com/services">Programs</a></li>
+    <li><a href="https://monicadubesekhwela.com/blog">Insights</a></li>
+    <li><a href="https://monicadubesekhwela.com/contact">Let's Talk</a></li>
+  </ul>
+</nav>
+
+<article class="article-wrapper">
+
+  <span class="article-tag">Continental Growth Strategy</span>
+
+  <h1 class="article-title">AfCFTA Is Rewriting the Rules of African Business — Here Is What Founders Need to Know in 2026</h1>
+
+  <p class="article-subtitle">The founders who understand how to position themselves inside this continental shift are the ones who will capture disproportionate market share in the next 24 months.</p>
+
+  <div class="article-meta">
+    <span>By Monica Dube-Sekhwela</span>
+    <span>May 2026</span>
+    <span>10 min read</span>
+  </div>
+
+  <!-- HERO BANNER -->
+  <div class="article-hero">
+    <div class="hero-continent">🌍</div>
+    <div class="hero-headline">54 Markets. One Continental Opportunity.</div>
+    <div class="hero-sub">AfCFTA is no longer a policy document. It is an active market shift.</div>
+    <div class="hero-badges">
+      <span class="hero-badge">Botswana</span>
+      <span class="hero-badge">Nigeria</span>
+      <span class="hero-badge">Kenya</span>
+      <span class="hero-badge">Ghana</span>
+      <span class="hero-badge">South Africa</span>
+      <span class="hero-badge">+ 50 more</span>
+    </div>
+  </div>
+
+  <div class="article-body">
+
+    <p>If you have been following the conversations in African business circles, you already know that AfCFTA — the African Continental Free Trade Area — is no longer just a headline. It is a commercial reality reshaping how buyers, investors, and suppliers evaluate opportunity across the continent.</p>
+
+    <p>But here is what most people are not saying loudly enough: the founders who understand how to position themselves inside this shift are the ones who will capture disproportionate market share in the next 24 months. The ones waiting for perfect clarity will find the opportunity has moved on without them.</p>
+
+    <!-- STAT CALLOUTS -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">55</div>
+        <div class="stat-label">African Union member states covered by AfCFTA</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">$3.4T</div>
+        <div class="stat-label">Combined GDP across the free trade area</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1.4B</div>
+        <div class="stat-label">People in the world's largest free trade area by country count</div>
+      </div>
+    </div>
+
+    <h2>What AfCFTA Actually Is — and Is Not</h2>
+
+    <p>AfCFTA is the world's largest free trade area by number of participating countries. The goal is to reduce tariffs on 90% of goods, liberalise services, and build continental infrastructure for trade.</p>
+
+    <div class="pullquote">
+      <p>"The question is not whether AfCFTA will change African commerce. It already is. The question is whether your business is positioned to benefit from that change now."</p>
+    </div>
+
+    <p>What it is not: a magic button. Implementation is uneven. Some countries are moving faster than others. Tariff reduction schedules are still being negotiated in certain sectors. Cross-border payments remain a friction point. Customs clearance is improving but not uniform.</p>
+
+    <p>So the honest answer to whether AfCFTA is working is: it depends on which markets you are talking about and what you are selling.</p>
+
+
+    <!-- DIAGRAM 1: WHICH SECTORS ARE MOVING FASTEST -->
+    <h2>Which Sectors Are Moving Fastest</h2>
+
+    <p>Based on activity tracked through early 2026, three sectors are showing the most tangible AfCFTA-driven movement for SMEs and founder-led businesses.</p>
+
+    <div class="diagram-wrap">
+      <p class="diagram-title">Diagram 1 — Three Sectors With the Most AfCFTA-Driven Momentum in 2026</p>
+      <div class="sector-grid">
+        <div class="sector-card">
+          <div class="sector-icon">🌾</div>
+          <div class="sector-title">Agribusiness and Food Processing</div>
+          <div class="sector-desc">Intra-African food trade has long been suppressed by tariffs and logistics gaps. As those barriers reduce, demand for processed, value-added goods is accelerating. Packaging, branding, and regional distribution matter most.</div>
+          <span class="sector-tag">High Momentum</span>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">🤝</div>
+          <div class="sector-title">Professional and Business Services</div>
+          <div class="sector-desc">Consultants, marketing agencies, legal firms, and tech service providers are finding that African clients are increasingly open to pan-African providers rather than defaulting to European or American firms.</div>
+          <span class="sector-tag">Growing Fast</span>
+        </div>
+        <div class="sector-card">
+          <div class="sector-icon">💳</div>
+          <div class="sector-title">Financial Technology and Payments</div>
+          <div class="sector-desc">Cross-border payment friction is AfCFTA's most visible bottleneck — and that bottleneck is creating commercial opportunity for fintech companies building African-to-African payment infrastructure.</div>
+          <span class="sector-tag">Critical Enabler</span>
+        </div>
+      </div>
+      <p class="diagram-note">Credibility, context, and continental proximity are the competitive advantages that matter most across all three sectors.</p>
+    </div>
+
+
+    <!-- DIAGRAM 2: MARKET READINESS TABLE -->
+    <h2>How Different African Markets Are Responding</h2>
+
+    <p>Not all 55 member states are at the same stage. Understanding which markets are moving fastest — and what they need — is the difference between a continental thesis and wishful thinking.</p>
+
+    <div class="diagram-wrap">
+      <p class="diagram-title">Diagram 2 — AfCFTA Market Readiness Snapshot: Key African Economies</p>
+      <table class="market-table">
+        <thead>
+          <tr>
+            <th>Market</th>
+            <th>Primary Opportunity</th>
+            <th>Entry Mode</th>
+            <th>AfCFTA Readiness</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nigeria</strong></td>
+            <td>Consumer goods, fintech, media and entertainment</td>
+            <td>Digital-first, local partnerships</td>
+            <td><span class="status-pill pill-fast">High Activity</span></td>
+          </tr>
+          <tr>
+            <td><strong>Kenya</strong></td>
+            <td>Business services, agribusiness, logistics</td>
+            <td>Regional hub positioning</td>
+            <td><span class="status-pill pill-fast">High Activity</span></td>
+          </tr>
+          <tr>
+            <td><strong>Ghana</strong></td>
+            <td>Professional services, tech, creative economy</td>
+            <td>Pan-African brand credibility</td>
+            <td><span class="status-pill pill-mid">Active Growth</span></td>
+          </tr>
+          <tr>
+            <td><strong>South Africa</strong></td>
+            <td>Finance, manufacturing, infrastructure</td>
+            <td>Continental investor gateway</td>
+            <td><span class="status-pill pill-mid">Active Growth</span></td>
+          </tr>
+          <tr>
+            <td><strong>Botswana</strong></td>
+            <td>Financial services, consulting, logistics</td>
+            <td>SADC corridor positioning</td>
+            <td><span class="status-pill pill-mid">Active Growth</span></td>
+          </tr>
+          <tr>
+            <td><strong>Ethiopia</strong></td>
+            <td>Agribusiness, manufacturing, talent</td>
+            <td>Long-term investment play</td>
+            <td><span class="status-pill pill-slow">Developing</span></td>
+          </tr>
+          <tr>
+            <td><strong>Senegal</strong></td>
+            <td>Energy, creative economy, services</td>
+            <td>West African hub potential</td>
+            <td><span class="status-pill pill-mid">Active Growth</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="diagram-note">AfCFTA readiness does not predict opportunity size. It reflects speed of institutional change. A "developing" market may still hold your biggest contract.</p>
+    </div>
+
+
+    <h2>What This Means for Your Growth Strategy</h2>
+
+    <p>If your business operates in one country and you have never thought about a second market, AfCFTA gives you a concrete reason to start now. Not because expansion is easy — it is not — but because the infrastructure conversation is changing. Investors are now evaluating whether a business has a continental thesis, not just a local one.</p>
+
+    <p>Here is what that actually looks like in practice. You do not need to open an office in Lagos to serve a Nigerian client. You do not need a physical presence in Nairobi to win a Kenyan contract. What you need is a service offer that is clearly positioned for pan-African delivery, a track record that travels across borders, and the operational infrastructure to deliver without geographical dependency.</p>
+
+    <p>That is what Growth Infrastructure means: the systems, positioning, and relationships that make scaling across markets possible without recreating your entire business from scratch in every new country.</p>
+
+
+    <!-- DIAGRAM 3: COMMON MISTAKES -->
+    <h2>Common Mistakes African Founders Make When Thinking About AfCFTA</h2>
+
+    <div class="diagram-wrap">
+      <p class="diagram-title">Diagram 3 — Three Mistakes That Stall Your AfCFTA Positioning</p>
+      <div class="mistake-flow">
+        <div class="mistake-item">
+          <div class="mistake-spine">
+            <div class="mistake-dot"></div>
+            <div class="mistake-line"></div>
+          </div>
+          <div class="mistake-content">
+            <p class="mistake-label">Mistake 01</p>
+            <p class="mistake-title">Waiting for perfect implementation before taking action</p>
+            <p class="mistake-desc">AfCFTA is a process, not an event. Founders who build cross-border capability now will be better positioned when conditions improve further. The window to establish first-mover credibility is open right now.</p>
+          </div>
+        </div>
+        <div class="mistake-item">
+          <div class="mistake-spine">
+            <div class="mistake-dot"></div>
+            <div class="mistake-line"></div>
+          </div>
+          <div class="mistake-content">
+            <p class="mistake-label">Mistake 02</p>
+            <p class="mistake-title">Treating all African markets as one</p>
+            <p class="mistake-desc">Nigeria, Kenya, Ghana, South Africa, and Botswana are not interchangeable. Each has distinct regulatory environments, consumer behaviours, and business cultures. Your AfCFTA strategy needs to be specific, not generic.</p>
+          </div>
+        </div>
+        <div class="mistake-item">
+          <div class="mistake-spine">
+            <div class="mistake-dot"></div>
+          </div>
+          <div class="mistake-content">
+            <p class="mistake-label">Mistake 03</p>
+            <p class="mistake-title">Underinvesting in visibility beyond your home market</p>
+            <p class="mistake-desc">If no one outside your home market knows who you are, AfCFTA cannot help you. Cross-border growth requires cross-border reputation — and that is built deliberately, through consistent content, pan-African positioning, and evidence that travels.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- DIAGRAM 4: GLIDE FRAMEWORK -->
+    <h2>How to Position Your Business for AfCFTA Opportunity</h2>
+
+    <p>Positioning for AfCFTA is not a marketing exercise. It is a structural one. The GLIDE Framework provides the diagnostic structure for evaluating whether your business is ready to scale across borders — and where the work needs to happen first.</p>
+
+    <div class="diagram-wrap">
+      <p class="diagram-title">Diagram 4 — The GLIDE Framework Applied to AfCFTA Readiness</p>
+      <div class="glide-grid">
+        <div class="glide-card">
+          <div class="glide-letter">G</div>
+          <div class="glide-word">Growth</div>
+          <div class="glide-desc">Is your current growth model repeatable across borders? Does your offer translate without full customisation for every new market you enter?</div>
+        </div>
+        <div class="glide-card">
+          <div class="glide-letter">L</div>
+          <div class="glide-word">Leadership</div>
+          <div class="glide-desc">Do you have the decision-making capacity and strategic clarity to manage multi-market complexity without burning out your core operations?</div>
+        </div>
+        <div class="glide-card">
+          <div class="glide-letter">I</div>
+          <div class="glide-word">Infrastructure</div>
+          <div class="glide-desc">Do your systems, processes, and delivery model support cross-border service without recreating your business from scratch in each new country?</div>
+        </div>
+        <div class="glide-card">
+          <div class="glide-letter">D</div>
+          <div class="glide-word">Demand</div>
+          <div class="glide-desc">Is there validated demand for what you offer in your target African markets? Not assumption — actual signals from buyers, searches, or referrals that cross borders.</div>
+        </div>
+        <div class="glide-full">
+          <div class="glide-letters-display">GLIDE</div>
+        </div>
+        <div class="glide-card">
+          <div class="glide-letter">E</div>
+          <div class="glide-word">Expansion</div>
+          <div class="glide-desc">Do you have a sequenced plan for market entry? Which market first, why, and with what offer? AfCFTA rewards intentional expansion, not opportunistic wandering.</div>
+        </div>
+      </div>
+      <p class="diagram-note">Run your business through each pillar before committing to a new market. The gaps you find are the work that comes before the strategy.</p>
+    </div>
+
+
+    <!-- DIAGRAM 5: CONTINENTAL THESIS CHECKLIST -->
+    <h2>What Investors and Buyers Are Looking For Right Now</h2>
+
+    <p>Based on conversations with global organisations entering African markets and with investors evaluating pan-African businesses, the signal they are looking for is not just traction. It is transferable traction. Can you prove that what works in one market can be replicated in another without losing quality or margin?</p>
+
+    <p>This is the continental thesis question. Here is what a credible continental thesis looks like in practice.</p>
+
+    <div class="diagram-wrap">
+      <p class="diagram-title">Diagram 5 — The Continental Thesis Checklist for African Founders</p>
+      <div class="thesis-checklist">
+        <div class="thesis-item">
+          <div class="thesis-check"></div>
+          <div class="thesis-text"><strong>Cross-border delivery model:</strong> Your service or product is genuinely deliverable across markets without requiring a physical office in each one.</div>
+        </div>
+        <div class="thesis-item">
+          <div class="thesis-check"></div>
+          <div class="thesis-text"><strong>Pan-African case studies:</strong> You have at least one documented result or engagement from a market outside your home country, however small.</div>
+        </div>
+        <div class="thesis-item">
+          <div class="thesis-check"></div>
+          <div class="thesis-text"><strong>Multi-market pricing:</strong> Your pricing model accounts for currency variation, purchasing power differences, and cross-border payment realities across African markets.</div>
+        </div>
+        <div class="thesis-item">
+          <div class="thesis-check"></div>
+          <div class="thesis-text"><strong>Continental visibility:</strong> Your content, positioning, and online presence speaks to African founders and buyers across multiple countries, not only your local audience.</div>
+        </div>
+        <div class="thesis-item">
+          <div class="thesis-check"></div>
+          <div class="thesis-text"><strong>Sequenced expansion plan:</strong> You know which market you are entering next, why, and with what specific offer — not just "we want to go regional."</div>
+        </div>
+        <div class="thesis-item">
+          <div class="thesis-check"></div>
+          <div class="thesis-text"><strong>Operational capacity:</strong> You have the team, systems, and margin to serve clients in multiple markets without degrading quality in your home market.</div>
+        </div>
+      </div>
+      <p class="diagram-note">If you ticked fewer than three, your AfCFTA preparation starts with infrastructure, not marketing.</p>
+    </div>
+
+
+    <h2>The Bottom Line</h2>
+
+    <p>AfCFTA is reshaping African commerce in real time. Tariffs are coming down. Trade corridors are opening. Buyers and investors are thinking continentally. The founders who build positioning, infrastructure, and visibility now will not just benefit from AfCFTA — they will define what success looks like inside it.</p>
+
+    <p>If you are unsure whether your business is built for cross-border growth, start with an honest audit of your current infrastructure. Look at your service delivery model, your pricing, your visibility, and your operational capacity. That is where the real AfCFTA preparation happens.</p>
+
+    <!-- KEY TAKEAWAY -->
+    <div class="key-takeaway">
+      <p class="key-takeaway-label">Key Takeaway</p>
+      <p>AfCFTA is not a shortcut to growth. It is a structural shift that rewards founders who have done the foundational work. If your infrastructure is solid, AfCFTA becomes an accelerant. If it is not, expansion into new markets will expose the gaps faster than you expect. Build the infrastructure first. Then scale.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <h3>Is your business built for cross-border growth?</h3>
+      <p>Take the free 2026 Growth Infrastructure Audit and find out exactly where your gaps are across 7 critical pillars in 5 minutes. Know before you expand.</p>
+      <a href="https://monicadubesekhwela.com/growthinfrastructureaudit" class="cta-btn">Take the Free Audit →</a>
+    </div>
+
+  </div>
+
+  <!-- RELATED -->
+  <div class="related-section">
+    <p class="related-title">Related Articles</p>
+    <div class="related-grid">
+      <a href="https://monicadubesekhwela.com/tacticinfra" class="related-card">
+        <span class="related-card-tag">Growth Strategy</span>
+        <h4>Infrastructure is the Compounding Asset. Tactics are a Temporary Fix.</h4>
+        <p>Why most businesses are drowning in marketing tactics but starving for sustainable growth.</p>
+      </a>
+      <a href="https://monicadubesekhwela.com/globalstrategies" class="related-card">
+        <span class="related-card-tag">Market Entry</span>
+        <h4>Why Global Strategies Fail in African Markets</h4>
+        <p>The clash between rigid global assumptions and dynamic local contextual realities.</p>
+      </a>
+    </div>
+  </div>
+
+</article>
+
+<footer>
+  <p>© Monica Dube-Sekhwela. All rights reserved. | <a href="https://monicadubesekhwela.com">monicadubesekhwela.com</a></p>
+</footer>
+
+</body>
+</html>
