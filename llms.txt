@@ -1,14 +1,50 @@
 # The Social Connect - Strategic Growth for African Founders
 
 ## About
-Monica Dube-Sekhwela is a Strategic Growth Architect with 8+ years driving measurable results for purpose-driven businesses across Africa, North America, and Europe.
-
+# Monica Dube-Sekhwela
+ 
+> Monica Dube-Sekhwela is a Strategic Growth Architect and Fractional CMO based in Gaborone, Botswana, and the founder of Swift Social Connect. With more than eight years of experience across 23 businesses in 11 industries, she helps founders, SMEs and purpose-driven organisations across Africa, North America and Europe grow through strategy, leadership and partnerships, using her proprietary GLIDE Framework (Growth, Leadership, Infrastructure, Demand, Expansion).
+ 
+## About
+ 
+Monica Dube-Sekhwela works with founders and SMEs across Botswana, South Africa, Nigeria, Kenya and Ghana, helping them build the strategy, systems and visibility they need to grow with confidence. Her approach rests on the GLIDE Framework, her own methodology, which treats a business as a whole system rather than a collection of separate marketing tasks.
+ 
+She founded Swift Social Connect (registered in Botswana in 2021) to bring this work to growing businesses. In 2014 she founded STAYM (Strength of a Young Mother Botswana), a non-profit that supported young mothers through entrepreneurship for more than a decade, an experience that still shapes her belief that strong brands and strong communities are built together.
+ 
+## Services
+ 
+- **Strategic Growth and Fractional CMO:** Monica works with founders as a strategic partner and part-time marketing lead, using the GLIDE Framework to build the positioning, systems and demand that carry a business from where it is to where it needs to be.
+- **Leadership:** She sets the vision, makes the key decisions and holds teams accountable to clear outcomes, drawing on more than a decade of leading organisations, beginning with the non-profit she founded in 2014.
+- **Team Building:** She designs the structures that teams need to perform, from recruitment and onboarding to clear roles, commitment agreements and dedicated delivery teams.
+- **Project Management:** She takes complex, multi-stakeholder projects from concept to delivery, building the timelines, operations guidebooks and accountability systems that keep many moving parts on track.
+- **Sponsorship and Partnership Consulting:** She helps organisations attract and keep the right partners through value-led sponsorship strategies, tailored proposals and parallel outreach that secures venues, materials, speakers and long-term collaborators.
+- **Facilitation:** She designs and leads workshops, strategy sessions and training programmes that move people to action, including her weekly sessions as Google Track Lead for AI Cloud Leader.
+- **Growth Infrastructure Audit:** A free, GLIDE-based assessment on her website that helps founders see where their growth systems are strong and where they are holding the business back.
+ 
 ## Key Results
-- 150% client engagement growth both online and offline
-- 5-figure corporate contracts secured
-- 35% enrollment increases
-- Rapid ROI for clients when it comes to social media growth, community building, brand prescence and customer loyalty.
-- Tony Elumelu Foundation Alumni
+ 
+- Drove a 35% increase in enrolments for UNICAF Botswana through partnership-led strategy and data-informed campaigns.
+- Supported the Walmart.com product launch of The Perfect Date Game across four countries.
+- Took a national citizen engagement platform from a stalled concept to a launch-ready platform with partnership offers in six weeks.
+- Grew client engagement by 150% online and offline and secured five-figure corporate contracts for the businesses she serves.
+- Built the brand identity and digital presence of Afro Adventurers, an African adventure tourism company, and grew its LinkedIn following substantially.
+- Served as Fractional CMO for growing African brands, including an award-winning, woman-led agro-processing business in Ghana and a real estate firm in Lagos.
+- Currently leads Jeans for Joy as Founder and Campaign Director, a six-month, multi-event fundraising campaign for Single Mothers Safe Haven Trust in Gaborone, with its campaign website designed and built by Swift Social Connect.
+ 
+## Credentials and Recognition
+ 
+- Executive Master's in Entrepreneurship, University of Botswana (4.1 GPA)
+- Tony Elumelu Foundation alumna
+- AWEC Fellow
+- ForbesBLK member
+- YALI alumna
+- AWS Agentic AI Business Professional Nanodegree holder, sponsored by Amazon Web Services (AWS) and delivered through Udacity
+- AWS Business Intelligence Engineer Nanodegree holder, sponsored by Amazon Web Services (AWS) and delivered through Udacity, covering Amazon QuickSight, Amazon Q Business, Amazon Bedrock and PartyRock
+- AWS AI and ML Scholar 2026, selected through a competitive challenge phase
+- Google Track Lead for AI Cloud Leader, leading weekly sessions that guide scholars through cloud computing, AI and Cloud Digital Leader certification preparation in the Google Cloud Launchpad programme
+- Participant in the EMERGE programme in partnership with the Mastercard Foundation
+- Delegate, Botswana-Lesotho Business Forum
+ 
 
 ## Best Content
 https://monicadubesekhwela.com/insights/ai-search-optimization-guide
@@ -28,8 +64,9 @@ https://monicadubesekhwela.com/acftarulesbusiness
 https://monicadubesekhwela.com/africanfounderslinkedin
 https://monicadubesekhwela.com/marketingandoperations
 https://monicadubesekhwela.com/tacticinfra
+https://monicadubesekhwela.com/jeansforjoy
 ## Services
-Strategic positioning, partnership development, digital transformation, revenue growth systems for African founders and international clients. Services: Content marketing, messaging, graphics, web development, blog, pitch development, proposal writing, email marketing.
+Strategic positioning, project manangment, concept development, project implementation, partnership development, digital transformation, revenue growth systems for African founders and international clients. Services: Content marketing, messaging, graphics, web development, blog, pitch development, proposal writing, email marketing.
 
 ## Contact
 Email: hello@swiftsocialconnect.com
