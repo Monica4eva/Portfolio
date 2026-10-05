@@ -35,10 +35,11 @@
     "jobTitle": "Fractional CMO and Strategic Growth Architect",
     "description": "Fractional CMO and Strategic Growth Architect specialising in Africa market entry, pan-African expansion, and growth infrastructure for purpose-driven businesses.",
     "url": "https://monicadubesekhwela.com",
-    "sameAs": ["https://swiftsocialconnect.com","https://www.linkedin.com/in/monica-dube-sekhwela"],
-    "knowsAbout": ["Fractional CMO","Business Development","Growth Strategy","Digital Marketing","Partnership Development","Africa Market Entry","Diaspora Investment","Pan-African Expansion","AfCFTA","Tech Talent Africa"],
+    "sameAs": ["https://swiftsocialconnect.com","https://www.linkedin.com/in/monica-dube-sekhwela","https://www.weentrerise.com","https://www.jeansforjoy.com"],
+    "knowsAbout": ["Fractional CMO","Business Development","Growth Strategy","Digital Marketing","Partnership Development","Sponsorship Strategy","Leadership","Team Building","Project Management","Facilitation","Cause Marketing","Africa Market Entry","Diaspora Investment","Pan-African Expansion","AfCFTA","Cloud and AI Leadership"],
+    "award": ["Tony Elumelu Foundation Alumna","AWEC Fellow","ForbesBLK Member","YALI Alumna","AWS AI and ML Scholar 2026","AWS Agentic AI Business Professional Nanodegree","AWS Business Intelligence Engineer Nanodegree","Google Track Lead, AI Cloud Leader"],
     "alumniOf": [{"@type":"EducationalOrganization","name":"University of Botswana"},{"@type":"EducationalOrganization","name":"University of Derby"}],
-    "worksFor": {"@type":"Organization","name":"The Social Connect","url":"https://swiftsocialconnect.com"},
+    "worksFor": {"@type":"Organization","name":"Swift Social Connect","url":"https://swiftsocialconnect.com"},
     "address": {"@type":"PostalAddress","addressLocality":"Gaborone","addressCountry":"BW"}
   }
   </script>
@@ -112,6 +113,26 @@
 
     .grain::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1;opacity:.4;}
 
+    /* LIVE + QUICK ACCESS + GROWTH (added, uses existing palette) */
+    .live-dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--gold);display:inline-block;animation:livePulse 1.8s ease-in-out infinite;}
+    @keyframes livePulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+    .quick-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+    .quick-card{display:flex;flex-direction:column;gap:.35rem;padding:1.25rem 1.1rem;border:1px solid var(--border);}
+    .quick-card .q-label{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+    .quick-card .q-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--ink);}
+    .quick-card .q-go{font-size:.75rem;font-weight:600;color:var(--gold);margin-top:auto;}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+    .timeline{position:relative;max-width:820px;margin:0 auto;}
+    .timeline::before{content:'';position:absolute;left:5.5rem;top:.5rem;bottom:.5rem;width:2px;background:linear-gradient(180deg,var(--gold),var(--gold-light),var(--pink));opacity:.45;}
+    .tl-item{display:grid;grid-template-columns:5.5rem 1fr;gap:0 2rem;position:relative;padding-bottom:2.25rem;}
+    .tl-item:last-child{padding-bottom:0;}
+    .tl-year{font-family:'Playfair Display',serif;font-weight:900;font-size:1.35rem;color:var(--gold);text-align:right;padding-right:1.25rem;line-height:1.2;}
+    .tl-item::after{content:'';position:absolute;left:calc(5.5rem - 6px);top:.45rem;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--gold);}
+    .tl-item.now::after{background:var(--gold);box-shadow:0 0 0 6px rgba(198,156,109,0.18);}
+    .tl-body{padding:1.25rem 1.5rem;margin-left:.5rem;}
+    .tl-body h3{font-weight:700;font-size:.98rem;margin:0 0 .4rem;}
+    .tl-body p{font-size:.84rem;color:#6b7280;line-height:1.7;margin:0;}
+
     #auditPopup{animation:fadeIn .3s ease-out;}
     #auditPopup>div{animation:slideUp .4s ease-out;}
     @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
@@ -134,10 +155,17 @@
       .testimonials-three{grid-template-columns:1fr!important;}
       .initiatives-grid{grid-template-columns:1fr 1fr!important;}
       .footer-grid{grid-template-columns:1fr 1fr!important;}
+      .quick-grid{grid-template-columns:1fr 1fr!important;}
+      .services-grid{grid-template-columns:1fr 1fr!important;}
+      .timeline::before{left:3.5rem;}
+      .tl-item{grid-template-columns:3.5rem 1fr;gap:0 1rem;}
+      .tl-item::after{left:calc(3.5rem - 6px);}
+      .tl-year{font-size:1rem;padding-right:.9rem;}
+      .now-card{flex-direction:column;align-items:flex-start!important;}
     }
     @media(max-width:480px){
       .stats-band-grid{grid-template-columns:1fr!important;}
-      .glide-grid,.sector-grid,.initiatives-grid,.footer-grid{grid-template-columns:1fr!important;}
+      .glide-grid,.sector-grid,.initiatives-grid,.footer-grid,.services-grid{grid-template-columns:1fr!important;}
     }
   </style>
 </head>
@@ -243,6 +271,15 @@
             <div style="font-size:.72rem;color:#6b7280;line-height:1.4;">8+ Years<br><span style="font-weight:700;color:var(--muted);">Proven Results</span></div>
           </div>
         </div>
+        <a href="jeansforjoy.html" class="glass lift reveal d5 now-card" style="display:flex;align-items:center;gap:1.25rem;margin-top:1.75rem;padding:1.1rem 1.35rem;border:1px solid rgba(198,156,109,0.3);border-left:4px solid var(--gold);max-width:520px;">
+          <img src="jeansforjoy-flyer.jpg" alt="Jeans for Joy campaign" style="width:3.6rem;height:4.6rem;object-fit:cover;object-position:top;border-radius:8px;flex-shrink:0;" onerror="this.style.display='none'" />
+          <div style="flex:1;min-width:0;">
+            <div style="display:flex;align-items:center;gap:.45rem;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem;"><span class="live-dot"></span>Now Leading · Live Project</div>
+            <div class="serif" style="font-weight:800;font-size:1.05rem;color:var(--ink);margin-bottom:.15rem;">Jeans for Joy</div>
+            <div style="font-size:.78rem;color:#6b7280;line-height:1.55;">A six-month, multi-event fundraising campaign I conceived and am directing for Single Mothers Safe Haven Trust in Gaborone.</div>
+          </div>
+          <span style="font-size:.8rem;font-weight:700;color:var(--gold);white-space:nowrap;">View &#8594;</span>
+        </a>
       </div>
       <div class="reveal-right photo-col" style="display:flex;justify-content:center;">
         <div style="position:relative;width:100%;max-width:420px;">
@@ -251,7 +288,7 @@
             <img src="Monicahome.png" alt="Monica Dube-Sekhwela Strategic Growth Architect Fractional CMO Africa" style="width:100%;height:auto;display:block;object-fit:cover;object-position:top;" />
             <div style="position:absolute;bottom:0;left:0;right:0;padding:1.25rem 1.5rem;background:linear-gradient(to top,rgba(26,15,7,0.85),transparent);">
               <div style="color:rgba(255,255,255,.7);font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600;">Strategic Growth Architect</div>
-              <div style="color:#fff;font-size:.9rem;font-weight:700;margin-top:.1rem;">The Social Connect · Est. 2017</div>
+              <div style="color:#fff;font-size:.9rem;font-weight:700;margin-top:.1rem;">Swift Social Connect · Est. 2017</div>
             </div>
           </div>
           <div class="glass" style="position:absolute;bottom:-1.5rem;left:-2rem;padding:.9rem 1.2rem;z-index:10;border:1px solid rgba(198,156,109,0.25);max-width:190px;">
@@ -268,33 +305,54 @@
   </div>
 </section>
 
-<!-- STATS BAND — updated with new numbers -->
+<!-- QUICK ACCESS -->
+<section style="padding:2.5rem 1.5rem;background:#fff;border-top:1px solid var(--border);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem;" class="reveal">
+      <span class="badge">Quick Access</span>
+      <span style="font-size:.78rem;color:#6b7280;">Go straight to what you came for.</span>
+    </div>
+    <div class="quick-grid reveal">
+      <a href="services.html" class="glass lift quick-card"><span class="q-label">Work With Me</span><span class="q-title">Services &amp; Programs</span><span class="q-go">Explore &#8594;</span></a>
+      <a href="projects.html" class="glass lift quick-card"><span class="q-label">Proof</span><span class="q-title">Case Studies</span><span class="q-go">See the results &#8594;</span></a>
+      <a href="jeansforjoy.html" class="glass lift quick-card" style="border-color:rgba(198,156,109,0.45);"><span class="q-label" style="display:flex;align-items:center;gap:.4rem;"><span class="live-dot"></span>Live Project</span><span class="q-title">Jeans for Joy</span><span class="q-go">View project &#8594;</span></a>
+      <a href="growthinfrastructureaudit.html" class="glass lift quick-card"><span class="q-label">Free · 5 Minutes</span><span class="q-title">2026 Growth Audit</span><span class="q-go">Start audit &#8594;</span></a>
+      <a href="contact.html" class="glass lift quick-card"><span class="q-label">Let's Talk</span><span class="q-title">Book a Strategy Call</span><span class="q-go">Book now &#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
 <section style="background:var(--dark);padding:3.5rem 1.5rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="stats-band-grid reveal" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;text-align:center;">
 
-      <a href="afroadventurer.html" style="display:block;padding:1.25rem 1rem;border-right:1px solid rgba(255,255,255,.08);">
+      <a href="afroadventurers.html" style="display:block;padding:1.25rem 1rem;border-right:1px solid rgba(255,255,255,.08);">
         <div class="stat-val" data-target="150" data-suffix="%">0%</div>
-        <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.4rem;font-weight:500;line-height:1.4;">Client Engagement increase with 14 days<br>Growth</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.4rem;font-weight:500;line-height:1.4;">Client Engagement<br>Growth in 14 Days</div>
       </a>
 
       <a href="unicaf.html" style="display:block;padding:1.25rem 1rem;border-right:1px solid rgba(255,255,255,.08);">
-        <div class="stat-val" data-target="40" data-suffix="%">0%</div>
+        <div class="stat-val" data-target="35" data-suffix="%">0%</div>
         <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.4rem;font-weight:500;line-height:1.4;">Enrollment<br>Increase</div>
       </a>
 
-      <!-- UPDATED: 20+ businesses -->
       <a href="projects.html" style="display:block;padding:1.25rem 1rem;border-right:1px solid rgba(255,255,255,.08);">
-        <div class="stat-val" data-target="20" data-suffix="+">0+</div>
+        <div class="stat-val" data-target="23" data-suffix="">0</div>
         <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.4rem;font-weight:500;line-height:1.4;">Businesses<br>Impacted</div>
-        <div class="stat-note">3 to 12+ contracts per period</div>
+        <div class="stat-note">across 11 industries</div>
       </a>
 
-      <!-- UPDATED: 20,000+ community -->
-      <a href="afroadventurer.html" style="display:block;padding:1.25rem 1rem;border-right:1px solid rgba(255,255,255,.08);">
+      <a href="afroadventurers.html" style="display:block;padding:1.25rem 1rem;border-right:1px solid rgba(255,255,255,.08);">
         <div class="stat-val" data-target="20000" data-suffix="+">0+</div>
         <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.4rem;font-weight:500;line-height:1.4;">Community<br>Building</div>
         <div class="stat-note">clients to events, across platforms</div>
+      </a>
+
+      <a href="about.html" style="display:block;padding:1.25rem 1rem;">
+        <div class="stat-val" data-target="12" data-suffix="+">0+</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.55);margin-top:.4rem;font-weight:500;line-height:1.4;">Years Building<br>Communities</div>
+        <div class="stat-note">since founding STAYM in 2014</div>
       </a>
 
     </div>
@@ -308,16 +366,26 @@
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Tony Elumelu Foundation Alumna</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">ForbesBLK Member</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWEC Fellow</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">YALI Alumna</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWS AI &amp; ML Scholar 2026</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWS Agentic AI Business Professional Nanodegree</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWS Business Intelligence Engineer Nanodegree</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Google Track Lead, AI Cloud Leader</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Executive Master's in Entrepreneurship</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">HerTech Trail</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Impact Toolbox Fellowship</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
-      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWEC Cohort 6</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Seedstar Enabler</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Tony Elumelu Foundation Alumna</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">ForbesBLK Member</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWEC Fellow</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">YALI Alumna</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWS AI &amp; ML Scholar 2026</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWS Agentic AI Business Professional Nanodegree</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWS Business Intelligence Engineer Nanodegree</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Google Track Lead, AI Cloud Leader</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
+      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Executive Master's in Entrepreneurship</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">HerTech Trail</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Impact Toolbox Fellowship</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
-      <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">AWEC Cohort 6</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
       <span style="font-size:.75rem;font-weight:600;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase;">Seedstar Enabler</span><span style="color:var(--gold);font-size:1rem;">&#10022;</span>
     </div>
   </div>
@@ -357,6 +425,24 @@
         <h3 style="font-weight:700;font-size:.88rem;margin:0 0 .6rem;">Expansion</h3>
         <p style="font-size:.75rem;color:#6b7280;line-height:1.6;margin:0;">Partnership development and cross-border growth across Africa and international markets</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding:0 1.5rem 6rem;background:#fff;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+      <span class="badge" style="margin-bottom:1rem;display:inline-block;">How I Can Help</span>
+      <h2 class="serif" style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;margin:0 0 .75rem;">One partner who shapes the plan <span class="gold-text">and leads the people who deliver it.</span></h2>
+    </div>
+    <div class="services-grid">
+      <a href="services.html" class="glass lift reveal d1" style="display:block;padding:1.75rem;border-top:3px solid var(--gold);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;color:var(--ink);">Strategic Growth &amp; Fractional CMO</h3><p style="color:#6b7280;font-size:.82rem;line-height:1.65;margin:0;">A strategic partner and part-time marketing lead who builds the positioning, systems and demand that carry your business to its next stage.</p></a>
+      <a href="services.html" class="glass lift reveal d2" style="display:block;padding:1.75rem;border-top:3px solid var(--gold-light);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;color:var(--ink);">Leadership</h3><p style="color:#6b7280;font-size:.82rem;line-height:1.65;margin:0;">Clear vision, confident decisions and accountability to outcomes, drawn from more than a decade of founding and leading organisations.</p></a>
+      <a href="services.html" class="glass lift reveal d3" style="display:block;padding:1.75rem;border-top:3px solid var(--pink);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;color:var(--ink);">Team Building</h3><p style="color:#6b7280;font-size:.82rem;line-height:1.65;margin:0;">The structures teams need to perform, from recruitment and onboarding to clear roles and dedicated delivery teams.</p></a>
+      <a href="services.html" class="glass lift reveal d1" style="display:block;padding:1.75rem;border-top:3px solid var(--gold);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;color:var(--ink);">Project Management</h3><p style="color:#6b7280;font-size:.82rem;line-height:1.65;margin:0;">Complex, multi-stakeholder projects taken from concept to delivery with the timelines, playbooks and systems that keep every part on track.</p></a>
+      <a href="services.html" class="glass lift reveal d2" style="display:block;padding:1.75rem;border-top:3px solid var(--gold-light);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;color:var(--ink);">Sponsorship &amp; Partnership Consulting</h3><p style="color:#6b7280;font-size:.82rem;line-height:1.65;margin:0;">Value-led sponsorship strategies and tailored proposals that bring the right partners on board and keep them there.</p></a>
+      <a href="services.html" class="glass lift reveal d3" style="display:block;padding:1.75rem;border-top:3px solid var(--pink);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;color:var(--ink);">Facilitation</h3><p style="color:#6b7280;font-size:.82rem;line-height:1.65;margin:0;">Workshops, strategy sessions and training programmes designed to move people to action, including my weekly sessions as a Google Track Lead.</p></a>
     </div>
     <div style="text-align:center;margin-top:2.5rem;" class="reveal"><a href="services.html" class="btn-ghost">View All Programs</a></div>
   </div>
@@ -491,9 +577,27 @@
         <div class="glass lift" style="padding:1.75rem;border-left:3px solid var(--gold-light);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;">Tech-Enabled Marketing</h3><p style="color:#6b7280;font-size:.85rem;line-height:1.65;margin:0;">Front-end development (HTML, CSS, JavaScript, React) plus marketing automation means I build what I design with no developer delays.</p></div>
         <div class="glass lift" style="padding:1.75rem;border-left:3px solid var(--pink);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;">Cross-Sector Pattern Recognition</h3><p style="color:#6b7280;font-size:.85rem;line-height:1.65;margin:0;">Education, hospitality, AgriTech, professional services. I see what others miss because I've been across all of it.</p></div>
         <div class="glass lift" style="padding:1.75rem;border-left:3px solid var(--gold);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;">Partnership DNA</h3><p style="color:#6b7280;font-size:.85rem;line-height:1.65;margin:0;">Track record of securing corporate, government, and institutional partnerships. I don't just market. I open doors.</p></div>
-        <div class="glass lift" style="padding:1.75rem;border-left:3px solid var(--gold-light);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;">Talent Infrastructure Access</h3><p style="color:#6b7280;font-size:.85rem;line-height:1.65;margin:0;">SAP-certified consultants, software engineers, and data analysts across Africa through strategic recruitment partnerships.</p></div>
+        <div class="glass lift" style="padding:1.75rem;border-left:3px solid var(--gold-light);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;">Talent Pipeline Experience</h3><p style="color:#6b7280;font-size:.85rem;line-height:1.65;margin:0;">For Umuzi, I built credible employer pipelines from zero across South Africa, Kenya and Nigeria in 90 days, using AI-powered outreach and strategic CRM management to place SAP-certified talent.</p></div>
         <div class="glass lift" style="padding:1.75rem;border-left:3px solid var(--pink);"><h3 style="font-weight:700;font-size:.95rem;margin:0 0 .5rem;">The Africa-Global Bridge</h3><p style="color:#6b7280;font-size:.85rem;line-height:1.65;margin:0;">African businesses scaling toward global markets, and international investors, diaspora founders, and EU/US organisations entering the continent. I translate strategy across both contexts with depth and precision.</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH JOURNEY -->
+<section id="growth" style="padding:5rem 1.5rem;background:linear-gradient(180deg,#fff,var(--cream));">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3.5rem;" class="reveal">
+      <span class="badge" style="margin-bottom:1rem;display:inline-block;">My Growth Journey</span>
+      <h2 class="serif" style="font-size:clamp(2rem,4vw,2.8rem);font-weight:900;margin:0 0 .75rem;">From one community <span class="gold-text">to markets across the continent.</span></h2>
+      <p style="color:#6b7280;max-width:520px;margin:0 auto;">Every stage of my journey has added a new layer to how I help founders grow, from building community on the ground to leading in AI and cloud.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-year">2014</div><div class="glass tl-body"><h3>Founded STAYM</h3><p>I founded Strength of a Young Mother Botswana to support young mothers through education access and entrepreneurship training, which taught me how to build community and lead with purpose.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-year">2017</div><div class="glass tl-body"><h3>Began strategic growth consulting</h3><p>I started helping businesses with strategy, marketing and community building, the work that would grow into my consultancy and, later, the GLIDE Framework.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-year">2021</div><div class="glass tl-body"><h3>Incorporated Swift Social Connect</h3><p>I formalised my consultancy as Swift Social Connect, serving founders and SMEs across Botswana, South Africa, Nigeria, Kenya and Ghana.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-year" style="font-size:1rem;">Along<br>the way</div><div class="glass tl-body"><h3>Results, recognition and growth</h3><p>I have impacted 23 businesses across 11 industries, from a 35% enrolment increase for UNICAF, a TEF grant for B Agro Crop and multi-country talent pipelines for Umuzi to a Walmart.com product launch across four countries, while earning an Executive Master's in Entrepreneurship with a 4.1 GPA and joining the Tony Elumelu Foundation, AWEC, ForbesBLK and YALI networks.</p></div></div>
+      <div class="tl-item now reveal"><div class="tl-year">2026</div><div class="glass tl-body" style="border:1px solid rgba(198,156,109,0.3);"><h3>Leading in AI, cloud and cause marketing</h3><p>I became an AWS AI and ML Scholar, completed AWS nanodegrees in Agentic AI Business and Business Intelligence Engineering, serve as a Google Track Lead for AI Cloud Leader, and am directing <a href="jeansforjoy.html" style="color:var(--gold);font-weight:600;">Jeans for Joy</a> while building <a href="https://www.weentrerise.com" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600;">WeEntreRise</a>.</p></div></div>
     </div>
   </div>
 </section>
@@ -554,10 +658,10 @@
       <p style="color:#6b7280;max-width:440px;margin:0 auto;">Beyond client work, these are the ecosystems I'm actively growing.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;" class="initiatives-grid">
-      <div class="glass lift reveal d1" style="padding:1.75rem;border-top:3px solid var(--gold);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;">Mentorship</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0;">Business and marketing mentor at Henkolu Group and TEFConnect, guiding emerging entrepreneurs across Africa.</p></div>
-      <div class="glass lift reveal d2" style="padding:1.75rem;border-top:3px solid var(--gold-light);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;">Social Impact via STAYM</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0;">Founder and Director of Strength of a Young Mother, supporting education access and entrepreneurship training for over a decade.</p></div>
-      <div class="glass lift reveal d3" style="padding:1.75rem;border-top:3px solid var(--pink);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;">Community Building</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0;">Community Marketing Strategist for Afro Adventurers, connecting Pan-African travelers and diaspora globally.</p></div>
-      <div class="glass lift reveal d4" style="padding:1.75rem;border-top:3px solid var(--gold);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;">Tech Talent Pipeline</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0;">Strategic partnerships with Umuzi placing SAP-certified consultants and software engineers across African markets.</p></div>
+      <a href="jeansforjoy.html" class="glass lift reveal d1" style="display:block;padding:1.75rem;border-top:3px solid var(--gold);"><div style="display:flex;align-items:center;gap:.4rem;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;"><span class="live-dot"></span>Live</div><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:var(--ink);">Jeans for Joy</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0 0 .75rem;">Founder and Campaign Director of a celebration-led fundraising season for Single Mothers Safe Haven Trust, with its website built by Swift Social Connect.</p><span style="font-size:.75rem;font-weight:600;color:var(--gold);">View project &#8594;</span></a>
+      <a href="https://www.weentrerise.com" target="_blank" rel="noopener" class="glass lift reveal d2" style="display:block;padding:1.75rem;border-top:3px solid var(--gold-light);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;color:var(--ink);">WeEntreRise</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0 0 .75rem;">A digital marketplace for African women professionals, opening cross-border opportunities across five markets under the AfCFTA.</p><span style="font-size:.75rem;font-weight:600;color:var(--gold);">Visit site &#8594;</span></a>
+      <div class="glass lift reveal d3" style="padding:1.75rem;border-top:3px solid var(--pink);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;">AI &amp; Cloud Leadership</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0;">Google Track Lead for AI Cloud Leader and AWS AI and ML Scholar, helping founders and professionals put AI and cloud to work.</p></div>
+      <div class="glass lift reveal d4" style="padding:1.75rem;border-top:3px solid var(--gold);"><div style="font-weight:700;font-size:.92rem;margin-bottom:.6rem;">Mentorship</div><p style="color:#6b7280;font-size:.8rem;line-height:1.65;margin:0;">Business and marketing mentor at Henkolu Group and TEFConnect, guiding emerging entrepreneurs across Africa.</p></div>
     </div>
   </div>
 </section>
@@ -566,7 +670,7 @@
 <section style="padding:6rem 1.5rem;background:linear-gradient(150deg,#fffaf5,#fff8f0);position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(198,156,109,0.04),rgba(248,200,216,0.04));pointer-events:none;"></div>
   <div style="max-width:740px;margin:0 auto;text-align:center;position:relative;z-index:1;" class="reveal">
-    <span class="badge" style="margin-bottom:1.5rem;display:inline-block;">Q2 2026 Engagements Open</span>
+    <span class="badge" style="margin-bottom:1.5rem;display:inline-block;">Q4 2026 &amp; Q1 2027 Engagements Open</span>
     <h2 class="serif" style="font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;margin:0 0 1.25rem;line-height:1.1;">You don't need more tactics.<br><em style="color:var(--gold);">You need a system that works.</em></h2>
     <p style="font-size:1.05rem;color:#4b5563;line-height:1.8;margin:0 0 .75rem;">Whether you're based on the continent building toward global markets, or a diaspora founder and international investor looking to enter Africa with confidence, the GLIDE Framework gives you the structure to stop guessing and start scaling.</p>
     <p style="color:#6b7280;margin:0 0 1rem;font-size:.9rem;">I accept a select number of fractional CMO and strategic advisory engagements each quarter. If you have traction and are ready to invest in systems that compound, let's talk.</p>
@@ -583,7 +687,7 @@
         <a href="https://swiftsocialconnect.com" target="_blank" style="color:var(--gold);font-weight:500;">swiftsocialconnect.com</a>
       </div>
     </div>
-    <p style="font-size:.75rem;color:#9ca3af;margin-top:1.5rem;">Currently accepting select Q2 2026 engagements · Gaborone, Botswana</p>
+    <p style="font-size:.75rem;color:#9ca3af;margin-top:1.5rem;">Currently accepting select Q4 2026 and Q1 2027 engagements · Gaborone, Botswana</p>
   </div>
 </section>
 
@@ -610,6 +714,8 @@
           <a href="blog.html" style="color:rgba(255,255,255,.5);" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Insights</a>
           <a href="projects.html" style="color:rgba(255,255,255,.5);" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Case Studies</a>
           <a href="growthinfrastructureaudit.html" style="color:rgba(255,255,255,.5);" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">2026 Audit</a>
+          <a href="jeansforjoy.html" style="color:rgba(255,255,255,.5);" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Jeans for Joy</a>
+          <a href="https://www.weentrerise.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='rgba(255,255,255,.5)'">WeEntreRise</a>
         </div>
       </div>
       <div>
@@ -637,6 +743,10 @@
         <span style="font-size:.72rem;color:rgba(255,255,255,.3);">ForbesBLK Member</span>
         <span style="color:rgba(198,156,109,.4);font-size:.72rem;">&#10022;</span>
         <span style="font-size:.72rem;color:rgba(255,255,255,.3);">AWEC Fellow</span>
+        <span style="color:rgba(198,156,109,.4);font-size:.72rem;">&#10022;</span>
+        <span style="font-size:.72rem;color:rgba(255,255,255,.3);">AWS AI &amp; ML Scholar</span>
+        <span style="color:rgba(198,156,109,.4);font-size:.72rem;">&#10022;</span>
+        <span style="font-size:.72rem;color:rgba(255,255,255,.3);">Google Track Lead</span>
       </div>
     </div>
   </div>
@@ -650,6 +760,7 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
   }, { threshold: 0.08 });
   revealEls.forEach(el => revealObs.observe(el));
+  setTimeout(() => revealEls.forEach(el => el.classList.add('up')), 4000);
 
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
